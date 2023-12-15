@@ -13,7 +13,6 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-
 dotenv.config();
 
 app.get("/", (req, res, next) => {
