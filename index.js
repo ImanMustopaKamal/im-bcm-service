@@ -20,7 +20,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(uuidv4);
 
-
 dotenv.config();
 
 app.get("/", (req, res, next) => {
