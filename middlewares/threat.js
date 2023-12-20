@@ -1,5 +1,5 @@
 const threatMiddleware = (req, res, next) => {
-    console.log(`threat middleware req body ${req.body} `);
+    console.log(`threat middleware req body `);
     next();
   }
   

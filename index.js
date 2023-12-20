@@ -2,12 +2,8 @@ const serverless = require("serverless-http");
 const express = require("express");
 const dotenv = require("dotenv");
 // const cors = require("cors");
-const bodyParser = require("body-parser");
+//const bodyParser = require("body-parser");
 const rateLimit = require("express-rate-limit");
-const { 
-  v1: uuidv1,
-  v4: uuidv4,
-} = require('uuid');
 
 const app = express();
 
@@ -16,9 +12,9 @@ const limiter = rateLimit({
   max: 1000, // limit each IP to 100 requests per windowMs
 });
 app.use(limiter);
-app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(uuidv4);
+//app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+//app.use(bodyParser.json());
 
 dotenv.config();
 
@@ -28,9 +24,10 @@ app.get("/", (req, res, next) => {
   });
 });
 
+require("./routes/call_tree_sdm.routes")(app);
+require("./routes/threat_type.routes")(app);
 require("./routes/threat.routes")(app);
 require("./routes/product.routes")(app);
 require("./routes/404.routes")(app);
-
 
 module.exports.handler = serverless(app);

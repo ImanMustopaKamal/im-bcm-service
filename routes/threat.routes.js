@@ -2,7 +2,9 @@ const { threatMiddleware } = require("../middlewares/threat");
 const threats = require("../controllers/threat.controller");
 
 module.exports = (app) => {
-  app.get("/threats/:type_id?/:name?", [threatMiddleware], threats.get);
+  app.get("/threats?", [threatMiddleware], threats.get);
   app.get("/threat/:id", [threatMiddleware], threats.getByID);
-  app.put("/threat/add", [threatMiddleware], threats.addThreat);
+  app.post("/threat/add", [threatMiddleware], threats.addThreat);
+  app.put('/threat/:id', [threatMiddleware], threats.updateThreat);
+  app.delete('/threat/:id', [threatMiddleware], threats.deleteThreat);
 };

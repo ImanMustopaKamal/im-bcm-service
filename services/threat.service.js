@@ -1,29 +1,17 @@
 const {
-    findAll, findThreats, findByID, findByType, createThreat
+    findAll, findByID, createThreat, updateThreat, deleteThreat
   } = require("../repositories/threat.repository");
   
-  const getAllThreats = async () => {
-    const threats = await findAll();
+  const getAllThreats = async (filter) => {
+    const threats = await findAll(filter);
   
     return threats;
   };
 
-  const searchThreats = async(type_id, name) => {
-    const threats = await findThreats(type_id, name);
-
-    return threats;
-  };
-  
   const getThreatByID = async (threat_id) => {
     const threat = await findByID(threat_id);
 
     return threat;
-  };
-
-  const getThreatByType = async (type_id) => {
-    const threats = await findByType(type_id);
-
-    return threats;
   };
 
   const addNewThreat = async (threat) => {
@@ -32,7 +20,19 @@ const {
     return aThreat;
   };
 
+  const update = async (threat_id, data) => {
+    const aThreat = await updateThreat(threat_id, data);
+
+    return aThreat;
+  };
+
+  const deleteTh = async (threat_id) => {
+    const dThreat = await deleteThreat(threat_id);
+
+    return dThreat;
+  };
+
   module.exports = {
-    searchThreats, getAllThreats, getThreatByID, getThreatByType, addNewThreat
+    getAllThreats, getThreatByID, addNewThreat, update, deleteTh
   };
   
