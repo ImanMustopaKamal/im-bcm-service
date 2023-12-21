@@ -1,9 +1,32 @@
+const { nanoid } = require("nanoid");
+
 const {
     findApplications, findByID, createApplication, updateApplications, deleteApplications
   } = require("../repositories/application.repository");
   
-  const getAllApps = async (filter) => {
-    const apps = await findApplications(filter);
+  const getAllApps = async (req, res) => {
+    const { query } = req;
+    const { pagiante } = res;
+    let whereCond = { };
+
+    if (query.is_active != null){
+        whereCond['is_active'] = req.query.is_active === 'true';
+      }
+
+    if (query.code != null){
+        let codeFilter = {
+            contains : req.query.code
+        };
+        whereCond['code'] = codeFilter;
+    }
+
+    if (query.name != null){
+        let nameFilter = {
+          contains : req.query.name
+        };
+        whereCond['name'] = nameFilter;
+      }
+    const apps = await findApplications(whereCond, pagiante);
   
     return apps;
   };
@@ -15,7 +38,12 @@ const {
   };
 
   const addNewApps = async (data) => {
-    const cApps = await createApplication(data);
+    let newApps = {
+        ...data,
+        id : nanoid(),
+        is_active : true,
+      };
+    const cApps = await createApplication(newApps);
 
     return cApps;
   };

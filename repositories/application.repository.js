@@ -1,7 +1,14 @@
 const prisma = require("../config/database");
 
-const findApplications = async (filter) => {
-  const products = await prisma.ref_applications.findMany(filter);
+const findApplications = async (whereCond, pagiante) => {
+  const products = await prisma.ref_applications.findMany({
+    where : whereCond,
+    take: pagiante.limit,
+    skip: pagiante.offset,
+    orderBy: {
+      ['name']: "desc"
+    }
+  });
 
   return products;
 };

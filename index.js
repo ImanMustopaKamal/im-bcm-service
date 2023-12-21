@@ -1,7 +1,7 @@
 const serverless = require("serverless-http");
 const express = require("express");
 const dotenv = require("dotenv");
-// const cors = require("cors");
+const cors = require("cors");
 //const bodyParser = require("body-parser");
 const rateLimit = require("express-rate-limit");
 
@@ -16,7 +16,14 @@ app.use(limiter);
 app.use(express.json());
 //app.use(bodyParser.json());
 
+var corsOptions = {
+  origin: "http://localhost:3000"
+};
+app.use(cors(corsOptions));
+
 dotenv.config();
+
+global.__basedir = __dirname;
 
 app.get("/", (req, res, next) => {
   return res.status(200).json({
@@ -24,6 +31,7 @@ app.get("/", (req, res, next) => {
   });
 });
 
+require("./routes/file_upload.routes")(app);
 require("./routes/application.routes")(app);
 require("./routes/call_tree_sdm.routes")(app);
 require("./routes/threat_type.routes")(app);

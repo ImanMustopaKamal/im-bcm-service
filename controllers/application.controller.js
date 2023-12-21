@@ -1,57 +1,27 @@
-const { nanoid : newID } = require('nanoid');
+const { jsonFormater } = require("../helpers");
 
 const {
     getAllApps, getAppsByID, addNewApps, updateApps, deleteApps
   } = require("../services/application.service");
   
   const get = async (req, res) => {
-    let jsonFilter = { 
-        where : {
 
-        },
-        orderBy : { 
-          name : 'asc'} 
-    };
-
-    if (req.query.is_active != null){
-        jsonFilter.where['is_active'] = req.query.is_active === 'true';
-      }
-
-      if (req.query.code != null){
-        let codeFilter = {
-          contains : req.query.code
-        };
-        jsonFilter.where['code'] = codeFilter;
-      }
-
-    if (req.query.name != null){
-        let nameFilter = {
-          contains : req.query.name
-        };
-        jsonFilter.where['name'] = nameFilter;
-      }
-
-    const apps = await getAllApps(jsonFilter);
+    const apps = await getAllApps(req, res);
   
-    res.send(apps);
+    jsonFormater.success(res, apps, "Application retrieved", 200);
   };
 
   const getByID = async (req, res) => {
     const apps = await getAppsByID(req.params.id);
 
-    res.send(apps);
+    jsonFormater.success(res, apps, "Application retrieved", 200);
   };
 
   const addApps = async (req,res) => {
-    let newApps = {
-        id : newID(),
-        code : req.body.code,
-        name : req.body.name,
-        is_active : true,
-      };
-      const nApps = await addNewApps(newApps);
-  
-      res.status(201).json(nApps);
+    const { body } = req;    
+    const application = await addNewApps(body);
+
+    jsonFormater.success(res, application, "Application created", 201);
   };
 
   const update = async (req, res) => {
@@ -61,18 +31,11 @@ const {
     const fApps = await getAppsByID(apps_id);
 
     if (fApps != null) {
-      let data = {
-        code : req.body.code,
-        name : req.body.name,
-        severity : req.body.severity,
-        is_active : req.body.is_active
-      };
-      const application = await updateApps(apps_id, data);
-      res.send(application);
+        const { body } = req;
+      const application = await updateApps(apps_id, body);
+      jsonFormater.success(res, application, "Application Updated", 200);
     }else {
-      res.send({
-        message: 'Data not found!'
-      });
+        jsonFormater.error(res, application, "Application data not found", 201);
     }
   };
 
