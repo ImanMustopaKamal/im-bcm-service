@@ -32,3 +32,15 @@ model threat {
 
   @@index([type_id], map: "fk_threat_type")
 }
+
+model Applications {
+  id         String   @id @db.VarChar(22)
+  code       String   @unique @db.VarChar(120)
+  name       String   @db.VarChar(250)
+  severity   Int      @db.Int
+  is_active  Boolean  @default(true)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("applications")
+}

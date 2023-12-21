@@ -1,6 +1,6 @@
 const productMiddleware = (req, res, next) => {
   console.log('product middleware');
-  next();
+  return next();
 }
 
 module.exports = {
