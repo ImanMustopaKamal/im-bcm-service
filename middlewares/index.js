@@ -1,9 +1,9 @@
 const pagination = require("./pagination");
 const applicationMiddleware = require("./application");
-const threatMiddleware = require("./threat");
+const threatTypeMiddleware = require("./threat_type");
 
 module.exports = {
   pagination,
-  threatMiddleware,
+  threatTypeMiddleware,
   applicationMiddleware,
 };

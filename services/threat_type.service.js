@@ -1,8 +1,8 @@
 const { nanoid } = require("nanoid");
 const { func } = require("../helpers");
 const {
-    findAll, findBy, createThreat
-  } = require("../repositories/threat.repository");
+    findAll, findBy, storeThreatTypes
+  } = require("../repositories/threat_type.repository");
   
   const getAllThreats = async (req, res) => {
     const { query } = req;
@@ -17,10 +17,6 @@ const {
       filter.where['is_active'] = query.is_active === 'true';   
     }
 
-    if (!func.isNull(query.type_id)) {
-      filter.where['type_id'] = query.type_id;
-    }
-
     if (!func.isNull(query.name)) {
       const nameFilter = {
         contains : query.name
@@ -33,19 +29,24 @@ const {
     return threats;
   };
 
-  const getThreatByID = async (threat_id) => {
-    const threat = await findBy('id', threat_id);
+  const getThreatByID = async (id) => {
+    const threat = await findBy('id', id);
 
     return threat;
   };
 
-  const addNewThreat = async (threat) => {
-    const aThreat = await createThreat(threat);
+  const addNewThreatTypes = async (body) => {
+    const data = {
+      id : nanoid(8),
+      ...body,
+      is_active : true
+    };
+    const aThreat = await storeThreatTypes(data);
     
     return aThreat;
   };
 
   module.exports = {
-    getAllThreats, getThreatByID, addNewThreat
+    getAllThreats, getThreatByID, addNewThreatTypes
   };
   
