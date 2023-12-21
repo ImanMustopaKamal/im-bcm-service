@@ -1,0 +1,33 @@
+const { response, enums, func } = require("../helpers");
+const { findBy } = require("../repositories/application.repository");
+
+const createValidator = async (req, res, next) => {
+  const { code, name, severity } = req.body;
+
+  if (func.isNull(code)) {
+    return response.badRequest(res, null, "Code is required", 404);
+  } else {
+    const application = await findBy("code", code);
+    if (application) {
+      return response.badRequest(res, null, "Code already exist", 404);
+    }
+  }
+
+  if(func.isNull(name)) {
+    return response.badRequest(res, null, "Name is required", 404);
+  }
+
+  if(func.isNull(severity)) {
+    return response.badRequest(res, null, "Severity is required", 404);
+  }else{
+    if(!enums.severity.includes(severity)){
+      return response.badRequest(res, null, "Severity is not valid", 404);
+    }
+  }
+
+  next();
+};
+
+module.exports = {
+  createValidator,
+};

@@ -7,19 +7,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model product {
-  id          Int    @id @default(autoincrement())
-  name        String
-  price       Int
-  description String
-  image       String
-}
-
 model threat_type {
-  id        String   @id @db.Char(40)
-  name      String   @db.VarChar(250)
-  is_active Boolean?
-  threats   threat[]
+  id         String   @id @db.Char(40)
+  name       String   @db.VarChar(250)
+  is_active  Boolean  @default(true)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  threats    threat[]
 }
 
 model threat {
@@ -27,7 +21,9 @@ model threat {
   type_id      String?      @db.Char(40)
   short_order  Int
   name         String?      @db.VarChar(250)
-  is_active    Boolean?
+  is_active    Boolean      @default(true)
+  created_at   DateTime     @default(now())
+  updated_at   DateTime     @updatedAt
   threat_types threat_type? @relation(fields: [type_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_threat_types")
 
   @@index([type_id], map: "fk_threat_type")

@@ -1,10 +1,10 @@
-const { jsonFormater } = require("../helpers");
+const { response } = require("../helpers");
 const { getAllApplications, createApplication } = require("../services/application.service");
 
 const getAll = async (req, res) => {
   const applications = await getAllApplications(req, res);
 
-  jsonFormater.success(res, applications, "Application retrieved", 200);
+  response.success(res, applications, "Application retrieved", 200);
 };
 
 const create = async (req, res) => {
@@ -12,7 +12,7 @@ const create = async (req, res) => {
 
   const application = await createApplication(body);
 
-  jsonFormater.success(res, application, "Application created", 201);
+  response.success(res, application, "Application created", 201);
 };
 
 module.exports = {

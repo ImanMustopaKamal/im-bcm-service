@@ -25,7 +25,6 @@ app.get("/", (req, res, next) => {
 
 require("./routes/threat.routes")(app);
 require("./routes/application.routes")(app);
-require("./routes/product.routes")(app);
 require("./routes/404.routes")(app);
 
 

@@ -12,6 +12,16 @@ const findApplications = async (pagiante) => {
   return application;
 }
 
+const findBy = async (key, value) => {
+  const application = await prisma.applications.findUnique({
+    where: {
+      [key]: value
+    }
+  });
+
+  return application;
+}
+
 const storeApplication = async (body) => {
   const application = await prisma.applications.create({
     data: body,
@@ -22,5 +32,6 @@ const storeApplication = async (body) => {
 
 module.exports = {
   findApplications,
-  storeApplication
+  storeApplication,
+  findBy
 }

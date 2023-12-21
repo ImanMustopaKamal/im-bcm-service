@@ -1,5 +1,9 @@
-const jsonFormater = require("./jsonFormater");
+const response = require("./response");
+const enums = require("./enum");
+const func = require("./function");
 
 module.exports = {
-  jsonFormater,
+  response,
+  enums,
+  func,
 };

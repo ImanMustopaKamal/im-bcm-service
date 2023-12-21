@@ -1,7 +1,11 @@
 const { getAll, create } = require("../controllers/application.controller");
-const { pagination } = require("../middlewares");
+const { pagination, applicationMiddleware } = require("../middlewares");
 
 module.exports = (app) => {
   app.get("/applications", [pagination.pagiantion], getAll);
-  app.post("/applications", create);
+  app.post(
+    "/applications",
+    [applicationMiddleware.createValidator],
+    create
+  );
 };
