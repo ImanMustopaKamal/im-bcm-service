@@ -1,9 +1,9 @@
 const {
-  findThreats, findByID, createThreat, updateThreat, deleteThreat
-  } = require("../repositories/threat.repository");
+    findAll, findByID, createThreat, updateThreat, deleteThreat
+  } = require("../repositories/threat_type.repository");
   
   const getAllThreats = async (filter) => {
-    const threats = await findThreats(filter);
+    const threats = await findAll(filter);
   
     return threats;
   };

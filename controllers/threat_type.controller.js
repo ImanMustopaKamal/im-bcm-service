@@ -1,8 +1,8 @@
 const { v4: uuidv4 } = require('uuid');
 
 const {
-  searchThreats, getAllThreats, getThreatByID, getThreatByType, addNewThreat, update, deleteTh
-  } = require("../services/threat.service");
+  searchThreats, getAllThreats, getThreatByID, addNewThreat, update, deleteTh
+  } = require("../services/threat_type.service");
   
   const get = async (req, res) => {
     try {
@@ -17,16 +17,13 @@ const {
       if (req.query.is_active != null){
         jsonFilter.where['is_active'] = req.query.is_active === 'true';
       }
-      if (req.query.type_id != null) {
-        jsonFilter.where['type_id'] = req.query.type_id;
-      }
       if (req.query.name != null){
         let nameFilter = {
           contains : req.query.name
         };
         jsonFilter.where['name'] = nameFilter;
       }
-
+        
       threats = await getAllThreats(jsonFilter);
       res.send(threats);
     } catch (error) {
@@ -78,8 +75,8 @@ const updateThreat = async (req, res) =>{
         name : req.body.name,
         is_active : req.body.is_active
       };
-      const threat = await update(threat_id, data);
-      res.send(threat);
+      const threat_type = await update(threat_id, data);
+      res.send(threat_type);
     }else {
       res.send({
         message: 'Data not found!'

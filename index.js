@@ -24,6 +24,7 @@ app.get("/", (req, res, next) => {
   });
 });
 
+require("./routes/application.routes")(app);
 require("./routes/call_tree_sdm.routes")(app);
 require("./routes/threat_type.routes")(app);
 require("./routes/threat.routes")(app);

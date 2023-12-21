@@ -1,13 +1,13 @@
 const prisma = require("../config/database");
 
-const findThreats = async (filter) => {
-  const threats = await prisma.threat.findMany(filter);
+const findAll = async (filter) => {
+    const threats = await prisma.threat_type.findMany(filter);
+  
+    return threats;
+  };
 
-  return threats;
-};
-
-const findByID = async (threat_id) => {
-    const threats = await prisma.threat.findUnique({
+  const findByID = async (threat_id) => {
+    const threats = await prisma.threat_type.findUnique({
         where : {
             id : threat_id
         },
@@ -20,14 +20,14 @@ const findByID = async (threat_id) => {
 };
 
 const createThreat = async(threat) => {
-    const cThreat = await prisma.threat.create({
+    const cThreat = await prisma.threat_type.create({
         data : threat
     });
     return cThreat;
 };
 
 const updateThreat = async(threat_id, data) => {
-    const cThreat = await prisma.threat.update({
+    const cThreat = await prisma.threat_type.update({
         where : {
             id : threat_id
         },
@@ -37,14 +37,13 @@ const updateThreat = async(threat_id, data) => {
 };
 
 const deleteThreat = async(threat_id) => {
-    const dThreat = await prisma.threat.delete({
+    const dThreat = await prisma.threat_type.delete({
         where : {
             id: threat_id
         }
     });
     return dThreat;
 };
-
-module.exports = {
-    findThreats, findByID, createThreat, updateThreat, deleteThreat
+  module.exports = {
+    findAll, findByID, createThreat, updateThreat, deleteThreat
 }

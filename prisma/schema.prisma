@@ -23,11 +23,11 @@ model threat_type {
 }
 
 model threat {
-  id           String       @id @db.Char(40)
-  type_id      String?      @db.Char(40)
-  name         String?      @db.VarChar(250)
+  id           String      @id @db.Char(40)
+  type_id      String      @db.Char(40)
+  name         String      @db.VarChar(250)
   is_active    Boolean?
-  threat_types threat_type? @relation(fields: [type_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_threat_types")
+  threat_types threat_type @relation(fields: [type_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_threat_types")
 
   @@index([type_id], map: "fk_threat_type")
 }
@@ -50,4 +50,12 @@ model call_tree_sdm {
   other_call_tree_sdm call_tree_sdm[] @relation("call_tree_sdmTocall_tree_sdm")
 
   @@index([supervisor_npp], map: "fk_npp_supervisor")
+}
+
+model ref_applications {
+  id        String   @id @db.Char(40)
+  code      String   @db.Char(50)
+  name      String   @db.VarChar(100)
+  severity  Int?
+  is_active Boolean?
 }
