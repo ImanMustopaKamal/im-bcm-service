@@ -1,3 +1,5 @@
+const { nanoid : newID } = require('nanoid');
+
 const {
     getAllApps, getAppsByID, addNewApps, updateApps, deleteApps
   } = require("../services/application.service");
@@ -42,7 +44,7 @@ const {
 
   const addApps = async (req,res) => {
     let newApps = {
-        id : uuidv4(),
+        id : newID(),
         code : req.body.code,
         name : req.body.name,
         is_active : true,

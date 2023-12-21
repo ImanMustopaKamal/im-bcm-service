@@ -1,4 +1,4 @@
-const { v4: uuidv4 } = require('uuid');
+const { nanoid : newID } = require('nanoid');
 
 const {
   searchThreats, getAllThreats, getThreatByID, getThreatByType, addNewThreat, update, deleteTh
@@ -51,7 +51,7 @@ const {
   const addThreat = async (req, res) => {
     try {
       let threat = {
-        id : uuidv4(),
+        id : newID(),
         type_id : req.body.type_id,
         name : req.body.name,
         is_active : true,
