@@ -23,6 +23,9 @@ app.get("/", (req, res, next) => {
   });
 });
 
+require("./routes/app_testing_period.routes")(app);
+require("./routes/indirect_unit.routes")(app);
+require("./routes/staff_condition.routes")(app);
 require("./routes/threat.routes")(app);
 require("./routes/application.routes")(app);
 require("./routes/404.routes")(app);

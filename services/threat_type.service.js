@@ -1,16 +1,14 @@
 const { nanoid } = require("nanoid");
 const { func } = require("../helpers");
 const {
-    findAll, findBy, storeThreatTypes
+    findAll, findBy, storeThreatTypes, removeThreatTypes, changeThreatTypes
   } = require("../repositories/threat_type.repository");
   
   const getAllThreats = async (req, res) => {
     const { query } = req;
     const { pagiante } = res;
-    const filter = {
-      where : {
-
-      }
+    let filter = {
+      where : {}
     };
     
     if (!func.isNull(query.is_active)) {
@@ -41,12 +39,28 @@ const {
       ...body,
       is_active : true
     };
-    const aThreat = await storeThreatTypes(data);
+    const threat = await storeThreatTypes(data);
     
-    return aThreat;
+    return threat;
+  };
+
+  const updateThreatTypes = async (id, body) => {
+    const data = {
+      ...body,
+      updated_at : new Date()
+    };
+    const threat = await changeThreatTypes(id, data);
+
+    return threat;
+  };
+
+  const deleteThreatTypes = async (id) => {
+    const threat = await removeThreatTypes(id);
+
+    return threat;
   };
 
   module.exports = {
-    getAllThreats, getThreatByID, addNewThreatTypes
+    getAllThreats, getThreatByID, addNewThreatTypes, deleteThreatTypes, updateThreatTypes
   };
   

@@ -1,6 +1,6 @@
 const { response } = require("../helpers");
 const {
-  getAllThreats, getThreatByID, addNewThreatTypes
+  getAllThreats, getThreatByID, addNewThreatTypes, updateThreatTypes, deleteThreatTypes
   } = require("../services/threat_type.service");
   
 const get = async (req, res) => {
@@ -22,6 +22,22 @@ const create = async (req, res) => {
   response.success(res, threat, "Threat type created", 201);
 };
 
+const updateThType = async (req, res) => {
+  const { id } = req.params;
+  const { body } = req;
+
+  const threat = await updateThreatTypes(id, body);
+  response.success(res, threat, "Threat type updated", 200);
+};
+
+const deleteThType = async (req, res) => {
+  const { id } = req.params;
+
+  const threat = await deleteThreatTypes(id);
+
+  response.success(res, threat, "Threat type deleted", 200);
+};
+
 module.exports = {
-  get, getByID, create
+  get, getByID, create, updateThType, deleteThType
 }

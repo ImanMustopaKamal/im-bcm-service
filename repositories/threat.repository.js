@@ -12,6 +12,14 @@ const findAll = async (filter, pagiante) => {
 
   return threats;
 };
+
+const countThreatByFilter = async (filter) => {
+    const thCount = await prisma.threat.count({
+        where : filter
+    });
+    return thCount;
+};
+
 const findBy = async (key, value) => {
   const threats = await prisma.threat.findUnique({
     where: {
@@ -31,8 +39,33 @@ const createThreat = async (threat) => {
   });
   return cThreat;
 };
+
+const changeThreat = async (id, data) => {
+    const cThreat = await prisma.threat.update({
+        where : {
+            "id" : id
+        },
+        data: data
+    });
+
+    return cThreat;
+};
+
+const removeThreat = async (id) => {
+    const rmThreat = await prisma.threat.delete({
+        where : {
+            "id" : id
+        }
+    });
+
+    return rmThreat;
+};
+
 module.exports = {
   findAll,
   findBy,
   createThreat,
+  countThreatByFilter,
+  changeThreat,
+  removeThreat
 };
