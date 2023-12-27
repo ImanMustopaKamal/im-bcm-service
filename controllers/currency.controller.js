@@ -6,14 +6,14 @@ const {
 const get = async (req, res) => {
     const curr = await getAll(req, res);
     
-    response.success(res, curr, "Staff Condition retrieved!", 200);
+    response.success(res, curr, "Currency retrieved!", 200);
 };
 
 const getByCode = async (req, res) => {
     const { code } =  req.params;
     const curr = await findByCode(code);
 
-    response.success(res, curr, "Staff Condition retrieved!", 200);
+    response.success(res, curr, "Currency retrieved!", 200);
 };
 
 module.exports = {

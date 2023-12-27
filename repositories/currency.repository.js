@@ -3,10 +3,10 @@ const prisma = require("../config/database");
 const findAll = async (filter) => {
     const curr = await prisma.currency.findMany({
       ...filter,
-      orderBy: {
-        sort_order : "asc",
-        code : "asc"
-      }
+      orderBy: [
+        { sort_order : "asc" },
+        { code : "asc" }
+      ]
     });
   
     return curr;
