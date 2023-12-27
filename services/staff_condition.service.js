@@ -9,7 +9,7 @@ const getAll = async (req, res) => {
     };
 
     if (!func.isNull(query.is_active)) {
-        where["is_active"] =  query.is_active === 'true'; 
+        filter.where["is_active"] =  query.is_active === 'true'; 
     }
     if (!func.isNull(query.name)) {
         let nameFilter = {
