@@ -1,39 +1,43 @@
+const { response } = require("../helpers");
 const {
-  searchThreats, getAllThreats, getThreatByID, getThreatByType, addNewThreat
+  getAllThreats, getThreatByID, addNewThreat, updateThreat, deleteThreat
   } = require("../services/threat.service");
   
   const get = async (req, res) => {
-    let threats;
-    if (req.params.type_id != null && req.params.type_id != '') {
-      if(req.params.name != null && req.params.name != ''){
-        threats = await searchThreats(req.params.type_id, req.params.name);
-      }else {
-        threats = await getThreatByType(req.params.type_id);
-      }
-    }else {
-      threats = await getAllThreats();
-    }
-    res.send(threats);
+    threats = await getAllThreats(req, res);
+
+    response.success(res, threats, "Threat retrieved", 200);
   };
 
   const getByID = async (req, res) => {
     const threat = await getThreatByID(req.params.id);
 
-    res.send(threat);
+    response.success(res, threat, "Threat retrieved", 200);
   };
 
   const addThreat = async (req, res) => {
-    let threat = {
-      id : uuidv4(),
-      type_id : req.body.type_id,
-      sort_order : req.body.sort_order,
-      name : req.body.name,
-      is_active : true,
-    };
-    const aThreat = await addNewThreat(threat);
+    const { body } = req;
+    const threat = await addNewThreat(body);
 
-    res.send(aThreat);
+    response.success(res, threat, "Threat created", 201);
   };
+
+  const updateTh = async (req, res) => {
+    const { id } = req.params;
+    const { body } = req;
+    const threat = await updateThreat(id, body);
+
+    response.success(res, threat, "Threat updated", 200);
+  };
+
+  const deleteTh = async (req, res) => {
+    const { id } = req.params;
+    const threat = await deleteThreat(id);
+
+    response.success(res, threat, "Threat deleted", 200);
+  };
+
+
   module.exports = {
-    get, getByID, addThreat
+    get, getByID, addThreat, updateTh, deleteTh
   }

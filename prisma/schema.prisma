@@ -8,35 +8,68 @@ datasource db {
 }
 
 model threat_type {
-  id         String   @id @db.Char(40)
-  name       String   @db.VarChar(250)
-  is_active  Boolean  @default(true)
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  id         String    @id @db.Char(40)
+  name       String    @unique @db.VarChar(250)
+  is_active  Boolean   @default(true)
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
   threats    threat[]
 }
 
 model threat {
-  id           String       @id @db.Char(40)
-  type_id      String?      @db.Char(40)
-  short_order  Int
-  name         String?      @db.VarChar(250)
-  is_active    Boolean      @default(true)
-  created_at   DateTime     @default(now())
-  updated_at   DateTime     @updatedAt
-  threat_types threat_type? @relation(fields: [type_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_threat_types")
+  id           String      @id @db.Char(40)
+  type_id      String      @db.Char(40)
+  name         String      @db.VarChar(250)
+  is_active    Boolean     @default(true)
+  created_at   DateTime    @default(now())
+  updated_at   DateTime?   @updatedAt
+  threat_types threat_type @relation(fields: [type_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_threat_types")
 
+  @@unique([type_id, name], map: "u_threat_type_name")
   @@index([type_id], map: "fk_threat_type")
 }
 
 model Applications {
-  id         String   @id @db.VarChar(22)
-  code       String   @unique @db.VarChar(120)
-  name       String   @db.VarChar(250)
-  severity   Int      @db.Int
-  is_active  Boolean  @default(true)
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  id         String    @id @db.VarChar(22)
+  code       String    @unique @db.VarChar(120)
+  name       String    @db.VarChar(250)
+  severity   Int
+  is_active  Boolean   @default(true)
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
 
   @@map("applications")
+}
+
+model Staff_Condition {
+  id          String   @id @db.VarChar(22)
+  name       String    @unique @db.VarChar(250)
+  sort_order  Int
+  is_active  Boolean   @default(true)
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  
+  @@map("status_staff_condition")
+}
+
+model Indirect_Unit {
+  id          String   @id @db.VarChar(22)
+  name       String    @unique @db.VarChar(250)
+  sort_order  Int
+  is_active  Boolean   @default(true)
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  
+  @@map("status_indirect_unit")
+}
+
+model App_Testing_Period {
+  code          String   @id @db.VarChar(22)
+  name       String    @unique @db.VarChar(250)
+  sort_order  Int
+  is_active  Boolean   @default(true)
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  
+  @@map("status_app_testing_period")
 }

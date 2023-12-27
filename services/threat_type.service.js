@@ -1,8 +1,8 @@
 const { nanoid } = require("nanoid");
 const { func } = require("../helpers");
 const {
-    findAll, findBy, createThreat, changeThreat, removeThreat
-  } = require("../repositories/threat.repository");
+    findAll, findBy, storeThreatTypes, removeThreatTypes, changeThreatTypes
+  } = require("../repositories/threat_type.repository");
   
   const getAllThreats = async (req, res) => {
     const { query } = req;
@@ -13,10 +13,6 @@ const {
     
     if (!func.isNull(query.is_active)) {
       filter.where['is_active'] = query.is_active === 'true';   
-    }
-
-    if (!func.isNull(query.type_id)) {
-      filter.where['type_id'] = query.type_id;
     }
 
     if (!func.isNull(query.name)) {
@@ -31,40 +27,40 @@ const {
     return threats;
   };
 
-  const getThreatByID = async (threat_id) => {
-    const threat = await findBy('id', threat_id);
+  const getThreatByID = async (id) => {
+    const threat = await findBy('id', id);
 
     return threat;
   };
 
-  const addNewThreat = async (body) => {
+  const addNewThreatTypes = async (body) => {
     const data = {
       id : nanoid(8),
       ...body,
       is_active : true
     };
-    const threat = await createThreat(data);
+    const threat = await storeThreatTypes(data);
     
     return threat;
   };
 
-  const updateThreat = async (id, body) => {
+  const updateThreatTypes = async (id, body) => {
     const data = {
       ...body,
       updated_at : new Date()
     };
-    const threat = await changeThreat(id, data);
+    const threat = await changeThreatTypes(id, data);
 
     return threat;
   };
 
-  const deleteThreat = async (id) => {
-    const threat = await removeThreat(id);
+  const deleteThreatTypes = async (id) => {
+    const threat = await removeThreatTypes(id);
 
     return threat;
   };
 
   module.exports = {
-    getAllThreats, getThreatByID, addNewThreat, updateThreat, deleteThreat
+    getAllThreats, getThreatByID, addNewThreatTypes, deleteThreatTypes, updateThreatTypes
   };
   
