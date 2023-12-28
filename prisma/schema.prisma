@@ -38,7 +38,7 @@ model Applications {
   created_at DateTime  @default(now())
   updated_at DateTime? @updatedAt
 
-  @@map("applications")
+  @@map("reff_applications")
 }
 
 model Staff_Condition {

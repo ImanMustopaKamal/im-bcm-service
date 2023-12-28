@@ -7,6 +7,10 @@ const findAll = async (filter, pagiante) => {
     skip: pagiante.offset,
     orderBy: {
       name : "asc"
+    },
+    include :
+    {
+      threats : true
     }
   });
 
