@@ -33,6 +33,7 @@ const getAllApplications = async (req, res) => {
     };
     filter.where['name'] = nameFilter;
   }
+  
 
   const applications = await findApplications(filter, pagiante);
 

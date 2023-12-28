@@ -1,5 +1,12 @@
 const prisma = require("../config/database");
 
+const countAll = async (filter) => {
+  const thCount = prisma.threat_type.count({
+    ...filter
+  })
+
+  return thCount;
+};
 const findAll = async (filter, pagiante) => {
   const threats = await prisma.threat_type.findMany({
     ...filter,
@@ -8,9 +15,12 @@ const findAll = async (filter, pagiante) => {
     orderBy: {
       name : "asc"
     },
-    include :
-    {
-      threats : true
+    include : {
+      threats : {
+        select : {
+          id : true
+        }
+      }
     }
   });
 
@@ -61,5 +71,6 @@ module.exports = {
   findBy,
   storeThreatTypes,
   removeThreatTypes,
-  changeThreatTypes
+  changeThreatTypes,
+  countAll
 };
