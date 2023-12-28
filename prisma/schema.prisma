@@ -38,7 +38,7 @@ model Applications {
   created_at DateTime  @default(now())
   updated_at DateTime? @updatedAt
 
-  @@map("applications")
+  @@map("reff_applications")
 }
 
 model Staff_Condition {
@@ -72,4 +72,16 @@ model App_Testing_Period {
   updated_at DateTime? @updatedAt
 
   @@map("status_app_testing_period")
+}
+
+model Currency {
+  code        String    @id @db.Char(50)
+  name        String    @unique @db.Char(100)
+  description String    @db.VarChar(2500)
+  sort_order  Int       @default(2)
+  is_active   Boolean   @default(true)
+  created_at  DateTime  @default(now())
+  updated_at  DateTime? @updatedAt
+
+  @@map("reff_currency")
 }

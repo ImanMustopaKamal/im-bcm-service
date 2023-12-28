@@ -1,6 +1,6 @@
 const { func } = require("../helpers");
 const { findAll, findBy
-} = require("../repositories/indirect_unit.repository");
+} = require("../repositories/currency.repository");
 
 const getAll = async (req, res) => {
     const { query } = req;
@@ -17,16 +17,19 @@ const getAll = async (req, res) => {
         }
         filter["name"] = nameFilter;
     }
-    const iu = await findAll(filter);
+    if (!func.isNull(query.code)) {
+        filter.where["code"] = query.code;
+    }
+    const curr = await findAll(filter);
 
-    return iu;
+    return curr;
 };
 
-const findByID = async (id) => {
-    const iu = findBy("id", id);
+const findByCode = async (code) => {
+    const curr = findBy("code", code);
 
-    return iu;
+    return curr;
 };
 module.exports = {
-    getAll, findByID
+    getAll, findByCode
 };

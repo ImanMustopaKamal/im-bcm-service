@@ -1,11 +1,12 @@
 const prisma = require("../config/database");
 
-const findApplications = async (pagiante) => {
+const findApplications = async (filter, pagiante) => {
   const application = await prisma.applications.findMany({
+    ...filter,
     take: pagiante.limit,
     skip: pagiante.offset,
     orderBy: {
-      ['name']: "desc"
+      ['code']: "asc"
     }
   });
 
@@ -30,8 +31,30 @@ const storeApplication = async (body) => {
   return application;
 }
 
+const changeApplication = async (id, body) => {
+  const application = await prisma.applications.update({
+    where : {
+      "id" : id,
+    },
+    data : body
+  });
+
+  return application;
+}
+
+const removeApplication = async (id) => {
+  const application = await prisma.applications.delete({
+    where : {
+      "id" : id
+    }
+  })
+  return application;
+}
+
 module.exports = {
   findApplications,
   storeApplication,
-  findBy
+  findBy,
+  changeApplication,
+  removeApplication
 }

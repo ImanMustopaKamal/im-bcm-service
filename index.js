@@ -23,6 +23,7 @@ app.get("/", (req, res, next) => {
   });
 });
 
+require("./routes/currency.routes")(app);
 require("./routes/app_testing_period.routes")(app);
 require("./routes/indirect_unit.routes")(app);
 require("./routes/staff_condition.routes")(app);
