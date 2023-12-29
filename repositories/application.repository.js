@@ -13,6 +13,13 @@ const findApplications = async (filter, pagiante) => {
   return application;
 }
 
+const countAll = async (filter) => {
+  const appCount = await prisma.applications.count({
+    ...filter
+  });
+  return appCount;
+};
+
 const findBy = async (key, value) => {
   const application = await prisma.applications.findUnique({
     where: {
@@ -56,5 +63,6 @@ module.exports = {
   storeApplication,
   findBy,
   changeApplication,
-  removeApplication
+  removeApplication,
+  countAll
 }
