@@ -6,12 +6,10 @@ const {
   storeApplication,
   changeApplication,
   removeApplication,
+  countAll
 } = require("../repositories/application.repository");
 
-const getAllApplications = async (req, res) => {
-  const { pagiante } = res;
-  const { query } = req;
-
+const buildFilter = async(query) => {
   let filter = {
     where : {}
   };
@@ -34,6 +32,22 @@ const getAllApplications = async (req, res) => {
     filter.where['name'] = nameFilter;
   }
 
+  return filter;
+
+}
+
+const countByFilter = async (req, res) => {
+  const { query } = req;
+  const filter = await buildFilter(query);
+
+  const appCount = await countAll(filter);
+  return appCount;
+}
+const getAllApplications = async (req, res) => {
+  const { pagiante } = res;
+  const { query } = req;
+
+   const filter = await buildFilter(query);
   const applications = await findApplications(filter, pagiante);
 
   return applications;
@@ -71,5 +85,6 @@ module.exports = {
   getAppByID,
   createApplication,
   updateApplication,
-  deleteApplication
+  deleteApplication,
+  countByFilter
 }
