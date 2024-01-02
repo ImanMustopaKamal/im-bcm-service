@@ -10,7 +10,14 @@ const findApplications = async (filter, pagiante) => {
     }
   });
 
-  return application;
+  const appCount = await prisma.applications.count({
+    ...filter
+  });
+
+  return {
+    dataCount: appCount,
+    data : application
+  };
 }
 
 const countAll = async (filter) => {
@@ -20,9 +27,10 @@ const countAll = async (filter) => {
   return appCount;
 };
 
-const findBy = async (key, value) => {
+const findBy = async (tenant_id, key, value) => {
   const application = await prisma.applications.findUnique({
     where: {
+      "tenant_id" : tenant_id,
       [key]: value
     }
   });

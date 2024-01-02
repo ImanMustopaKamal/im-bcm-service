@@ -1,35 +1,30 @@
 const prisma = require("../config/database");
+const { func } = require("../helpers");
 
-const countAll = async (filter) => {
-  const thCount = prisma.threat_type.count({
-    ...filter
-  })
-
-  return thCount;
-};
 const findAll = async (filter, pagiante) => {
-  const threats = await prisma.threat_type.findMany({
+  const threats = await prisma.vw_threat_types.findMany({
     ...filter,
     take: pagiante.limit,
     skip: pagiante.offset,
     orderBy: {
       name : "asc"
-    },
-    include : {
-      threats : {
-        select : {
-          id : true
-        }
-      }
     }
   });
 
-  return threats;
+  const threatCount = await prisma.threat_type.count({
+    ...filter
+  });
+
+  return {
+    dataCount: threatCount,
+    data: threats,
+  };threats;
 };
 
-const findBy = async (key, value) => {
+const findBy = async (tenant_id, key, value) => {
   const threats = await prisma.threat_type.findUnique({
     where: {
+      "tenant_id" : tenant_id,
       [key]: value,
     }
   });
@@ -71,6 +66,5 @@ module.exports = {
   findBy,
   storeThreatTypes,
   removeThreatTypes,
-  changeThreatTypes,
-  countAll
+  changeThreatTypes
 };

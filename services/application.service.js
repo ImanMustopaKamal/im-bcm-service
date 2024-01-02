@@ -5,13 +5,18 @@ const {
   findBy,
   storeApplication,
   changeApplication,
-  removeApplication,
-  countAll
+  removeApplication
 } = require("../repositories/application.repository");
 
-const buildFilter = async(query) => {
+const getAllApplications = async (req, res) => {
+  const { pagiante } = res;
+  const { query } = req;
+  const tenant_id = req.tenant_id;
+
   let filter = {
-    where : {}
+    where : {
+      "tenant_id" : tenant_id
+    }
   };
 
   if (!func.isNull(query.is_active)) {
@@ -32,36 +37,21 @@ const buildFilter = async(query) => {
     filter.where['name'] = nameFilter;
   }
 
-  return filter;
+  const results = await findApplications(filter, pagiante);
 
-}
+  return results;
+};
 
-const countByFilter = async (req, res) => {
-  const { query } = req;
-  const filter = await buildFilter(query);
-
-  const appCount = await countAll(filter);
-  return appCount;
-}
-const getAllApplications = async (req, res) => {
-  const { pagiante } = res;
-  const { query } = req;
-
-   const filter = await buildFilter(query);
-  const applications = await findApplications(filter, pagiante);
+const getAppByID = async (tenant_id, id) => {
+  const applications = await findBy(tenant_id, "id", id);
 
   return applications;
 };
 
-const getAppByID = async (id) => {
-  const applications = await findBy("id", id);
-
-  return applications;
-};
-
-const createApplication = async (body) => {
+const createApplication = async (tenant_id, body) => {
   const data = {
     ...body,
+    tenant_id : tenant_id,
     id: nanoid(10),
   };
   const application = await storeApplication(data);
@@ -85,6 +75,5 @@ module.exports = {
   getAppByID,
   createApplication,
   updateApplication,
-  deleteApplication,
-  countByFilter
+  deleteApplication
 }

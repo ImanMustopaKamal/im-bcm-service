@@ -11,7 +11,8 @@ const get = async (req, res) => {
 
 const getByCode = async (req, res) => {
     const { code } =  req.params;
-    const curr = await findByCode(code);
+    const tenant_id = req.tenant_id;
+    const curr = await findByCode(tenant_id, code);
 
     response.success(res, curr, "Currency retrieved!", 200);
 };

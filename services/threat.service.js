@@ -1,12 +1,17 @@
 const { nanoid } = require("nanoid");
 const { func } = require("../helpers");
 const {
-    findAll, findBy, createThreat, changeThreat, removeThreat, countThreatByFilter
+    findAll, findBy, createThreat, changeThreat, removeThreat
   } = require("../repositories/threat.repository");
   
-  const buildFilter = async (query) => {
+  const getAllThreats = async (req, res) => {
+    const { query } = req;
+    const { pagiante } = res;
+    const tenant_id = req.tenant_id;
     let filter = {
-      where : {}
+      where : {
+        "tenant_id" : tenant_id
+      }
     };
     
     if (!func.isNull(query.is_active)) {
@@ -23,40 +28,24 @@ const {
       };
       filter.where['name'] = nameFilter;
     }
-    return filter;
-  };
 
-  const getAllThreats = async (req, res) => {
-    const { query } = req;
-    const { pagiante } = res;
-
-    const filter = buildFilter(query);
-
-    const threats = await findAll(filter, pagiante);
+    const results = await findAll(filter, pagiante);
   
-    return threats;
+    return results;
   };
 
-  const countThreat = async (req, res) => {
-    const { query } = req;
-
-    const filter = buildFilter(query);
-    const thCount = await countThreatByFilter(filter);
-
-    return thCount;
-  };
-
-  const getThreatByID = async (threat_id) => {
-    const threat = await findBy('id', threat_id);
+  const getThreatByID = async (tenant_id, threat_id) => {
+    const threat = await findBy(tenant_id, 'id', threat_id);
 
     return threat;
   };
 
-  const addNewThreat = async (body) => {
+  const addNewThreat = async (tenant_id, body) => {
     const data = {
-      id : nanoid(8),
+      "id" : nanoid(8),
+      "tenant_id" : tenant_id,
       ...body,
-      is_active : true
+      "is_active" : true
     };
     const threat = await createThreat(data);
     
@@ -80,6 +69,6 @@ const {
   };
 
   module.exports = {
-    getAllThreats, getThreatByID, addNewThreat, updateThreat, deleteThreat, countThreat
+    getAllThreats, getThreatByID, addNewThreat, updateThreat, deleteThreat
   };
   

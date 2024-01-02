@@ -12,9 +12,10 @@ const findAll = async (filter) => {
     return curr;
   };
 
-  const findBy = async (key, value) => {
+  const findBy = async (tenant_id, key, value) => {
     const curr = await prisma.currency.findUnique({
         where : {
+          "tenant_id" : tenant_id,
             [key] : value
         }
     });

@@ -11,9 +11,10 @@ const findAll = async (filter) => {
     return sc;
   };
 
-  const findBy = async (key, value) => {
+  const findBy = async (tenant_id, key, value) => {
     const sc = await prisma.Staff_Condition.findUnique({
         where : {
+          "tenant_id" : tenant_id,
             [key] : value
         }
     });
