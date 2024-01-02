@@ -40,39 +40,39 @@ begin
 END$$
 DELIMITER ;
 select RandString(8);
-insert into threat_type(id, name, is_active) value
-(RandString(8), 'Bencana Alam', 1),
-(RandString(8), 'Insiden Teknis', 1),
-(RandString(8), 'Bencana Buatan Manusia', 1);
+insert into threat_type(id, tenant_id, name, is_active) value
+(RandString(8), 'H3pZkf7W', 'Bencana Alam', 1),
+(RandString(8), 'H3pZkf7W', 'Insiden Teknis', 1),
+(RandString(8), 'H3pZkf7W', 'Bencana Buatan Manusia', 1);
 
 select @typeID := id from threat_type where name = 'Bencana Alam';
-insert into threat(id, type_id, name, is_active) values
-(RandString(8), @typeID, 'Kebakaran', 1),
-(RandString(8), @typeID, 'Gelombang Ekstrim', 1),
-(RandString(8), @typeID, 'Kebakaran Hutan', 1),
-(RandString(8), @typeID, 'Kekeringan', 1),
-(RandString(8), @typeID, 'Likuifaksi', 1),
-(RandString(8), @typeID, 'Tsunami', 1),
-(RandString(8), @typeID, 'Wabah', 1),
-(RandString(8), @typeID, 'Cuaca Ekstrim', 1),
-(RandString(8), @typeID, 'Gunung Meletus', 1),
-(RandString(8), @typeID, 'Tanah Longsor', 1),
-(RandString(8), @typeID, 'Gempa Bumi', 1),
-(RandString(8), @typeID, 'Banjir', 1);
+insert into threat(id, tenant_id, type_id, name, is_active) values
+(RandString(8), 'H3pZkf7W', @typeID, 'Kebakaran', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Gelombang Ekstrim', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Kebakaran Hutan', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Kekeringan', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Likuifaksi', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Tsunami', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Wabah', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Cuaca Ekstrim', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Gunung Meletus', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Tanah Longsor', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Gempa Bumi', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Banjir', 1);
 
 select @typeID := id from threat_type where name = 'Insiden Teknis';
-insert into threat(id, type_id, name, is_active) values
-(RandString(8), @typeID, 'Genset Rusak', 1),
-(RandString(8), @typeID, 'Kebakaran', 1),
-(RandString(8), @typeID, 'Pipa Bocor', 1),
-(RandString(8), @typeID, 'Data Center Down', 1),
-(RandString(8), @typeID, 'Korsleting', 1);
+insert into threat(id, tenant_id, type_id, name, is_active) values
+(RandString(8), 'H3pZkf7W', @typeID, 'Genset Rusak', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Kebakaran', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Pipa Bocor', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Data Center Down', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Korsleting', 1);
 
 select @typeID := id from threat_type where name = 'Bencana Buatan Manusia';
-insert into threat(id, type_id, name, is_active) values
-(RandString(8), @typeID, 'Radiasi Nuklir', 1),
-(RandString(8), @typeID, 'Kerusuhan', 1),
-(RandString(8), @typeID, 'Mogok Kerja', 1),
-(RandString(8), @typeID, 'Perampokan', 1),
-(RandString(8), @typeID, 'Sabotase', 1);
+insert into threat(id, tenant_id, type_id, name, is_active) values
+(RandString(8), 'H3pZkf7W', @typeID, 'Radiasi Nuklir', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Kerusuhan', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Mogok Kerja', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Perampokan', 1),
+(RandString(8), 'H3pZkf7W', @typeID, 'Sabotase', 1);
 

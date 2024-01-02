@@ -7,9 +7,11 @@ const {
   const getAllThreats = async (req, res) => {
     const { query } = req;
     const { pagiante } = res;
-
+    const tenant_id = req.tenant_id;
     let filter = {
-      where : {}
+      where : {
+        "tenant_id" : tenant_id
+      }
     };
     
     if (!func.isNull(query.is_active)) {
@@ -32,17 +34,18 @@ const {
     return results;
   };
 
-  const getThreatByID = async (threat_id) => {
-    const threat = await findBy('id', threat_id);
+  const getThreatByID = async (tenant_id, threat_id) => {
+    const threat = await findBy(tenant_id, 'id', threat_id);
 
     return threat;
   };
 
-  const addNewThreat = async (body) => {
+  const addNewThreat = async (tenant_id, body) => {
     const data = {
-      id : nanoid(8),
+      "id" : nanoid(8),
+      "tenant_id" : tenant_id,
       ...body,
-      is_active : true
+      "is_active" : true
     };
     const threat = await createThreat(data);
     

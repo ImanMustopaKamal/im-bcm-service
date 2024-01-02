@@ -11,7 +11,8 @@ const get = async (req, res) => {
 
 const getByID = async (req, res) => {
     const { id } =  req.params;
-    const sc = await findByID(id);
+    const tenant_id = req.tenant_id;
+    const sc = await findByID(tenant_id, id);
 
     response.success(res, sc, "Staff Condition retrieved!", 200);
 };

@@ -3,11 +3,12 @@ const { findBy } = require("../repositories/application.repository");
 
 const createValidator = async (req, res, next) => {
   const { code, name, severity } = req.body;
+  const tenant_id = req.tenant_id;
 
   if (func.isNull(code)) {
     return response.badRequest(res, null, "Code is required", 404);
   } else {
-    const application = await findBy("code", code);
+    const application = await findBy(tenant_id, "code", code);
     if (application) {
       return response.badRequest(res, null, "Code already exist", 404);
     }

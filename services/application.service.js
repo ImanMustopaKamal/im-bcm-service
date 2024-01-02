@@ -11,9 +11,12 @@ const {
 const getAllApplications = async (req, res) => {
   const { pagiante } = res;
   const { query } = req;
+  const tenant_id = req.tenant_id;
 
   let filter = {
-    where : {}
+    where : {
+      "tenant_id" : tenant_id
+    }
   };
 
   if (!func.isNull(query.is_active)) {
@@ -39,15 +42,16 @@ const getAllApplications = async (req, res) => {
   return results;
 };
 
-const getAppByID = async (id) => {
-  const applications = await findBy("id", id);
+const getAppByID = async (tenant_id, id) => {
+  const applications = await findBy(tenant_id, "id", id);
 
   return applications;
 };
 
-const createApplication = async (body) => {
+const createApplication = async (tenant_id, body) => {
   const data = {
     ...body,
+    tenant_id : tenant_id,
     id: nanoid(10),
   };
   const application = await storeApplication(data);

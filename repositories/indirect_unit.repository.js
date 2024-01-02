@@ -11,9 +11,10 @@ const findAll = async (filter) => {
     return iu;
   };
 
-  const findBy = async (key, value) => {
+  const findBy = async (tenant_id, key, value) => {
     const iu = await prisma.Indirect_Unit.findUnique({
         where : {
+          "tenant_id" : tenant_id,
             [key] : value
         }
     });

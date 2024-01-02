@@ -1,13 +1,13 @@
 const { getAll, getByID, create, updateByID, deleteByID } = require("../controllers/application.controller");
-const { pagination, applicationMiddleware } = require("../middlewares");
+const { pagination, applicationMiddleware, authMiddleware } = require("../middlewares");
 
 module.exports = (app) => {
-  app.get("/applications", [pagination.pagiantion], getAll);
-  app.get("/applications/:id", getByID);
+  app.get("/applications", [authMiddleware.authToken, pagination.pagiantion], getAll);
+  app.get("/applications/:id", [authMiddleware.authToken], getByID);
   app.post("/applications",
-    [applicationMiddleware.createValidator],
+    [authMiddleware.authToken, applicationMiddleware.createValidator],
     create
   );
-  app.put("/applications/:id", [applicationMiddleware.updateValidator], updateByID);
-  app.delete("/applications/:id", [applicationMiddleware.deleteValidator], deleteByID);
+  app.put("/applications/:id", [authMiddleware.authToken, applicationMiddleware.updateValidator], updateByID);
+  app.delete("/applications/:id", [authMiddleware.authToken, applicationMiddleware.deleteValidator], deleteByID);
 };

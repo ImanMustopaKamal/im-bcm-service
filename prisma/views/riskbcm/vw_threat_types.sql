@@ -1,5 +1,6 @@
 SELECT
   `typ`.`id` AS `id`,
+  `typ`.`tenant_id` AS `tenant_id`,
   `typ`.`name` AS `name`,
   `typ`.`is_active` AS `is_active`,
   `typ`.`created_at` AS `created_at`,
