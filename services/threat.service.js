@@ -1,10 +1,13 @@
 const { nanoid } = require("nanoid");
 const { func } = require("../helpers");
 const {
-    findAll, findBy, createThreat, changeThreat, removeThreat, countThreatByFilter
+    findAll, findBy, createThreat, changeThreat, removeThreat
   } = require("../repositories/threat.repository");
   
-  const buildFilter = async (query) => {
+  const getAllThreats = async (req, res) => {
+    const { query } = req;
+    const { pagiante } = res;
+
     let filter = {
       where : {}
     };
@@ -23,27 +26,10 @@ const {
       };
       filter.where['name'] = nameFilter;
     }
-    return filter;
-  };
 
-  const getAllThreats = async (req, res) => {
-    const { query } = req;
-    const { pagiante } = res;
-
-    const filter = buildFilter(query);
-
-    const threats = await findAll(filter, pagiante);
+    const results = await findAll(filter, pagiante);
   
-    return threats;
-  };
-
-  const countThreat = async (req, res) => {
-    const { query } = req;
-
-    const filter = buildFilter(query);
-    const thCount = await countThreatByFilter(filter);
-
-    return thCount;
+    return results;
   };
 
   const getThreatByID = async (threat_id) => {
@@ -80,6 +66,6 @@ const {
   };
 
   module.exports = {
-    getAllThreats, getThreatByID, addNewThreat, updateThreat, deleteThreat, countThreat
+    getAllThreats, getThreatByID, addNewThreat, updateThreat, deleteThreat
   };
   

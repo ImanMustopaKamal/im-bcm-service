@@ -4,7 +4,9 @@ const {
     findAll, findBy, storeThreatTypes, removeThreatTypes, changeThreatTypes, countAll
   } = require("../repositories/threat_type.repository");
 
-  const buildFilter = async (query) => {
+  const getAllThreats = async (req, res) => {
+    const { query } = req;
+    const { pagiante } = res;
 
     let filter = {
       where : {}
@@ -20,27 +22,10 @@ const {
       };
       filter.where['name'] = nameFilter;
     }
-    return filter;
 
-  };
+    const results = await findAll(filter, pagiante);
   
-  const countAllThreat = async (req,res) => {
-    const { query } = req;
-    const filter = await buildFilter(query);
-    const thCount = await countAll(filter);
-
-    return thCount;
-
-  };
-
-  const getAllThreats = async (req, res) => {
-    const { query } = req;
-    const { pagiante } = res;
-
-    const filter = await buildFilter(query);    
-    const threats = await findAll(filter, pagiante);
-  
-    return threats;
+    return results;
   };
 
   const getThreatByID = async (id) => {
@@ -77,6 +62,6 @@ const {
   };
 
   module.exports = {
-    getAllThreats, getThreatByID, addNewThreatTypes, deleteThreatTypes, updateThreatTypes, countAllThreat
+    getAllThreats, getThreatByID, addNewThreatTypes, deleteThreatTypes, updateThreatTypes
   };
   

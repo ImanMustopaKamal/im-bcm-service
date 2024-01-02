@@ -4,10 +4,9 @@ const {
   } = require("../services/threat.service");
   
   const get = async (req, res) => {
-    const thCount = await countThreat(req, res);
-    const threats = await getAllThreats(req, res);
+    const { dataCount, data } = await getAllThreats(req, res);
 
-    response.successWithDataCount(res, thCount, threats, "Threat retrieved", 200);
+    response.successWithDataCount(res, dataCount, data, "Threat retrieved", 200);
   };
 
   const getByID = async (req, res) => {

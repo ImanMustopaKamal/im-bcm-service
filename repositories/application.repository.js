@@ -10,7 +10,14 @@ const findApplications = async (filter, pagiante) => {
     }
   });
 
-  return application;
+  const appCount = await prisma.applications.count({
+    ...filter
+  });
+
+  return {
+    dataCount: appCount,
+    data : application
+  };
 }
 
 const countAll = async (filter) => {

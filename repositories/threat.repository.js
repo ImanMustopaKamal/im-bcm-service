@@ -10,7 +10,14 @@ const findAll = async (filter, pagiante) => {
     }
   });
 
-  return threats;
+  const threatCount = await prisma.threat.count({
+    ...filter
+  });
+
+  return {
+    dataCount : threatCount,
+    data : threats
+  };
 };
 
 const countThreatByFilter = async (filter) => {

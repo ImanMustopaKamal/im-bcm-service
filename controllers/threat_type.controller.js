@@ -1,13 +1,12 @@
 const { response } = require("../helpers");
 const {
-  getAllThreats, getThreatByID, addNewThreatTypes, updateThreatTypes, deleteThreatTypes, countAllThreat
+  getAllThreats, getThreatByID, addNewThreatTypes, updateThreatTypes, deleteThreatTypes
   } = require("../services/threat_type.service");
   
 const get = async (req, res) => {
-  const dataCount= await countAllThreat(req, res);
-  const threats = await getAllThreats(req, res);
+  const { dataCount, data } = await getAllThreats(req, res);
 
-  response.successWithDataCount(res, dataCount, threats, "Threat type retrieved with count", 200);
+  response.successWithDataCount(res, dataCount, data, "Threat type retrieved with count", 200);
 };
 
 const getByID = async (req, res) => {

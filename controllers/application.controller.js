@@ -1,12 +1,11 @@
 const { response } = require("../helpers");
-const { getAllApplications, getAppByID, createApplication, updateApplication, deleteApplication, countByFilter } 
+const { getAllApplications, getAppByID, createApplication, updateApplication, deleteApplication } 
 = require("../services/application.service");
 
 const getAll = async (req, res) => {
-  const applications = await getAllApplications(req, res);
-  const appCount = await countByFilter(req,res);
+  const {dataCount, data } = await getAllApplications(req, res);
 
-  response.successWithDataCount(res, appCount, applications, "Application retrieved", 200);
+  response.successWithDataCount(res, dataCount, data, "Application retrieved", 200);
 };
 
 const getByID = async (req, res) => {
