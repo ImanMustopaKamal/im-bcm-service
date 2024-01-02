@@ -103,7 +103,7 @@ model Currency {
 }
 
 view vw_threat_types {
-  id            String   @id @db.Char(40)
+  id            String    @id @db.Char(40)
   tenant_id     String?   @db.Char(8)
   name          String?   @db.VarChar(250)
   is_active     Boolean?  @default(true)
