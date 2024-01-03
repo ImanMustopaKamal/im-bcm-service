@@ -28,10 +28,10 @@ const countThreatByFilter = async (filter) => {
 };
 
 const findBy = async (tenant_id, key, value) => {
-  const threats = await prisma.threat.findUnique({
+  const threats = await prisma.threat.findFirst({
     where: {
-      "tenant_id" : tenant_id,
-      [key]: value,
+        "tenant_id" : tenant_id,
+        [key]: value
     },
     include: {
       threat_types: true,
