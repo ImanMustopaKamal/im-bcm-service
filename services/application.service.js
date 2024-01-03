@@ -11,7 +11,7 @@ const {
 const getAllApplications = async (req, res) => {
   const { pagiante } = res;
   const { query } = req;
-  const tenant_id = req.tenant_id;
+  const tenant_id = res.tenant_id;
 
   let filter = {
     where : {
