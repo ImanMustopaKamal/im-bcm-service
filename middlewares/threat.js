@@ -18,9 +18,10 @@ const createValidator = async (req, res, next) => {
     }
   }
   const threat = await findAll(filter, {});
-  if (Object.keys(threat).length > 0) {
-    return response.badRequest(res, null, "Threat already exists", 404);
-  }
+  console.log("🚀 ~ file: threat.js:21 ~ createValidator ~ threat:", threat)
+  // if (Object.keys(threat).length > 0) {
+  //   return response.badRequest(res, null, "Threat already exists", 404);
+  // }
 
   next();
 };

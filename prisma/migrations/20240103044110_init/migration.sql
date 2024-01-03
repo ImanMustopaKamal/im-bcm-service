@@ -100,3 +100,10 @@ CREATE TABLE `reff_currency` (
 
 -- AddForeignKey
 ALTER TABLE `threat` ADD CONSTRAINT `fk_threat_types` FOREIGN KEY (`type_id`) REFERENCES `threat_type`(`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- view vw_threat_types
+drop view if exists vw_threat_types;
+create view vw_threat_types as
+select *, case when (select count(1) from threat where type_id = typ.id) = 0 then true else false end as delete_enable
+from threat_type as typ
+order by typ.name asc;
