@@ -7,7 +7,7 @@ const {
   const getAllThreats = async (req, res) => {
     const { query } = req;
     const { pagiante } = res;
-    const tenant_id = req.tenant_id;
+    const tenant_id = res.tenant_id;
 
     let filter = {
       where : {

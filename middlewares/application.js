@@ -3,7 +3,7 @@ const { findBy } = require("../repositories/application.repository");
 
 const createValidator = async (req, res, next) => {
   const { code, name, severity } = req.body;
-  const tenant_id = req.tenant_id;
+  const tenant_id = res.tenant_id;
 
   if (func.isNull(code)) {
     return response.badRequest(res, null, "Code is required", 404);

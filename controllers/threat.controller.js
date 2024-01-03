@@ -10,7 +10,7 @@ const {
   };
 
   const getByID = async (req, res) => {
-    const tenant_id = req.tenant_id;
+    const tenant_id = res.tenant_id;
     const threat = await getThreatByID(tenant_id, req.params.id);
 
     response.success(res, threat, "Threat retrieved", 200);
@@ -18,7 +18,7 @@ const {
 
   const addThreat = async (req, res) => {
     const { body } = req;
-    const tenant_id = req.tenant_id;
+    const tenant_id = res.tenant_id;
     const threat = await addNewThreat(tenant_id, body);
 
     response.success(res, threat, "Threat created", 201);

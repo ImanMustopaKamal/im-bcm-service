@@ -4,7 +4,7 @@ const { findAll, findBy
 
 const getAll = async (req, res) => {
     const { query } = req;
-    const tenant_id = req.tenant_id;
+    const tenant_id = res.tenant_id;
     let filter = {
         where : {
             "tenant_id" : tenant_id

@@ -10,7 +10,7 @@ const getAll = async (req, res) => {
 
 const getByID = async (req, res) => {
   const { id } = req.params;
-  const tenant_id = req.tenant_id;
+  const tenant_id = res.tenant_id;
   const applications = await getAppByID(tenant_id, id);
 
   response.success(res, applications, "Application retrieved", 200);
@@ -18,7 +18,7 @@ const getByID = async (req, res) => {
 
 const create = async (req, res) => {
   const { body } = req;
-  const tenant_id = req.tenant_id;
+  const tenant_id = res.tenant_id;
 
   const application = await createApplication(tenant_id, body);
 
