@@ -28,10 +28,10 @@ const countAll = async (filter) => {
 };
 
 const findBy = async (tenant_id, key, value) => {
-  const application = await prisma.applications.findUnique({
+  const application = await prisma.applications.findFirst({
     where: {
-      "tenant_id" : tenant_id,
-      [key]: value
+        tenant_id : tenant_id,
+        [key] : value
     }
   });
 

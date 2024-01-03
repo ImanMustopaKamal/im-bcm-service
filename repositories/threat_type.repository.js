@@ -22,10 +22,10 @@ const findAll = async (filter, pagiante) => {
 };
 
 const findBy = async (tenant_id, key, value) => {
-  const threats = await prisma.threat_type.findUnique({
+  const threats = await prisma.threat_type.findFirst({
     where: {
-      "tenant_id" : tenant_id,
-      [key]: value,
+        "tenant_id" : tenant_id,
+        [key]: value
     }
   });
 

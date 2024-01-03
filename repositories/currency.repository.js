@@ -13,9 +13,9 @@ const findAll = async (filter) => {
   };
 
   const findBy = async (tenant_id, key, value) => {
-    const curr = await prisma.currency.findUnique({
+    const curr = await prisma.currency.findFirst({
         where : {
-          "tenant_id" : tenant_id,
+            "tenant_id" : tenant_id,
             [key] : value
         }
     });
