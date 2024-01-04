@@ -1,6 +1,6 @@
 const { response } = require("../helpers");
 const {
-  getAllThreats, getThreatByID, addNewThreat, updateThreat, deleteThreat, countThreat
+  getAllThreats, getThreatByID, addNewThreat, updateThreat, deleteThreat
   } = require("../services/threat.service");
   
   const get = async (req, res) => {
