@@ -47,7 +47,14 @@ const findByID = async (id) => {
     const disaster = await prisma.bcm_disaster.findUnique({
         where : {
             "id" : id
-        }
+        },
+        include : {
+            threat : {
+                include : {
+                    threat_types : true
+                }
+            }
+        },
     });
 
     const dis_staff = await prisma.bcm_disaster_staff_affected.findMany({
