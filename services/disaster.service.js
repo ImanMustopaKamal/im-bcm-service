@@ -67,7 +67,7 @@ const addNewDisaster = async (tenant_id, user_id, body) => {
         "id" : newDisasterID,
         "tenant_id" : tenant_id,
         ...disaster,
-        "wf_status_id": 0,
+        "wf_status_id": 1,
         "created_by" : user_id
     };
     let data_staff = [];
