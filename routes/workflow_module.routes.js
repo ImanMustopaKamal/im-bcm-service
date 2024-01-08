@@ -1,5 +1,5 @@
 const { authMiddleware, pagination } = require("../middlewares");
-const { addWfModule, get, getBy, update, deleteWfModule } = require("../controllers/workflow_module.controller")
+const { addWfModule, get, getBy, update, deleteWfModule } = require("../controllers/workflow_module.controller");
 
 module.exports = (app) => {
     app.post("/workflow_module/add", [authMiddleware.authToken], addWfModule);

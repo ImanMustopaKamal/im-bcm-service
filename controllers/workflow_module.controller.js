@@ -24,7 +24,7 @@ const getBy = async (req,res) => {
     response.success(res, wfModule, "Workflow Module retrieved!", 200);
 };
 
-const update = async (res,res) => {
+const update = async (req,res) => {
     const { code } = req.params;
     const { body } = req;
 

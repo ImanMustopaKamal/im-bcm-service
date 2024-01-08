@@ -213,50 +213,65 @@ model workflow_status {
   bcm_disaster_assignment_history bcm_disaster_assignment_history[]
 }
 
+model sys_process_list {
+  code            String            @id @db.Char(40)
+  name            String            @db.Char(100)
+  description     String?           @db.VarChar(2500)
+  is_active       Boolean?          @default(true)
+  workflow_module workflow_module[]
+}
+
 model org_structure {
-  id              String  @id @db.Char(40)
-  org_id          String? @db.Char(40)
-  org_name        String? @db.VarChar(200)
-  parent_org_id   String? @db.Char(40)
-  parent_org_name String? @db.VarChar(200)
-  created_by      String?          @db.VarChar(50)
-  created_at      DateTime?        @default(now())
-  updated_by      String?          @db.VarChar(50)
-  updated_at      DateTime?        @updatedAt
+  id              String    @id @db.Char(40)
+  org_id          String?   @db.Char(40)
+  org_name        String?   @db.VarChar(200)
+  parent_org_id   String?   @db.Char(40)
+  parent_org_name String?   @db.VarChar(200)
+  created_at      DateTime? @default(now())
+  created_by      String?   @db.VarChar(50)
+  updated_at      DateTime? @updatedAt
+  updated_by      String?   @db.VarChar(50)
 }
 
 model workflow_level {
-  id                    String           @id @db.Char(40)
-  wf_module_code        String?          @db.Char(40)
-  level                 Int?
-  org_id                String?          @db.Char(40)
-  business_unit         String?          @db.Char(40)
-  bussiness_unit_parent String?          @db.Char(40)
-  role_id               String?          @db.Char(40)
-  created_by            String?          @db.VarChar(50)
-  created_at            DateTime?        @default(now())
-  updated_by            String?          @db.VarChar(50)
-  updated_at            DateTime?        @updatedAt
-  workflow_module       workflow_module? @relation(fields: [wf_module_code], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_wf_level_module")
+  id              String          @id @db.Char(40)
+  wf_module_code  String          @db.Char(40)
+  level           Int
+  role_id         String          @db.Char(40)
+  org_id          String?         @db.Char(40)
+  org_type_id     String?         @db.Char(40)
+  dept_id         String?         @db.Char(40)
+  parent_dept_id  String?         @db.Char(40)
+  created_at      DateTime?       @default(now())
+  created_by      String?         @db.VarChar(50)
+  updated_at      DateTime?       @updatedAt
+  updated_by      String?         @db.VarChar(50)
+  wf_status_id    Int
+  workflow_module workflow_module @relation(fields: [wf_module_code], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_wf_level_module")
 
   @@index([wf_module_code], map: "fk_wf_level_module")
 }
 
 model workflow_module {
-  code           String           @id @db.Char(40)
-  tenant_id      String?          @db.Char(40)
-  name           String?          @db.VarChar(200)
-  is_active      Boolean?
-  created_by     String?          @db.VarChar(50)
-  created_at     DateTime?        @default(now())
-  updated_by     String?          @db.VarChar(50)
-  updated_at     DateTime?        @updatedAt
-  workflow_level workflow_level[]
+  code             String           @id @db.Char(40)
+  tenant_id        String?          @db.Char(40)
+  name             String?          @db.VarChar(200)
+  is_active        Boolean?
+  created_at       DateTime?        @default(now())
+  created_by       String?          @db.VarChar(50)
+  updated_at       DateTime?        @updatedAt
+  updated_by       String?          @db.VarChar(50)
+  org_id           String?          @db.Char(40)
+  org_type_id      String?          @db.Char(40)
+  sys_code         String           @db.Char(40)
+  workflow_level   workflow_level[]
+  sys_process_list sys_process_list @relation(fields: [sys_code], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_module_sys_code")
+
+  @@index([sys_code], map: "fk_module_sys_code")
 }
 
-
 view vw_threat_types {
-  id            String    @id @db.Char(40)
+  id            String   @id @db.Char(40)
   tenant_id     String?   @db.Char(8)
   name          String?   @db.VarChar(250)
   is_active     Boolean?  @default(true)
