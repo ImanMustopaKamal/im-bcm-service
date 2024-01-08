@@ -4,6 +4,7 @@ const threatTypeMiddleware = require("./threat_type");
 const threatMiddleware = require("./threat");
 const authMiddleware = require("./authentication");
 const orgStructureMiddleware = require("./org_structure");
+const wfModuleMiddleware = require("./workflow_module")
 
 module.exports = {
   pagination,
@@ -11,5 +12,6 @@ module.exports = {
   applicationMiddleware,
   threatMiddleware,
   authMiddleware,
-  orgStructureMiddleware
+  orgStructureMiddleware,
+  wfModuleMiddleware
 };

@@ -214,11 +214,10 @@ model workflow_status {
 }
 
 model sys_process_list {
-  code            String            @id @db.Char(40)
-  name            String            @db.Char(100)
-  description     String?           @db.VarChar(2500)
-  is_active       Boolean?          @default(true)
-  workflow_module workflow_module[]
+  code        String   @id @db.Char(40)
+  name        String   @db.Char(100)
+  description String?  @db.VarChar(2500)
+  is_active   Boolean? @default(true)
 }
 
 model org_structure {
@@ -253,19 +252,18 @@ model workflow_level {
 }
 
 model workflow_module {
-  code             String           @id @db.Char(40)
-  tenant_id        String?          @db.Char(40)
-  name             String?          @db.VarChar(200)
-  is_active        Boolean?
-  created_at       DateTime?        @default(now())
-  created_by       String?          @db.VarChar(50)
-  updated_at       DateTime?        @updatedAt
-  updated_by       String?          @db.VarChar(50)
-  org_id           String?          @db.Char(40)
-  org_type_id      String?          @db.Char(40)
-  sys_code         String           @db.Char(40)
-  workflow_level   workflow_level[]
-  sys_process_list sys_process_list @relation(fields: [sys_code], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_module_sys_code")
+  code           String           @id @db.Char(40)
+  tenant_id      String?          @db.Char(40)
+  name           String?          @db.VarChar(200)
+  is_active      Boolean?
+  created_at     DateTime?        @default(now())
+  created_by     String?          @db.VarChar(50)
+  updated_at     DateTime?        @updatedAt
+  updated_by     String?          @db.VarChar(50)
+  org_id         String?          @db.Char(40)
+  org_type_id    String?          @db.Char(40)
+  sys_code       String?           @db.Char(40)
+  workflow_level workflow_level[]
 
   @@index([sys_code], map: "fk_module_sys_code")
 }

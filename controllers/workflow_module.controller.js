@@ -6,7 +6,7 @@ const addWfModule = async (req,res) => {
     const tenant_id = res.tenant_id;
     const user_id = res.user_id;
 
-    const wfModule = addNewWfModule(tenant_id, user_id, body);
+    const wfModule = await addNewWfModule(tenant_id, user_id, body);
     response.success(res, wfModule, "Workflow Module is created!", 201)
 };
 
