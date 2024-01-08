@@ -18,7 +18,7 @@ const findAll = async (filter, pagiante) => {
   return {
     dataCount: threatCount,
     data: threats,
-  };threats;
+  };
 };
 
 const findBy = async (tenant_id, key, value) => {

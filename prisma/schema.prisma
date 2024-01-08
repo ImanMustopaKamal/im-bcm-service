@@ -126,9 +126,9 @@ model bcm_disaster {
   assign_curr_org                                                          String?                                @db.Char(40)
   assign_curr_role                                                         String?                                @db.Char(40)
   created_by                                                               String?                                @db.VarChar(50)
-  created_at                                                               DateTime?                              @db.DateTime(0) @default(now())
+  created_at                                                               DateTime?                              @default(now()) @db.DateTime(0)
   updated_by                                                               String?                                @db.VarChar(50)
-  updated_at                                                               DateTime?                              @db.DateTime(0) @updatedAt
+  updated_at                                                               DateTime?                              @updatedAt @db.DateTime(0)
   reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency        Currency?                              @relation("bcm_disaster_estimated_lost_currencyToreff_currency", fields: [estimated_lost_currency], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_disaster_estimated_lost_curr")
   reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency Currency?                              @relation("bcm_disaster_total_insurance_claim_currencyToreff_currency", fields: [total_insurance_claim_currency], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_disaster_insurance_claim_curr")
   threat                                                                   threat                                 @relation(fields: [threat_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_disaster_threat")
@@ -211,6 +211,63 @@ model workflow_status {
   is_active                       Boolean?                          @default(dbgenerated("(true)"))
   bcm_disaster                    bcm_disaster[]
   bcm_disaster_assignment_history bcm_disaster_assignment_history[]
+}
+
+model sys_process_list {
+  code            String            @id @db.Char(40)
+  name            String            @db.Char(100)
+  description     String?           @db.VarChar(2500)
+  is_active       Boolean?          @default(true)
+  workflow_module workflow_module[]
+}
+
+model org_structure {
+  id              String    @id @db.Char(40)
+  org_id          String?   @db.Char(40)
+  org_name        String?   @db.VarChar(200)
+  parent_org_id   String?   @db.Char(40)
+  parent_org_name String?   @db.VarChar(200)
+  created_at      DateTime? @default(now())
+  created_by      String?   @db.VarChar(50)
+  updated_at      DateTime? @updatedAt
+  updated_by      String?   @db.VarChar(50)
+}
+
+model workflow_level {
+  id              String          @id @db.Char(40)
+  wf_module_code  String          @db.Char(40)
+  level           Int
+  role_id         String          @db.Char(40)
+  org_id          String?         @db.Char(40)
+  org_type_id     String?         @db.Char(40)
+  dept_id         String?         @db.Char(40)
+  parent_dept_id  String?         @db.Char(40)
+  created_at      DateTime?       @default(now())
+  created_by      String?         @db.VarChar(50)
+  updated_at      DateTime?       @updatedAt
+  updated_by      String?         @db.VarChar(50)
+  wf_status_id    Int
+  workflow_module workflow_module @relation(fields: [wf_module_code], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_wf_level_module")
+
+  @@index([wf_module_code], map: "fk_wf_level_module")
+}
+
+model workflow_module {
+  code             String           @id @db.Char(40)
+  tenant_id        String?          @db.Char(40)
+  name             String?          @db.VarChar(200)
+  is_active        Boolean?
+  created_at       DateTime?        @default(now())
+  created_by       String?          @db.VarChar(50)
+  updated_at       DateTime?        @updatedAt
+  updated_by       String?          @db.VarChar(50)
+  org_id           String?          @db.Char(40)
+  org_type_id      String?          @db.Char(40)
+  sys_code         String           @db.Char(40)
+  workflow_level   workflow_level[]
+  sys_process_list sys_process_list @relation(fields: [sys_code], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_module_sys_code")
+
+  @@index([sys_code], map: "fk_module_sys_code")
 }
 
 view vw_threat_types {

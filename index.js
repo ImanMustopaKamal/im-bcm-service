@@ -23,6 +23,8 @@ app.get("/", (req, res, next) => {
   });
 });
 
+require("./routes/workflow_module.routes")(app);
+require("./routes/org_structure.routes")(app);
 require("./routes/disaster.route")(app);
 require("./routes/currency.routes")(app);
 require("./routes/app_testing_period.routes")(app);
