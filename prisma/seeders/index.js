@@ -8,6 +8,7 @@ const {
   status_indirect_unit,
   reff_currency,
 } = require("./references");
+const { workflow_status } = require("./workflow_status");
 
 async function main() {
   await threat_type();
@@ -16,6 +17,7 @@ async function main() {
   await status_app_testing_period();
   await status_indirect_unit();
   await reff_currency();
+  await workflow_status();
 }
 main()
   .then(async () => {

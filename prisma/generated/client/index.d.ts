@@ -49,6 +49,41 @@ export type App_Testing_Period = $Result.DefaultSelection<Prisma.$App_Testing_Pe
  */
 export type Currency = $Result.DefaultSelection<Prisma.$CurrencyPayload>
 /**
+ * Model bcm_disaster
+ * 
+ */
+export type bcm_disaster = $Result.DefaultSelection<Prisma.$bcm_disasterPayload>
+/**
+ * Model bcm_disaster_assignment_history
+ * 
+ */
+export type bcm_disaster_assignment_history = $Result.DefaultSelection<Prisma.$bcm_disaster_assignment_historyPayload>
+/**
+ * Model bcm_disaster_atm_affected
+ * 
+ */
+export type bcm_disaster_atm_affected = $Result.DefaultSelection<Prisma.$bcm_disaster_atm_affectedPayload>
+/**
+ * Model bcm_disaster_staff_affected
+ * 
+ */
+export type bcm_disaster_staff_affected = $Result.DefaultSelection<Prisma.$bcm_disaster_staff_affectedPayload>
+/**
+ * Model bcm_disaster_unit_affected_dirrect
+ * 
+ */
+export type bcm_disaster_unit_affected_dirrect = $Result.DefaultSelection<Prisma.$bcm_disaster_unit_affected_dirrectPayload>
+/**
+ * Model bcm_disaster_unit_affected_indirrect
+ * 
+ */
+export type bcm_disaster_unit_affected_indirrect = $Result.DefaultSelection<Prisma.$bcm_disaster_unit_affected_indirrectPayload>
+/**
+ * Model workflow_status
+ * 
+ */
+export type workflow_status = $Result.DefaultSelection<Prisma.$workflow_statusPayload>
+/**
  * Model vw_threat_types
  * 
  */
@@ -245,6 +280,76 @@ export class PrismaClient<
     * ```
     */
   get currency(): Prisma.CurrencyDelegate<ExtArgs>;
+
+  /**
+   * `prisma.bcm_disaster`: Exposes CRUD operations for the **bcm_disaster** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Bcm_disasters
+    * const bcm_disasters = await prisma.bcm_disaster.findMany()
+    * ```
+    */
+  get bcm_disaster(): Prisma.bcm_disasterDelegate<ExtArgs>;
+
+  /**
+   * `prisma.bcm_disaster_assignment_history`: Exposes CRUD operations for the **bcm_disaster_assignment_history** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Bcm_disaster_assignment_histories
+    * const bcm_disaster_assignment_histories = await prisma.bcm_disaster_assignment_history.findMany()
+    * ```
+    */
+  get bcm_disaster_assignment_history(): Prisma.bcm_disaster_assignment_historyDelegate<ExtArgs>;
+
+  /**
+   * `prisma.bcm_disaster_atm_affected`: Exposes CRUD operations for the **bcm_disaster_atm_affected** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Bcm_disaster_atm_affecteds
+    * const bcm_disaster_atm_affecteds = await prisma.bcm_disaster_atm_affected.findMany()
+    * ```
+    */
+  get bcm_disaster_atm_affected(): Prisma.bcm_disaster_atm_affectedDelegate<ExtArgs>;
+
+  /**
+   * `prisma.bcm_disaster_staff_affected`: Exposes CRUD operations for the **bcm_disaster_staff_affected** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Bcm_disaster_staff_affecteds
+    * const bcm_disaster_staff_affecteds = await prisma.bcm_disaster_staff_affected.findMany()
+    * ```
+    */
+  get bcm_disaster_staff_affected(): Prisma.bcm_disaster_staff_affectedDelegate<ExtArgs>;
+
+  /**
+   * `prisma.bcm_disaster_unit_affected_dirrect`: Exposes CRUD operations for the **bcm_disaster_unit_affected_dirrect** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Bcm_disaster_unit_affected_dirrects
+    * const bcm_disaster_unit_affected_dirrects = await prisma.bcm_disaster_unit_affected_dirrect.findMany()
+    * ```
+    */
+  get bcm_disaster_unit_affected_dirrect(): Prisma.bcm_disaster_unit_affected_dirrectDelegate<ExtArgs>;
+
+  /**
+   * `prisma.bcm_disaster_unit_affected_indirrect`: Exposes CRUD operations for the **bcm_disaster_unit_affected_indirrect** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Bcm_disaster_unit_affected_indirrects
+    * const bcm_disaster_unit_affected_indirrects = await prisma.bcm_disaster_unit_affected_indirrect.findMany()
+    * ```
+    */
+  get bcm_disaster_unit_affected_indirrect(): Prisma.bcm_disaster_unit_affected_indirrectDelegate<ExtArgs>;
+
+  /**
+   * `prisma.workflow_status`: Exposes CRUD operations for the **workflow_status** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Workflow_statuses
+    * const workflow_statuses = await prisma.workflow_status.findMany()
+    * ```
+    */
+  get workflow_status(): Prisma.workflow_statusDelegate<ExtArgs>;
 
   /**
    * `prisma.vw_threat_types`: Exposes CRUD operations for the **vw_threat_types** model.
@@ -732,6 +837,13 @@ export namespace Prisma {
     Indirect_Unit: 'Indirect_Unit',
     App_Testing_Period: 'App_Testing_Period',
     Currency: 'Currency',
+    bcm_disaster: 'bcm_disaster',
+    bcm_disaster_assignment_history: 'bcm_disaster_assignment_history',
+    bcm_disaster_atm_affected: 'bcm_disaster_atm_affected',
+    bcm_disaster_staff_affected: 'bcm_disaster_staff_affected',
+    bcm_disaster_unit_affected_dirrect: 'bcm_disaster_unit_affected_dirrect',
+    bcm_disaster_unit_affected_indirrect: 'bcm_disaster_unit_affected_indirrect',
+    workflow_status: 'workflow_status',
     vw_threat_types: 'vw_threat_types'
   };
 
@@ -749,7 +861,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meta: {
-      modelProps: 'threat_type' | 'threat' | 'applications' | 'staff_Condition' | 'indirect_Unit' | 'app_Testing_Period' | 'currency' | 'vw_threat_types'
+      modelProps: 'threat_type' | 'threat' | 'applications' | 'staff_Condition' | 'indirect_Unit' | 'app_Testing_Period' | 'currency' | 'bcm_disaster' | 'bcm_disaster_assignment_history' | 'bcm_disaster_atm_affected' | 'bcm_disaster_staff_affected' | 'bcm_disaster_unit_affected_dirrect' | 'bcm_disaster_unit_affected_indirrect' | 'workflow_status' | 'vw_threat_types'
       txIsolationLevel: Prisma.TransactionIsolationLevel
     },
     model: {
@@ -1215,6 +1327,468 @@ export namespace Prisma {
           }
         }
       }
+      bcm_disaster: {
+        payload: Prisma.$bcm_disasterPayload<ExtArgs>
+        fields: Prisma.bcm_disasterFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.bcm_disasterFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disasterPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.bcm_disasterFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disasterPayload>
+          }
+          findFirst: {
+            args: Prisma.bcm_disasterFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disasterPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.bcm_disasterFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disasterPayload>
+          }
+          findMany: {
+            args: Prisma.bcm_disasterFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disasterPayload>[]
+          }
+          create: {
+            args: Prisma.bcm_disasterCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disasterPayload>
+          }
+          createMany: {
+            args: Prisma.bcm_disasterCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.bcm_disasterDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disasterPayload>
+          }
+          update: {
+            args: Prisma.bcm_disasterUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disasterPayload>
+          }
+          deleteMany: {
+            args: Prisma.bcm_disasterDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.bcm_disasterUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.bcm_disasterUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disasterPayload>
+          }
+          aggregate: {
+            args: Prisma.Bcm_disasterAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateBcm_disaster>
+          }
+          groupBy: {
+            args: Prisma.bcm_disasterGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disasterGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.bcm_disasterCountArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disasterCountAggregateOutputType> | number
+          }
+        }
+      }
+      bcm_disaster_assignment_history: {
+        payload: Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>
+        fields: Prisma.bcm_disaster_assignment_historyFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.bcm_disaster_assignment_historyFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_assignment_historyPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.bcm_disaster_assignment_historyFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_assignment_historyPayload>
+          }
+          findFirst: {
+            args: Prisma.bcm_disaster_assignment_historyFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_assignment_historyPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.bcm_disaster_assignment_historyFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_assignment_historyPayload>
+          }
+          findMany: {
+            args: Prisma.bcm_disaster_assignment_historyFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_assignment_historyPayload>[]
+          }
+          create: {
+            args: Prisma.bcm_disaster_assignment_historyCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_assignment_historyPayload>
+          }
+          createMany: {
+            args: Prisma.bcm_disaster_assignment_historyCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.bcm_disaster_assignment_historyDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_assignment_historyPayload>
+          }
+          update: {
+            args: Prisma.bcm_disaster_assignment_historyUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_assignment_historyPayload>
+          }
+          deleteMany: {
+            args: Prisma.bcm_disaster_assignment_historyDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.bcm_disaster_assignment_historyUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.bcm_disaster_assignment_historyUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_assignment_historyPayload>
+          }
+          aggregate: {
+            args: Prisma.Bcm_disaster_assignment_historyAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateBcm_disaster_assignment_history>
+          }
+          groupBy: {
+            args: Prisma.bcm_disaster_assignment_historyGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disaster_assignment_historyGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.bcm_disaster_assignment_historyCountArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disaster_assignment_historyCountAggregateOutputType> | number
+          }
+        }
+      }
+      bcm_disaster_atm_affected: {
+        payload: Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>
+        fields: Prisma.bcm_disaster_atm_affectedFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.bcm_disaster_atm_affectedFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_atm_affectedPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.bcm_disaster_atm_affectedFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_atm_affectedPayload>
+          }
+          findFirst: {
+            args: Prisma.bcm_disaster_atm_affectedFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_atm_affectedPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.bcm_disaster_atm_affectedFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_atm_affectedPayload>
+          }
+          findMany: {
+            args: Prisma.bcm_disaster_atm_affectedFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_atm_affectedPayload>[]
+          }
+          create: {
+            args: Prisma.bcm_disaster_atm_affectedCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_atm_affectedPayload>
+          }
+          createMany: {
+            args: Prisma.bcm_disaster_atm_affectedCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.bcm_disaster_atm_affectedDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_atm_affectedPayload>
+          }
+          update: {
+            args: Prisma.bcm_disaster_atm_affectedUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_atm_affectedPayload>
+          }
+          deleteMany: {
+            args: Prisma.bcm_disaster_atm_affectedDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.bcm_disaster_atm_affectedUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.bcm_disaster_atm_affectedUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_atm_affectedPayload>
+          }
+          aggregate: {
+            args: Prisma.Bcm_disaster_atm_affectedAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateBcm_disaster_atm_affected>
+          }
+          groupBy: {
+            args: Prisma.bcm_disaster_atm_affectedGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disaster_atm_affectedGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.bcm_disaster_atm_affectedCountArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disaster_atm_affectedCountAggregateOutputType> | number
+          }
+        }
+      }
+      bcm_disaster_staff_affected: {
+        payload: Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>
+        fields: Prisma.bcm_disaster_staff_affectedFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.bcm_disaster_staff_affectedFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_staff_affectedPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.bcm_disaster_staff_affectedFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_staff_affectedPayload>
+          }
+          findFirst: {
+            args: Prisma.bcm_disaster_staff_affectedFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_staff_affectedPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.bcm_disaster_staff_affectedFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_staff_affectedPayload>
+          }
+          findMany: {
+            args: Prisma.bcm_disaster_staff_affectedFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_staff_affectedPayload>[]
+          }
+          create: {
+            args: Prisma.bcm_disaster_staff_affectedCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_staff_affectedPayload>
+          }
+          createMany: {
+            args: Prisma.bcm_disaster_staff_affectedCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.bcm_disaster_staff_affectedDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_staff_affectedPayload>
+          }
+          update: {
+            args: Prisma.bcm_disaster_staff_affectedUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_staff_affectedPayload>
+          }
+          deleteMany: {
+            args: Prisma.bcm_disaster_staff_affectedDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.bcm_disaster_staff_affectedUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.bcm_disaster_staff_affectedUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_staff_affectedPayload>
+          }
+          aggregate: {
+            args: Prisma.Bcm_disaster_staff_affectedAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateBcm_disaster_staff_affected>
+          }
+          groupBy: {
+            args: Prisma.bcm_disaster_staff_affectedGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disaster_staff_affectedGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.bcm_disaster_staff_affectedCountArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disaster_staff_affectedCountAggregateOutputType> | number
+          }
+        }
+      }
+      bcm_disaster_unit_affected_dirrect: {
+        payload: Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>
+        fields: Prisma.bcm_disaster_unit_affected_dirrectFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload>
+          }
+          findFirst: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload>
+          }
+          findMany: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload>[]
+          }
+          create: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload>
+          }
+          createMany: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload>
+          }
+          update: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload>
+          }
+          deleteMany: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload>
+          }
+          aggregate: {
+            args: Prisma.Bcm_disaster_unit_affected_dirrectAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateBcm_disaster_unit_affected_dirrect>
+          }
+          groupBy: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disaster_unit_affected_dirrectGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.bcm_disaster_unit_affected_dirrectCountArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disaster_unit_affected_dirrectCountAggregateOutputType> | number
+          }
+        }
+      }
+      bcm_disaster_unit_affected_indirrect: {
+        payload: Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>
+        fields: Prisma.bcm_disaster_unit_affected_indirrectFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload>
+          }
+          findFirst: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload>
+          }
+          findMany: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload>[]
+          }
+          create: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload>
+          }
+          createMany: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload>
+          }
+          update: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload>
+          }
+          deleteMany: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload>
+          }
+          aggregate: {
+            args: Prisma.Bcm_disaster_unit_affected_indirrectAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateBcm_disaster_unit_affected_indirrect>
+          }
+          groupBy: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disaster_unit_affected_indirrectGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.bcm_disaster_unit_affected_indirrectCountArgs<ExtArgs>,
+            result: $Utils.Optional<Bcm_disaster_unit_affected_indirrectCountAggregateOutputType> | number
+          }
+        }
+      }
+      workflow_status: {
+        payload: Prisma.$workflow_statusPayload<ExtArgs>
+        fields: Prisma.workflow_statusFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.workflow_statusFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$workflow_statusPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.workflow_statusFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$workflow_statusPayload>
+          }
+          findFirst: {
+            args: Prisma.workflow_statusFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$workflow_statusPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.workflow_statusFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$workflow_statusPayload>
+          }
+          findMany: {
+            args: Prisma.workflow_statusFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$workflow_statusPayload>[]
+          }
+          create: {
+            args: Prisma.workflow_statusCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$workflow_statusPayload>
+          }
+          createMany: {
+            args: Prisma.workflow_statusCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.workflow_statusDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$workflow_statusPayload>
+          }
+          update: {
+            args: Prisma.workflow_statusUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$workflow_statusPayload>
+          }
+          deleteMany: {
+            args: Prisma.workflow_statusDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.workflow_statusUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.workflow_statusUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$workflow_statusPayload>
+          }
+          aggregate: {
+            args: Prisma.Workflow_statusAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateWorkflow_status>
+          }
+          groupBy: {
+            args: Prisma.workflow_statusGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Workflow_statusGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.workflow_statusCountArgs<ExtArgs>,
+            result: $Utils.Optional<Workflow_statusCountAggregateOutputType> | number
+          }
+        }
+      }
       vw_threat_types: {
         payload: Prisma.$vw_threat_typesPayload<ExtArgs>
         fields: Prisma.vw_threat_typesFieldRefs
@@ -1455,6 +2029,236 @@ export namespace Prisma {
    */
   export type Threat_typeCountOutputTypeCountThreatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: threatWhereInput
+  }
+
+
+
+  /**
+   * Count Type ThreatCountOutputType
+   */
+
+  export type ThreatCountOutputType = {
+    bcm_disaster: number
+  }
+
+  export type ThreatCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster?: boolean | ThreatCountOutputTypeCountBcm_disasterArgs
+  }
+
+  // Custom InputTypes
+
+  /**
+   * ThreatCountOutputType without action
+   */
+  export type ThreatCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ThreatCountOutputType
+     */
+    select?: ThreatCountOutputTypeSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * ThreatCountOutputType without action
+   */
+  export type ThreatCountOutputTypeCountBcm_disasterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disasterWhereInput
+  }
+
+
+
+  /**
+   * Count Type Indirect_UnitCountOutputType
+   */
+
+  export type Indirect_UnitCountOutputType = {
+    bcm_disaster_unit_affected_indirrect: number
+  }
+
+  export type Indirect_UnitCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster_unit_affected_indirrect?: boolean | Indirect_UnitCountOutputTypeCountBcm_disaster_unit_affected_indirrectArgs
+  }
+
+  // Custom InputTypes
+
+  /**
+   * Indirect_UnitCountOutputType without action
+   */
+  export type Indirect_UnitCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Indirect_UnitCountOutputType
+     */
+    select?: Indirect_UnitCountOutputTypeSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Indirect_UnitCountOutputType without action
+   */
+  export type Indirect_UnitCountOutputTypeCountBcm_disaster_unit_affected_indirrectArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_unit_affected_indirrectWhereInput
+  }
+
+
+
+  /**
+   * Count Type CurrencyCountOutputType
+   */
+
+  export type CurrencyCountOutputType = {
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency: number
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency: number
+  }
+
+  export type CurrencyCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: boolean | CurrencyCountOutputTypeCountBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyArgs
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: boolean | CurrencyCountOutputTypeCountBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs
+  }
+
+  // Custom InputTypes
+
+  /**
+   * CurrencyCountOutputType without action
+   */
+  export type CurrencyCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CurrencyCountOutputType
+     */
+    select?: CurrencyCountOutputTypeSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * CurrencyCountOutputType without action
+   */
+  export type CurrencyCountOutputTypeCountBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disasterWhereInput
+  }
+
+
+  /**
+   * CurrencyCountOutputType without action
+   */
+  export type CurrencyCountOutputTypeCountBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disasterWhereInput
+  }
+
+
+
+  /**
+   * Count Type Bcm_disasterCountOutputType
+   */
+
+  export type Bcm_disasterCountOutputType = {
+    bcm_disaster_assignment_history: number
+    bcm_disaster_atm_affected: number
+    bcm_disaster_staff_affected: number
+    bcm_disaster_unit_affected_dirrect: number
+    bcm_disaster_unit_affected_indirrect: number
+  }
+
+  export type Bcm_disasterCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster_assignment_history?: boolean | Bcm_disasterCountOutputTypeCountBcm_disaster_assignment_historyArgs
+    bcm_disaster_atm_affected?: boolean | Bcm_disasterCountOutputTypeCountBcm_disaster_atm_affectedArgs
+    bcm_disaster_staff_affected?: boolean | Bcm_disasterCountOutputTypeCountBcm_disaster_staff_affectedArgs
+    bcm_disaster_unit_affected_dirrect?: boolean | Bcm_disasterCountOutputTypeCountBcm_disaster_unit_affected_dirrectArgs
+    bcm_disaster_unit_affected_indirrect?: boolean | Bcm_disasterCountOutputTypeCountBcm_disaster_unit_affected_indirrectArgs
+  }
+
+  // Custom InputTypes
+
+  /**
+   * Bcm_disasterCountOutputType without action
+   */
+  export type Bcm_disasterCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Bcm_disasterCountOutputType
+     */
+    select?: Bcm_disasterCountOutputTypeSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Bcm_disasterCountOutputType without action
+   */
+  export type Bcm_disasterCountOutputTypeCountBcm_disaster_assignment_historyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_assignment_historyWhereInput
+  }
+
+
+  /**
+   * Bcm_disasterCountOutputType without action
+   */
+  export type Bcm_disasterCountOutputTypeCountBcm_disaster_atm_affectedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_atm_affectedWhereInput
+  }
+
+
+  /**
+   * Bcm_disasterCountOutputType without action
+   */
+  export type Bcm_disasterCountOutputTypeCountBcm_disaster_staff_affectedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_staff_affectedWhereInput
+  }
+
+
+  /**
+   * Bcm_disasterCountOutputType without action
+   */
+  export type Bcm_disasterCountOutputTypeCountBcm_disaster_unit_affected_dirrectArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_unit_affected_dirrectWhereInput
+  }
+
+
+  /**
+   * Bcm_disasterCountOutputType without action
+   */
+  export type Bcm_disasterCountOutputTypeCountBcm_disaster_unit_affected_indirrectArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_unit_affected_indirrectWhereInput
+  }
+
+
+
+  /**
+   * Count Type Workflow_statusCountOutputType
+   */
+
+  export type Workflow_statusCountOutputType = {
+    bcm_disaster: number
+    bcm_disaster_assignment_history: number
+  }
+
+  export type Workflow_statusCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster?: boolean | Workflow_statusCountOutputTypeCountBcm_disasterArgs
+    bcm_disaster_assignment_history?: boolean | Workflow_statusCountOutputTypeCountBcm_disaster_assignment_historyArgs
+  }
+
+  // Custom InputTypes
+
+  /**
+   * Workflow_statusCountOutputType without action
+   */
+  export type Workflow_statusCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Workflow_statusCountOutputType
+     */
+    select?: Workflow_statusCountOutputTypeSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Workflow_statusCountOutputType without action
+   */
+  export type Workflow_statusCountOutputTypeCountBcm_disasterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disasterWhereInput
+  }
+
+
+  /**
+   * Workflow_statusCountOutputType without action
+   */
+  export type Workflow_statusCountOutputTypeCountBcm_disaster_assignment_historyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_assignment_historyWhereInput
   }
 
 
@@ -2595,7 +3399,9 @@ export namespace Prisma {
     is_active?: boolean
     created_at?: boolean
     updated_at?: boolean
+    bcm_disaster?: boolean | threat$bcm_disasterArgs<ExtArgs>
     threat_types?: boolean | threat_typeDefaultArgs<ExtArgs>
+    _count?: boolean | ThreatCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["threat"]>
 
   export type threatSelectScalar = {
@@ -2609,13 +3415,16 @@ export namespace Prisma {
   }
 
   export type threatInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster?: boolean | threat$bcm_disasterArgs<ExtArgs>
     threat_types?: boolean | threat_typeDefaultArgs<ExtArgs>
+    _count?: boolean | ThreatCountOutputTypeDefaultArgs<ExtArgs>
   }
 
 
   export type $threatPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "threat"
     objects: {
+      bcm_disaster: Prisma.$bcm_disasterPayload<ExtArgs>[]
       threat_types: Prisma.$threat_typePayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -2991,6 +3800,8 @@ export namespace Prisma {
   export interface Prisma__threatClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
+    bcm_disaster<T extends threat$bcm_disasterArgs<ExtArgs> = {}>(args?: Subset<T, threat$bcm_disasterArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findMany'> | Null>;
+
     threat_types<T extends threat_typeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, threat_typeDefaultArgs<ExtArgs>>): Prisma__threat_typeClient<$Result.GetResult<Prisma.$threat_typePayload<ExtArgs>, T, 'findUniqueOrThrow'> | Null, Null, ExtArgs>;
 
     /**
@@ -3336,6 +4147,27 @@ export namespace Prisma {
      * Filter which threats to delete
      */
     where?: threatWhereInput
+  }
+
+
+  /**
+   * threat.bcm_disaster
+   */
+  export type threat$bcm_disasterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    where?: bcm_disasterWhereInput
+    orderBy?: bcm_disasterOrderByWithRelationInput | bcm_disasterOrderByWithRelationInput[]
+    cursor?: bcm_disasterWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Bcm_disasterScalarFieldEnum | Bcm_disasterScalarFieldEnum[]
   }
 
 
@@ -5432,6 +6264,8 @@ export namespace Prisma {
     is_active?: boolean
     created_at?: boolean
     updated_at?: boolean
+    bcm_disaster_unit_affected_indirrect?: boolean | Indirect_Unit$bcm_disaster_unit_affected_indirrectArgs<ExtArgs>
+    _count?: boolean | Indirect_UnitCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["indirect_Unit"]>
 
   export type Indirect_UnitSelectScalar = {
@@ -5444,10 +6278,17 @@ export namespace Prisma {
     updated_at?: boolean
   }
 
+  export type Indirect_UnitInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster_unit_affected_indirrect?: boolean | Indirect_Unit$bcm_disaster_unit_affected_indirrectArgs<ExtArgs>
+    _count?: boolean | Indirect_UnitCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
 
   export type $Indirect_UnitPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Indirect_Unit"
-    objects: {}
+    objects: {
+      bcm_disaster_unit_affected_indirrect: Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>[]
+    }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       tenant_id: string
@@ -5821,6 +6662,7 @@ export namespace Prisma {
   export interface Prisma__Indirect_UnitClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
+    bcm_disaster_unit_affected_indirrect<T extends Indirect_Unit$bcm_disaster_unit_affected_indirrectArgs<ExtArgs> = {}>(args?: Subset<T, Indirect_Unit$bcm_disaster_unit_affected_indirrectArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>, T, 'findMany'> | Null>;
 
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -5871,6 +6713,10 @@ export namespace Prisma {
      */
     select?: Indirect_UnitSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: Indirect_UnitInclude<ExtArgs> | null
+    /**
      * Filter, which Indirect_Unit to fetch.
      */
     where: Indirect_UnitWhereUniqueInput
@@ -5886,6 +6732,10 @@ export namespace Prisma {
      */
     select?: Indirect_UnitSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: Indirect_UnitInclude<ExtArgs> | null
+    /**
      * Filter, which Indirect_Unit to fetch.
      */
     where: Indirect_UnitWhereUniqueInput
@@ -5900,6 +6750,10 @@ export namespace Prisma {
      * Select specific fields to fetch from the Indirect_Unit
      */
     select?: Indirect_UnitSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: Indirect_UnitInclude<ExtArgs> | null
     /**
      * Filter, which Indirect_Unit to fetch.
      */
@@ -5946,6 +6800,10 @@ export namespace Prisma {
      */
     select?: Indirect_UnitSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: Indirect_UnitInclude<ExtArgs> | null
+    /**
      * Filter, which Indirect_Unit to fetch.
      */
     where?: Indirect_UnitWhereInput
@@ -5991,6 +6849,10 @@ export namespace Prisma {
      */
     select?: Indirect_UnitSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: Indirect_UnitInclude<ExtArgs> | null
+    /**
      * Filter, which Indirect_Units to fetch.
      */
     where?: Indirect_UnitWhereInput
@@ -6031,6 +6893,10 @@ export namespace Prisma {
      */
     select?: Indirect_UnitSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: Indirect_UnitInclude<ExtArgs> | null
+    /**
      * The data needed to create a Indirect_Unit.
      */
     data: XOR<Indirect_UnitCreateInput, Indirect_UnitUncheckedCreateInput>
@@ -6057,6 +6923,10 @@ export namespace Prisma {
      * Select specific fields to fetch from the Indirect_Unit
      */
     select?: Indirect_UnitSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: Indirect_UnitInclude<ExtArgs> | null
     /**
      * The data needed to update a Indirect_Unit.
      */
@@ -6092,6 +6962,10 @@ export namespace Prisma {
      */
     select?: Indirect_UnitSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: Indirect_UnitInclude<ExtArgs> | null
+    /**
      * The filter to search for the Indirect_Unit to update in case it exists.
      */
     where: Indirect_UnitWhereUniqueInput
@@ -6115,6 +6989,10 @@ export namespace Prisma {
      */
     select?: Indirect_UnitSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: Indirect_UnitInclude<ExtArgs> | null
+    /**
      * Filter which Indirect_Unit to delete.
      */
     where: Indirect_UnitWhereUniqueInput
@@ -6133,6 +7011,27 @@ export namespace Prisma {
 
 
   /**
+   * Indirect_Unit.bcm_disaster_unit_affected_indirrect
+   */
+  export type Indirect_Unit$bcm_disaster_unit_affected_indirrectArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+    where?: bcm_disaster_unit_affected_indirrectWhereInput
+    orderBy?: bcm_disaster_unit_affected_indirrectOrderByWithRelationInput | bcm_disaster_unit_affected_indirrectOrderByWithRelationInput[]
+    cursor?: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Bcm_disaster_unit_affected_indirrectScalarFieldEnum | Bcm_disaster_unit_affected_indirrectScalarFieldEnum[]
+  }
+
+
+  /**
    * Indirect_Unit without action
    */
   export type Indirect_UnitDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -6140,6 +7039,10 @@ export namespace Prisma {
      * Select specific fields to fetch from the Indirect_Unit
      */
     select?: Indirect_UnitSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: Indirect_UnitInclude<ExtArgs> | null
   }
 
 
@@ -7292,6 +8195,9 @@ export namespace Prisma {
     is_active?: boolean
     created_at?: boolean
     updated_at?: boolean
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: boolean | Currency$bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyArgs<ExtArgs>
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: boolean | Currency$bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs<ExtArgs>
+    _count?: boolean | CurrencyCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["currency"]>
 
   export type CurrencySelectScalar = {
@@ -7305,10 +8211,19 @@ export namespace Prisma {
     updated_at?: boolean
   }
 
+  export type CurrencyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: boolean | Currency$bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyArgs<ExtArgs>
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: boolean | Currency$bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs<ExtArgs>
+    _count?: boolean | CurrencyCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
 
   export type $CurrencyPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Currency"
-    objects: {}
+    objects: {
+      bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency: Prisma.$bcm_disasterPayload<ExtArgs>[]
+      bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency: Prisma.$bcm_disasterPayload<ExtArgs>[]
+    }
     scalars: $Extensions.GetPayloadResult<{
       code: string
       tenant_id: string
@@ -7683,6 +8598,9 @@ export namespace Prisma {
   export interface Prisma__CurrencyClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency<T extends Currency$bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyArgs<ExtArgs> = {}>(args?: Subset<T, Currency$bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findMany'> | Null>;
+
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency<T extends Currency$bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs<ExtArgs> = {}>(args?: Subset<T, Currency$bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findMany'> | Null>;
 
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -7734,6 +8652,10 @@ export namespace Prisma {
      */
     select?: CurrencySelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
+    /**
      * Filter, which Currency to fetch.
      */
     where: CurrencyWhereUniqueInput
@@ -7749,6 +8671,10 @@ export namespace Prisma {
      */
     select?: CurrencySelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
+    /**
      * Filter, which Currency to fetch.
      */
     where: CurrencyWhereUniqueInput
@@ -7763,6 +8689,10 @@ export namespace Prisma {
      * Select specific fields to fetch from the Currency
      */
     select?: CurrencySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
     /**
      * Filter, which Currency to fetch.
      */
@@ -7809,6 +8739,10 @@ export namespace Prisma {
      */
     select?: CurrencySelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
+    /**
      * Filter, which Currency to fetch.
      */
     where?: CurrencyWhereInput
@@ -7854,6 +8788,10 @@ export namespace Prisma {
      */
     select?: CurrencySelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
+    /**
      * Filter, which Currencies to fetch.
      */
     where?: CurrencyWhereInput
@@ -7894,6 +8832,10 @@ export namespace Prisma {
      */
     select?: CurrencySelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
+    /**
      * The data needed to create a Currency.
      */
     data: XOR<CurrencyCreateInput, CurrencyUncheckedCreateInput>
@@ -7920,6 +8862,10 @@ export namespace Prisma {
      * Select specific fields to fetch from the Currency
      */
     select?: CurrencySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
     /**
      * The data needed to update a Currency.
      */
@@ -7955,6 +8901,10 @@ export namespace Prisma {
      */
     select?: CurrencySelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
+    /**
      * The filter to search for the Currency to update in case it exists.
      */
     where: CurrencyWhereUniqueInput
@@ -7978,6 +8928,10 @@ export namespace Prisma {
      */
     select?: CurrencySelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
+    /**
      * Filter which Currency to delete.
      */
     where: CurrencyWhereUniqueInput
@@ -7996,6 +8950,48 @@ export namespace Prisma {
 
 
   /**
+   * Currency.bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency
+   */
+  export type Currency$bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    where?: bcm_disasterWhereInput
+    orderBy?: bcm_disasterOrderByWithRelationInput | bcm_disasterOrderByWithRelationInput[]
+    cursor?: bcm_disasterWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Bcm_disasterScalarFieldEnum | Bcm_disasterScalarFieldEnum[]
+  }
+
+
+  /**
+   * Currency.bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency
+   */
+  export type Currency$bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    where?: bcm_disasterWhereInput
+    orderBy?: bcm_disasterOrderByWithRelationInput | bcm_disasterOrderByWithRelationInput[]
+    cursor?: bcm_disasterWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Bcm_disasterScalarFieldEnum | Bcm_disasterScalarFieldEnum[]
+  }
+
+
+  /**
    * Currency without action
    */
   export type CurrencyDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -8003,6 +8999,7168 @@ export namespace Prisma {
      * Select specific fields to fetch from the Currency
      */
     select?: CurrencySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model bcm_disaster
+   */
+
+  export type AggregateBcm_disaster = {
+    _count: Bcm_disasterCountAggregateOutputType | null
+    _avg: Bcm_disasterAvgAggregateOutputType | null
+    _sum: Bcm_disasterSumAggregateOutputType | null
+    _min: Bcm_disasterMinAggregateOutputType | null
+    _max: Bcm_disasterMaxAggregateOutputType | null
+  }
+
+  export type Bcm_disasterAvgAggregateOutputType = {
+    estimated_lost: Decimal | null
+    total_insurance_claim: Decimal | null
+    wf_status_id: number | null
+  }
+
+  export type Bcm_disasterSumAggregateOutputType = {
+    estimated_lost: Decimal | null
+    total_insurance_claim: Decimal | null
+    wf_status_id: number | null
+  }
+
+  export type Bcm_disasterMinAggregateOutputType = {
+    id: string | null
+    tenant_id: string | null
+    org_id: string | null
+    threat_id: string | null
+    disaster_chronology: string | null
+    disaster_date: Date | null
+    disaster_location: string | null
+    estimated_lost_currency: string | null
+    estimated_lost: Decimal | null
+    total_insurance_claim_currency: string | null
+    total_insurance_claim: Decimal | null
+    temp_action_plan: string | null
+    recovery_plan: string | null
+    alt_customer_services: string | null
+    alt_staff: string | null
+    wf_status_id: number | null
+    assign_curr_org: string | null
+    assign_curr_role: string | null
+    created_by: string | null
+    created_at: Date | null
+    updated_by: string | null
+    updated_at: Date | null
+  }
+
+  export type Bcm_disasterMaxAggregateOutputType = {
+    id: string | null
+    tenant_id: string | null
+    org_id: string | null
+    threat_id: string | null
+    disaster_chronology: string | null
+    disaster_date: Date | null
+    disaster_location: string | null
+    estimated_lost_currency: string | null
+    estimated_lost: Decimal | null
+    total_insurance_claim_currency: string | null
+    total_insurance_claim: Decimal | null
+    temp_action_plan: string | null
+    recovery_plan: string | null
+    alt_customer_services: string | null
+    alt_staff: string | null
+    wf_status_id: number | null
+    assign_curr_org: string | null
+    assign_curr_role: string | null
+    created_by: string | null
+    created_at: Date | null
+    updated_by: string | null
+    updated_at: Date | null
+  }
+
+  export type Bcm_disasterCountAggregateOutputType = {
+    id: number
+    tenant_id: number
+    org_id: number
+    threat_id: number
+    disaster_chronology: number
+    disaster_date: number
+    disaster_location: number
+    estimated_lost_currency: number
+    estimated_lost: number
+    total_insurance_claim_currency: number
+    total_insurance_claim: number
+    temp_action_plan: number
+    recovery_plan: number
+    alt_customer_services: number
+    alt_staff: number
+    wf_status_id: number
+    assign_curr_org: number
+    assign_curr_role: number
+    created_by: number
+    created_at: number
+    updated_by: number
+    updated_at: number
+    _all: number
+  }
+
+
+  export type Bcm_disasterAvgAggregateInputType = {
+    estimated_lost?: true
+    total_insurance_claim?: true
+    wf_status_id?: true
+  }
+
+  export type Bcm_disasterSumAggregateInputType = {
+    estimated_lost?: true
+    total_insurance_claim?: true
+    wf_status_id?: true
+  }
+
+  export type Bcm_disasterMinAggregateInputType = {
+    id?: true
+    tenant_id?: true
+    org_id?: true
+    threat_id?: true
+    disaster_chronology?: true
+    disaster_date?: true
+    disaster_location?: true
+    estimated_lost_currency?: true
+    estimated_lost?: true
+    total_insurance_claim_currency?: true
+    total_insurance_claim?: true
+    temp_action_plan?: true
+    recovery_plan?: true
+    alt_customer_services?: true
+    alt_staff?: true
+    wf_status_id?: true
+    assign_curr_org?: true
+    assign_curr_role?: true
+    created_by?: true
+    created_at?: true
+    updated_by?: true
+    updated_at?: true
+  }
+
+  export type Bcm_disasterMaxAggregateInputType = {
+    id?: true
+    tenant_id?: true
+    org_id?: true
+    threat_id?: true
+    disaster_chronology?: true
+    disaster_date?: true
+    disaster_location?: true
+    estimated_lost_currency?: true
+    estimated_lost?: true
+    total_insurance_claim_currency?: true
+    total_insurance_claim?: true
+    temp_action_plan?: true
+    recovery_plan?: true
+    alt_customer_services?: true
+    alt_staff?: true
+    wf_status_id?: true
+    assign_curr_org?: true
+    assign_curr_role?: true
+    created_by?: true
+    created_at?: true
+    updated_by?: true
+    updated_at?: true
+  }
+
+  export type Bcm_disasterCountAggregateInputType = {
+    id?: true
+    tenant_id?: true
+    org_id?: true
+    threat_id?: true
+    disaster_chronology?: true
+    disaster_date?: true
+    disaster_location?: true
+    estimated_lost_currency?: true
+    estimated_lost?: true
+    total_insurance_claim_currency?: true
+    total_insurance_claim?: true
+    temp_action_plan?: true
+    recovery_plan?: true
+    alt_customer_services?: true
+    alt_staff?: true
+    wf_status_id?: true
+    assign_curr_org?: true
+    assign_curr_role?: true
+    created_by?: true
+    created_at?: true
+    updated_by?: true
+    updated_at?: true
+    _all?: true
+  }
+
+  export type Bcm_disasterAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disaster to aggregate.
+     */
+    where?: bcm_disasterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disasters to fetch.
+     */
+    orderBy?: bcm_disasterOrderByWithRelationInput | bcm_disasterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: bcm_disasterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disasters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disasters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned bcm_disasters
+    **/
+    _count?: true | Bcm_disasterCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Bcm_disasterAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Bcm_disasterSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Bcm_disasterMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Bcm_disasterMaxAggregateInputType
+  }
+
+  export type GetBcm_disasterAggregateType<T extends Bcm_disasterAggregateArgs> = {
+        [P in keyof T & keyof AggregateBcm_disaster]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBcm_disaster[P]>
+      : GetScalarType<T[P], AggregateBcm_disaster[P]>
+  }
+
+
+
+
+  export type bcm_disasterGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disasterWhereInput
+    orderBy?: bcm_disasterOrderByWithAggregationInput | bcm_disasterOrderByWithAggregationInput[]
+    by: Bcm_disasterScalarFieldEnum[] | Bcm_disasterScalarFieldEnum
+    having?: bcm_disasterScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Bcm_disasterCountAggregateInputType | true
+    _avg?: Bcm_disasterAvgAggregateInputType
+    _sum?: Bcm_disasterSumAggregateInputType
+    _min?: Bcm_disasterMinAggregateInputType
+    _max?: Bcm_disasterMaxAggregateInputType
+  }
+
+  export type Bcm_disasterGroupByOutputType = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology: string | null
+    disaster_date: Date | null
+    disaster_location: string | null
+    estimated_lost_currency: string | null
+    estimated_lost: Decimal | null
+    total_insurance_claim_currency: string | null
+    total_insurance_claim: Decimal | null
+    temp_action_plan: string | null
+    recovery_plan: string | null
+    alt_customer_services: string | null
+    alt_staff: string | null
+    wf_status_id: number | null
+    assign_curr_org: string | null
+    assign_curr_role: string | null
+    created_by: string | null
+    created_at: Date | null
+    updated_by: string | null
+    updated_at: Date | null
+    _count: Bcm_disasterCountAggregateOutputType | null
+    _avg: Bcm_disasterAvgAggregateOutputType | null
+    _sum: Bcm_disasterSumAggregateOutputType | null
+    _min: Bcm_disasterMinAggregateOutputType | null
+    _max: Bcm_disasterMaxAggregateOutputType | null
+  }
+
+  type GetBcm_disasterGroupByPayload<T extends bcm_disasterGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Bcm_disasterGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Bcm_disasterGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Bcm_disasterGroupByOutputType[P]>
+            : GetScalarType<T[P], Bcm_disasterGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type bcm_disasterSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    tenant_id?: boolean
+    org_id?: boolean
+    threat_id?: boolean
+    disaster_chronology?: boolean
+    disaster_date?: boolean
+    disaster_location?: boolean
+    estimated_lost_currency?: boolean
+    estimated_lost?: boolean
+    total_insurance_claim_currency?: boolean
+    total_insurance_claim?: boolean
+    temp_action_plan?: boolean
+    recovery_plan?: boolean
+    alt_customer_services?: boolean
+    alt_staff?: boolean
+    wf_status_id?: boolean
+    assign_curr_org?: boolean
+    assign_curr_role?: boolean
+    created_by?: boolean
+    created_at?: boolean
+    updated_by?: boolean
+    updated_at?: boolean
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: boolean | bcm_disaster$reff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyArgs<ExtArgs>
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: boolean | bcm_disaster$reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs<ExtArgs>
+    threat?: boolean | threatDefaultArgs<ExtArgs>
+    workflow_status?: boolean | bcm_disaster$workflow_statusArgs<ExtArgs>
+    bcm_disaster_assignment_history?: boolean | bcm_disaster$bcm_disaster_assignment_historyArgs<ExtArgs>
+    bcm_disaster_atm_affected?: boolean | bcm_disaster$bcm_disaster_atm_affectedArgs<ExtArgs>
+    bcm_disaster_staff_affected?: boolean | bcm_disaster$bcm_disaster_staff_affectedArgs<ExtArgs>
+    bcm_disaster_unit_affected_dirrect?: boolean | bcm_disaster$bcm_disaster_unit_affected_dirrectArgs<ExtArgs>
+    bcm_disaster_unit_affected_indirrect?: boolean | bcm_disaster$bcm_disaster_unit_affected_indirrectArgs<ExtArgs>
+    _count?: boolean | Bcm_disasterCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["bcm_disaster"]>
+
+  export type bcm_disasterSelectScalar = {
+    id?: boolean
+    tenant_id?: boolean
+    org_id?: boolean
+    threat_id?: boolean
+    disaster_chronology?: boolean
+    disaster_date?: boolean
+    disaster_location?: boolean
+    estimated_lost_currency?: boolean
+    estimated_lost?: boolean
+    total_insurance_claim_currency?: boolean
+    total_insurance_claim?: boolean
+    temp_action_plan?: boolean
+    recovery_plan?: boolean
+    alt_customer_services?: boolean
+    alt_staff?: boolean
+    wf_status_id?: boolean
+    assign_curr_org?: boolean
+    assign_curr_role?: boolean
+    created_by?: boolean
+    created_at?: boolean
+    updated_by?: boolean
+    updated_at?: boolean
+  }
+
+  export type bcm_disasterInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: boolean | bcm_disaster$reff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyArgs<ExtArgs>
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: boolean | bcm_disaster$reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs<ExtArgs>
+    threat?: boolean | threatDefaultArgs<ExtArgs>
+    workflow_status?: boolean | bcm_disaster$workflow_statusArgs<ExtArgs>
+    bcm_disaster_assignment_history?: boolean | bcm_disaster$bcm_disaster_assignment_historyArgs<ExtArgs>
+    bcm_disaster_atm_affected?: boolean | bcm_disaster$bcm_disaster_atm_affectedArgs<ExtArgs>
+    bcm_disaster_staff_affected?: boolean | bcm_disaster$bcm_disaster_staff_affectedArgs<ExtArgs>
+    bcm_disaster_unit_affected_dirrect?: boolean | bcm_disaster$bcm_disaster_unit_affected_dirrectArgs<ExtArgs>
+    bcm_disaster_unit_affected_indirrect?: boolean | bcm_disaster$bcm_disaster_unit_affected_indirrectArgs<ExtArgs>
+    _count?: boolean | Bcm_disasterCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+
+  export type $bcm_disasterPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "bcm_disaster"
+    objects: {
+      reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency: Prisma.$CurrencyPayload<ExtArgs> | null
+      reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency: Prisma.$CurrencyPayload<ExtArgs> | null
+      threat: Prisma.$threatPayload<ExtArgs>
+      workflow_status: Prisma.$workflow_statusPayload<ExtArgs> | null
+      bcm_disaster_assignment_history: Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>[]
+      bcm_disaster_atm_affected: Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>[]
+      bcm_disaster_staff_affected: Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>[]
+      bcm_disaster_unit_affected_dirrect: Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>[]
+      bcm_disaster_unit_affected_indirrect: Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      tenant_id: string
+      org_id: string
+      threat_id: string
+      disaster_chronology: string | null
+      disaster_date: Date | null
+      disaster_location: string | null
+      estimated_lost_currency: string | null
+      estimated_lost: Prisma.Decimal | null
+      total_insurance_claim_currency: string | null
+      total_insurance_claim: Prisma.Decimal | null
+      temp_action_plan: string | null
+      recovery_plan: string | null
+      alt_customer_services: string | null
+      alt_staff: string | null
+      wf_status_id: number | null
+      assign_curr_org: string | null
+      assign_curr_role: string | null
+      created_by: string | null
+      created_at: Date | null
+      updated_by: string | null
+      updated_at: Date | null
+    }, ExtArgs["result"]["bcm_disaster"]>
+    composites: {}
+  }
+
+
+  type bcm_disasterGetPayload<S extends boolean | null | undefined | bcm_disasterDefaultArgs> = $Result.GetResult<Prisma.$bcm_disasterPayload, S>
+
+  type bcm_disasterCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<bcm_disasterFindManyArgs, 'select' | 'include' | 'distinct' > & {
+      select?: Bcm_disasterCountAggregateInputType | true
+    }
+
+  export interface bcm_disasterDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['bcm_disaster'], meta: { name: 'bcm_disaster' } }
+    /**
+     * Find zero or one Bcm_disaster that matches the filter.
+     * @param {bcm_disasterFindUniqueArgs} args - Arguments to find a Bcm_disaster
+     * @example
+     * // Get one Bcm_disaster
+     * const bcm_disaster = await prisma.bcm_disaster.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends bcm_disasterFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disasterFindUniqueArgs<ExtArgs>>
+    ): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one Bcm_disaster that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {bcm_disasterFindUniqueOrThrowArgs} args - Arguments to find a Bcm_disaster
+     * @example
+     * // Get one Bcm_disaster
+     * const bcm_disaster = await prisma.bcm_disaster.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends bcm_disasterFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disasterFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disasterFindFirstArgs} args - Arguments to find a Bcm_disaster
+     * @example
+     * // Get one Bcm_disaster
+     * const bcm_disaster = await prisma.bcm_disaster.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends bcm_disasterFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disasterFindFirstArgs<ExtArgs>>
+    ): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disasterFindFirstOrThrowArgs} args - Arguments to find a Bcm_disaster
+     * @example
+     * // Get one Bcm_disaster
+     * const bcm_disaster = await prisma.bcm_disaster.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends bcm_disasterFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disasterFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more Bcm_disasters that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disasterFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Bcm_disasters
+     * const bcm_disasters = await prisma.bcm_disaster.findMany()
+     * 
+     * // Get first 10 Bcm_disasters
+     * const bcm_disasters = await prisma.bcm_disaster.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const bcm_disasterWithIdOnly = await prisma.bcm_disaster.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends bcm_disasterFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disasterFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a Bcm_disaster.
+     * @param {bcm_disasterCreateArgs} args - Arguments to create a Bcm_disaster.
+     * @example
+     * // Create one Bcm_disaster
+     * const Bcm_disaster = await prisma.bcm_disaster.create({
+     *   data: {
+     *     // ... data to create a Bcm_disaster
+     *   }
+     * })
+     * 
+    **/
+    create<T extends bcm_disasterCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disasterCreateArgs<ExtArgs>>
+    ): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many Bcm_disasters.
+     *     @param {bcm_disasterCreateManyArgs} args - Arguments to create many Bcm_disasters.
+     *     @example
+     *     // Create many Bcm_disasters
+     *     const bcm_disaster = await prisma.bcm_disaster.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends bcm_disasterCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disasterCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Bcm_disaster.
+     * @param {bcm_disasterDeleteArgs} args - Arguments to delete one Bcm_disaster.
+     * @example
+     * // Delete one Bcm_disaster
+     * const Bcm_disaster = await prisma.bcm_disaster.delete({
+     *   where: {
+     *     // ... filter to delete one Bcm_disaster
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends bcm_disasterDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disasterDeleteArgs<ExtArgs>>
+    ): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one Bcm_disaster.
+     * @param {bcm_disasterUpdateArgs} args - Arguments to update one Bcm_disaster.
+     * @example
+     * // Update one Bcm_disaster
+     * const bcm_disaster = await prisma.bcm_disaster.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends bcm_disasterUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disasterUpdateArgs<ExtArgs>>
+    ): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more Bcm_disasters.
+     * @param {bcm_disasterDeleteManyArgs} args - Arguments to filter Bcm_disasters to delete.
+     * @example
+     * // Delete a few Bcm_disasters
+     * const { count } = await prisma.bcm_disaster.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends bcm_disasterDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disasterDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Bcm_disasters.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disasterUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Bcm_disasters
+     * const bcm_disaster = await prisma.bcm_disaster.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends bcm_disasterUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disasterUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Bcm_disaster.
+     * @param {bcm_disasterUpsertArgs} args - Arguments to update or create a Bcm_disaster.
+     * @example
+     * // Update or create a Bcm_disaster
+     * const bcm_disaster = await prisma.bcm_disaster.upsert({
+     *   create: {
+     *     // ... data to create a Bcm_disaster
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Bcm_disaster we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends bcm_disasterUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disasterUpsertArgs<ExtArgs>>
+    ): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of Bcm_disasters.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disasterCountArgs} args - Arguments to filter Bcm_disasters to count.
+     * @example
+     * // Count the number of Bcm_disasters
+     * const count = await prisma.bcm_disaster.count({
+     *   where: {
+     *     // ... the filter for the Bcm_disasters we want to count
+     *   }
+     * })
+    **/
+    count<T extends bcm_disasterCountArgs>(
+      args?: Subset<T, bcm_disasterCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Bcm_disasterCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Bcm_disaster.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Bcm_disasterAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Bcm_disasterAggregateArgs>(args: Subset<T, Bcm_disasterAggregateArgs>): Prisma.PrismaPromise<GetBcm_disasterAggregateType<T>>
+
+    /**
+     * Group by Bcm_disaster.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disasterGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends bcm_disasterGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: bcm_disasterGroupByArgs['orderBy'] }
+        : { orderBy?: bcm_disasterGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, bcm_disasterGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBcm_disasterGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the bcm_disaster model
+   */
+  readonly fields: bcm_disasterFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for bcm_disaster.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__bcm_disasterClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency<T extends bcm_disaster$reff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster$reff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyArgs<ExtArgs>>): Prisma__CurrencyClient<$Result.GetResult<Prisma.$CurrencyPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency<T extends bcm_disaster$reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster$reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs<ExtArgs>>): Prisma__CurrencyClient<$Result.GetResult<Prisma.$CurrencyPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+
+    threat<T extends threatDefaultArgs<ExtArgs> = {}>(args?: Subset<T, threatDefaultArgs<ExtArgs>>): Prisma__threatClient<$Result.GetResult<Prisma.$threatPayload<ExtArgs>, T, 'findUniqueOrThrow'> | Null, Null, ExtArgs>;
+
+    workflow_status<T extends bcm_disaster$workflow_statusArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster$workflow_statusArgs<ExtArgs>>): Prisma__workflow_statusClient<$Result.GetResult<Prisma.$workflow_statusPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+
+    bcm_disaster_assignment_history<T extends bcm_disaster$bcm_disaster_assignment_historyArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster$bcm_disaster_assignment_historyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>, T, 'findMany'> | Null>;
+
+    bcm_disaster_atm_affected<T extends bcm_disaster$bcm_disaster_atm_affectedArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster$bcm_disaster_atm_affectedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>, T, 'findMany'> | Null>;
+
+    bcm_disaster_staff_affected<T extends bcm_disaster$bcm_disaster_staff_affectedArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster$bcm_disaster_staff_affectedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>, T, 'findMany'> | Null>;
+
+    bcm_disaster_unit_affected_dirrect<T extends bcm_disaster$bcm_disaster_unit_affected_dirrectArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster$bcm_disaster_unit_affected_dirrectArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>, T, 'findMany'> | Null>;
+
+    bcm_disaster_unit_affected_indirrect<T extends bcm_disaster$bcm_disaster_unit_affected_indirrectArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster$bcm_disaster_unit_affected_indirrectArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>, T, 'findMany'> | Null>;
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the bcm_disaster model
+   */ 
+  interface bcm_disasterFieldRefs {
+    readonly id: FieldRef<"bcm_disaster", 'String'>
+    readonly tenant_id: FieldRef<"bcm_disaster", 'String'>
+    readonly org_id: FieldRef<"bcm_disaster", 'String'>
+    readonly threat_id: FieldRef<"bcm_disaster", 'String'>
+    readonly disaster_chronology: FieldRef<"bcm_disaster", 'String'>
+    readonly disaster_date: FieldRef<"bcm_disaster", 'DateTime'>
+    readonly disaster_location: FieldRef<"bcm_disaster", 'String'>
+    readonly estimated_lost_currency: FieldRef<"bcm_disaster", 'String'>
+    readonly estimated_lost: FieldRef<"bcm_disaster", 'Decimal'>
+    readonly total_insurance_claim_currency: FieldRef<"bcm_disaster", 'String'>
+    readonly total_insurance_claim: FieldRef<"bcm_disaster", 'Decimal'>
+    readonly temp_action_plan: FieldRef<"bcm_disaster", 'String'>
+    readonly recovery_plan: FieldRef<"bcm_disaster", 'String'>
+    readonly alt_customer_services: FieldRef<"bcm_disaster", 'String'>
+    readonly alt_staff: FieldRef<"bcm_disaster", 'String'>
+    readonly wf_status_id: FieldRef<"bcm_disaster", 'Int'>
+    readonly assign_curr_org: FieldRef<"bcm_disaster", 'String'>
+    readonly assign_curr_role: FieldRef<"bcm_disaster", 'String'>
+    readonly created_by: FieldRef<"bcm_disaster", 'String'>
+    readonly created_at: FieldRef<"bcm_disaster", 'DateTime'>
+    readonly updated_by: FieldRef<"bcm_disaster", 'String'>
+    readonly updated_at: FieldRef<"bcm_disaster", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * bcm_disaster findUnique
+   */
+  export type bcm_disasterFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster to fetch.
+     */
+    where: bcm_disasterWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster findUniqueOrThrow
+   */
+  export type bcm_disasterFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster to fetch.
+     */
+    where: bcm_disasterWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster findFirst
+   */
+  export type bcm_disasterFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster to fetch.
+     */
+    where?: bcm_disasterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disasters to fetch.
+     */
+    orderBy?: bcm_disasterOrderByWithRelationInput | bcm_disasterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disasters.
+     */
+    cursor?: bcm_disasterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disasters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disasters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disasters.
+     */
+    distinct?: Bcm_disasterScalarFieldEnum | Bcm_disasterScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster findFirstOrThrow
+   */
+  export type bcm_disasterFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster to fetch.
+     */
+    where?: bcm_disasterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disasters to fetch.
+     */
+    orderBy?: bcm_disasterOrderByWithRelationInput | bcm_disasterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disasters.
+     */
+    cursor?: bcm_disasterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disasters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disasters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disasters.
+     */
+    distinct?: Bcm_disasterScalarFieldEnum | Bcm_disasterScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster findMany
+   */
+  export type bcm_disasterFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disasters to fetch.
+     */
+    where?: bcm_disasterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disasters to fetch.
+     */
+    orderBy?: bcm_disasterOrderByWithRelationInput | bcm_disasterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing bcm_disasters.
+     */
+    cursor?: bcm_disasterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disasters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disasters.
+     */
+    skip?: number
+    distinct?: Bcm_disasterScalarFieldEnum | Bcm_disasterScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster create
+   */
+  export type bcm_disasterCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    /**
+     * The data needed to create a bcm_disaster.
+     */
+    data: XOR<bcm_disasterCreateInput, bcm_disasterUncheckedCreateInput>
+  }
+
+
+  /**
+   * bcm_disaster createMany
+   */
+  export type bcm_disasterCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many bcm_disasters.
+     */
+    data: bcm_disasterCreateManyInput | bcm_disasterCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * bcm_disaster update
+   */
+  export type bcm_disasterUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    /**
+     * The data needed to update a bcm_disaster.
+     */
+    data: XOR<bcm_disasterUpdateInput, bcm_disasterUncheckedUpdateInput>
+    /**
+     * Choose, which bcm_disaster to update.
+     */
+    where: bcm_disasterWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster updateMany
+   */
+  export type bcm_disasterUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update bcm_disasters.
+     */
+    data: XOR<bcm_disasterUpdateManyMutationInput, bcm_disasterUncheckedUpdateManyInput>
+    /**
+     * Filter which bcm_disasters to update
+     */
+    where?: bcm_disasterWhereInput
+  }
+
+
+  /**
+   * bcm_disaster upsert
+   */
+  export type bcm_disasterUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    /**
+     * The filter to search for the bcm_disaster to update in case it exists.
+     */
+    where: bcm_disasterWhereUniqueInput
+    /**
+     * In case the bcm_disaster found by the `where` argument doesn't exist, create a new bcm_disaster with this data.
+     */
+    create: XOR<bcm_disasterCreateInput, bcm_disasterUncheckedCreateInput>
+    /**
+     * In case the bcm_disaster was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<bcm_disasterUpdateInput, bcm_disasterUncheckedUpdateInput>
+  }
+
+
+  /**
+   * bcm_disaster delete
+   */
+  export type bcm_disasterDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    /**
+     * Filter which bcm_disaster to delete.
+     */
+    where: bcm_disasterWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster deleteMany
+   */
+  export type bcm_disasterDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disasters to delete
+     */
+    where?: bcm_disasterWhereInput
+  }
+
+
+  /**
+   * bcm_disaster.reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency
+   */
+  export type bcm_disaster$reff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Currency
+     */
+    select?: CurrencySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
+    where?: CurrencyWhereInput
+  }
+
+
+  /**
+   * bcm_disaster.reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency
+   */
+  export type bcm_disaster$reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Currency
+     */
+    select?: CurrencySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: CurrencyInclude<ExtArgs> | null
+    where?: CurrencyWhereInput
+  }
+
+
+  /**
+   * bcm_disaster.workflow_status
+   */
+  export type bcm_disaster$workflow_statusArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
+    where?: workflow_statusWhereInput
+  }
+
+
+  /**
+   * bcm_disaster.bcm_disaster_assignment_history
+   */
+  export type bcm_disaster$bcm_disaster_assignment_historyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+    where?: bcm_disaster_assignment_historyWhereInput
+    orderBy?: bcm_disaster_assignment_historyOrderByWithRelationInput | bcm_disaster_assignment_historyOrderByWithRelationInput[]
+    cursor?: bcm_disaster_assignment_historyWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Bcm_disaster_assignment_historyScalarFieldEnum | Bcm_disaster_assignment_historyScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster.bcm_disaster_atm_affected
+   */
+  export type bcm_disaster$bcm_disaster_atm_affectedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_atm_affected
+     */
+    select?: bcm_disaster_atm_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_atm_affectedInclude<ExtArgs> | null
+    where?: bcm_disaster_atm_affectedWhereInput
+    orderBy?: bcm_disaster_atm_affectedOrderByWithRelationInput | bcm_disaster_atm_affectedOrderByWithRelationInput[]
+    cursor?: bcm_disaster_atm_affectedWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Bcm_disaster_atm_affectedScalarFieldEnum | Bcm_disaster_atm_affectedScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster.bcm_disaster_staff_affected
+   */
+  export type bcm_disaster$bcm_disaster_staff_affectedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_staff_affected
+     */
+    select?: bcm_disaster_staff_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_staff_affectedInclude<ExtArgs> | null
+    where?: bcm_disaster_staff_affectedWhereInput
+    orderBy?: bcm_disaster_staff_affectedOrderByWithRelationInput | bcm_disaster_staff_affectedOrderByWithRelationInput[]
+    cursor?: bcm_disaster_staff_affectedWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Bcm_disaster_staff_affectedScalarFieldEnum | Bcm_disaster_staff_affectedScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster.bcm_disaster_unit_affected_dirrect
+   */
+  export type bcm_disaster$bcm_disaster_unit_affected_dirrectArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_dirrect
+     */
+    select?: bcm_disaster_unit_affected_dirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_dirrectInclude<ExtArgs> | null
+    where?: bcm_disaster_unit_affected_dirrectWhereInput
+    orderBy?: bcm_disaster_unit_affected_dirrectOrderByWithRelationInput | bcm_disaster_unit_affected_dirrectOrderByWithRelationInput[]
+    cursor?: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Bcm_disaster_unit_affected_dirrectScalarFieldEnum | Bcm_disaster_unit_affected_dirrectScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster.bcm_disaster_unit_affected_indirrect
+   */
+  export type bcm_disaster$bcm_disaster_unit_affected_indirrectArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+    where?: bcm_disaster_unit_affected_indirrectWhereInput
+    orderBy?: bcm_disaster_unit_affected_indirrectOrderByWithRelationInput | bcm_disaster_unit_affected_indirrectOrderByWithRelationInput[]
+    cursor?: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Bcm_disaster_unit_affected_indirrectScalarFieldEnum | Bcm_disaster_unit_affected_indirrectScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster without action
+   */
+  export type bcm_disasterDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model bcm_disaster_assignment_history
+   */
+
+  export type AggregateBcm_disaster_assignment_history = {
+    _count: Bcm_disaster_assignment_historyCountAggregateOutputType | null
+    _avg: Bcm_disaster_assignment_historyAvgAggregateOutputType | null
+    _sum: Bcm_disaster_assignment_historySumAggregateOutputType | null
+    _min: Bcm_disaster_assignment_historyMinAggregateOutputType | null
+    _max: Bcm_disaster_assignment_historyMaxAggregateOutputType | null
+  }
+
+  export type Bcm_disaster_assignment_historyAvgAggregateOutputType = {
+    wf_status_id: number | null
+  }
+
+  export type Bcm_disaster_assignment_historySumAggregateOutputType = {
+    wf_status_id: number | null
+  }
+
+  export type Bcm_disaster_assignment_historyMinAggregateOutputType = {
+    id: string | null
+    disaster_id: string | null
+    history_date: Date | null
+    user_id: string | null
+    user_name: string | null
+    wf_status_id: number | null
+    reason: string | null
+  }
+
+  export type Bcm_disaster_assignment_historyMaxAggregateOutputType = {
+    id: string | null
+    disaster_id: string | null
+    history_date: Date | null
+    user_id: string | null
+    user_name: string | null
+    wf_status_id: number | null
+    reason: string | null
+  }
+
+  export type Bcm_disaster_assignment_historyCountAggregateOutputType = {
+    id: number
+    disaster_id: number
+    history_date: number
+    user_id: number
+    user_name: number
+    wf_status_id: number
+    reason: number
+    _all: number
+  }
+
+
+  export type Bcm_disaster_assignment_historyAvgAggregateInputType = {
+    wf_status_id?: true
+  }
+
+  export type Bcm_disaster_assignment_historySumAggregateInputType = {
+    wf_status_id?: true
+  }
+
+  export type Bcm_disaster_assignment_historyMinAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    history_date?: true
+    user_id?: true
+    user_name?: true
+    wf_status_id?: true
+    reason?: true
+  }
+
+  export type Bcm_disaster_assignment_historyMaxAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    history_date?: true
+    user_id?: true
+    user_name?: true
+    wf_status_id?: true
+    reason?: true
+  }
+
+  export type Bcm_disaster_assignment_historyCountAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    history_date?: true
+    user_id?: true
+    user_name?: true
+    wf_status_id?: true
+    reason?: true
+    _all?: true
+  }
+
+  export type Bcm_disaster_assignment_historyAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disaster_assignment_history to aggregate.
+     */
+    where?: bcm_disaster_assignment_historyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_assignment_histories to fetch.
+     */
+    orderBy?: bcm_disaster_assignment_historyOrderByWithRelationInput | bcm_disaster_assignment_historyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: bcm_disaster_assignment_historyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_assignment_histories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_assignment_histories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned bcm_disaster_assignment_histories
+    **/
+    _count?: true | Bcm_disaster_assignment_historyCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Bcm_disaster_assignment_historyAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Bcm_disaster_assignment_historySumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Bcm_disaster_assignment_historyMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Bcm_disaster_assignment_historyMaxAggregateInputType
+  }
+
+  export type GetBcm_disaster_assignment_historyAggregateType<T extends Bcm_disaster_assignment_historyAggregateArgs> = {
+        [P in keyof T & keyof AggregateBcm_disaster_assignment_history]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBcm_disaster_assignment_history[P]>
+      : GetScalarType<T[P], AggregateBcm_disaster_assignment_history[P]>
+  }
+
+
+
+
+  export type bcm_disaster_assignment_historyGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_assignment_historyWhereInput
+    orderBy?: bcm_disaster_assignment_historyOrderByWithAggregationInput | bcm_disaster_assignment_historyOrderByWithAggregationInput[]
+    by: Bcm_disaster_assignment_historyScalarFieldEnum[] | Bcm_disaster_assignment_historyScalarFieldEnum
+    having?: bcm_disaster_assignment_historyScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Bcm_disaster_assignment_historyCountAggregateInputType | true
+    _avg?: Bcm_disaster_assignment_historyAvgAggregateInputType
+    _sum?: Bcm_disaster_assignment_historySumAggregateInputType
+    _min?: Bcm_disaster_assignment_historyMinAggregateInputType
+    _max?: Bcm_disaster_assignment_historyMaxAggregateInputType
+  }
+
+  export type Bcm_disaster_assignment_historyGroupByOutputType = {
+    id: string
+    disaster_id: string | null
+    history_date: Date | null
+    user_id: string | null
+    user_name: string | null
+    wf_status_id: number | null
+    reason: string | null
+    _count: Bcm_disaster_assignment_historyCountAggregateOutputType | null
+    _avg: Bcm_disaster_assignment_historyAvgAggregateOutputType | null
+    _sum: Bcm_disaster_assignment_historySumAggregateOutputType | null
+    _min: Bcm_disaster_assignment_historyMinAggregateOutputType | null
+    _max: Bcm_disaster_assignment_historyMaxAggregateOutputType | null
+  }
+
+  type GetBcm_disaster_assignment_historyGroupByPayload<T extends bcm_disaster_assignment_historyGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Bcm_disaster_assignment_historyGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Bcm_disaster_assignment_historyGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Bcm_disaster_assignment_historyGroupByOutputType[P]>
+            : GetScalarType<T[P], Bcm_disaster_assignment_historyGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type bcm_disaster_assignment_historySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    disaster_id?: boolean
+    history_date?: boolean
+    user_id?: boolean
+    user_name?: boolean
+    wf_status_id?: boolean
+    reason?: boolean
+    bcm_disaster?: boolean | bcm_disaster_assignment_history$bcm_disasterArgs<ExtArgs>
+    workflow_status?: boolean | bcm_disaster_assignment_history$workflow_statusArgs<ExtArgs>
+  }, ExtArgs["result"]["bcm_disaster_assignment_history"]>
+
+  export type bcm_disaster_assignment_historySelectScalar = {
+    id?: boolean
+    disaster_id?: boolean
+    history_date?: boolean
+    user_id?: boolean
+    user_name?: boolean
+    wf_status_id?: boolean
+    reason?: boolean
+  }
+
+  export type bcm_disaster_assignment_historyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster?: boolean | bcm_disaster_assignment_history$bcm_disasterArgs<ExtArgs>
+    workflow_status?: boolean | bcm_disaster_assignment_history$workflow_statusArgs<ExtArgs>
+  }
+
+
+  export type $bcm_disaster_assignment_historyPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "bcm_disaster_assignment_history"
+    objects: {
+      bcm_disaster: Prisma.$bcm_disasterPayload<ExtArgs> | null
+      workflow_status: Prisma.$workflow_statusPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      disaster_id: string | null
+      history_date: Date | null
+      user_id: string | null
+      user_name: string | null
+      wf_status_id: number | null
+      reason: string | null
+    }, ExtArgs["result"]["bcm_disaster_assignment_history"]>
+    composites: {}
+  }
+
+
+  type bcm_disaster_assignment_historyGetPayload<S extends boolean | null | undefined | bcm_disaster_assignment_historyDefaultArgs> = $Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload, S>
+
+  type bcm_disaster_assignment_historyCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<bcm_disaster_assignment_historyFindManyArgs, 'select' | 'include' | 'distinct' > & {
+      select?: Bcm_disaster_assignment_historyCountAggregateInputType | true
+    }
+
+  export interface bcm_disaster_assignment_historyDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['bcm_disaster_assignment_history'], meta: { name: 'bcm_disaster_assignment_history' } }
+    /**
+     * Find zero or one Bcm_disaster_assignment_history that matches the filter.
+     * @param {bcm_disaster_assignment_historyFindUniqueArgs} args - Arguments to find a Bcm_disaster_assignment_history
+     * @example
+     * // Get one Bcm_disaster_assignment_history
+     * const bcm_disaster_assignment_history = await prisma.bcm_disaster_assignment_history.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends bcm_disaster_assignment_historyFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_assignment_historyFindUniqueArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_assignment_historyClient<$Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one Bcm_disaster_assignment_history that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {bcm_disaster_assignment_historyFindUniqueOrThrowArgs} args - Arguments to find a Bcm_disaster_assignment_history
+     * @example
+     * // Get one Bcm_disaster_assignment_history
+     * const bcm_disaster_assignment_history = await prisma.bcm_disaster_assignment_history.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends bcm_disaster_assignment_historyFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_assignment_historyFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_assignment_historyClient<$Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster_assignment_history that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_assignment_historyFindFirstArgs} args - Arguments to find a Bcm_disaster_assignment_history
+     * @example
+     * // Get one Bcm_disaster_assignment_history
+     * const bcm_disaster_assignment_history = await prisma.bcm_disaster_assignment_history.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends bcm_disaster_assignment_historyFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_assignment_historyFindFirstArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_assignment_historyClient<$Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster_assignment_history that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_assignment_historyFindFirstOrThrowArgs} args - Arguments to find a Bcm_disaster_assignment_history
+     * @example
+     * // Get one Bcm_disaster_assignment_history
+     * const bcm_disaster_assignment_history = await prisma.bcm_disaster_assignment_history.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends bcm_disaster_assignment_historyFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_assignment_historyFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_assignment_historyClient<$Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more Bcm_disaster_assignment_histories that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_assignment_historyFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Bcm_disaster_assignment_histories
+     * const bcm_disaster_assignment_histories = await prisma.bcm_disaster_assignment_history.findMany()
+     * 
+     * // Get first 10 Bcm_disaster_assignment_histories
+     * const bcm_disaster_assignment_histories = await prisma.bcm_disaster_assignment_history.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const bcm_disaster_assignment_historyWithIdOnly = await prisma.bcm_disaster_assignment_history.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends bcm_disaster_assignment_historyFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_assignment_historyFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a Bcm_disaster_assignment_history.
+     * @param {bcm_disaster_assignment_historyCreateArgs} args - Arguments to create a Bcm_disaster_assignment_history.
+     * @example
+     * // Create one Bcm_disaster_assignment_history
+     * const Bcm_disaster_assignment_history = await prisma.bcm_disaster_assignment_history.create({
+     *   data: {
+     *     // ... data to create a Bcm_disaster_assignment_history
+     *   }
+     * })
+     * 
+    **/
+    create<T extends bcm_disaster_assignment_historyCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_assignment_historyCreateArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_assignment_historyClient<$Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many Bcm_disaster_assignment_histories.
+     *     @param {bcm_disaster_assignment_historyCreateManyArgs} args - Arguments to create many Bcm_disaster_assignment_histories.
+     *     @example
+     *     // Create many Bcm_disaster_assignment_histories
+     *     const bcm_disaster_assignment_history = await prisma.bcm_disaster_assignment_history.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends bcm_disaster_assignment_historyCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_assignment_historyCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Bcm_disaster_assignment_history.
+     * @param {bcm_disaster_assignment_historyDeleteArgs} args - Arguments to delete one Bcm_disaster_assignment_history.
+     * @example
+     * // Delete one Bcm_disaster_assignment_history
+     * const Bcm_disaster_assignment_history = await prisma.bcm_disaster_assignment_history.delete({
+     *   where: {
+     *     // ... filter to delete one Bcm_disaster_assignment_history
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends bcm_disaster_assignment_historyDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_assignment_historyDeleteArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_assignment_historyClient<$Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one Bcm_disaster_assignment_history.
+     * @param {bcm_disaster_assignment_historyUpdateArgs} args - Arguments to update one Bcm_disaster_assignment_history.
+     * @example
+     * // Update one Bcm_disaster_assignment_history
+     * const bcm_disaster_assignment_history = await prisma.bcm_disaster_assignment_history.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends bcm_disaster_assignment_historyUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_assignment_historyUpdateArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_assignment_historyClient<$Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more Bcm_disaster_assignment_histories.
+     * @param {bcm_disaster_assignment_historyDeleteManyArgs} args - Arguments to filter Bcm_disaster_assignment_histories to delete.
+     * @example
+     * // Delete a few Bcm_disaster_assignment_histories
+     * const { count } = await prisma.bcm_disaster_assignment_history.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends bcm_disaster_assignment_historyDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_assignment_historyDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Bcm_disaster_assignment_histories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_assignment_historyUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Bcm_disaster_assignment_histories
+     * const bcm_disaster_assignment_history = await prisma.bcm_disaster_assignment_history.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends bcm_disaster_assignment_historyUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_assignment_historyUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Bcm_disaster_assignment_history.
+     * @param {bcm_disaster_assignment_historyUpsertArgs} args - Arguments to update or create a Bcm_disaster_assignment_history.
+     * @example
+     * // Update or create a Bcm_disaster_assignment_history
+     * const bcm_disaster_assignment_history = await prisma.bcm_disaster_assignment_history.upsert({
+     *   create: {
+     *     // ... data to create a Bcm_disaster_assignment_history
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Bcm_disaster_assignment_history we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends bcm_disaster_assignment_historyUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_assignment_historyUpsertArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_assignment_historyClient<$Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of Bcm_disaster_assignment_histories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_assignment_historyCountArgs} args - Arguments to filter Bcm_disaster_assignment_histories to count.
+     * @example
+     * // Count the number of Bcm_disaster_assignment_histories
+     * const count = await prisma.bcm_disaster_assignment_history.count({
+     *   where: {
+     *     // ... the filter for the Bcm_disaster_assignment_histories we want to count
+     *   }
+     * })
+    **/
+    count<T extends bcm_disaster_assignment_historyCountArgs>(
+      args?: Subset<T, bcm_disaster_assignment_historyCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Bcm_disaster_assignment_historyCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Bcm_disaster_assignment_history.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Bcm_disaster_assignment_historyAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Bcm_disaster_assignment_historyAggregateArgs>(args: Subset<T, Bcm_disaster_assignment_historyAggregateArgs>): Prisma.PrismaPromise<GetBcm_disaster_assignment_historyAggregateType<T>>
+
+    /**
+     * Group by Bcm_disaster_assignment_history.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_assignment_historyGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends bcm_disaster_assignment_historyGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: bcm_disaster_assignment_historyGroupByArgs['orderBy'] }
+        : { orderBy?: bcm_disaster_assignment_historyGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, bcm_disaster_assignment_historyGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBcm_disaster_assignment_historyGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the bcm_disaster_assignment_history model
+   */
+  readonly fields: bcm_disaster_assignment_historyFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for bcm_disaster_assignment_history.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__bcm_disaster_assignment_historyClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+    bcm_disaster<T extends bcm_disaster_assignment_history$bcm_disasterArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster_assignment_history$bcm_disasterArgs<ExtArgs>>): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+
+    workflow_status<T extends bcm_disaster_assignment_history$workflow_statusArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster_assignment_history$workflow_statusArgs<ExtArgs>>): Prisma__workflow_statusClient<$Result.GetResult<Prisma.$workflow_statusPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the bcm_disaster_assignment_history model
+   */ 
+  interface bcm_disaster_assignment_historyFieldRefs {
+    readonly id: FieldRef<"bcm_disaster_assignment_history", 'String'>
+    readonly disaster_id: FieldRef<"bcm_disaster_assignment_history", 'String'>
+    readonly history_date: FieldRef<"bcm_disaster_assignment_history", 'DateTime'>
+    readonly user_id: FieldRef<"bcm_disaster_assignment_history", 'String'>
+    readonly user_name: FieldRef<"bcm_disaster_assignment_history", 'String'>
+    readonly wf_status_id: FieldRef<"bcm_disaster_assignment_history", 'Int'>
+    readonly reason: FieldRef<"bcm_disaster_assignment_history", 'String'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * bcm_disaster_assignment_history findUnique
+   */
+  export type bcm_disaster_assignment_historyFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_assignment_history to fetch.
+     */
+    where: bcm_disaster_assignment_historyWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history findUniqueOrThrow
+   */
+  export type bcm_disaster_assignment_historyFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_assignment_history to fetch.
+     */
+    where: bcm_disaster_assignment_historyWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history findFirst
+   */
+  export type bcm_disaster_assignment_historyFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_assignment_history to fetch.
+     */
+    where?: bcm_disaster_assignment_historyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_assignment_histories to fetch.
+     */
+    orderBy?: bcm_disaster_assignment_historyOrderByWithRelationInput | bcm_disaster_assignment_historyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disaster_assignment_histories.
+     */
+    cursor?: bcm_disaster_assignment_historyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_assignment_histories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_assignment_histories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disaster_assignment_histories.
+     */
+    distinct?: Bcm_disaster_assignment_historyScalarFieldEnum | Bcm_disaster_assignment_historyScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history findFirstOrThrow
+   */
+  export type bcm_disaster_assignment_historyFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_assignment_history to fetch.
+     */
+    where?: bcm_disaster_assignment_historyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_assignment_histories to fetch.
+     */
+    orderBy?: bcm_disaster_assignment_historyOrderByWithRelationInput | bcm_disaster_assignment_historyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disaster_assignment_histories.
+     */
+    cursor?: bcm_disaster_assignment_historyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_assignment_histories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_assignment_histories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disaster_assignment_histories.
+     */
+    distinct?: Bcm_disaster_assignment_historyScalarFieldEnum | Bcm_disaster_assignment_historyScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history findMany
+   */
+  export type bcm_disaster_assignment_historyFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_assignment_histories to fetch.
+     */
+    where?: bcm_disaster_assignment_historyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_assignment_histories to fetch.
+     */
+    orderBy?: bcm_disaster_assignment_historyOrderByWithRelationInput | bcm_disaster_assignment_historyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing bcm_disaster_assignment_histories.
+     */
+    cursor?: bcm_disaster_assignment_historyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_assignment_histories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_assignment_histories.
+     */
+    skip?: number
+    distinct?: Bcm_disaster_assignment_historyScalarFieldEnum | Bcm_disaster_assignment_historyScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history create
+   */
+  export type bcm_disaster_assignment_historyCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+    /**
+     * The data needed to create a bcm_disaster_assignment_history.
+     */
+    data: XOR<bcm_disaster_assignment_historyCreateInput, bcm_disaster_assignment_historyUncheckedCreateInput>
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history createMany
+   */
+  export type bcm_disaster_assignment_historyCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many bcm_disaster_assignment_histories.
+     */
+    data: bcm_disaster_assignment_historyCreateManyInput | bcm_disaster_assignment_historyCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history update
+   */
+  export type bcm_disaster_assignment_historyUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+    /**
+     * The data needed to update a bcm_disaster_assignment_history.
+     */
+    data: XOR<bcm_disaster_assignment_historyUpdateInput, bcm_disaster_assignment_historyUncheckedUpdateInput>
+    /**
+     * Choose, which bcm_disaster_assignment_history to update.
+     */
+    where: bcm_disaster_assignment_historyWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history updateMany
+   */
+  export type bcm_disaster_assignment_historyUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update bcm_disaster_assignment_histories.
+     */
+    data: XOR<bcm_disaster_assignment_historyUpdateManyMutationInput, bcm_disaster_assignment_historyUncheckedUpdateManyInput>
+    /**
+     * Filter which bcm_disaster_assignment_histories to update
+     */
+    where?: bcm_disaster_assignment_historyWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history upsert
+   */
+  export type bcm_disaster_assignment_historyUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+    /**
+     * The filter to search for the bcm_disaster_assignment_history to update in case it exists.
+     */
+    where: bcm_disaster_assignment_historyWhereUniqueInput
+    /**
+     * In case the bcm_disaster_assignment_history found by the `where` argument doesn't exist, create a new bcm_disaster_assignment_history with this data.
+     */
+    create: XOR<bcm_disaster_assignment_historyCreateInput, bcm_disaster_assignment_historyUncheckedCreateInput>
+    /**
+     * In case the bcm_disaster_assignment_history was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<bcm_disaster_assignment_historyUpdateInput, bcm_disaster_assignment_historyUncheckedUpdateInput>
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history delete
+   */
+  export type bcm_disaster_assignment_historyDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+    /**
+     * Filter which bcm_disaster_assignment_history to delete.
+     */
+    where: bcm_disaster_assignment_historyWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history deleteMany
+   */
+  export type bcm_disaster_assignment_historyDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disaster_assignment_histories to delete
+     */
+    where?: bcm_disaster_assignment_historyWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history.bcm_disaster
+   */
+  export type bcm_disaster_assignment_history$bcm_disasterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    where?: bcm_disasterWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history.workflow_status
+   */
+  export type bcm_disaster_assignment_history$workflow_statusArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
+    where?: workflow_statusWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_assignment_history without action
+   */
+  export type bcm_disaster_assignment_historyDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model bcm_disaster_atm_affected
+   */
+
+  export type AggregateBcm_disaster_atm_affected = {
+    _count: Bcm_disaster_atm_affectedCountAggregateOutputType | null
+    _avg: Bcm_disaster_atm_affectedAvgAggregateOutputType | null
+    _sum: Bcm_disaster_atm_affectedSumAggregateOutputType | null
+    _min: Bcm_disaster_atm_affectedMinAggregateOutputType | null
+    _max: Bcm_disaster_atm_affectedMaxAggregateOutputType | null
+  }
+
+  export type Bcm_disaster_atm_affectedAvgAggregateOutputType = {
+    total_atm: number | null
+    total_atm_is_operating: number | null
+    total_atm_is_not_operating: number | null
+  }
+
+  export type Bcm_disaster_atm_affectedSumAggregateOutputType = {
+    total_atm: number | null
+    total_atm_is_operating: number | null
+    total_atm_is_not_operating: number | null
+  }
+
+  export type Bcm_disaster_atm_affectedMinAggregateOutputType = {
+    id: string | null
+    disaster_id: string | null
+    total_atm: number | null
+    total_atm_is_operating: number | null
+    total_atm_is_not_operating: number | null
+  }
+
+  export type Bcm_disaster_atm_affectedMaxAggregateOutputType = {
+    id: string | null
+    disaster_id: string | null
+    total_atm: number | null
+    total_atm_is_operating: number | null
+    total_atm_is_not_operating: number | null
+  }
+
+  export type Bcm_disaster_atm_affectedCountAggregateOutputType = {
+    id: number
+    disaster_id: number
+    total_atm: number
+    total_atm_is_operating: number
+    total_atm_is_not_operating: number
+    _all: number
+  }
+
+
+  export type Bcm_disaster_atm_affectedAvgAggregateInputType = {
+    total_atm?: true
+    total_atm_is_operating?: true
+    total_atm_is_not_operating?: true
+  }
+
+  export type Bcm_disaster_atm_affectedSumAggregateInputType = {
+    total_atm?: true
+    total_atm_is_operating?: true
+    total_atm_is_not_operating?: true
+  }
+
+  export type Bcm_disaster_atm_affectedMinAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    total_atm?: true
+    total_atm_is_operating?: true
+    total_atm_is_not_operating?: true
+  }
+
+  export type Bcm_disaster_atm_affectedMaxAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    total_atm?: true
+    total_atm_is_operating?: true
+    total_atm_is_not_operating?: true
+  }
+
+  export type Bcm_disaster_atm_affectedCountAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    total_atm?: true
+    total_atm_is_operating?: true
+    total_atm_is_not_operating?: true
+    _all?: true
+  }
+
+  export type Bcm_disaster_atm_affectedAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disaster_atm_affected to aggregate.
+     */
+    where?: bcm_disaster_atm_affectedWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_atm_affecteds to fetch.
+     */
+    orderBy?: bcm_disaster_atm_affectedOrderByWithRelationInput | bcm_disaster_atm_affectedOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: bcm_disaster_atm_affectedWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_atm_affecteds from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_atm_affecteds.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned bcm_disaster_atm_affecteds
+    **/
+    _count?: true | Bcm_disaster_atm_affectedCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Bcm_disaster_atm_affectedAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Bcm_disaster_atm_affectedSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Bcm_disaster_atm_affectedMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Bcm_disaster_atm_affectedMaxAggregateInputType
+  }
+
+  export type GetBcm_disaster_atm_affectedAggregateType<T extends Bcm_disaster_atm_affectedAggregateArgs> = {
+        [P in keyof T & keyof AggregateBcm_disaster_atm_affected]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBcm_disaster_atm_affected[P]>
+      : GetScalarType<T[P], AggregateBcm_disaster_atm_affected[P]>
+  }
+
+
+
+
+  export type bcm_disaster_atm_affectedGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_atm_affectedWhereInput
+    orderBy?: bcm_disaster_atm_affectedOrderByWithAggregationInput | bcm_disaster_atm_affectedOrderByWithAggregationInput[]
+    by: Bcm_disaster_atm_affectedScalarFieldEnum[] | Bcm_disaster_atm_affectedScalarFieldEnum
+    having?: bcm_disaster_atm_affectedScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Bcm_disaster_atm_affectedCountAggregateInputType | true
+    _avg?: Bcm_disaster_atm_affectedAvgAggregateInputType
+    _sum?: Bcm_disaster_atm_affectedSumAggregateInputType
+    _min?: Bcm_disaster_atm_affectedMinAggregateInputType
+    _max?: Bcm_disaster_atm_affectedMaxAggregateInputType
+  }
+
+  export type Bcm_disaster_atm_affectedGroupByOutputType = {
+    id: string
+    disaster_id: string | null
+    total_atm: number | null
+    total_atm_is_operating: number | null
+    total_atm_is_not_operating: number | null
+    _count: Bcm_disaster_atm_affectedCountAggregateOutputType | null
+    _avg: Bcm_disaster_atm_affectedAvgAggregateOutputType | null
+    _sum: Bcm_disaster_atm_affectedSumAggregateOutputType | null
+    _min: Bcm_disaster_atm_affectedMinAggregateOutputType | null
+    _max: Bcm_disaster_atm_affectedMaxAggregateOutputType | null
+  }
+
+  type GetBcm_disaster_atm_affectedGroupByPayload<T extends bcm_disaster_atm_affectedGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Bcm_disaster_atm_affectedGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Bcm_disaster_atm_affectedGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Bcm_disaster_atm_affectedGroupByOutputType[P]>
+            : GetScalarType<T[P], Bcm_disaster_atm_affectedGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type bcm_disaster_atm_affectedSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    disaster_id?: boolean
+    total_atm?: boolean
+    total_atm_is_operating?: boolean
+    total_atm_is_not_operating?: boolean
+    bcm_disaster?: boolean | bcm_disaster_atm_affected$bcm_disasterArgs<ExtArgs>
+  }, ExtArgs["result"]["bcm_disaster_atm_affected"]>
+
+  export type bcm_disaster_atm_affectedSelectScalar = {
+    id?: boolean
+    disaster_id?: boolean
+    total_atm?: boolean
+    total_atm_is_operating?: boolean
+    total_atm_is_not_operating?: boolean
+  }
+
+  export type bcm_disaster_atm_affectedInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster?: boolean | bcm_disaster_atm_affected$bcm_disasterArgs<ExtArgs>
+  }
+
+
+  export type $bcm_disaster_atm_affectedPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "bcm_disaster_atm_affected"
+    objects: {
+      bcm_disaster: Prisma.$bcm_disasterPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      disaster_id: string | null
+      total_atm: number | null
+      total_atm_is_operating: number | null
+      total_atm_is_not_operating: number | null
+    }, ExtArgs["result"]["bcm_disaster_atm_affected"]>
+    composites: {}
+  }
+
+
+  type bcm_disaster_atm_affectedGetPayload<S extends boolean | null | undefined | bcm_disaster_atm_affectedDefaultArgs> = $Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload, S>
+
+  type bcm_disaster_atm_affectedCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<bcm_disaster_atm_affectedFindManyArgs, 'select' | 'include' | 'distinct' > & {
+      select?: Bcm_disaster_atm_affectedCountAggregateInputType | true
+    }
+
+  export interface bcm_disaster_atm_affectedDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['bcm_disaster_atm_affected'], meta: { name: 'bcm_disaster_atm_affected' } }
+    /**
+     * Find zero or one Bcm_disaster_atm_affected that matches the filter.
+     * @param {bcm_disaster_atm_affectedFindUniqueArgs} args - Arguments to find a Bcm_disaster_atm_affected
+     * @example
+     * // Get one Bcm_disaster_atm_affected
+     * const bcm_disaster_atm_affected = await prisma.bcm_disaster_atm_affected.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends bcm_disaster_atm_affectedFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_atm_affectedFindUniqueArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_atm_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one Bcm_disaster_atm_affected that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {bcm_disaster_atm_affectedFindUniqueOrThrowArgs} args - Arguments to find a Bcm_disaster_atm_affected
+     * @example
+     * // Get one Bcm_disaster_atm_affected
+     * const bcm_disaster_atm_affected = await prisma.bcm_disaster_atm_affected.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends bcm_disaster_atm_affectedFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_atm_affectedFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_atm_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster_atm_affected that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_atm_affectedFindFirstArgs} args - Arguments to find a Bcm_disaster_atm_affected
+     * @example
+     * // Get one Bcm_disaster_atm_affected
+     * const bcm_disaster_atm_affected = await prisma.bcm_disaster_atm_affected.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends bcm_disaster_atm_affectedFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_atm_affectedFindFirstArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_atm_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster_atm_affected that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_atm_affectedFindFirstOrThrowArgs} args - Arguments to find a Bcm_disaster_atm_affected
+     * @example
+     * // Get one Bcm_disaster_atm_affected
+     * const bcm_disaster_atm_affected = await prisma.bcm_disaster_atm_affected.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends bcm_disaster_atm_affectedFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_atm_affectedFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_atm_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more Bcm_disaster_atm_affecteds that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_atm_affectedFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Bcm_disaster_atm_affecteds
+     * const bcm_disaster_atm_affecteds = await prisma.bcm_disaster_atm_affected.findMany()
+     * 
+     * // Get first 10 Bcm_disaster_atm_affecteds
+     * const bcm_disaster_atm_affecteds = await prisma.bcm_disaster_atm_affected.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const bcm_disaster_atm_affectedWithIdOnly = await prisma.bcm_disaster_atm_affected.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends bcm_disaster_atm_affectedFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_atm_affectedFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a Bcm_disaster_atm_affected.
+     * @param {bcm_disaster_atm_affectedCreateArgs} args - Arguments to create a Bcm_disaster_atm_affected.
+     * @example
+     * // Create one Bcm_disaster_atm_affected
+     * const Bcm_disaster_atm_affected = await prisma.bcm_disaster_atm_affected.create({
+     *   data: {
+     *     // ... data to create a Bcm_disaster_atm_affected
+     *   }
+     * })
+     * 
+    **/
+    create<T extends bcm_disaster_atm_affectedCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_atm_affectedCreateArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_atm_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many Bcm_disaster_atm_affecteds.
+     *     @param {bcm_disaster_atm_affectedCreateManyArgs} args - Arguments to create many Bcm_disaster_atm_affecteds.
+     *     @example
+     *     // Create many Bcm_disaster_atm_affecteds
+     *     const bcm_disaster_atm_affected = await prisma.bcm_disaster_atm_affected.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends bcm_disaster_atm_affectedCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_atm_affectedCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Bcm_disaster_atm_affected.
+     * @param {bcm_disaster_atm_affectedDeleteArgs} args - Arguments to delete one Bcm_disaster_atm_affected.
+     * @example
+     * // Delete one Bcm_disaster_atm_affected
+     * const Bcm_disaster_atm_affected = await prisma.bcm_disaster_atm_affected.delete({
+     *   where: {
+     *     // ... filter to delete one Bcm_disaster_atm_affected
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends bcm_disaster_atm_affectedDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_atm_affectedDeleteArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_atm_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one Bcm_disaster_atm_affected.
+     * @param {bcm_disaster_atm_affectedUpdateArgs} args - Arguments to update one Bcm_disaster_atm_affected.
+     * @example
+     * // Update one Bcm_disaster_atm_affected
+     * const bcm_disaster_atm_affected = await prisma.bcm_disaster_atm_affected.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends bcm_disaster_atm_affectedUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_atm_affectedUpdateArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_atm_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more Bcm_disaster_atm_affecteds.
+     * @param {bcm_disaster_atm_affectedDeleteManyArgs} args - Arguments to filter Bcm_disaster_atm_affecteds to delete.
+     * @example
+     * // Delete a few Bcm_disaster_atm_affecteds
+     * const { count } = await prisma.bcm_disaster_atm_affected.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends bcm_disaster_atm_affectedDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_atm_affectedDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Bcm_disaster_atm_affecteds.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_atm_affectedUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Bcm_disaster_atm_affecteds
+     * const bcm_disaster_atm_affected = await prisma.bcm_disaster_atm_affected.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends bcm_disaster_atm_affectedUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_atm_affectedUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Bcm_disaster_atm_affected.
+     * @param {bcm_disaster_atm_affectedUpsertArgs} args - Arguments to update or create a Bcm_disaster_atm_affected.
+     * @example
+     * // Update or create a Bcm_disaster_atm_affected
+     * const bcm_disaster_atm_affected = await prisma.bcm_disaster_atm_affected.upsert({
+     *   create: {
+     *     // ... data to create a Bcm_disaster_atm_affected
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Bcm_disaster_atm_affected we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends bcm_disaster_atm_affectedUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_atm_affectedUpsertArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_atm_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of Bcm_disaster_atm_affecteds.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_atm_affectedCountArgs} args - Arguments to filter Bcm_disaster_atm_affecteds to count.
+     * @example
+     * // Count the number of Bcm_disaster_atm_affecteds
+     * const count = await prisma.bcm_disaster_atm_affected.count({
+     *   where: {
+     *     // ... the filter for the Bcm_disaster_atm_affecteds we want to count
+     *   }
+     * })
+    **/
+    count<T extends bcm_disaster_atm_affectedCountArgs>(
+      args?: Subset<T, bcm_disaster_atm_affectedCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Bcm_disaster_atm_affectedCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Bcm_disaster_atm_affected.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Bcm_disaster_atm_affectedAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Bcm_disaster_atm_affectedAggregateArgs>(args: Subset<T, Bcm_disaster_atm_affectedAggregateArgs>): Prisma.PrismaPromise<GetBcm_disaster_atm_affectedAggregateType<T>>
+
+    /**
+     * Group by Bcm_disaster_atm_affected.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_atm_affectedGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends bcm_disaster_atm_affectedGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: bcm_disaster_atm_affectedGroupByArgs['orderBy'] }
+        : { orderBy?: bcm_disaster_atm_affectedGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, bcm_disaster_atm_affectedGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBcm_disaster_atm_affectedGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the bcm_disaster_atm_affected model
+   */
+  readonly fields: bcm_disaster_atm_affectedFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for bcm_disaster_atm_affected.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__bcm_disaster_atm_affectedClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+    bcm_disaster<T extends bcm_disaster_atm_affected$bcm_disasterArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster_atm_affected$bcm_disasterArgs<ExtArgs>>): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the bcm_disaster_atm_affected model
+   */ 
+  interface bcm_disaster_atm_affectedFieldRefs {
+    readonly id: FieldRef<"bcm_disaster_atm_affected", 'String'>
+    readonly disaster_id: FieldRef<"bcm_disaster_atm_affected", 'String'>
+    readonly total_atm: FieldRef<"bcm_disaster_atm_affected", 'Int'>
+    readonly total_atm_is_operating: FieldRef<"bcm_disaster_atm_affected", 'Int'>
+    readonly total_atm_is_not_operating: FieldRef<"bcm_disaster_atm_affected", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * bcm_disaster_atm_affected findUnique
+   */
+  export type bcm_disaster_atm_affectedFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_atm_affected
+     */
+    select?: bcm_disaster_atm_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_atm_affectedInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_atm_affected to fetch.
+     */
+    where: bcm_disaster_atm_affectedWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected findUniqueOrThrow
+   */
+  export type bcm_disaster_atm_affectedFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_atm_affected
+     */
+    select?: bcm_disaster_atm_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_atm_affectedInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_atm_affected to fetch.
+     */
+    where: bcm_disaster_atm_affectedWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected findFirst
+   */
+  export type bcm_disaster_atm_affectedFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_atm_affected
+     */
+    select?: bcm_disaster_atm_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_atm_affectedInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_atm_affected to fetch.
+     */
+    where?: bcm_disaster_atm_affectedWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_atm_affecteds to fetch.
+     */
+    orderBy?: bcm_disaster_atm_affectedOrderByWithRelationInput | bcm_disaster_atm_affectedOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disaster_atm_affecteds.
+     */
+    cursor?: bcm_disaster_atm_affectedWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_atm_affecteds from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_atm_affecteds.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disaster_atm_affecteds.
+     */
+    distinct?: Bcm_disaster_atm_affectedScalarFieldEnum | Bcm_disaster_atm_affectedScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected findFirstOrThrow
+   */
+  export type bcm_disaster_atm_affectedFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_atm_affected
+     */
+    select?: bcm_disaster_atm_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_atm_affectedInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_atm_affected to fetch.
+     */
+    where?: bcm_disaster_atm_affectedWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_atm_affecteds to fetch.
+     */
+    orderBy?: bcm_disaster_atm_affectedOrderByWithRelationInput | bcm_disaster_atm_affectedOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disaster_atm_affecteds.
+     */
+    cursor?: bcm_disaster_atm_affectedWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_atm_affecteds from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_atm_affecteds.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disaster_atm_affecteds.
+     */
+    distinct?: Bcm_disaster_atm_affectedScalarFieldEnum | Bcm_disaster_atm_affectedScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected findMany
+   */
+  export type bcm_disaster_atm_affectedFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_atm_affected
+     */
+    select?: bcm_disaster_atm_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_atm_affectedInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_atm_affecteds to fetch.
+     */
+    where?: bcm_disaster_atm_affectedWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_atm_affecteds to fetch.
+     */
+    orderBy?: bcm_disaster_atm_affectedOrderByWithRelationInput | bcm_disaster_atm_affectedOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing bcm_disaster_atm_affecteds.
+     */
+    cursor?: bcm_disaster_atm_affectedWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_atm_affecteds from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_atm_affecteds.
+     */
+    skip?: number
+    distinct?: Bcm_disaster_atm_affectedScalarFieldEnum | Bcm_disaster_atm_affectedScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected create
+   */
+  export type bcm_disaster_atm_affectedCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_atm_affected
+     */
+    select?: bcm_disaster_atm_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_atm_affectedInclude<ExtArgs> | null
+    /**
+     * The data needed to create a bcm_disaster_atm_affected.
+     */
+    data: XOR<bcm_disaster_atm_affectedCreateInput, bcm_disaster_atm_affectedUncheckedCreateInput>
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected createMany
+   */
+  export type bcm_disaster_atm_affectedCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many bcm_disaster_atm_affecteds.
+     */
+    data: bcm_disaster_atm_affectedCreateManyInput | bcm_disaster_atm_affectedCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected update
+   */
+  export type bcm_disaster_atm_affectedUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_atm_affected
+     */
+    select?: bcm_disaster_atm_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_atm_affectedInclude<ExtArgs> | null
+    /**
+     * The data needed to update a bcm_disaster_atm_affected.
+     */
+    data: XOR<bcm_disaster_atm_affectedUpdateInput, bcm_disaster_atm_affectedUncheckedUpdateInput>
+    /**
+     * Choose, which bcm_disaster_atm_affected to update.
+     */
+    where: bcm_disaster_atm_affectedWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected updateMany
+   */
+  export type bcm_disaster_atm_affectedUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update bcm_disaster_atm_affecteds.
+     */
+    data: XOR<bcm_disaster_atm_affectedUpdateManyMutationInput, bcm_disaster_atm_affectedUncheckedUpdateManyInput>
+    /**
+     * Filter which bcm_disaster_atm_affecteds to update
+     */
+    where?: bcm_disaster_atm_affectedWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected upsert
+   */
+  export type bcm_disaster_atm_affectedUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_atm_affected
+     */
+    select?: bcm_disaster_atm_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_atm_affectedInclude<ExtArgs> | null
+    /**
+     * The filter to search for the bcm_disaster_atm_affected to update in case it exists.
+     */
+    where: bcm_disaster_atm_affectedWhereUniqueInput
+    /**
+     * In case the bcm_disaster_atm_affected found by the `where` argument doesn't exist, create a new bcm_disaster_atm_affected with this data.
+     */
+    create: XOR<bcm_disaster_atm_affectedCreateInput, bcm_disaster_atm_affectedUncheckedCreateInput>
+    /**
+     * In case the bcm_disaster_atm_affected was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<bcm_disaster_atm_affectedUpdateInput, bcm_disaster_atm_affectedUncheckedUpdateInput>
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected delete
+   */
+  export type bcm_disaster_atm_affectedDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_atm_affected
+     */
+    select?: bcm_disaster_atm_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_atm_affectedInclude<ExtArgs> | null
+    /**
+     * Filter which bcm_disaster_atm_affected to delete.
+     */
+    where: bcm_disaster_atm_affectedWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected deleteMany
+   */
+  export type bcm_disaster_atm_affectedDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disaster_atm_affecteds to delete
+     */
+    where?: bcm_disaster_atm_affectedWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected.bcm_disaster
+   */
+  export type bcm_disaster_atm_affected$bcm_disasterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    where?: bcm_disasterWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_atm_affected without action
+   */
+  export type bcm_disaster_atm_affectedDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_atm_affected
+     */
+    select?: bcm_disaster_atm_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_atm_affectedInclude<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model bcm_disaster_staff_affected
+   */
+
+  export type AggregateBcm_disaster_staff_affected = {
+    _count: Bcm_disaster_staff_affectedCountAggregateOutputType | null
+    _avg: Bcm_disaster_staff_affectedAvgAggregateOutputType | null
+    _sum: Bcm_disaster_staff_affectedSumAggregateOutputType | null
+    _min: Bcm_disaster_staff_affectedMinAggregateOutputType | null
+    _max: Bcm_disaster_staff_affectedMaxAggregateOutputType | null
+  }
+
+  export type Bcm_disaster_staff_affectedAvgAggregateOutputType = {
+    total: number | null
+    total_family: number | null
+  }
+
+  export type Bcm_disaster_staff_affectedSumAggregateOutputType = {
+    total: number | null
+    total_family: number | null
+  }
+
+  export type Bcm_disaster_staff_affectedMinAggregateOutputType = {
+    id: string | null
+    disaster_id: string | null
+    staff_condition_id: string | null
+    total: number | null
+    name: string | null
+    total_family: number | null
+  }
+
+  export type Bcm_disaster_staff_affectedMaxAggregateOutputType = {
+    id: string | null
+    disaster_id: string | null
+    staff_condition_id: string | null
+    total: number | null
+    name: string | null
+    total_family: number | null
+  }
+
+  export type Bcm_disaster_staff_affectedCountAggregateOutputType = {
+    id: number
+    disaster_id: number
+    staff_condition_id: number
+    total: number
+    name: number
+    total_family: number
+    _all: number
+  }
+
+
+  export type Bcm_disaster_staff_affectedAvgAggregateInputType = {
+    total?: true
+    total_family?: true
+  }
+
+  export type Bcm_disaster_staff_affectedSumAggregateInputType = {
+    total?: true
+    total_family?: true
+  }
+
+  export type Bcm_disaster_staff_affectedMinAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    staff_condition_id?: true
+    total?: true
+    name?: true
+    total_family?: true
+  }
+
+  export type Bcm_disaster_staff_affectedMaxAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    staff_condition_id?: true
+    total?: true
+    name?: true
+    total_family?: true
+  }
+
+  export type Bcm_disaster_staff_affectedCountAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    staff_condition_id?: true
+    total?: true
+    name?: true
+    total_family?: true
+    _all?: true
+  }
+
+  export type Bcm_disaster_staff_affectedAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disaster_staff_affected to aggregate.
+     */
+    where?: bcm_disaster_staff_affectedWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_staff_affecteds to fetch.
+     */
+    orderBy?: bcm_disaster_staff_affectedOrderByWithRelationInput | bcm_disaster_staff_affectedOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: bcm_disaster_staff_affectedWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_staff_affecteds from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_staff_affecteds.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned bcm_disaster_staff_affecteds
+    **/
+    _count?: true | Bcm_disaster_staff_affectedCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Bcm_disaster_staff_affectedAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Bcm_disaster_staff_affectedSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Bcm_disaster_staff_affectedMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Bcm_disaster_staff_affectedMaxAggregateInputType
+  }
+
+  export type GetBcm_disaster_staff_affectedAggregateType<T extends Bcm_disaster_staff_affectedAggregateArgs> = {
+        [P in keyof T & keyof AggregateBcm_disaster_staff_affected]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBcm_disaster_staff_affected[P]>
+      : GetScalarType<T[P], AggregateBcm_disaster_staff_affected[P]>
+  }
+
+
+
+
+  export type bcm_disaster_staff_affectedGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_staff_affectedWhereInput
+    orderBy?: bcm_disaster_staff_affectedOrderByWithAggregationInput | bcm_disaster_staff_affectedOrderByWithAggregationInput[]
+    by: Bcm_disaster_staff_affectedScalarFieldEnum[] | Bcm_disaster_staff_affectedScalarFieldEnum
+    having?: bcm_disaster_staff_affectedScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Bcm_disaster_staff_affectedCountAggregateInputType | true
+    _avg?: Bcm_disaster_staff_affectedAvgAggregateInputType
+    _sum?: Bcm_disaster_staff_affectedSumAggregateInputType
+    _min?: Bcm_disaster_staff_affectedMinAggregateInputType
+    _max?: Bcm_disaster_staff_affectedMaxAggregateInputType
+  }
+
+  export type Bcm_disaster_staff_affectedGroupByOutputType = {
+    id: string
+    disaster_id: string | null
+    staff_condition_id: string | null
+    total: number | null
+    name: string | null
+    total_family: number | null
+    _count: Bcm_disaster_staff_affectedCountAggregateOutputType | null
+    _avg: Bcm_disaster_staff_affectedAvgAggregateOutputType | null
+    _sum: Bcm_disaster_staff_affectedSumAggregateOutputType | null
+    _min: Bcm_disaster_staff_affectedMinAggregateOutputType | null
+    _max: Bcm_disaster_staff_affectedMaxAggregateOutputType | null
+  }
+
+  type GetBcm_disaster_staff_affectedGroupByPayload<T extends bcm_disaster_staff_affectedGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Bcm_disaster_staff_affectedGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Bcm_disaster_staff_affectedGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Bcm_disaster_staff_affectedGroupByOutputType[P]>
+            : GetScalarType<T[P], Bcm_disaster_staff_affectedGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type bcm_disaster_staff_affectedSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    disaster_id?: boolean
+    staff_condition_id?: boolean
+    total?: boolean
+    name?: boolean
+    total_family?: boolean
+    bcm_disaster?: boolean | bcm_disaster_staff_affected$bcm_disasterArgs<ExtArgs>
+  }, ExtArgs["result"]["bcm_disaster_staff_affected"]>
+
+  export type bcm_disaster_staff_affectedSelectScalar = {
+    id?: boolean
+    disaster_id?: boolean
+    staff_condition_id?: boolean
+    total?: boolean
+    name?: boolean
+    total_family?: boolean
+  }
+
+  export type bcm_disaster_staff_affectedInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster?: boolean | bcm_disaster_staff_affected$bcm_disasterArgs<ExtArgs>
+  }
+
+
+  export type $bcm_disaster_staff_affectedPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "bcm_disaster_staff_affected"
+    objects: {
+      bcm_disaster: Prisma.$bcm_disasterPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      disaster_id: string | null
+      staff_condition_id: string | null
+      total: number | null
+      name: string | null
+      total_family: number | null
+    }, ExtArgs["result"]["bcm_disaster_staff_affected"]>
+    composites: {}
+  }
+
+
+  type bcm_disaster_staff_affectedGetPayload<S extends boolean | null | undefined | bcm_disaster_staff_affectedDefaultArgs> = $Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload, S>
+
+  type bcm_disaster_staff_affectedCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<bcm_disaster_staff_affectedFindManyArgs, 'select' | 'include' | 'distinct' > & {
+      select?: Bcm_disaster_staff_affectedCountAggregateInputType | true
+    }
+
+  export interface bcm_disaster_staff_affectedDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['bcm_disaster_staff_affected'], meta: { name: 'bcm_disaster_staff_affected' } }
+    /**
+     * Find zero or one Bcm_disaster_staff_affected that matches the filter.
+     * @param {bcm_disaster_staff_affectedFindUniqueArgs} args - Arguments to find a Bcm_disaster_staff_affected
+     * @example
+     * // Get one Bcm_disaster_staff_affected
+     * const bcm_disaster_staff_affected = await prisma.bcm_disaster_staff_affected.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends bcm_disaster_staff_affectedFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_staff_affectedFindUniqueArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_staff_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one Bcm_disaster_staff_affected that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {bcm_disaster_staff_affectedFindUniqueOrThrowArgs} args - Arguments to find a Bcm_disaster_staff_affected
+     * @example
+     * // Get one Bcm_disaster_staff_affected
+     * const bcm_disaster_staff_affected = await prisma.bcm_disaster_staff_affected.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends bcm_disaster_staff_affectedFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_staff_affectedFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_staff_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster_staff_affected that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_staff_affectedFindFirstArgs} args - Arguments to find a Bcm_disaster_staff_affected
+     * @example
+     * // Get one Bcm_disaster_staff_affected
+     * const bcm_disaster_staff_affected = await prisma.bcm_disaster_staff_affected.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends bcm_disaster_staff_affectedFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_staff_affectedFindFirstArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_staff_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster_staff_affected that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_staff_affectedFindFirstOrThrowArgs} args - Arguments to find a Bcm_disaster_staff_affected
+     * @example
+     * // Get one Bcm_disaster_staff_affected
+     * const bcm_disaster_staff_affected = await prisma.bcm_disaster_staff_affected.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends bcm_disaster_staff_affectedFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_staff_affectedFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_staff_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more Bcm_disaster_staff_affecteds that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_staff_affectedFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Bcm_disaster_staff_affecteds
+     * const bcm_disaster_staff_affecteds = await prisma.bcm_disaster_staff_affected.findMany()
+     * 
+     * // Get first 10 Bcm_disaster_staff_affecteds
+     * const bcm_disaster_staff_affecteds = await prisma.bcm_disaster_staff_affected.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const bcm_disaster_staff_affectedWithIdOnly = await prisma.bcm_disaster_staff_affected.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends bcm_disaster_staff_affectedFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_staff_affectedFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a Bcm_disaster_staff_affected.
+     * @param {bcm_disaster_staff_affectedCreateArgs} args - Arguments to create a Bcm_disaster_staff_affected.
+     * @example
+     * // Create one Bcm_disaster_staff_affected
+     * const Bcm_disaster_staff_affected = await prisma.bcm_disaster_staff_affected.create({
+     *   data: {
+     *     // ... data to create a Bcm_disaster_staff_affected
+     *   }
+     * })
+     * 
+    **/
+    create<T extends bcm_disaster_staff_affectedCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_staff_affectedCreateArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_staff_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many Bcm_disaster_staff_affecteds.
+     *     @param {bcm_disaster_staff_affectedCreateManyArgs} args - Arguments to create many Bcm_disaster_staff_affecteds.
+     *     @example
+     *     // Create many Bcm_disaster_staff_affecteds
+     *     const bcm_disaster_staff_affected = await prisma.bcm_disaster_staff_affected.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends bcm_disaster_staff_affectedCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_staff_affectedCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Bcm_disaster_staff_affected.
+     * @param {bcm_disaster_staff_affectedDeleteArgs} args - Arguments to delete one Bcm_disaster_staff_affected.
+     * @example
+     * // Delete one Bcm_disaster_staff_affected
+     * const Bcm_disaster_staff_affected = await prisma.bcm_disaster_staff_affected.delete({
+     *   where: {
+     *     // ... filter to delete one Bcm_disaster_staff_affected
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends bcm_disaster_staff_affectedDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_staff_affectedDeleteArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_staff_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one Bcm_disaster_staff_affected.
+     * @param {bcm_disaster_staff_affectedUpdateArgs} args - Arguments to update one Bcm_disaster_staff_affected.
+     * @example
+     * // Update one Bcm_disaster_staff_affected
+     * const bcm_disaster_staff_affected = await prisma.bcm_disaster_staff_affected.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends bcm_disaster_staff_affectedUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_staff_affectedUpdateArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_staff_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more Bcm_disaster_staff_affecteds.
+     * @param {bcm_disaster_staff_affectedDeleteManyArgs} args - Arguments to filter Bcm_disaster_staff_affecteds to delete.
+     * @example
+     * // Delete a few Bcm_disaster_staff_affecteds
+     * const { count } = await prisma.bcm_disaster_staff_affected.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends bcm_disaster_staff_affectedDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_staff_affectedDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Bcm_disaster_staff_affecteds.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_staff_affectedUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Bcm_disaster_staff_affecteds
+     * const bcm_disaster_staff_affected = await prisma.bcm_disaster_staff_affected.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends bcm_disaster_staff_affectedUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_staff_affectedUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Bcm_disaster_staff_affected.
+     * @param {bcm_disaster_staff_affectedUpsertArgs} args - Arguments to update or create a Bcm_disaster_staff_affected.
+     * @example
+     * // Update or create a Bcm_disaster_staff_affected
+     * const bcm_disaster_staff_affected = await prisma.bcm_disaster_staff_affected.upsert({
+     *   create: {
+     *     // ... data to create a Bcm_disaster_staff_affected
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Bcm_disaster_staff_affected we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends bcm_disaster_staff_affectedUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_staff_affectedUpsertArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_staff_affectedClient<$Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of Bcm_disaster_staff_affecteds.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_staff_affectedCountArgs} args - Arguments to filter Bcm_disaster_staff_affecteds to count.
+     * @example
+     * // Count the number of Bcm_disaster_staff_affecteds
+     * const count = await prisma.bcm_disaster_staff_affected.count({
+     *   where: {
+     *     // ... the filter for the Bcm_disaster_staff_affecteds we want to count
+     *   }
+     * })
+    **/
+    count<T extends bcm_disaster_staff_affectedCountArgs>(
+      args?: Subset<T, bcm_disaster_staff_affectedCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Bcm_disaster_staff_affectedCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Bcm_disaster_staff_affected.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Bcm_disaster_staff_affectedAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Bcm_disaster_staff_affectedAggregateArgs>(args: Subset<T, Bcm_disaster_staff_affectedAggregateArgs>): Prisma.PrismaPromise<GetBcm_disaster_staff_affectedAggregateType<T>>
+
+    /**
+     * Group by Bcm_disaster_staff_affected.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_staff_affectedGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends bcm_disaster_staff_affectedGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: bcm_disaster_staff_affectedGroupByArgs['orderBy'] }
+        : { orderBy?: bcm_disaster_staff_affectedGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, bcm_disaster_staff_affectedGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBcm_disaster_staff_affectedGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the bcm_disaster_staff_affected model
+   */
+  readonly fields: bcm_disaster_staff_affectedFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for bcm_disaster_staff_affected.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__bcm_disaster_staff_affectedClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+    bcm_disaster<T extends bcm_disaster_staff_affected$bcm_disasterArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster_staff_affected$bcm_disasterArgs<ExtArgs>>): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the bcm_disaster_staff_affected model
+   */ 
+  interface bcm_disaster_staff_affectedFieldRefs {
+    readonly id: FieldRef<"bcm_disaster_staff_affected", 'String'>
+    readonly disaster_id: FieldRef<"bcm_disaster_staff_affected", 'String'>
+    readonly staff_condition_id: FieldRef<"bcm_disaster_staff_affected", 'String'>
+    readonly total: FieldRef<"bcm_disaster_staff_affected", 'Int'>
+    readonly name: FieldRef<"bcm_disaster_staff_affected", 'String'>
+    readonly total_family: FieldRef<"bcm_disaster_staff_affected", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * bcm_disaster_staff_affected findUnique
+   */
+  export type bcm_disaster_staff_affectedFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_staff_affected
+     */
+    select?: bcm_disaster_staff_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_staff_affectedInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_staff_affected to fetch.
+     */
+    where: bcm_disaster_staff_affectedWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected findUniqueOrThrow
+   */
+  export type bcm_disaster_staff_affectedFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_staff_affected
+     */
+    select?: bcm_disaster_staff_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_staff_affectedInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_staff_affected to fetch.
+     */
+    where: bcm_disaster_staff_affectedWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected findFirst
+   */
+  export type bcm_disaster_staff_affectedFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_staff_affected
+     */
+    select?: bcm_disaster_staff_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_staff_affectedInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_staff_affected to fetch.
+     */
+    where?: bcm_disaster_staff_affectedWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_staff_affecteds to fetch.
+     */
+    orderBy?: bcm_disaster_staff_affectedOrderByWithRelationInput | bcm_disaster_staff_affectedOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disaster_staff_affecteds.
+     */
+    cursor?: bcm_disaster_staff_affectedWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_staff_affecteds from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_staff_affecteds.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disaster_staff_affecteds.
+     */
+    distinct?: Bcm_disaster_staff_affectedScalarFieldEnum | Bcm_disaster_staff_affectedScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected findFirstOrThrow
+   */
+  export type bcm_disaster_staff_affectedFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_staff_affected
+     */
+    select?: bcm_disaster_staff_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_staff_affectedInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_staff_affected to fetch.
+     */
+    where?: bcm_disaster_staff_affectedWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_staff_affecteds to fetch.
+     */
+    orderBy?: bcm_disaster_staff_affectedOrderByWithRelationInput | bcm_disaster_staff_affectedOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disaster_staff_affecteds.
+     */
+    cursor?: bcm_disaster_staff_affectedWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_staff_affecteds from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_staff_affecteds.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disaster_staff_affecteds.
+     */
+    distinct?: Bcm_disaster_staff_affectedScalarFieldEnum | Bcm_disaster_staff_affectedScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected findMany
+   */
+  export type bcm_disaster_staff_affectedFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_staff_affected
+     */
+    select?: bcm_disaster_staff_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_staff_affectedInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_staff_affecteds to fetch.
+     */
+    where?: bcm_disaster_staff_affectedWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_staff_affecteds to fetch.
+     */
+    orderBy?: bcm_disaster_staff_affectedOrderByWithRelationInput | bcm_disaster_staff_affectedOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing bcm_disaster_staff_affecteds.
+     */
+    cursor?: bcm_disaster_staff_affectedWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_staff_affecteds from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_staff_affecteds.
+     */
+    skip?: number
+    distinct?: Bcm_disaster_staff_affectedScalarFieldEnum | Bcm_disaster_staff_affectedScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected create
+   */
+  export type bcm_disaster_staff_affectedCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_staff_affected
+     */
+    select?: bcm_disaster_staff_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_staff_affectedInclude<ExtArgs> | null
+    /**
+     * The data needed to create a bcm_disaster_staff_affected.
+     */
+    data: XOR<bcm_disaster_staff_affectedCreateInput, bcm_disaster_staff_affectedUncheckedCreateInput>
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected createMany
+   */
+  export type bcm_disaster_staff_affectedCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many bcm_disaster_staff_affecteds.
+     */
+    data: bcm_disaster_staff_affectedCreateManyInput | bcm_disaster_staff_affectedCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected update
+   */
+  export type bcm_disaster_staff_affectedUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_staff_affected
+     */
+    select?: bcm_disaster_staff_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_staff_affectedInclude<ExtArgs> | null
+    /**
+     * The data needed to update a bcm_disaster_staff_affected.
+     */
+    data: XOR<bcm_disaster_staff_affectedUpdateInput, bcm_disaster_staff_affectedUncheckedUpdateInput>
+    /**
+     * Choose, which bcm_disaster_staff_affected to update.
+     */
+    where: bcm_disaster_staff_affectedWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected updateMany
+   */
+  export type bcm_disaster_staff_affectedUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update bcm_disaster_staff_affecteds.
+     */
+    data: XOR<bcm_disaster_staff_affectedUpdateManyMutationInput, bcm_disaster_staff_affectedUncheckedUpdateManyInput>
+    /**
+     * Filter which bcm_disaster_staff_affecteds to update
+     */
+    where?: bcm_disaster_staff_affectedWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected upsert
+   */
+  export type bcm_disaster_staff_affectedUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_staff_affected
+     */
+    select?: bcm_disaster_staff_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_staff_affectedInclude<ExtArgs> | null
+    /**
+     * The filter to search for the bcm_disaster_staff_affected to update in case it exists.
+     */
+    where: bcm_disaster_staff_affectedWhereUniqueInput
+    /**
+     * In case the bcm_disaster_staff_affected found by the `where` argument doesn't exist, create a new bcm_disaster_staff_affected with this data.
+     */
+    create: XOR<bcm_disaster_staff_affectedCreateInput, bcm_disaster_staff_affectedUncheckedCreateInput>
+    /**
+     * In case the bcm_disaster_staff_affected was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<bcm_disaster_staff_affectedUpdateInput, bcm_disaster_staff_affectedUncheckedUpdateInput>
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected delete
+   */
+  export type bcm_disaster_staff_affectedDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_staff_affected
+     */
+    select?: bcm_disaster_staff_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_staff_affectedInclude<ExtArgs> | null
+    /**
+     * Filter which bcm_disaster_staff_affected to delete.
+     */
+    where: bcm_disaster_staff_affectedWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected deleteMany
+   */
+  export type bcm_disaster_staff_affectedDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disaster_staff_affecteds to delete
+     */
+    where?: bcm_disaster_staff_affectedWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected.bcm_disaster
+   */
+  export type bcm_disaster_staff_affected$bcm_disasterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    where?: bcm_disasterWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_staff_affected without action
+   */
+  export type bcm_disaster_staff_affectedDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_staff_affected
+     */
+    select?: bcm_disaster_staff_affectedSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_staff_affectedInclude<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model bcm_disaster_unit_affected_dirrect
+   */
+
+  export type AggregateBcm_disaster_unit_affected_dirrect = {
+    _count: Bcm_disaster_unit_affected_dirrectCountAggregateOutputType | null
+    _min: Bcm_disaster_unit_affected_dirrectMinAggregateOutputType | null
+    _max: Bcm_disaster_unit_affected_dirrectMaxAggregateOutputType | null
+  }
+
+  export type Bcm_disaster_unit_affected_dirrectMinAggregateOutputType = {
+    id: string | null
+    disaster_id: string | null
+    location_org_id: string | null
+    is_operating: boolean | null
+  }
+
+  export type Bcm_disaster_unit_affected_dirrectMaxAggregateOutputType = {
+    id: string | null
+    disaster_id: string | null
+    location_org_id: string | null
+    is_operating: boolean | null
+  }
+
+  export type Bcm_disaster_unit_affected_dirrectCountAggregateOutputType = {
+    id: number
+    disaster_id: number
+    location_org_id: number
+    is_operating: number
+    _all: number
+  }
+
+
+  export type Bcm_disaster_unit_affected_dirrectMinAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    location_org_id?: true
+    is_operating?: true
+  }
+
+  export type Bcm_disaster_unit_affected_dirrectMaxAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    location_org_id?: true
+    is_operating?: true
+  }
+
+  export type Bcm_disaster_unit_affected_dirrectCountAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    location_org_id?: true
+    is_operating?: true
+    _all?: true
+  }
+
+  export type Bcm_disaster_unit_affected_dirrectAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disaster_unit_affected_dirrect to aggregate.
+     */
+    where?: bcm_disaster_unit_affected_dirrectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_unit_affected_dirrects to fetch.
+     */
+    orderBy?: bcm_disaster_unit_affected_dirrectOrderByWithRelationInput | bcm_disaster_unit_affected_dirrectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_unit_affected_dirrects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_unit_affected_dirrects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned bcm_disaster_unit_affected_dirrects
+    **/
+    _count?: true | Bcm_disaster_unit_affected_dirrectCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Bcm_disaster_unit_affected_dirrectMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Bcm_disaster_unit_affected_dirrectMaxAggregateInputType
+  }
+
+  export type GetBcm_disaster_unit_affected_dirrectAggregateType<T extends Bcm_disaster_unit_affected_dirrectAggregateArgs> = {
+        [P in keyof T & keyof AggregateBcm_disaster_unit_affected_dirrect]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBcm_disaster_unit_affected_dirrect[P]>
+      : GetScalarType<T[P], AggregateBcm_disaster_unit_affected_dirrect[P]>
+  }
+
+
+
+
+  export type bcm_disaster_unit_affected_dirrectGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_unit_affected_dirrectWhereInput
+    orderBy?: bcm_disaster_unit_affected_dirrectOrderByWithAggregationInput | bcm_disaster_unit_affected_dirrectOrderByWithAggregationInput[]
+    by: Bcm_disaster_unit_affected_dirrectScalarFieldEnum[] | Bcm_disaster_unit_affected_dirrectScalarFieldEnum
+    having?: bcm_disaster_unit_affected_dirrectScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Bcm_disaster_unit_affected_dirrectCountAggregateInputType | true
+    _min?: Bcm_disaster_unit_affected_dirrectMinAggregateInputType
+    _max?: Bcm_disaster_unit_affected_dirrectMaxAggregateInputType
+  }
+
+  export type Bcm_disaster_unit_affected_dirrectGroupByOutputType = {
+    id: string
+    disaster_id: string | null
+    location_org_id: string | null
+    is_operating: boolean | null
+    _count: Bcm_disaster_unit_affected_dirrectCountAggregateOutputType | null
+    _min: Bcm_disaster_unit_affected_dirrectMinAggregateOutputType | null
+    _max: Bcm_disaster_unit_affected_dirrectMaxAggregateOutputType | null
+  }
+
+  type GetBcm_disaster_unit_affected_dirrectGroupByPayload<T extends bcm_disaster_unit_affected_dirrectGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Bcm_disaster_unit_affected_dirrectGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Bcm_disaster_unit_affected_dirrectGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Bcm_disaster_unit_affected_dirrectGroupByOutputType[P]>
+            : GetScalarType<T[P], Bcm_disaster_unit_affected_dirrectGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type bcm_disaster_unit_affected_dirrectSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    disaster_id?: boolean
+    location_org_id?: boolean
+    is_operating?: boolean
+    bcm_disaster?: boolean | bcm_disaster_unit_affected_dirrect$bcm_disasterArgs<ExtArgs>
+  }, ExtArgs["result"]["bcm_disaster_unit_affected_dirrect"]>
+
+  export type bcm_disaster_unit_affected_dirrectSelectScalar = {
+    id?: boolean
+    disaster_id?: boolean
+    location_org_id?: boolean
+    is_operating?: boolean
+  }
+
+  export type bcm_disaster_unit_affected_dirrectInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster?: boolean | bcm_disaster_unit_affected_dirrect$bcm_disasterArgs<ExtArgs>
+  }
+
+
+  export type $bcm_disaster_unit_affected_dirrectPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "bcm_disaster_unit_affected_dirrect"
+    objects: {
+      bcm_disaster: Prisma.$bcm_disasterPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      disaster_id: string | null
+      location_org_id: string | null
+      is_operating: boolean | null
+    }, ExtArgs["result"]["bcm_disaster_unit_affected_dirrect"]>
+    composites: {}
+  }
+
+
+  type bcm_disaster_unit_affected_dirrectGetPayload<S extends boolean | null | undefined | bcm_disaster_unit_affected_dirrectDefaultArgs> = $Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload, S>
+
+  type bcm_disaster_unit_affected_dirrectCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<bcm_disaster_unit_affected_dirrectFindManyArgs, 'select' | 'include' | 'distinct' > & {
+      select?: Bcm_disaster_unit_affected_dirrectCountAggregateInputType | true
+    }
+
+  export interface bcm_disaster_unit_affected_dirrectDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['bcm_disaster_unit_affected_dirrect'], meta: { name: 'bcm_disaster_unit_affected_dirrect' } }
+    /**
+     * Find zero or one Bcm_disaster_unit_affected_dirrect that matches the filter.
+     * @param {bcm_disaster_unit_affected_dirrectFindUniqueArgs} args - Arguments to find a Bcm_disaster_unit_affected_dirrect
+     * @example
+     * // Get one Bcm_disaster_unit_affected_dirrect
+     * const bcm_disaster_unit_affected_dirrect = await prisma.bcm_disaster_unit_affected_dirrect.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends bcm_disaster_unit_affected_dirrectFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_dirrectFindUniqueArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_dirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one Bcm_disaster_unit_affected_dirrect that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {bcm_disaster_unit_affected_dirrectFindUniqueOrThrowArgs} args - Arguments to find a Bcm_disaster_unit_affected_dirrect
+     * @example
+     * // Get one Bcm_disaster_unit_affected_dirrect
+     * const bcm_disaster_unit_affected_dirrect = await prisma.bcm_disaster_unit_affected_dirrect.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends bcm_disaster_unit_affected_dirrectFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_dirrectFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_dirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster_unit_affected_dirrect that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_dirrectFindFirstArgs} args - Arguments to find a Bcm_disaster_unit_affected_dirrect
+     * @example
+     * // Get one Bcm_disaster_unit_affected_dirrect
+     * const bcm_disaster_unit_affected_dirrect = await prisma.bcm_disaster_unit_affected_dirrect.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends bcm_disaster_unit_affected_dirrectFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_dirrectFindFirstArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_dirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster_unit_affected_dirrect that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_dirrectFindFirstOrThrowArgs} args - Arguments to find a Bcm_disaster_unit_affected_dirrect
+     * @example
+     * // Get one Bcm_disaster_unit_affected_dirrect
+     * const bcm_disaster_unit_affected_dirrect = await prisma.bcm_disaster_unit_affected_dirrect.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends bcm_disaster_unit_affected_dirrectFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_dirrectFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_dirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more Bcm_disaster_unit_affected_dirrects that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_dirrectFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Bcm_disaster_unit_affected_dirrects
+     * const bcm_disaster_unit_affected_dirrects = await prisma.bcm_disaster_unit_affected_dirrect.findMany()
+     * 
+     * // Get first 10 Bcm_disaster_unit_affected_dirrects
+     * const bcm_disaster_unit_affected_dirrects = await prisma.bcm_disaster_unit_affected_dirrect.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const bcm_disaster_unit_affected_dirrectWithIdOnly = await prisma.bcm_disaster_unit_affected_dirrect.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends bcm_disaster_unit_affected_dirrectFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_dirrectFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a Bcm_disaster_unit_affected_dirrect.
+     * @param {bcm_disaster_unit_affected_dirrectCreateArgs} args - Arguments to create a Bcm_disaster_unit_affected_dirrect.
+     * @example
+     * // Create one Bcm_disaster_unit_affected_dirrect
+     * const Bcm_disaster_unit_affected_dirrect = await prisma.bcm_disaster_unit_affected_dirrect.create({
+     *   data: {
+     *     // ... data to create a Bcm_disaster_unit_affected_dirrect
+     *   }
+     * })
+     * 
+    **/
+    create<T extends bcm_disaster_unit_affected_dirrectCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_dirrectCreateArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_dirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many Bcm_disaster_unit_affected_dirrects.
+     *     @param {bcm_disaster_unit_affected_dirrectCreateManyArgs} args - Arguments to create many Bcm_disaster_unit_affected_dirrects.
+     *     @example
+     *     // Create many Bcm_disaster_unit_affected_dirrects
+     *     const bcm_disaster_unit_affected_dirrect = await prisma.bcm_disaster_unit_affected_dirrect.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends bcm_disaster_unit_affected_dirrectCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_dirrectCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Bcm_disaster_unit_affected_dirrect.
+     * @param {bcm_disaster_unit_affected_dirrectDeleteArgs} args - Arguments to delete one Bcm_disaster_unit_affected_dirrect.
+     * @example
+     * // Delete one Bcm_disaster_unit_affected_dirrect
+     * const Bcm_disaster_unit_affected_dirrect = await prisma.bcm_disaster_unit_affected_dirrect.delete({
+     *   where: {
+     *     // ... filter to delete one Bcm_disaster_unit_affected_dirrect
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends bcm_disaster_unit_affected_dirrectDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_dirrectDeleteArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_dirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one Bcm_disaster_unit_affected_dirrect.
+     * @param {bcm_disaster_unit_affected_dirrectUpdateArgs} args - Arguments to update one Bcm_disaster_unit_affected_dirrect.
+     * @example
+     * // Update one Bcm_disaster_unit_affected_dirrect
+     * const bcm_disaster_unit_affected_dirrect = await prisma.bcm_disaster_unit_affected_dirrect.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends bcm_disaster_unit_affected_dirrectUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_dirrectUpdateArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_dirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more Bcm_disaster_unit_affected_dirrects.
+     * @param {bcm_disaster_unit_affected_dirrectDeleteManyArgs} args - Arguments to filter Bcm_disaster_unit_affected_dirrects to delete.
+     * @example
+     * // Delete a few Bcm_disaster_unit_affected_dirrects
+     * const { count } = await prisma.bcm_disaster_unit_affected_dirrect.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends bcm_disaster_unit_affected_dirrectDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_dirrectDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Bcm_disaster_unit_affected_dirrects.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_dirrectUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Bcm_disaster_unit_affected_dirrects
+     * const bcm_disaster_unit_affected_dirrect = await prisma.bcm_disaster_unit_affected_dirrect.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends bcm_disaster_unit_affected_dirrectUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_dirrectUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Bcm_disaster_unit_affected_dirrect.
+     * @param {bcm_disaster_unit_affected_dirrectUpsertArgs} args - Arguments to update or create a Bcm_disaster_unit_affected_dirrect.
+     * @example
+     * // Update or create a Bcm_disaster_unit_affected_dirrect
+     * const bcm_disaster_unit_affected_dirrect = await prisma.bcm_disaster_unit_affected_dirrect.upsert({
+     *   create: {
+     *     // ... data to create a Bcm_disaster_unit_affected_dirrect
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Bcm_disaster_unit_affected_dirrect we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends bcm_disaster_unit_affected_dirrectUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_dirrectUpsertArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_dirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of Bcm_disaster_unit_affected_dirrects.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_dirrectCountArgs} args - Arguments to filter Bcm_disaster_unit_affected_dirrects to count.
+     * @example
+     * // Count the number of Bcm_disaster_unit_affected_dirrects
+     * const count = await prisma.bcm_disaster_unit_affected_dirrect.count({
+     *   where: {
+     *     // ... the filter for the Bcm_disaster_unit_affected_dirrects we want to count
+     *   }
+     * })
+    **/
+    count<T extends bcm_disaster_unit_affected_dirrectCountArgs>(
+      args?: Subset<T, bcm_disaster_unit_affected_dirrectCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Bcm_disaster_unit_affected_dirrectCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Bcm_disaster_unit_affected_dirrect.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Bcm_disaster_unit_affected_dirrectAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Bcm_disaster_unit_affected_dirrectAggregateArgs>(args: Subset<T, Bcm_disaster_unit_affected_dirrectAggregateArgs>): Prisma.PrismaPromise<GetBcm_disaster_unit_affected_dirrectAggregateType<T>>
+
+    /**
+     * Group by Bcm_disaster_unit_affected_dirrect.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_dirrectGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends bcm_disaster_unit_affected_dirrectGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: bcm_disaster_unit_affected_dirrectGroupByArgs['orderBy'] }
+        : { orderBy?: bcm_disaster_unit_affected_dirrectGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, bcm_disaster_unit_affected_dirrectGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBcm_disaster_unit_affected_dirrectGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the bcm_disaster_unit_affected_dirrect model
+   */
+  readonly fields: bcm_disaster_unit_affected_dirrectFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for bcm_disaster_unit_affected_dirrect.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__bcm_disaster_unit_affected_dirrectClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+    bcm_disaster<T extends bcm_disaster_unit_affected_dirrect$bcm_disasterArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster_unit_affected_dirrect$bcm_disasterArgs<ExtArgs>>): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the bcm_disaster_unit_affected_dirrect model
+   */ 
+  interface bcm_disaster_unit_affected_dirrectFieldRefs {
+    readonly id: FieldRef<"bcm_disaster_unit_affected_dirrect", 'String'>
+    readonly disaster_id: FieldRef<"bcm_disaster_unit_affected_dirrect", 'String'>
+    readonly location_org_id: FieldRef<"bcm_disaster_unit_affected_dirrect", 'String'>
+    readonly is_operating: FieldRef<"bcm_disaster_unit_affected_dirrect", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * bcm_disaster_unit_affected_dirrect findUnique
+   */
+  export type bcm_disaster_unit_affected_dirrectFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_dirrect
+     */
+    select?: bcm_disaster_unit_affected_dirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_dirrectInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_unit_affected_dirrect to fetch.
+     */
+    where: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect findUniqueOrThrow
+   */
+  export type bcm_disaster_unit_affected_dirrectFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_dirrect
+     */
+    select?: bcm_disaster_unit_affected_dirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_dirrectInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_unit_affected_dirrect to fetch.
+     */
+    where: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect findFirst
+   */
+  export type bcm_disaster_unit_affected_dirrectFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_dirrect
+     */
+    select?: bcm_disaster_unit_affected_dirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_dirrectInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_unit_affected_dirrect to fetch.
+     */
+    where?: bcm_disaster_unit_affected_dirrectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_unit_affected_dirrects to fetch.
+     */
+    orderBy?: bcm_disaster_unit_affected_dirrectOrderByWithRelationInput | bcm_disaster_unit_affected_dirrectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disaster_unit_affected_dirrects.
+     */
+    cursor?: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_unit_affected_dirrects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_unit_affected_dirrects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disaster_unit_affected_dirrects.
+     */
+    distinct?: Bcm_disaster_unit_affected_dirrectScalarFieldEnum | Bcm_disaster_unit_affected_dirrectScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect findFirstOrThrow
+   */
+  export type bcm_disaster_unit_affected_dirrectFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_dirrect
+     */
+    select?: bcm_disaster_unit_affected_dirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_dirrectInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_unit_affected_dirrect to fetch.
+     */
+    where?: bcm_disaster_unit_affected_dirrectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_unit_affected_dirrects to fetch.
+     */
+    orderBy?: bcm_disaster_unit_affected_dirrectOrderByWithRelationInput | bcm_disaster_unit_affected_dirrectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disaster_unit_affected_dirrects.
+     */
+    cursor?: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_unit_affected_dirrects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_unit_affected_dirrects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disaster_unit_affected_dirrects.
+     */
+    distinct?: Bcm_disaster_unit_affected_dirrectScalarFieldEnum | Bcm_disaster_unit_affected_dirrectScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect findMany
+   */
+  export type bcm_disaster_unit_affected_dirrectFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_dirrect
+     */
+    select?: bcm_disaster_unit_affected_dirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_dirrectInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_unit_affected_dirrects to fetch.
+     */
+    where?: bcm_disaster_unit_affected_dirrectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_unit_affected_dirrects to fetch.
+     */
+    orderBy?: bcm_disaster_unit_affected_dirrectOrderByWithRelationInput | bcm_disaster_unit_affected_dirrectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing bcm_disaster_unit_affected_dirrects.
+     */
+    cursor?: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_unit_affected_dirrects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_unit_affected_dirrects.
+     */
+    skip?: number
+    distinct?: Bcm_disaster_unit_affected_dirrectScalarFieldEnum | Bcm_disaster_unit_affected_dirrectScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect create
+   */
+  export type bcm_disaster_unit_affected_dirrectCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_dirrect
+     */
+    select?: bcm_disaster_unit_affected_dirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_dirrectInclude<ExtArgs> | null
+    /**
+     * The data needed to create a bcm_disaster_unit_affected_dirrect.
+     */
+    data: XOR<bcm_disaster_unit_affected_dirrectCreateInput, bcm_disaster_unit_affected_dirrectUncheckedCreateInput>
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect createMany
+   */
+  export type bcm_disaster_unit_affected_dirrectCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many bcm_disaster_unit_affected_dirrects.
+     */
+    data: bcm_disaster_unit_affected_dirrectCreateManyInput | bcm_disaster_unit_affected_dirrectCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect update
+   */
+  export type bcm_disaster_unit_affected_dirrectUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_dirrect
+     */
+    select?: bcm_disaster_unit_affected_dirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_dirrectInclude<ExtArgs> | null
+    /**
+     * The data needed to update a bcm_disaster_unit_affected_dirrect.
+     */
+    data: XOR<bcm_disaster_unit_affected_dirrectUpdateInput, bcm_disaster_unit_affected_dirrectUncheckedUpdateInput>
+    /**
+     * Choose, which bcm_disaster_unit_affected_dirrect to update.
+     */
+    where: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect updateMany
+   */
+  export type bcm_disaster_unit_affected_dirrectUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update bcm_disaster_unit_affected_dirrects.
+     */
+    data: XOR<bcm_disaster_unit_affected_dirrectUpdateManyMutationInput, bcm_disaster_unit_affected_dirrectUncheckedUpdateManyInput>
+    /**
+     * Filter which bcm_disaster_unit_affected_dirrects to update
+     */
+    where?: bcm_disaster_unit_affected_dirrectWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect upsert
+   */
+  export type bcm_disaster_unit_affected_dirrectUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_dirrect
+     */
+    select?: bcm_disaster_unit_affected_dirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_dirrectInclude<ExtArgs> | null
+    /**
+     * The filter to search for the bcm_disaster_unit_affected_dirrect to update in case it exists.
+     */
+    where: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+    /**
+     * In case the bcm_disaster_unit_affected_dirrect found by the `where` argument doesn't exist, create a new bcm_disaster_unit_affected_dirrect with this data.
+     */
+    create: XOR<bcm_disaster_unit_affected_dirrectCreateInput, bcm_disaster_unit_affected_dirrectUncheckedCreateInput>
+    /**
+     * In case the bcm_disaster_unit_affected_dirrect was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<bcm_disaster_unit_affected_dirrectUpdateInput, bcm_disaster_unit_affected_dirrectUncheckedUpdateInput>
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect delete
+   */
+  export type bcm_disaster_unit_affected_dirrectDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_dirrect
+     */
+    select?: bcm_disaster_unit_affected_dirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_dirrectInclude<ExtArgs> | null
+    /**
+     * Filter which bcm_disaster_unit_affected_dirrect to delete.
+     */
+    where: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect deleteMany
+   */
+  export type bcm_disaster_unit_affected_dirrectDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disaster_unit_affected_dirrects to delete
+     */
+    where?: bcm_disaster_unit_affected_dirrectWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect.bcm_disaster
+   */
+  export type bcm_disaster_unit_affected_dirrect$bcm_disasterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    where?: bcm_disasterWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_dirrect without action
+   */
+  export type bcm_disaster_unit_affected_dirrectDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_dirrect
+     */
+    select?: bcm_disaster_unit_affected_dirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_dirrectInclude<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model bcm_disaster_unit_affected_indirrect
+   */
+
+  export type AggregateBcm_disaster_unit_affected_indirrect = {
+    _count: Bcm_disaster_unit_affected_indirrectCountAggregateOutputType | null
+    _min: Bcm_disaster_unit_affected_indirrectMinAggregateOutputType | null
+    _max: Bcm_disaster_unit_affected_indirrectMaxAggregateOutputType | null
+  }
+
+  export type Bcm_disaster_unit_affected_indirrectMinAggregateOutputType = {
+    id: string | null
+    disaster_id: string | null
+    status_indirect_unit_id: string | null
+    location_org_id: string | null
+  }
+
+  export type Bcm_disaster_unit_affected_indirrectMaxAggregateOutputType = {
+    id: string | null
+    disaster_id: string | null
+    status_indirect_unit_id: string | null
+    location_org_id: string | null
+  }
+
+  export type Bcm_disaster_unit_affected_indirrectCountAggregateOutputType = {
+    id: number
+    disaster_id: number
+    status_indirect_unit_id: number
+    location_org_id: number
+    _all: number
+  }
+
+
+  export type Bcm_disaster_unit_affected_indirrectMinAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    status_indirect_unit_id?: true
+    location_org_id?: true
+  }
+
+  export type Bcm_disaster_unit_affected_indirrectMaxAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    status_indirect_unit_id?: true
+    location_org_id?: true
+  }
+
+  export type Bcm_disaster_unit_affected_indirrectCountAggregateInputType = {
+    id?: true
+    disaster_id?: true
+    status_indirect_unit_id?: true
+    location_org_id?: true
+    _all?: true
+  }
+
+  export type Bcm_disaster_unit_affected_indirrectAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disaster_unit_affected_indirrect to aggregate.
+     */
+    where?: bcm_disaster_unit_affected_indirrectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_unit_affected_indirrects to fetch.
+     */
+    orderBy?: bcm_disaster_unit_affected_indirrectOrderByWithRelationInput | bcm_disaster_unit_affected_indirrectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_unit_affected_indirrects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_unit_affected_indirrects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned bcm_disaster_unit_affected_indirrects
+    **/
+    _count?: true | Bcm_disaster_unit_affected_indirrectCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Bcm_disaster_unit_affected_indirrectMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Bcm_disaster_unit_affected_indirrectMaxAggregateInputType
+  }
+
+  export type GetBcm_disaster_unit_affected_indirrectAggregateType<T extends Bcm_disaster_unit_affected_indirrectAggregateArgs> = {
+        [P in keyof T & keyof AggregateBcm_disaster_unit_affected_indirrect]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBcm_disaster_unit_affected_indirrect[P]>
+      : GetScalarType<T[P], AggregateBcm_disaster_unit_affected_indirrect[P]>
+  }
+
+
+
+
+  export type bcm_disaster_unit_affected_indirrectGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bcm_disaster_unit_affected_indirrectWhereInput
+    orderBy?: bcm_disaster_unit_affected_indirrectOrderByWithAggregationInput | bcm_disaster_unit_affected_indirrectOrderByWithAggregationInput[]
+    by: Bcm_disaster_unit_affected_indirrectScalarFieldEnum[] | Bcm_disaster_unit_affected_indirrectScalarFieldEnum
+    having?: bcm_disaster_unit_affected_indirrectScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Bcm_disaster_unit_affected_indirrectCountAggregateInputType | true
+    _min?: Bcm_disaster_unit_affected_indirrectMinAggregateInputType
+    _max?: Bcm_disaster_unit_affected_indirrectMaxAggregateInputType
+  }
+
+  export type Bcm_disaster_unit_affected_indirrectGroupByOutputType = {
+    id: string
+    disaster_id: string | null
+    status_indirect_unit_id: string | null
+    location_org_id: string | null
+    _count: Bcm_disaster_unit_affected_indirrectCountAggregateOutputType | null
+    _min: Bcm_disaster_unit_affected_indirrectMinAggregateOutputType | null
+    _max: Bcm_disaster_unit_affected_indirrectMaxAggregateOutputType | null
+  }
+
+  type GetBcm_disaster_unit_affected_indirrectGroupByPayload<T extends bcm_disaster_unit_affected_indirrectGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Bcm_disaster_unit_affected_indirrectGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Bcm_disaster_unit_affected_indirrectGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Bcm_disaster_unit_affected_indirrectGroupByOutputType[P]>
+            : GetScalarType<T[P], Bcm_disaster_unit_affected_indirrectGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type bcm_disaster_unit_affected_indirrectSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    disaster_id?: boolean
+    status_indirect_unit_id?: boolean
+    location_org_id?: boolean
+    status_indirect_unit?: boolean | bcm_disaster_unit_affected_indirrect$status_indirect_unitArgs<ExtArgs>
+    bcm_disaster?: boolean | bcm_disaster_unit_affected_indirrect$bcm_disasterArgs<ExtArgs>
+  }, ExtArgs["result"]["bcm_disaster_unit_affected_indirrect"]>
+
+  export type bcm_disaster_unit_affected_indirrectSelectScalar = {
+    id?: boolean
+    disaster_id?: boolean
+    status_indirect_unit_id?: boolean
+    location_org_id?: boolean
+  }
+
+  export type bcm_disaster_unit_affected_indirrectInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    status_indirect_unit?: boolean | bcm_disaster_unit_affected_indirrect$status_indirect_unitArgs<ExtArgs>
+    bcm_disaster?: boolean | bcm_disaster_unit_affected_indirrect$bcm_disasterArgs<ExtArgs>
+  }
+
+
+  export type $bcm_disaster_unit_affected_indirrectPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "bcm_disaster_unit_affected_indirrect"
+    objects: {
+      status_indirect_unit: Prisma.$Indirect_UnitPayload<ExtArgs> | null
+      bcm_disaster: Prisma.$bcm_disasterPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      disaster_id: string | null
+      status_indirect_unit_id: string | null
+      location_org_id: string | null
+    }, ExtArgs["result"]["bcm_disaster_unit_affected_indirrect"]>
+    composites: {}
+  }
+
+
+  type bcm_disaster_unit_affected_indirrectGetPayload<S extends boolean | null | undefined | bcm_disaster_unit_affected_indirrectDefaultArgs> = $Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload, S>
+
+  type bcm_disaster_unit_affected_indirrectCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<bcm_disaster_unit_affected_indirrectFindManyArgs, 'select' | 'include' | 'distinct' > & {
+      select?: Bcm_disaster_unit_affected_indirrectCountAggregateInputType | true
+    }
+
+  export interface bcm_disaster_unit_affected_indirrectDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['bcm_disaster_unit_affected_indirrect'], meta: { name: 'bcm_disaster_unit_affected_indirrect' } }
+    /**
+     * Find zero or one Bcm_disaster_unit_affected_indirrect that matches the filter.
+     * @param {bcm_disaster_unit_affected_indirrectFindUniqueArgs} args - Arguments to find a Bcm_disaster_unit_affected_indirrect
+     * @example
+     * // Get one Bcm_disaster_unit_affected_indirrect
+     * const bcm_disaster_unit_affected_indirrect = await prisma.bcm_disaster_unit_affected_indirrect.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends bcm_disaster_unit_affected_indirrectFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_indirrectFindUniqueArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_indirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one Bcm_disaster_unit_affected_indirrect that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {bcm_disaster_unit_affected_indirrectFindUniqueOrThrowArgs} args - Arguments to find a Bcm_disaster_unit_affected_indirrect
+     * @example
+     * // Get one Bcm_disaster_unit_affected_indirrect
+     * const bcm_disaster_unit_affected_indirrect = await prisma.bcm_disaster_unit_affected_indirrect.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends bcm_disaster_unit_affected_indirrectFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_indirrectFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_indirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster_unit_affected_indirrect that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_indirrectFindFirstArgs} args - Arguments to find a Bcm_disaster_unit_affected_indirrect
+     * @example
+     * // Get one Bcm_disaster_unit_affected_indirrect
+     * const bcm_disaster_unit_affected_indirrect = await prisma.bcm_disaster_unit_affected_indirrect.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends bcm_disaster_unit_affected_indirrectFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_indirrectFindFirstArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_indirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first Bcm_disaster_unit_affected_indirrect that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_indirrectFindFirstOrThrowArgs} args - Arguments to find a Bcm_disaster_unit_affected_indirrect
+     * @example
+     * // Get one Bcm_disaster_unit_affected_indirrect
+     * const bcm_disaster_unit_affected_indirrect = await prisma.bcm_disaster_unit_affected_indirrect.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends bcm_disaster_unit_affected_indirrectFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_indirrectFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_indirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more Bcm_disaster_unit_affected_indirrects that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_indirrectFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Bcm_disaster_unit_affected_indirrects
+     * const bcm_disaster_unit_affected_indirrects = await prisma.bcm_disaster_unit_affected_indirrect.findMany()
+     * 
+     * // Get first 10 Bcm_disaster_unit_affected_indirrects
+     * const bcm_disaster_unit_affected_indirrects = await prisma.bcm_disaster_unit_affected_indirrect.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const bcm_disaster_unit_affected_indirrectWithIdOnly = await prisma.bcm_disaster_unit_affected_indirrect.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends bcm_disaster_unit_affected_indirrectFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_indirrectFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a Bcm_disaster_unit_affected_indirrect.
+     * @param {bcm_disaster_unit_affected_indirrectCreateArgs} args - Arguments to create a Bcm_disaster_unit_affected_indirrect.
+     * @example
+     * // Create one Bcm_disaster_unit_affected_indirrect
+     * const Bcm_disaster_unit_affected_indirrect = await prisma.bcm_disaster_unit_affected_indirrect.create({
+     *   data: {
+     *     // ... data to create a Bcm_disaster_unit_affected_indirrect
+     *   }
+     * })
+     * 
+    **/
+    create<T extends bcm_disaster_unit_affected_indirrectCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_indirrectCreateArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_indirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many Bcm_disaster_unit_affected_indirrects.
+     *     @param {bcm_disaster_unit_affected_indirrectCreateManyArgs} args - Arguments to create many Bcm_disaster_unit_affected_indirrects.
+     *     @example
+     *     // Create many Bcm_disaster_unit_affected_indirrects
+     *     const bcm_disaster_unit_affected_indirrect = await prisma.bcm_disaster_unit_affected_indirrect.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends bcm_disaster_unit_affected_indirrectCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_indirrectCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Bcm_disaster_unit_affected_indirrect.
+     * @param {bcm_disaster_unit_affected_indirrectDeleteArgs} args - Arguments to delete one Bcm_disaster_unit_affected_indirrect.
+     * @example
+     * // Delete one Bcm_disaster_unit_affected_indirrect
+     * const Bcm_disaster_unit_affected_indirrect = await prisma.bcm_disaster_unit_affected_indirrect.delete({
+     *   where: {
+     *     // ... filter to delete one Bcm_disaster_unit_affected_indirrect
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends bcm_disaster_unit_affected_indirrectDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_indirrectDeleteArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_indirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one Bcm_disaster_unit_affected_indirrect.
+     * @param {bcm_disaster_unit_affected_indirrectUpdateArgs} args - Arguments to update one Bcm_disaster_unit_affected_indirrect.
+     * @example
+     * // Update one Bcm_disaster_unit_affected_indirrect
+     * const bcm_disaster_unit_affected_indirrect = await prisma.bcm_disaster_unit_affected_indirrect.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends bcm_disaster_unit_affected_indirrectUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_indirrectUpdateArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_indirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more Bcm_disaster_unit_affected_indirrects.
+     * @param {bcm_disaster_unit_affected_indirrectDeleteManyArgs} args - Arguments to filter Bcm_disaster_unit_affected_indirrects to delete.
+     * @example
+     * // Delete a few Bcm_disaster_unit_affected_indirrects
+     * const { count } = await prisma.bcm_disaster_unit_affected_indirrect.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends bcm_disaster_unit_affected_indirrectDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, bcm_disaster_unit_affected_indirrectDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Bcm_disaster_unit_affected_indirrects.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_indirrectUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Bcm_disaster_unit_affected_indirrects
+     * const bcm_disaster_unit_affected_indirrect = await prisma.bcm_disaster_unit_affected_indirrect.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends bcm_disaster_unit_affected_indirrectUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_indirrectUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Bcm_disaster_unit_affected_indirrect.
+     * @param {bcm_disaster_unit_affected_indirrectUpsertArgs} args - Arguments to update or create a Bcm_disaster_unit_affected_indirrect.
+     * @example
+     * // Update or create a Bcm_disaster_unit_affected_indirrect
+     * const bcm_disaster_unit_affected_indirrect = await prisma.bcm_disaster_unit_affected_indirrect.upsert({
+     *   create: {
+     *     // ... data to create a Bcm_disaster_unit_affected_indirrect
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Bcm_disaster_unit_affected_indirrect we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends bcm_disaster_unit_affected_indirrectUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, bcm_disaster_unit_affected_indirrectUpsertArgs<ExtArgs>>
+    ): Prisma__bcm_disaster_unit_affected_indirrectClient<$Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of Bcm_disaster_unit_affected_indirrects.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_indirrectCountArgs} args - Arguments to filter Bcm_disaster_unit_affected_indirrects to count.
+     * @example
+     * // Count the number of Bcm_disaster_unit_affected_indirrects
+     * const count = await prisma.bcm_disaster_unit_affected_indirrect.count({
+     *   where: {
+     *     // ... the filter for the Bcm_disaster_unit_affected_indirrects we want to count
+     *   }
+     * })
+    **/
+    count<T extends bcm_disaster_unit_affected_indirrectCountArgs>(
+      args?: Subset<T, bcm_disaster_unit_affected_indirrectCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Bcm_disaster_unit_affected_indirrectCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Bcm_disaster_unit_affected_indirrect.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Bcm_disaster_unit_affected_indirrectAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Bcm_disaster_unit_affected_indirrectAggregateArgs>(args: Subset<T, Bcm_disaster_unit_affected_indirrectAggregateArgs>): Prisma.PrismaPromise<GetBcm_disaster_unit_affected_indirrectAggregateType<T>>
+
+    /**
+     * Group by Bcm_disaster_unit_affected_indirrect.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {bcm_disaster_unit_affected_indirrectGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends bcm_disaster_unit_affected_indirrectGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: bcm_disaster_unit_affected_indirrectGroupByArgs['orderBy'] }
+        : { orderBy?: bcm_disaster_unit_affected_indirrectGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, bcm_disaster_unit_affected_indirrectGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBcm_disaster_unit_affected_indirrectGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the bcm_disaster_unit_affected_indirrect model
+   */
+  readonly fields: bcm_disaster_unit_affected_indirrectFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for bcm_disaster_unit_affected_indirrect.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__bcm_disaster_unit_affected_indirrectClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+    status_indirect_unit<T extends bcm_disaster_unit_affected_indirrect$status_indirect_unitArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster_unit_affected_indirrect$status_indirect_unitArgs<ExtArgs>>): Prisma__Indirect_UnitClient<$Result.GetResult<Prisma.$Indirect_UnitPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+
+    bcm_disaster<T extends bcm_disaster_unit_affected_indirrect$bcm_disasterArgs<ExtArgs> = {}>(args?: Subset<T, bcm_disaster_unit_affected_indirrect$bcm_disasterArgs<ExtArgs>>): Prisma__bcm_disasterClient<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the bcm_disaster_unit_affected_indirrect model
+   */ 
+  interface bcm_disaster_unit_affected_indirrectFieldRefs {
+    readonly id: FieldRef<"bcm_disaster_unit_affected_indirrect", 'String'>
+    readonly disaster_id: FieldRef<"bcm_disaster_unit_affected_indirrect", 'String'>
+    readonly status_indirect_unit_id: FieldRef<"bcm_disaster_unit_affected_indirrect", 'String'>
+    readonly location_org_id: FieldRef<"bcm_disaster_unit_affected_indirrect", 'String'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * bcm_disaster_unit_affected_indirrect findUnique
+   */
+  export type bcm_disaster_unit_affected_indirrectFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_unit_affected_indirrect to fetch.
+     */
+    where: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect findUniqueOrThrow
+   */
+  export type bcm_disaster_unit_affected_indirrectFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_unit_affected_indirrect to fetch.
+     */
+    where: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect findFirst
+   */
+  export type bcm_disaster_unit_affected_indirrectFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_unit_affected_indirrect to fetch.
+     */
+    where?: bcm_disaster_unit_affected_indirrectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_unit_affected_indirrects to fetch.
+     */
+    orderBy?: bcm_disaster_unit_affected_indirrectOrderByWithRelationInput | bcm_disaster_unit_affected_indirrectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disaster_unit_affected_indirrects.
+     */
+    cursor?: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_unit_affected_indirrects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_unit_affected_indirrects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disaster_unit_affected_indirrects.
+     */
+    distinct?: Bcm_disaster_unit_affected_indirrectScalarFieldEnum | Bcm_disaster_unit_affected_indirrectScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect findFirstOrThrow
+   */
+  export type bcm_disaster_unit_affected_indirrectFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_unit_affected_indirrect to fetch.
+     */
+    where?: bcm_disaster_unit_affected_indirrectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_unit_affected_indirrects to fetch.
+     */
+    orderBy?: bcm_disaster_unit_affected_indirrectOrderByWithRelationInput | bcm_disaster_unit_affected_indirrectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for bcm_disaster_unit_affected_indirrects.
+     */
+    cursor?: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_unit_affected_indirrects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_unit_affected_indirrects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of bcm_disaster_unit_affected_indirrects.
+     */
+    distinct?: Bcm_disaster_unit_affected_indirrectScalarFieldEnum | Bcm_disaster_unit_affected_indirrectScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect findMany
+   */
+  export type bcm_disaster_unit_affected_indirrectFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+    /**
+     * Filter, which bcm_disaster_unit_affected_indirrects to fetch.
+     */
+    where?: bcm_disaster_unit_affected_indirrectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of bcm_disaster_unit_affected_indirrects to fetch.
+     */
+    orderBy?: bcm_disaster_unit_affected_indirrectOrderByWithRelationInput | bcm_disaster_unit_affected_indirrectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing bcm_disaster_unit_affected_indirrects.
+     */
+    cursor?: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` bcm_disaster_unit_affected_indirrects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` bcm_disaster_unit_affected_indirrects.
+     */
+    skip?: number
+    distinct?: Bcm_disaster_unit_affected_indirrectScalarFieldEnum | Bcm_disaster_unit_affected_indirrectScalarFieldEnum[]
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect create
+   */
+  export type bcm_disaster_unit_affected_indirrectCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+    /**
+     * The data needed to create a bcm_disaster_unit_affected_indirrect.
+     */
+    data: XOR<bcm_disaster_unit_affected_indirrectCreateInput, bcm_disaster_unit_affected_indirrectUncheckedCreateInput>
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect createMany
+   */
+  export type bcm_disaster_unit_affected_indirrectCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many bcm_disaster_unit_affected_indirrects.
+     */
+    data: bcm_disaster_unit_affected_indirrectCreateManyInput | bcm_disaster_unit_affected_indirrectCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect update
+   */
+  export type bcm_disaster_unit_affected_indirrectUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+    /**
+     * The data needed to update a bcm_disaster_unit_affected_indirrect.
+     */
+    data: XOR<bcm_disaster_unit_affected_indirrectUpdateInput, bcm_disaster_unit_affected_indirrectUncheckedUpdateInput>
+    /**
+     * Choose, which bcm_disaster_unit_affected_indirrect to update.
+     */
+    where: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect updateMany
+   */
+  export type bcm_disaster_unit_affected_indirrectUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update bcm_disaster_unit_affected_indirrects.
+     */
+    data: XOR<bcm_disaster_unit_affected_indirrectUpdateManyMutationInput, bcm_disaster_unit_affected_indirrectUncheckedUpdateManyInput>
+    /**
+     * Filter which bcm_disaster_unit_affected_indirrects to update
+     */
+    where?: bcm_disaster_unit_affected_indirrectWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect upsert
+   */
+  export type bcm_disaster_unit_affected_indirrectUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+    /**
+     * The filter to search for the bcm_disaster_unit_affected_indirrect to update in case it exists.
+     */
+    where: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    /**
+     * In case the bcm_disaster_unit_affected_indirrect found by the `where` argument doesn't exist, create a new bcm_disaster_unit_affected_indirrect with this data.
+     */
+    create: XOR<bcm_disaster_unit_affected_indirrectCreateInput, bcm_disaster_unit_affected_indirrectUncheckedCreateInput>
+    /**
+     * In case the bcm_disaster_unit_affected_indirrect was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<bcm_disaster_unit_affected_indirrectUpdateInput, bcm_disaster_unit_affected_indirrectUncheckedUpdateInput>
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect delete
+   */
+  export type bcm_disaster_unit_affected_indirrectDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+    /**
+     * Filter which bcm_disaster_unit_affected_indirrect to delete.
+     */
+    where: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect deleteMany
+   */
+  export type bcm_disaster_unit_affected_indirrectDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which bcm_disaster_unit_affected_indirrects to delete
+     */
+    where?: bcm_disaster_unit_affected_indirrectWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect.status_indirect_unit
+   */
+  export type bcm_disaster_unit_affected_indirrect$status_indirect_unitArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Indirect_Unit
+     */
+    select?: Indirect_UnitSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: Indirect_UnitInclude<ExtArgs> | null
+    where?: Indirect_UnitWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect.bcm_disaster
+   */
+  export type bcm_disaster_unit_affected_indirrect$bcm_disasterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    where?: bcm_disasterWhereInput
+  }
+
+
+  /**
+   * bcm_disaster_unit_affected_indirrect without action
+   */
+  export type bcm_disaster_unit_affected_indirrectDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_unit_affected_indirrect
+     */
+    select?: bcm_disaster_unit_affected_indirrectSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_unit_affected_indirrectInclude<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model workflow_status
+   */
+
+  export type AggregateWorkflow_status = {
+    _count: Workflow_statusCountAggregateOutputType | null
+    _avg: Workflow_statusAvgAggregateOutputType | null
+    _sum: Workflow_statusSumAggregateOutputType | null
+    _min: Workflow_statusMinAggregateOutputType | null
+    _max: Workflow_statusMaxAggregateOutputType | null
+  }
+
+  export type Workflow_statusAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type Workflow_statusSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type Workflow_statusMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+    is_active: boolean | null
+  }
+
+  export type Workflow_statusMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    is_active: boolean | null
+  }
+
+  export type Workflow_statusCountAggregateOutputType = {
+    id: number
+    name: number
+    is_active: number
+    _all: number
+  }
+
+
+  export type Workflow_statusAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type Workflow_statusSumAggregateInputType = {
+    id?: true
+  }
+
+  export type Workflow_statusMinAggregateInputType = {
+    id?: true
+    name?: true
+    is_active?: true
+  }
+
+  export type Workflow_statusMaxAggregateInputType = {
+    id?: true
+    name?: true
+    is_active?: true
+  }
+
+  export type Workflow_statusCountAggregateInputType = {
+    id?: true
+    name?: true
+    is_active?: true
+    _all?: true
+  }
+
+  export type Workflow_statusAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which workflow_status to aggregate.
+     */
+    where?: workflow_statusWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of workflow_statuses to fetch.
+     */
+    orderBy?: workflow_statusOrderByWithRelationInput | workflow_statusOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: workflow_statusWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` workflow_statuses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` workflow_statuses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned workflow_statuses
+    **/
+    _count?: true | Workflow_statusCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Workflow_statusAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Workflow_statusSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Workflow_statusMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Workflow_statusMaxAggregateInputType
+  }
+
+  export type GetWorkflow_statusAggregateType<T extends Workflow_statusAggregateArgs> = {
+        [P in keyof T & keyof AggregateWorkflow_status]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateWorkflow_status[P]>
+      : GetScalarType<T[P], AggregateWorkflow_status[P]>
+  }
+
+
+
+
+  export type workflow_statusGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: workflow_statusWhereInput
+    orderBy?: workflow_statusOrderByWithAggregationInput | workflow_statusOrderByWithAggregationInput[]
+    by: Workflow_statusScalarFieldEnum[] | Workflow_statusScalarFieldEnum
+    having?: workflow_statusScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Workflow_statusCountAggregateInputType | true
+    _avg?: Workflow_statusAvgAggregateInputType
+    _sum?: Workflow_statusSumAggregateInputType
+    _min?: Workflow_statusMinAggregateInputType
+    _max?: Workflow_statusMaxAggregateInputType
+  }
+
+  export type Workflow_statusGroupByOutputType = {
+    id: number
+    name: string | null
+    is_active: boolean | null
+    _count: Workflow_statusCountAggregateOutputType | null
+    _avg: Workflow_statusAvgAggregateOutputType | null
+    _sum: Workflow_statusSumAggregateOutputType | null
+    _min: Workflow_statusMinAggregateOutputType | null
+    _max: Workflow_statusMaxAggregateOutputType | null
+  }
+
+  type GetWorkflow_statusGroupByPayload<T extends workflow_statusGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Workflow_statusGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Workflow_statusGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Workflow_statusGroupByOutputType[P]>
+            : GetScalarType<T[P], Workflow_statusGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type workflow_statusSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    is_active?: boolean
+    bcm_disaster?: boolean | workflow_status$bcm_disasterArgs<ExtArgs>
+    bcm_disaster_assignment_history?: boolean | workflow_status$bcm_disaster_assignment_historyArgs<ExtArgs>
+    _count?: boolean | Workflow_statusCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["workflow_status"]>
+
+  export type workflow_statusSelectScalar = {
+    id?: boolean
+    name?: boolean
+    is_active?: boolean
+  }
+
+  export type workflow_statusInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bcm_disaster?: boolean | workflow_status$bcm_disasterArgs<ExtArgs>
+    bcm_disaster_assignment_history?: boolean | workflow_status$bcm_disaster_assignment_historyArgs<ExtArgs>
+    _count?: boolean | Workflow_statusCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+
+  export type $workflow_statusPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "workflow_status"
+    objects: {
+      bcm_disaster: Prisma.$bcm_disasterPayload<ExtArgs>[]
+      bcm_disaster_assignment_history: Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string | null
+      is_active: boolean | null
+    }, ExtArgs["result"]["workflow_status"]>
+    composites: {}
+  }
+
+
+  type workflow_statusGetPayload<S extends boolean | null | undefined | workflow_statusDefaultArgs> = $Result.GetResult<Prisma.$workflow_statusPayload, S>
+
+  type workflow_statusCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<workflow_statusFindManyArgs, 'select' | 'include' | 'distinct' > & {
+      select?: Workflow_statusCountAggregateInputType | true
+    }
+
+  export interface workflow_statusDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['workflow_status'], meta: { name: 'workflow_status' } }
+    /**
+     * Find zero or one Workflow_status that matches the filter.
+     * @param {workflow_statusFindUniqueArgs} args - Arguments to find a Workflow_status
+     * @example
+     * // Get one Workflow_status
+     * const workflow_status = await prisma.workflow_status.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends workflow_statusFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, workflow_statusFindUniqueArgs<ExtArgs>>
+    ): Prisma__workflow_statusClient<$Result.GetResult<Prisma.$workflow_statusPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one Workflow_status that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {workflow_statusFindUniqueOrThrowArgs} args - Arguments to find a Workflow_status
+     * @example
+     * // Get one Workflow_status
+     * const workflow_status = await prisma.workflow_status.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends workflow_statusFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, workflow_statusFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__workflow_statusClient<$Result.GetResult<Prisma.$workflow_statusPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first Workflow_status that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {workflow_statusFindFirstArgs} args - Arguments to find a Workflow_status
+     * @example
+     * // Get one Workflow_status
+     * const workflow_status = await prisma.workflow_status.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends workflow_statusFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, workflow_statusFindFirstArgs<ExtArgs>>
+    ): Prisma__workflow_statusClient<$Result.GetResult<Prisma.$workflow_statusPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first Workflow_status that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {workflow_statusFindFirstOrThrowArgs} args - Arguments to find a Workflow_status
+     * @example
+     * // Get one Workflow_status
+     * const workflow_status = await prisma.workflow_status.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends workflow_statusFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, workflow_statusFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__workflow_statusClient<$Result.GetResult<Prisma.$workflow_statusPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more Workflow_statuses that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {workflow_statusFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Workflow_statuses
+     * const workflow_statuses = await prisma.workflow_status.findMany()
+     * 
+     * // Get first 10 Workflow_statuses
+     * const workflow_statuses = await prisma.workflow_status.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const workflow_statusWithIdOnly = await prisma.workflow_status.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends workflow_statusFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, workflow_statusFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$workflow_statusPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a Workflow_status.
+     * @param {workflow_statusCreateArgs} args - Arguments to create a Workflow_status.
+     * @example
+     * // Create one Workflow_status
+     * const Workflow_status = await prisma.workflow_status.create({
+     *   data: {
+     *     // ... data to create a Workflow_status
+     *   }
+     * })
+     * 
+    **/
+    create<T extends workflow_statusCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, workflow_statusCreateArgs<ExtArgs>>
+    ): Prisma__workflow_statusClient<$Result.GetResult<Prisma.$workflow_statusPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many Workflow_statuses.
+     *     @param {workflow_statusCreateManyArgs} args - Arguments to create many Workflow_statuses.
+     *     @example
+     *     // Create many Workflow_statuses
+     *     const workflow_status = await prisma.workflow_status.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends workflow_statusCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, workflow_statusCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Workflow_status.
+     * @param {workflow_statusDeleteArgs} args - Arguments to delete one Workflow_status.
+     * @example
+     * // Delete one Workflow_status
+     * const Workflow_status = await prisma.workflow_status.delete({
+     *   where: {
+     *     // ... filter to delete one Workflow_status
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends workflow_statusDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, workflow_statusDeleteArgs<ExtArgs>>
+    ): Prisma__workflow_statusClient<$Result.GetResult<Prisma.$workflow_statusPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one Workflow_status.
+     * @param {workflow_statusUpdateArgs} args - Arguments to update one Workflow_status.
+     * @example
+     * // Update one Workflow_status
+     * const workflow_status = await prisma.workflow_status.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends workflow_statusUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, workflow_statusUpdateArgs<ExtArgs>>
+    ): Prisma__workflow_statusClient<$Result.GetResult<Prisma.$workflow_statusPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more Workflow_statuses.
+     * @param {workflow_statusDeleteManyArgs} args - Arguments to filter Workflow_statuses to delete.
+     * @example
+     * // Delete a few Workflow_statuses
+     * const { count } = await prisma.workflow_status.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends workflow_statusDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, workflow_statusDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Workflow_statuses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {workflow_statusUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Workflow_statuses
+     * const workflow_status = await prisma.workflow_status.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends workflow_statusUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, workflow_statusUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Workflow_status.
+     * @param {workflow_statusUpsertArgs} args - Arguments to update or create a Workflow_status.
+     * @example
+     * // Update or create a Workflow_status
+     * const workflow_status = await prisma.workflow_status.upsert({
+     *   create: {
+     *     // ... data to create a Workflow_status
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Workflow_status we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends workflow_statusUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, workflow_statusUpsertArgs<ExtArgs>>
+    ): Prisma__workflow_statusClient<$Result.GetResult<Prisma.$workflow_statusPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of Workflow_statuses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {workflow_statusCountArgs} args - Arguments to filter Workflow_statuses to count.
+     * @example
+     * // Count the number of Workflow_statuses
+     * const count = await prisma.workflow_status.count({
+     *   where: {
+     *     // ... the filter for the Workflow_statuses we want to count
+     *   }
+     * })
+    **/
+    count<T extends workflow_statusCountArgs>(
+      args?: Subset<T, workflow_statusCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Workflow_statusCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Workflow_status.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Workflow_statusAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Workflow_statusAggregateArgs>(args: Subset<T, Workflow_statusAggregateArgs>): Prisma.PrismaPromise<GetWorkflow_statusAggregateType<T>>
+
+    /**
+     * Group by Workflow_status.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {workflow_statusGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends workflow_statusGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: workflow_statusGroupByArgs['orderBy'] }
+        : { orderBy?: workflow_statusGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, workflow_statusGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWorkflow_statusGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the workflow_status model
+   */
+  readonly fields: workflow_statusFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for workflow_status.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__workflow_statusClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+    bcm_disaster<T extends workflow_status$bcm_disasterArgs<ExtArgs> = {}>(args?: Subset<T, workflow_status$bcm_disasterArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disasterPayload<ExtArgs>, T, 'findMany'> | Null>;
+
+    bcm_disaster_assignment_history<T extends workflow_status$bcm_disaster_assignment_historyArgs<ExtArgs> = {}>(args?: Subset<T, workflow_status$bcm_disaster_assignment_historyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload<ExtArgs>, T, 'findMany'> | Null>;
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the workflow_status model
+   */ 
+  interface workflow_statusFieldRefs {
+    readonly id: FieldRef<"workflow_status", 'Int'>
+    readonly name: FieldRef<"workflow_status", 'String'>
+    readonly is_active: FieldRef<"workflow_status", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * workflow_status findUnique
+   */
+  export type workflow_statusFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
+    /**
+     * Filter, which workflow_status to fetch.
+     */
+    where: workflow_statusWhereUniqueInput
+  }
+
+
+  /**
+   * workflow_status findUniqueOrThrow
+   */
+  export type workflow_statusFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
+    /**
+     * Filter, which workflow_status to fetch.
+     */
+    where: workflow_statusWhereUniqueInput
+  }
+
+
+  /**
+   * workflow_status findFirst
+   */
+  export type workflow_statusFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
+    /**
+     * Filter, which workflow_status to fetch.
+     */
+    where?: workflow_statusWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of workflow_statuses to fetch.
+     */
+    orderBy?: workflow_statusOrderByWithRelationInput | workflow_statusOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for workflow_statuses.
+     */
+    cursor?: workflow_statusWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` workflow_statuses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` workflow_statuses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of workflow_statuses.
+     */
+    distinct?: Workflow_statusScalarFieldEnum | Workflow_statusScalarFieldEnum[]
+  }
+
+
+  /**
+   * workflow_status findFirstOrThrow
+   */
+  export type workflow_statusFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
+    /**
+     * Filter, which workflow_status to fetch.
+     */
+    where?: workflow_statusWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of workflow_statuses to fetch.
+     */
+    orderBy?: workflow_statusOrderByWithRelationInput | workflow_statusOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for workflow_statuses.
+     */
+    cursor?: workflow_statusWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` workflow_statuses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` workflow_statuses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of workflow_statuses.
+     */
+    distinct?: Workflow_statusScalarFieldEnum | Workflow_statusScalarFieldEnum[]
+  }
+
+
+  /**
+   * workflow_status findMany
+   */
+  export type workflow_statusFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
+    /**
+     * Filter, which workflow_statuses to fetch.
+     */
+    where?: workflow_statusWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of workflow_statuses to fetch.
+     */
+    orderBy?: workflow_statusOrderByWithRelationInput | workflow_statusOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing workflow_statuses.
+     */
+    cursor?: workflow_statusWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` workflow_statuses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` workflow_statuses.
+     */
+    skip?: number
+    distinct?: Workflow_statusScalarFieldEnum | Workflow_statusScalarFieldEnum[]
+  }
+
+
+  /**
+   * workflow_status create
+   */
+  export type workflow_statusCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
+    /**
+     * The data needed to create a workflow_status.
+     */
+    data: XOR<workflow_statusCreateInput, workflow_statusUncheckedCreateInput>
+  }
+
+
+  /**
+   * workflow_status createMany
+   */
+  export type workflow_statusCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many workflow_statuses.
+     */
+    data: workflow_statusCreateManyInput | workflow_statusCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * workflow_status update
+   */
+  export type workflow_statusUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
+    /**
+     * The data needed to update a workflow_status.
+     */
+    data: XOR<workflow_statusUpdateInput, workflow_statusUncheckedUpdateInput>
+    /**
+     * Choose, which workflow_status to update.
+     */
+    where: workflow_statusWhereUniqueInput
+  }
+
+
+  /**
+   * workflow_status updateMany
+   */
+  export type workflow_statusUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update workflow_statuses.
+     */
+    data: XOR<workflow_statusUpdateManyMutationInput, workflow_statusUncheckedUpdateManyInput>
+    /**
+     * Filter which workflow_statuses to update
+     */
+    where?: workflow_statusWhereInput
+  }
+
+
+  /**
+   * workflow_status upsert
+   */
+  export type workflow_statusUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
+    /**
+     * The filter to search for the workflow_status to update in case it exists.
+     */
+    where: workflow_statusWhereUniqueInput
+    /**
+     * In case the workflow_status found by the `where` argument doesn't exist, create a new workflow_status with this data.
+     */
+    create: XOR<workflow_statusCreateInput, workflow_statusUncheckedCreateInput>
+    /**
+     * In case the workflow_status was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<workflow_statusUpdateInput, workflow_statusUncheckedUpdateInput>
+  }
+
+
+  /**
+   * workflow_status delete
+   */
+  export type workflow_statusDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
+    /**
+     * Filter which workflow_status to delete.
+     */
+    where: workflow_statusWhereUniqueInput
+  }
+
+
+  /**
+   * workflow_status deleteMany
+   */
+  export type workflow_statusDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which workflow_statuses to delete
+     */
+    where?: workflow_statusWhereInput
+  }
+
+
+  /**
+   * workflow_status.bcm_disaster
+   */
+  export type workflow_status$bcm_disasterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster
+     */
+    select?: bcm_disasterSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disasterInclude<ExtArgs> | null
+    where?: bcm_disasterWhereInput
+    orderBy?: bcm_disasterOrderByWithRelationInput | bcm_disasterOrderByWithRelationInput[]
+    cursor?: bcm_disasterWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Bcm_disasterScalarFieldEnum | Bcm_disasterScalarFieldEnum[]
+  }
+
+
+  /**
+   * workflow_status.bcm_disaster_assignment_history
+   */
+  export type workflow_status$bcm_disaster_assignment_historyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the bcm_disaster_assignment_history
+     */
+    select?: bcm_disaster_assignment_historySelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: bcm_disaster_assignment_historyInclude<ExtArgs> | null
+    where?: bcm_disaster_assignment_historyWhereInput
+    orderBy?: bcm_disaster_assignment_historyOrderByWithRelationInput | bcm_disaster_assignment_historyOrderByWithRelationInput[]
+    cursor?: bcm_disaster_assignment_historyWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Bcm_disaster_assignment_historyScalarFieldEnum | Bcm_disaster_assignment_historyScalarFieldEnum[]
+  }
+
+
+  /**
+   * workflow_status without action
+   */
+  export type workflow_statusDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the workflow_status
+     */
+    select?: workflow_statusSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: workflow_statusInclude<ExtArgs> | null
   }
 
 
@@ -9039,6 +17197,99 @@ export namespace Prisma {
   export type CurrencyScalarFieldEnum = (typeof CurrencyScalarFieldEnum)[keyof typeof CurrencyScalarFieldEnum]
 
 
+  export const Bcm_disasterScalarFieldEnum: {
+    id: 'id',
+    tenant_id: 'tenant_id',
+    org_id: 'org_id',
+    threat_id: 'threat_id',
+    disaster_chronology: 'disaster_chronology',
+    disaster_date: 'disaster_date',
+    disaster_location: 'disaster_location',
+    estimated_lost_currency: 'estimated_lost_currency',
+    estimated_lost: 'estimated_lost',
+    total_insurance_claim_currency: 'total_insurance_claim_currency',
+    total_insurance_claim: 'total_insurance_claim',
+    temp_action_plan: 'temp_action_plan',
+    recovery_plan: 'recovery_plan',
+    alt_customer_services: 'alt_customer_services',
+    alt_staff: 'alt_staff',
+    wf_status_id: 'wf_status_id',
+    assign_curr_org: 'assign_curr_org',
+    assign_curr_role: 'assign_curr_role',
+    created_by: 'created_by',
+    created_at: 'created_at',
+    updated_by: 'updated_by',
+    updated_at: 'updated_at'
+  };
+
+  export type Bcm_disasterScalarFieldEnum = (typeof Bcm_disasterScalarFieldEnum)[keyof typeof Bcm_disasterScalarFieldEnum]
+
+
+  export const Bcm_disaster_assignment_historyScalarFieldEnum: {
+    id: 'id',
+    disaster_id: 'disaster_id',
+    history_date: 'history_date',
+    user_id: 'user_id',
+    user_name: 'user_name',
+    wf_status_id: 'wf_status_id',
+    reason: 'reason'
+  };
+
+  export type Bcm_disaster_assignment_historyScalarFieldEnum = (typeof Bcm_disaster_assignment_historyScalarFieldEnum)[keyof typeof Bcm_disaster_assignment_historyScalarFieldEnum]
+
+
+  export const Bcm_disaster_atm_affectedScalarFieldEnum: {
+    id: 'id',
+    disaster_id: 'disaster_id',
+    total_atm: 'total_atm',
+    total_atm_is_operating: 'total_atm_is_operating',
+    total_atm_is_not_operating: 'total_atm_is_not_operating'
+  };
+
+  export type Bcm_disaster_atm_affectedScalarFieldEnum = (typeof Bcm_disaster_atm_affectedScalarFieldEnum)[keyof typeof Bcm_disaster_atm_affectedScalarFieldEnum]
+
+
+  export const Bcm_disaster_staff_affectedScalarFieldEnum: {
+    id: 'id',
+    disaster_id: 'disaster_id',
+    staff_condition_id: 'staff_condition_id',
+    total: 'total',
+    name: 'name',
+    total_family: 'total_family'
+  };
+
+  export type Bcm_disaster_staff_affectedScalarFieldEnum = (typeof Bcm_disaster_staff_affectedScalarFieldEnum)[keyof typeof Bcm_disaster_staff_affectedScalarFieldEnum]
+
+
+  export const Bcm_disaster_unit_affected_dirrectScalarFieldEnum: {
+    id: 'id',
+    disaster_id: 'disaster_id',
+    location_org_id: 'location_org_id',
+    is_operating: 'is_operating'
+  };
+
+  export type Bcm_disaster_unit_affected_dirrectScalarFieldEnum = (typeof Bcm_disaster_unit_affected_dirrectScalarFieldEnum)[keyof typeof Bcm_disaster_unit_affected_dirrectScalarFieldEnum]
+
+
+  export const Bcm_disaster_unit_affected_indirrectScalarFieldEnum: {
+    id: 'id',
+    disaster_id: 'disaster_id',
+    status_indirect_unit_id: 'status_indirect_unit_id',
+    location_org_id: 'location_org_id'
+  };
+
+  export type Bcm_disaster_unit_affected_indirrectScalarFieldEnum = (typeof Bcm_disaster_unit_affected_indirrectScalarFieldEnum)[keyof typeof Bcm_disaster_unit_affected_indirrectScalarFieldEnum]
+
+
+  export const Workflow_statusScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    is_active: 'is_active'
+  };
+
+  export type Workflow_statusScalarFieldEnum = (typeof Workflow_statusScalarFieldEnum)[keyof typeof Workflow_statusScalarFieldEnum]
+
+
   export const Vw_threat_typesScalarFieldEnum: {
     id: 'id',
     tenant_id: 'tenant_id',
@@ -9098,6 +17349,13 @@ export namespace Prisma {
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Decimal'
+   */
+  export type DecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal'>
     
 
 
@@ -9183,6 +17441,7 @@ export namespace Prisma {
     is_active?: BoolFilter<"threat"> | boolean
     created_at?: DateTimeFilter<"threat"> | Date | string
     updated_at?: DateTimeNullableFilter<"threat"> | Date | string | null
+    bcm_disaster?: Bcm_disasterListRelationFilter
     threat_types?: XOR<Threat_typeRelationFilter, threat_typeWhereInput>
   }
 
@@ -9194,6 +17453,7 @@ export namespace Prisma {
     is_active?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrderInput | SortOrder
+    bcm_disaster?: bcm_disasterOrderByRelationAggregateInput
     threat_types?: threat_typeOrderByWithRelationInput
   }
 
@@ -9209,6 +17469,7 @@ export namespace Prisma {
     is_active?: BoolFilter<"threat"> | boolean
     created_at?: DateTimeFilter<"threat"> | Date | string
     updated_at?: DateTimeNullableFilter<"threat"> | Date | string | null
+    bcm_disaster?: Bcm_disasterListRelationFilter
     threat_types?: XOR<Threat_typeRelationFilter, threat_typeWhereInput>
   }, "id" | "type_id_name_tenant_id">
 
@@ -9384,6 +17645,7 @@ export namespace Prisma {
     is_active?: BoolFilter<"Indirect_Unit"> | boolean
     created_at?: DateTimeFilter<"Indirect_Unit"> | Date | string
     updated_at?: DateTimeNullableFilter<"Indirect_Unit"> | Date | string | null
+    bcm_disaster_unit_affected_indirrect?: Bcm_disaster_unit_affected_indirrectListRelationFilter
   }
 
   export type Indirect_UnitOrderByWithRelationInput = {
@@ -9394,6 +17656,7 @@ export namespace Prisma {
     is_active?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrderInput | SortOrder
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectOrderByRelationAggregateInput
   }
 
   export type Indirect_UnitWhereUniqueInput = Prisma.AtLeast<{
@@ -9408,6 +17671,7 @@ export namespace Prisma {
     is_active?: BoolFilter<"Indirect_Unit"> | boolean
     created_at?: DateTimeFilter<"Indirect_Unit"> | Date | string
     updated_at?: DateTimeNullableFilter<"Indirect_Unit"> | Date | string | null
+    bcm_disaster_unit_affected_indirrect?: Bcm_disaster_unit_affected_indirrectListRelationFilter
   }, "id" | "tenant_id_name">
 
   export type Indirect_UnitOrderByWithAggregationInput = {
@@ -9515,6 +17779,8 @@ export namespace Prisma {
     is_active?: BoolFilter<"Currency"> | boolean
     created_at?: DateTimeFilter<"Currency"> | Date | string
     updated_at?: DateTimeNullableFilter<"Currency"> | Date | string | null
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: Bcm_disasterListRelationFilter
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: Bcm_disasterListRelationFilter
   }
 
   export type CurrencyOrderByWithRelationInput = {
@@ -9526,6 +17792,8 @@ export namespace Prisma {
     is_active?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrderInput | SortOrder
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: bcm_disasterOrderByRelationAggregateInput
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: bcm_disasterOrderByRelationAggregateInput
   }
 
   export type CurrencyWhereUniqueInput = Prisma.AtLeast<{
@@ -9541,6 +17809,8 @@ export namespace Prisma {
     is_active?: BoolFilter<"Currency"> | boolean
     created_at?: DateTimeFilter<"Currency"> | Date | string
     updated_at?: DateTimeNullableFilter<"Currency"> | Date | string | null
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: Bcm_disasterListRelationFilter
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: Bcm_disasterListRelationFilter
   }, "code" | "tenant_id_name">
 
   export type CurrencyOrderByWithAggregationInput = {
@@ -9571,6 +17841,514 @@ export namespace Prisma {
     is_active?: BoolWithAggregatesFilter<"Currency"> | boolean
     created_at?: DateTimeWithAggregatesFilter<"Currency"> | Date | string
     updated_at?: DateTimeNullableWithAggregatesFilter<"Currency"> | Date | string | null
+  }
+
+  export type bcm_disasterWhereInput = {
+    AND?: bcm_disasterWhereInput | bcm_disasterWhereInput[]
+    OR?: bcm_disasterWhereInput[]
+    NOT?: bcm_disasterWhereInput | bcm_disasterWhereInput[]
+    id?: StringFilter<"bcm_disaster"> | string
+    tenant_id?: StringFilter<"bcm_disaster"> | string
+    org_id?: StringFilter<"bcm_disaster"> | string
+    threat_id?: StringFilter<"bcm_disaster"> | string
+    disaster_chronology?: StringNullableFilter<"bcm_disaster"> | string | null
+    disaster_date?: DateTimeNullableFilter<"bcm_disaster"> | Date | string | null
+    disaster_location?: StringNullableFilter<"bcm_disaster"> | string | null
+    estimated_lost_currency?: StringNullableFilter<"bcm_disaster"> | string | null
+    estimated_lost?: DecimalNullableFilter<"bcm_disaster"> | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: StringNullableFilter<"bcm_disaster"> | string | null
+    total_insurance_claim?: DecimalNullableFilter<"bcm_disaster"> | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: StringNullableFilter<"bcm_disaster"> | string | null
+    recovery_plan?: StringNullableFilter<"bcm_disaster"> | string | null
+    alt_customer_services?: StringNullableFilter<"bcm_disaster"> | string | null
+    alt_staff?: StringNullableFilter<"bcm_disaster"> | string | null
+    wf_status_id?: IntNullableFilter<"bcm_disaster"> | number | null
+    assign_curr_org?: StringNullableFilter<"bcm_disaster"> | string | null
+    assign_curr_role?: StringNullableFilter<"bcm_disaster"> | string | null
+    created_by?: StringNullableFilter<"bcm_disaster"> | string | null
+    created_at?: DateTimeNullableFilter<"bcm_disaster"> | Date | string | null
+    updated_by?: StringNullableFilter<"bcm_disaster"> | string | null
+    updated_at?: DateTimeNullableFilter<"bcm_disaster"> | Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: XOR<CurrencyNullableRelationFilter, CurrencyWhereInput> | null
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: XOR<CurrencyNullableRelationFilter, CurrencyWhereInput> | null
+    threat?: XOR<ThreatRelationFilter, threatWhereInput>
+    workflow_status?: XOR<Workflow_statusNullableRelationFilter, workflow_statusWhereInput> | null
+    bcm_disaster_assignment_history?: Bcm_disaster_assignment_historyListRelationFilter
+    bcm_disaster_atm_affected?: Bcm_disaster_atm_affectedListRelationFilter
+    bcm_disaster_staff_affected?: Bcm_disaster_staff_affectedListRelationFilter
+    bcm_disaster_unit_affected_dirrect?: Bcm_disaster_unit_affected_dirrectListRelationFilter
+    bcm_disaster_unit_affected_indirrect?: Bcm_disaster_unit_affected_indirrectListRelationFilter
+  }
+
+  export type bcm_disasterOrderByWithRelationInput = {
+    id?: SortOrder
+    tenant_id?: SortOrder
+    org_id?: SortOrder
+    threat_id?: SortOrder
+    disaster_chronology?: SortOrderInput | SortOrder
+    disaster_date?: SortOrderInput | SortOrder
+    disaster_location?: SortOrderInput | SortOrder
+    estimated_lost_currency?: SortOrderInput | SortOrder
+    estimated_lost?: SortOrderInput | SortOrder
+    total_insurance_claim_currency?: SortOrderInput | SortOrder
+    total_insurance_claim?: SortOrderInput | SortOrder
+    temp_action_plan?: SortOrderInput | SortOrder
+    recovery_plan?: SortOrderInput | SortOrder
+    alt_customer_services?: SortOrderInput | SortOrder
+    alt_staff?: SortOrderInput | SortOrder
+    wf_status_id?: SortOrderInput | SortOrder
+    assign_curr_org?: SortOrderInput | SortOrder
+    assign_curr_role?: SortOrderInput | SortOrder
+    created_by?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
+    updated_at?: SortOrderInput | SortOrder
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyOrderByWithRelationInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyOrderByWithRelationInput
+    threat?: threatOrderByWithRelationInput
+    workflow_status?: workflow_statusOrderByWithRelationInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyOrderByRelationAggregateInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedOrderByRelationAggregateInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedOrderByRelationAggregateInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectOrderByRelationAggregateInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectOrderByRelationAggregateInput
+  }
+
+  export type bcm_disasterWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: bcm_disasterWhereInput | bcm_disasterWhereInput[]
+    OR?: bcm_disasterWhereInput[]
+    NOT?: bcm_disasterWhereInput | bcm_disasterWhereInput[]
+    tenant_id?: StringFilter<"bcm_disaster"> | string
+    org_id?: StringFilter<"bcm_disaster"> | string
+    threat_id?: StringFilter<"bcm_disaster"> | string
+    disaster_chronology?: StringNullableFilter<"bcm_disaster"> | string | null
+    disaster_date?: DateTimeNullableFilter<"bcm_disaster"> | Date | string | null
+    disaster_location?: StringNullableFilter<"bcm_disaster"> | string | null
+    estimated_lost_currency?: StringNullableFilter<"bcm_disaster"> | string | null
+    estimated_lost?: DecimalNullableFilter<"bcm_disaster"> | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: StringNullableFilter<"bcm_disaster"> | string | null
+    total_insurance_claim?: DecimalNullableFilter<"bcm_disaster"> | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: StringNullableFilter<"bcm_disaster"> | string | null
+    recovery_plan?: StringNullableFilter<"bcm_disaster"> | string | null
+    alt_customer_services?: StringNullableFilter<"bcm_disaster"> | string | null
+    alt_staff?: StringNullableFilter<"bcm_disaster"> | string | null
+    wf_status_id?: IntNullableFilter<"bcm_disaster"> | number | null
+    assign_curr_org?: StringNullableFilter<"bcm_disaster"> | string | null
+    assign_curr_role?: StringNullableFilter<"bcm_disaster"> | string | null
+    created_by?: StringNullableFilter<"bcm_disaster"> | string | null
+    created_at?: DateTimeNullableFilter<"bcm_disaster"> | Date | string | null
+    updated_by?: StringNullableFilter<"bcm_disaster"> | string | null
+    updated_at?: DateTimeNullableFilter<"bcm_disaster"> | Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: XOR<CurrencyNullableRelationFilter, CurrencyWhereInput> | null
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: XOR<CurrencyNullableRelationFilter, CurrencyWhereInput> | null
+    threat?: XOR<ThreatRelationFilter, threatWhereInput>
+    workflow_status?: XOR<Workflow_statusNullableRelationFilter, workflow_statusWhereInput> | null
+    bcm_disaster_assignment_history?: Bcm_disaster_assignment_historyListRelationFilter
+    bcm_disaster_atm_affected?: Bcm_disaster_atm_affectedListRelationFilter
+    bcm_disaster_staff_affected?: Bcm_disaster_staff_affectedListRelationFilter
+    bcm_disaster_unit_affected_dirrect?: Bcm_disaster_unit_affected_dirrectListRelationFilter
+    bcm_disaster_unit_affected_indirrect?: Bcm_disaster_unit_affected_indirrectListRelationFilter
+  }, "id">
+
+  export type bcm_disasterOrderByWithAggregationInput = {
+    id?: SortOrder
+    tenant_id?: SortOrder
+    org_id?: SortOrder
+    threat_id?: SortOrder
+    disaster_chronology?: SortOrderInput | SortOrder
+    disaster_date?: SortOrderInput | SortOrder
+    disaster_location?: SortOrderInput | SortOrder
+    estimated_lost_currency?: SortOrderInput | SortOrder
+    estimated_lost?: SortOrderInput | SortOrder
+    total_insurance_claim_currency?: SortOrderInput | SortOrder
+    total_insurance_claim?: SortOrderInput | SortOrder
+    temp_action_plan?: SortOrderInput | SortOrder
+    recovery_plan?: SortOrderInput | SortOrder
+    alt_customer_services?: SortOrderInput | SortOrder
+    alt_staff?: SortOrderInput | SortOrder
+    wf_status_id?: SortOrderInput | SortOrder
+    assign_curr_org?: SortOrderInput | SortOrder
+    assign_curr_role?: SortOrderInput | SortOrder
+    created_by?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
+    updated_at?: SortOrderInput | SortOrder
+    _count?: bcm_disasterCountOrderByAggregateInput
+    _avg?: bcm_disasterAvgOrderByAggregateInput
+    _max?: bcm_disasterMaxOrderByAggregateInput
+    _min?: bcm_disasterMinOrderByAggregateInput
+    _sum?: bcm_disasterSumOrderByAggregateInput
+  }
+
+  export type bcm_disasterScalarWhereWithAggregatesInput = {
+    AND?: bcm_disasterScalarWhereWithAggregatesInput | bcm_disasterScalarWhereWithAggregatesInput[]
+    OR?: bcm_disasterScalarWhereWithAggregatesInput[]
+    NOT?: bcm_disasterScalarWhereWithAggregatesInput | bcm_disasterScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"bcm_disaster"> | string
+    tenant_id?: StringWithAggregatesFilter<"bcm_disaster"> | string
+    org_id?: StringWithAggregatesFilter<"bcm_disaster"> | string
+    threat_id?: StringWithAggregatesFilter<"bcm_disaster"> | string
+    disaster_chronology?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    disaster_date?: DateTimeNullableWithAggregatesFilter<"bcm_disaster"> | Date | string | null
+    disaster_location?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    estimated_lost_currency?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    estimated_lost?: DecimalNullableWithAggregatesFilter<"bcm_disaster"> | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    total_insurance_claim?: DecimalNullableWithAggregatesFilter<"bcm_disaster"> | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    recovery_plan?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    alt_customer_services?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    alt_staff?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    wf_status_id?: IntNullableWithAggregatesFilter<"bcm_disaster"> | number | null
+    assign_curr_org?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    assign_curr_role?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    created_by?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    created_at?: DateTimeNullableWithAggregatesFilter<"bcm_disaster"> | Date | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"bcm_disaster"> | string | null
+    updated_at?: DateTimeNullableWithAggregatesFilter<"bcm_disaster"> | Date | string | null
+  }
+
+  export type bcm_disaster_assignment_historyWhereInput = {
+    AND?: bcm_disaster_assignment_historyWhereInput | bcm_disaster_assignment_historyWhereInput[]
+    OR?: bcm_disaster_assignment_historyWhereInput[]
+    NOT?: bcm_disaster_assignment_historyWhereInput | bcm_disaster_assignment_historyWhereInput[]
+    id?: StringFilter<"bcm_disaster_assignment_history"> | string
+    disaster_id?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+    history_date?: DateTimeNullableFilter<"bcm_disaster_assignment_history"> | Date | string | null
+    user_id?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+    user_name?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+    wf_status_id?: IntNullableFilter<"bcm_disaster_assignment_history"> | number | null
+    reason?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+    bcm_disaster?: XOR<Bcm_disasterNullableRelationFilter, bcm_disasterWhereInput> | null
+    workflow_status?: XOR<Workflow_statusNullableRelationFilter, workflow_statusWhereInput> | null
+  }
+
+  export type bcm_disaster_assignment_historyOrderByWithRelationInput = {
+    id?: SortOrder
+    disaster_id?: SortOrderInput | SortOrder
+    history_date?: SortOrderInput | SortOrder
+    user_id?: SortOrderInput | SortOrder
+    user_name?: SortOrderInput | SortOrder
+    wf_status_id?: SortOrderInput | SortOrder
+    reason?: SortOrderInput | SortOrder
+    bcm_disaster?: bcm_disasterOrderByWithRelationInput
+    workflow_status?: workflow_statusOrderByWithRelationInput
+  }
+
+  export type bcm_disaster_assignment_historyWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: bcm_disaster_assignment_historyWhereInput | bcm_disaster_assignment_historyWhereInput[]
+    OR?: bcm_disaster_assignment_historyWhereInput[]
+    NOT?: bcm_disaster_assignment_historyWhereInput | bcm_disaster_assignment_historyWhereInput[]
+    disaster_id?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+    history_date?: DateTimeNullableFilter<"bcm_disaster_assignment_history"> | Date | string | null
+    user_id?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+    user_name?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+    wf_status_id?: IntNullableFilter<"bcm_disaster_assignment_history"> | number | null
+    reason?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+    bcm_disaster?: XOR<Bcm_disasterNullableRelationFilter, bcm_disasterWhereInput> | null
+    workflow_status?: XOR<Workflow_statusNullableRelationFilter, workflow_statusWhereInput> | null
+  }, "id">
+
+  export type bcm_disaster_assignment_historyOrderByWithAggregationInput = {
+    id?: SortOrder
+    disaster_id?: SortOrderInput | SortOrder
+    history_date?: SortOrderInput | SortOrder
+    user_id?: SortOrderInput | SortOrder
+    user_name?: SortOrderInput | SortOrder
+    wf_status_id?: SortOrderInput | SortOrder
+    reason?: SortOrderInput | SortOrder
+    _count?: bcm_disaster_assignment_historyCountOrderByAggregateInput
+    _avg?: bcm_disaster_assignment_historyAvgOrderByAggregateInput
+    _max?: bcm_disaster_assignment_historyMaxOrderByAggregateInput
+    _min?: bcm_disaster_assignment_historyMinOrderByAggregateInput
+    _sum?: bcm_disaster_assignment_historySumOrderByAggregateInput
+  }
+
+  export type bcm_disaster_assignment_historyScalarWhereWithAggregatesInput = {
+    AND?: bcm_disaster_assignment_historyScalarWhereWithAggregatesInput | bcm_disaster_assignment_historyScalarWhereWithAggregatesInput[]
+    OR?: bcm_disaster_assignment_historyScalarWhereWithAggregatesInput[]
+    NOT?: bcm_disaster_assignment_historyScalarWhereWithAggregatesInput | bcm_disaster_assignment_historyScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"bcm_disaster_assignment_history"> | string
+    disaster_id?: StringNullableWithAggregatesFilter<"bcm_disaster_assignment_history"> | string | null
+    history_date?: DateTimeNullableWithAggregatesFilter<"bcm_disaster_assignment_history"> | Date | string | null
+    user_id?: StringNullableWithAggregatesFilter<"bcm_disaster_assignment_history"> | string | null
+    user_name?: StringNullableWithAggregatesFilter<"bcm_disaster_assignment_history"> | string | null
+    wf_status_id?: IntNullableWithAggregatesFilter<"bcm_disaster_assignment_history"> | number | null
+    reason?: StringNullableWithAggregatesFilter<"bcm_disaster_assignment_history"> | string | null
+  }
+
+  export type bcm_disaster_atm_affectedWhereInput = {
+    AND?: bcm_disaster_atm_affectedWhereInput | bcm_disaster_atm_affectedWhereInput[]
+    OR?: bcm_disaster_atm_affectedWhereInput[]
+    NOT?: bcm_disaster_atm_affectedWhereInput | bcm_disaster_atm_affectedWhereInput[]
+    id?: StringFilter<"bcm_disaster_atm_affected"> | string
+    disaster_id?: StringNullableFilter<"bcm_disaster_atm_affected"> | string | null
+    total_atm?: IntNullableFilter<"bcm_disaster_atm_affected"> | number | null
+    total_atm_is_operating?: IntNullableFilter<"bcm_disaster_atm_affected"> | number | null
+    total_atm_is_not_operating?: IntNullableFilter<"bcm_disaster_atm_affected"> | number | null
+    bcm_disaster?: XOR<Bcm_disasterNullableRelationFilter, bcm_disasterWhereInput> | null
+  }
+
+  export type bcm_disaster_atm_affectedOrderByWithRelationInput = {
+    id?: SortOrder
+    disaster_id?: SortOrderInput | SortOrder
+    total_atm?: SortOrderInput | SortOrder
+    total_atm_is_operating?: SortOrderInput | SortOrder
+    total_atm_is_not_operating?: SortOrderInput | SortOrder
+    bcm_disaster?: bcm_disasterOrderByWithRelationInput
+  }
+
+  export type bcm_disaster_atm_affectedWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: bcm_disaster_atm_affectedWhereInput | bcm_disaster_atm_affectedWhereInput[]
+    OR?: bcm_disaster_atm_affectedWhereInput[]
+    NOT?: bcm_disaster_atm_affectedWhereInput | bcm_disaster_atm_affectedWhereInput[]
+    disaster_id?: StringNullableFilter<"bcm_disaster_atm_affected"> | string | null
+    total_atm?: IntNullableFilter<"bcm_disaster_atm_affected"> | number | null
+    total_atm_is_operating?: IntNullableFilter<"bcm_disaster_atm_affected"> | number | null
+    total_atm_is_not_operating?: IntNullableFilter<"bcm_disaster_atm_affected"> | number | null
+    bcm_disaster?: XOR<Bcm_disasterNullableRelationFilter, bcm_disasterWhereInput> | null
+  }, "id">
+
+  export type bcm_disaster_atm_affectedOrderByWithAggregationInput = {
+    id?: SortOrder
+    disaster_id?: SortOrderInput | SortOrder
+    total_atm?: SortOrderInput | SortOrder
+    total_atm_is_operating?: SortOrderInput | SortOrder
+    total_atm_is_not_operating?: SortOrderInput | SortOrder
+    _count?: bcm_disaster_atm_affectedCountOrderByAggregateInput
+    _avg?: bcm_disaster_atm_affectedAvgOrderByAggregateInput
+    _max?: bcm_disaster_atm_affectedMaxOrderByAggregateInput
+    _min?: bcm_disaster_atm_affectedMinOrderByAggregateInput
+    _sum?: bcm_disaster_atm_affectedSumOrderByAggregateInput
+  }
+
+  export type bcm_disaster_atm_affectedScalarWhereWithAggregatesInput = {
+    AND?: bcm_disaster_atm_affectedScalarWhereWithAggregatesInput | bcm_disaster_atm_affectedScalarWhereWithAggregatesInput[]
+    OR?: bcm_disaster_atm_affectedScalarWhereWithAggregatesInput[]
+    NOT?: bcm_disaster_atm_affectedScalarWhereWithAggregatesInput | bcm_disaster_atm_affectedScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"bcm_disaster_atm_affected"> | string
+    disaster_id?: StringNullableWithAggregatesFilter<"bcm_disaster_atm_affected"> | string | null
+    total_atm?: IntNullableWithAggregatesFilter<"bcm_disaster_atm_affected"> | number | null
+    total_atm_is_operating?: IntNullableWithAggregatesFilter<"bcm_disaster_atm_affected"> | number | null
+    total_atm_is_not_operating?: IntNullableWithAggregatesFilter<"bcm_disaster_atm_affected"> | number | null
+  }
+
+  export type bcm_disaster_staff_affectedWhereInput = {
+    AND?: bcm_disaster_staff_affectedWhereInput | bcm_disaster_staff_affectedWhereInput[]
+    OR?: bcm_disaster_staff_affectedWhereInput[]
+    NOT?: bcm_disaster_staff_affectedWhereInput | bcm_disaster_staff_affectedWhereInput[]
+    id?: StringFilter<"bcm_disaster_staff_affected"> | string
+    disaster_id?: StringNullableFilter<"bcm_disaster_staff_affected"> | string | null
+    staff_condition_id?: StringNullableFilter<"bcm_disaster_staff_affected"> | string | null
+    total?: IntNullableFilter<"bcm_disaster_staff_affected"> | number | null
+    name?: StringNullableFilter<"bcm_disaster_staff_affected"> | string | null
+    total_family?: IntNullableFilter<"bcm_disaster_staff_affected"> | number | null
+    bcm_disaster?: XOR<Bcm_disasterNullableRelationFilter, bcm_disasterWhereInput> | null
+  }
+
+  export type bcm_disaster_staff_affectedOrderByWithRelationInput = {
+    id?: SortOrder
+    disaster_id?: SortOrderInput | SortOrder
+    staff_condition_id?: SortOrderInput | SortOrder
+    total?: SortOrderInput | SortOrder
+    name?: SortOrderInput | SortOrder
+    total_family?: SortOrderInput | SortOrder
+    bcm_disaster?: bcm_disasterOrderByWithRelationInput
+  }
+
+  export type bcm_disaster_staff_affectedWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: bcm_disaster_staff_affectedWhereInput | bcm_disaster_staff_affectedWhereInput[]
+    OR?: bcm_disaster_staff_affectedWhereInput[]
+    NOT?: bcm_disaster_staff_affectedWhereInput | bcm_disaster_staff_affectedWhereInput[]
+    disaster_id?: StringNullableFilter<"bcm_disaster_staff_affected"> | string | null
+    staff_condition_id?: StringNullableFilter<"bcm_disaster_staff_affected"> | string | null
+    total?: IntNullableFilter<"bcm_disaster_staff_affected"> | number | null
+    name?: StringNullableFilter<"bcm_disaster_staff_affected"> | string | null
+    total_family?: IntNullableFilter<"bcm_disaster_staff_affected"> | number | null
+    bcm_disaster?: XOR<Bcm_disasterNullableRelationFilter, bcm_disasterWhereInput> | null
+  }, "id">
+
+  export type bcm_disaster_staff_affectedOrderByWithAggregationInput = {
+    id?: SortOrder
+    disaster_id?: SortOrderInput | SortOrder
+    staff_condition_id?: SortOrderInput | SortOrder
+    total?: SortOrderInput | SortOrder
+    name?: SortOrderInput | SortOrder
+    total_family?: SortOrderInput | SortOrder
+    _count?: bcm_disaster_staff_affectedCountOrderByAggregateInput
+    _avg?: bcm_disaster_staff_affectedAvgOrderByAggregateInput
+    _max?: bcm_disaster_staff_affectedMaxOrderByAggregateInput
+    _min?: bcm_disaster_staff_affectedMinOrderByAggregateInput
+    _sum?: bcm_disaster_staff_affectedSumOrderByAggregateInput
+  }
+
+  export type bcm_disaster_staff_affectedScalarWhereWithAggregatesInput = {
+    AND?: bcm_disaster_staff_affectedScalarWhereWithAggregatesInput | bcm_disaster_staff_affectedScalarWhereWithAggregatesInput[]
+    OR?: bcm_disaster_staff_affectedScalarWhereWithAggregatesInput[]
+    NOT?: bcm_disaster_staff_affectedScalarWhereWithAggregatesInput | bcm_disaster_staff_affectedScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"bcm_disaster_staff_affected"> | string
+    disaster_id?: StringNullableWithAggregatesFilter<"bcm_disaster_staff_affected"> | string | null
+    staff_condition_id?: StringNullableWithAggregatesFilter<"bcm_disaster_staff_affected"> | string | null
+    total?: IntNullableWithAggregatesFilter<"bcm_disaster_staff_affected"> | number | null
+    name?: StringNullableWithAggregatesFilter<"bcm_disaster_staff_affected"> | string | null
+    total_family?: IntNullableWithAggregatesFilter<"bcm_disaster_staff_affected"> | number | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectWhereInput = {
+    AND?: bcm_disaster_unit_affected_dirrectWhereInput | bcm_disaster_unit_affected_dirrectWhereInput[]
+    OR?: bcm_disaster_unit_affected_dirrectWhereInput[]
+    NOT?: bcm_disaster_unit_affected_dirrectWhereInput | bcm_disaster_unit_affected_dirrectWhereInput[]
+    id?: StringFilter<"bcm_disaster_unit_affected_dirrect"> | string
+    disaster_id?: StringNullableFilter<"bcm_disaster_unit_affected_dirrect"> | string | null
+    location_org_id?: StringNullableFilter<"bcm_disaster_unit_affected_dirrect"> | string | null
+    is_operating?: BoolNullableFilter<"bcm_disaster_unit_affected_dirrect"> | boolean | null
+    bcm_disaster?: XOR<Bcm_disasterNullableRelationFilter, bcm_disasterWhereInput> | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectOrderByWithRelationInput = {
+    id?: SortOrder
+    disaster_id?: SortOrderInput | SortOrder
+    location_org_id?: SortOrderInput | SortOrder
+    is_operating?: SortOrderInput | SortOrder
+    bcm_disaster?: bcm_disasterOrderByWithRelationInput
+  }
+
+  export type bcm_disaster_unit_affected_dirrectWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: bcm_disaster_unit_affected_dirrectWhereInput | bcm_disaster_unit_affected_dirrectWhereInput[]
+    OR?: bcm_disaster_unit_affected_dirrectWhereInput[]
+    NOT?: bcm_disaster_unit_affected_dirrectWhereInput | bcm_disaster_unit_affected_dirrectWhereInput[]
+    disaster_id?: StringNullableFilter<"bcm_disaster_unit_affected_dirrect"> | string | null
+    location_org_id?: StringNullableFilter<"bcm_disaster_unit_affected_dirrect"> | string | null
+    is_operating?: BoolNullableFilter<"bcm_disaster_unit_affected_dirrect"> | boolean | null
+    bcm_disaster?: XOR<Bcm_disasterNullableRelationFilter, bcm_disasterWhereInput> | null
+  }, "id">
+
+  export type bcm_disaster_unit_affected_dirrectOrderByWithAggregationInput = {
+    id?: SortOrder
+    disaster_id?: SortOrderInput | SortOrder
+    location_org_id?: SortOrderInput | SortOrder
+    is_operating?: SortOrderInput | SortOrder
+    _count?: bcm_disaster_unit_affected_dirrectCountOrderByAggregateInput
+    _max?: bcm_disaster_unit_affected_dirrectMaxOrderByAggregateInput
+    _min?: bcm_disaster_unit_affected_dirrectMinOrderByAggregateInput
+  }
+
+  export type bcm_disaster_unit_affected_dirrectScalarWhereWithAggregatesInput = {
+    AND?: bcm_disaster_unit_affected_dirrectScalarWhereWithAggregatesInput | bcm_disaster_unit_affected_dirrectScalarWhereWithAggregatesInput[]
+    OR?: bcm_disaster_unit_affected_dirrectScalarWhereWithAggregatesInput[]
+    NOT?: bcm_disaster_unit_affected_dirrectScalarWhereWithAggregatesInput | bcm_disaster_unit_affected_dirrectScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"bcm_disaster_unit_affected_dirrect"> | string
+    disaster_id?: StringNullableWithAggregatesFilter<"bcm_disaster_unit_affected_dirrect"> | string | null
+    location_org_id?: StringNullableWithAggregatesFilter<"bcm_disaster_unit_affected_dirrect"> | string | null
+    is_operating?: BoolNullableWithAggregatesFilter<"bcm_disaster_unit_affected_dirrect"> | boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectWhereInput = {
+    AND?: bcm_disaster_unit_affected_indirrectWhereInput | bcm_disaster_unit_affected_indirrectWhereInput[]
+    OR?: bcm_disaster_unit_affected_indirrectWhereInput[]
+    NOT?: bcm_disaster_unit_affected_indirrectWhereInput | bcm_disaster_unit_affected_indirrectWhereInput[]
+    id?: StringFilter<"bcm_disaster_unit_affected_indirrect"> | string
+    disaster_id?: StringNullableFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+    status_indirect_unit_id?: StringNullableFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+    location_org_id?: StringNullableFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+    status_indirect_unit?: XOR<Indirect_UnitNullableRelationFilter, Indirect_UnitWhereInput> | null
+    bcm_disaster?: XOR<Bcm_disasterNullableRelationFilter, bcm_disasterWhereInput> | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectOrderByWithRelationInput = {
+    id?: SortOrder
+    disaster_id?: SortOrderInput | SortOrder
+    status_indirect_unit_id?: SortOrderInput | SortOrder
+    location_org_id?: SortOrderInput | SortOrder
+    status_indirect_unit?: Indirect_UnitOrderByWithRelationInput
+    bcm_disaster?: bcm_disasterOrderByWithRelationInput
+  }
+
+  export type bcm_disaster_unit_affected_indirrectWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: bcm_disaster_unit_affected_indirrectWhereInput | bcm_disaster_unit_affected_indirrectWhereInput[]
+    OR?: bcm_disaster_unit_affected_indirrectWhereInput[]
+    NOT?: bcm_disaster_unit_affected_indirrectWhereInput | bcm_disaster_unit_affected_indirrectWhereInput[]
+    disaster_id?: StringNullableFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+    status_indirect_unit_id?: StringNullableFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+    location_org_id?: StringNullableFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+    status_indirect_unit?: XOR<Indirect_UnitNullableRelationFilter, Indirect_UnitWhereInput> | null
+    bcm_disaster?: XOR<Bcm_disasterNullableRelationFilter, bcm_disasterWhereInput> | null
+  }, "id">
+
+  export type bcm_disaster_unit_affected_indirrectOrderByWithAggregationInput = {
+    id?: SortOrder
+    disaster_id?: SortOrderInput | SortOrder
+    status_indirect_unit_id?: SortOrderInput | SortOrder
+    location_org_id?: SortOrderInput | SortOrder
+    _count?: bcm_disaster_unit_affected_indirrectCountOrderByAggregateInput
+    _max?: bcm_disaster_unit_affected_indirrectMaxOrderByAggregateInput
+    _min?: bcm_disaster_unit_affected_indirrectMinOrderByAggregateInput
+  }
+
+  export type bcm_disaster_unit_affected_indirrectScalarWhereWithAggregatesInput = {
+    AND?: bcm_disaster_unit_affected_indirrectScalarWhereWithAggregatesInput | bcm_disaster_unit_affected_indirrectScalarWhereWithAggregatesInput[]
+    OR?: bcm_disaster_unit_affected_indirrectScalarWhereWithAggregatesInput[]
+    NOT?: bcm_disaster_unit_affected_indirrectScalarWhereWithAggregatesInput | bcm_disaster_unit_affected_indirrectScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"bcm_disaster_unit_affected_indirrect"> | string
+    disaster_id?: StringNullableWithAggregatesFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+    status_indirect_unit_id?: StringNullableWithAggregatesFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+    location_org_id?: StringNullableWithAggregatesFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+  }
+
+  export type workflow_statusWhereInput = {
+    AND?: workflow_statusWhereInput | workflow_statusWhereInput[]
+    OR?: workflow_statusWhereInput[]
+    NOT?: workflow_statusWhereInput | workflow_statusWhereInput[]
+    id?: IntFilter<"workflow_status"> | number
+    name?: StringNullableFilter<"workflow_status"> | string | null
+    is_active?: BoolNullableFilter<"workflow_status"> | boolean | null
+    bcm_disaster?: Bcm_disasterListRelationFilter
+    bcm_disaster_assignment_history?: Bcm_disaster_assignment_historyListRelationFilter
+  }
+
+  export type workflow_statusOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    is_active?: SortOrderInput | SortOrder
+    bcm_disaster?: bcm_disasterOrderByRelationAggregateInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyOrderByRelationAggregateInput
+  }
+
+  export type workflow_statusWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: workflow_statusWhereInput | workflow_statusWhereInput[]
+    OR?: workflow_statusWhereInput[]
+    NOT?: workflow_statusWhereInput | workflow_statusWhereInput[]
+    name?: StringNullableFilter<"workflow_status"> | string | null
+    is_active?: BoolNullableFilter<"workflow_status"> | boolean | null
+    bcm_disaster?: Bcm_disasterListRelationFilter
+    bcm_disaster_assignment_history?: Bcm_disaster_assignment_historyListRelationFilter
+  }, "id">
+
+  export type workflow_statusOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    is_active?: SortOrderInput | SortOrder
+    _count?: workflow_statusCountOrderByAggregateInput
+    _avg?: workflow_statusAvgOrderByAggregateInput
+    _max?: workflow_statusMaxOrderByAggregateInput
+    _min?: workflow_statusMinOrderByAggregateInput
+    _sum?: workflow_statusSumOrderByAggregateInput
+  }
+
+  export type workflow_statusScalarWhereWithAggregatesInput = {
+    AND?: workflow_statusScalarWhereWithAggregatesInput | workflow_statusScalarWhereWithAggregatesInput[]
+    OR?: workflow_statusScalarWhereWithAggregatesInput[]
+    NOT?: workflow_statusScalarWhereWithAggregatesInput | workflow_statusScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"workflow_status"> | number
+    name?: StringNullableWithAggregatesFilter<"workflow_status"> | string | null
+    is_active?: BoolNullableWithAggregatesFilter<"workflow_status"> | boolean | null
   }
 
   export type vw_threat_typesWhereInput = {
@@ -9711,6 +18489,7 @@ export namespace Prisma {
     is_active?: boolean
     created_at?: Date | string
     updated_at?: Date | string | null
+    bcm_disaster?: bcm_disasterCreateNestedManyWithoutThreatInput
     threat_types: threat_typeCreateNestedOneWithoutThreatsInput
   }
 
@@ -9722,6 +18501,7 @@ export namespace Prisma {
     is_active?: boolean
     created_at?: Date | string
     updated_at?: Date | string | null
+    bcm_disaster?: bcm_disasterUncheckedCreateNestedManyWithoutThreatInput
   }
 
   export type threatUpdateInput = {
@@ -9731,6 +18511,7 @@ export namespace Prisma {
     is_active?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster?: bcm_disasterUpdateManyWithoutThreatNestedInput
     threat_types?: threat_typeUpdateOneRequiredWithoutThreatsNestedInput
   }
 
@@ -9742,6 +18523,7 @@ export namespace Prisma {
     is_active?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster?: bcm_disasterUncheckedUpdateManyWithoutThreatNestedInput
   }
 
   export type threatCreateManyInput = {
@@ -9928,6 +18710,7 @@ export namespace Prisma {
     is_active?: boolean
     created_at?: Date | string
     updated_at?: Date | string | null
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutStatus_indirect_unitInput
   }
 
   export type Indirect_UnitUncheckedCreateInput = {
@@ -9938,6 +18721,7 @@ export namespace Prisma {
     is_active?: boolean
     created_at?: Date | string
     updated_at?: Date | string | null
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutStatus_indirect_unitInput
   }
 
   export type Indirect_UnitUpdateInput = {
@@ -9948,6 +18732,7 @@ export namespace Prisma {
     is_active?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUpdateManyWithoutStatus_indirect_unitNestedInput
   }
 
   export type Indirect_UnitUncheckedUpdateInput = {
@@ -9958,6 +18743,7 @@ export namespace Prisma {
     is_active?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutStatus_indirect_unitNestedInput
   }
 
   export type Indirect_UnitCreateManyInput = {
@@ -10069,6 +18855,8 @@ export namespace Prisma {
     is_active?: boolean
     created_at?: Date | string
     updated_at?: Date | string | null
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: bcm_disasterCreateNestedManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: bcm_disasterCreateNestedManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
   }
 
   export type CurrencyUncheckedCreateInput = {
@@ -10080,6 +18868,8 @@ export namespace Prisma {
     is_active?: boolean
     created_at?: Date | string
     updated_at?: Date | string | null
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: bcm_disasterUncheckedCreateNestedManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: bcm_disasterUncheckedCreateNestedManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
   }
 
   export type CurrencyUpdateInput = {
@@ -10091,6 +18881,8 @@ export namespace Prisma {
     is_active?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: bcm_disasterUpdateManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: bcm_disasterUpdateManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
   }
 
   export type CurrencyUncheckedUpdateInput = {
@@ -10102,6 +18894,8 @@ export namespace Prisma {
     is_active?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: bcm_disasterUncheckedUpdateManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: bcm_disasterUncheckedUpdateManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
   }
 
   export type CurrencyCreateManyInput = {
@@ -10135,6 +18929,527 @@ export namespace Prisma {
     is_active?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type bcm_disasterCreateInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    threat: threatCreateNestedOneWithoutBcm_disasterInput
+    workflow_status?: workflow_statusCreateNestedOneWithoutBcm_disasterInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterUncheckedCreateInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
+    threat?: threatUpdateOneRequiredWithoutBcm_disasterNestedInput
+    workflow_status?: workflow_statusUpdateOneWithoutBcm_disasterNestedInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterCreateManyInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+  }
+
+  export type bcm_disasterUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type bcm_disasterUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type bcm_disaster_assignment_historyCreateInput = {
+    id: string
+    history_date?: Date | string | null
+    user_id?: string | null
+    user_name?: string | null
+    reason?: string | null
+    bcm_disaster?: bcm_disasterCreateNestedOneWithoutBcm_disaster_assignment_historyInput
+    workflow_status?: workflow_statusCreateNestedOneWithoutBcm_disaster_assignment_historyInput
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedCreateInput = {
+    id: string
+    disaster_id?: string | null
+    history_date?: Date | string | null
+    user_id?: string | null
+    user_name?: string | null
+    wf_status_id?: number | null
+    reason?: string | null
+  }
+
+  export type bcm_disaster_assignment_historyUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    history_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user_id?: NullableStringFieldUpdateOperationsInput | string | null
+    user_name?: NullableStringFieldUpdateOperationsInput | string | null
+    reason?: NullableStringFieldUpdateOperationsInput | string | null
+    bcm_disaster?: bcm_disasterUpdateOneWithoutBcm_disaster_assignment_historyNestedInput
+    workflow_status?: workflow_statusUpdateOneWithoutBcm_disaster_assignment_historyNestedInput
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    history_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user_id?: NullableStringFieldUpdateOperationsInput | string | null
+    user_name?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    reason?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disaster_assignment_historyCreateManyInput = {
+    id: string
+    disaster_id?: string | null
+    history_date?: Date | string | null
+    user_id?: string | null
+    user_name?: string | null
+    wf_status_id?: number | null
+    reason?: string | null
+  }
+
+  export type bcm_disaster_assignment_historyUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    history_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user_id?: NullableStringFieldUpdateOperationsInput | string | null
+    user_name?: NullableStringFieldUpdateOperationsInput | string | null
+    reason?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    history_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user_id?: NullableStringFieldUpdateOperationsInput | string | null
+    user_name?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    reason?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disaster_atm_affectedCreateInput = {
+    id: string
+    total_atm?: number | null
+    total_atm_is_operating?: number | null
+    total_atm_is_not_operating?: number | null
+    bcm_disaster?: bcm_disasterCreateNestedOneWithoutBcm_disaster_atm_affectedInput
+  }
+
+  export type bcm_disaster_atm_affectedUncheckedCreateInput = {
+    id: string
+    disaster_id?: string | null
+    total_atm?: number | null
+    total_atm_is_operating?: number | null
+    total_atm_is_not_operating?: number | null
+  }
+
+  export type bcm_disaster_atm_affectedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    total_atm?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_operating?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_not_operating?: NullableIntFieldUpdateOperationsInput | number | null
+    bcm_disaster?: bcm_disasterUpdateOneWithoutBcm_disaster_atm_affectedNestedInput
+  }
+
+  export type bcm_disaster_atm_affectedUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    total_atm?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_operating?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_not_operating?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_atm_affectedCreateManyInput = {
+    id: string
+    disaster_id?: string | null
+    total_atm?: number | null
+    total_atm_is_operating?: number | null
+    total_atm_is_not_operating?: number | null
+  }
+
+  export type bcm_disaster_atm_affectedUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    total_atm?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_operating?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_not_operating?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_atm_affectedUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    total_atm?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_operating?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_not_operating?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_staff_affectedCreateInput = {
+    id: string
+    staff_condition_id?: string | null
+    total?: number | null
+    name?: string | null
+    total_family?: number | null
+    bcm_disaster?: bcm_disasterCreateNestedOneWithoutBcm_disaster_staff_affectedInput
+  }
+
+  export type bcm_disaster_staff_affectedUncheckedCreateInput = {
+    id: string
+    disaster_id?: string | null
+    staff_condition_id?: string | null
+    total?: number | null
+    name?: string | null
+    total_family?: number | null
+  }
+
+  export type bcm_disaster_staff_affectedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    staff_condition_id?: NullableStringFieldUpdateOperationsInput | string | null
+    total?: NullableIntFieldUpdateOperationsInput | number | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    total_family?: NullableIntFieldUpdateOperationsInput | number | null
+    bcm_disaster?: bcm_disasterUpdateOneWithoutBcm_disaster_staff_affectedNestedInput
+  }
+
+  export type bcm_disaster_staff_affectedUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    staff_condition_id?: NullableStringFieldUpdateOperationsInput | string | null
+    total?: NullableIntFieldUpdateOperationsInput | number | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    total_family?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_staff_affectedCreateManyInput = {
+    id: string
+    disaster_id?: string | null
+    staff_condition_id?: string | null
+    total?: number | null
+    name?: string | null
+    total_family?: number | null
+  }
+
+  export type bcm_disaster_staff_affectedUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    staff_condition_id?: NullableStringFieldUpdateOperationsInput | string | null
+    total?: NullableIntFieldUpdateOperationsInput | number | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    total_family?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_staff_affectedUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    staff_condition_id?: NullableStringFieldUpdateOperationsInput | string | null
+    total?: NullableIntFieldUpdateOperationsInput | number | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    total_family?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectCreateInput = {
+    id: string
+    location_org_id?: string | null
+    is_operating?: boolean | null
+    bcm_disaster?: bcm_disasterCreateNestedOneWithoutBcm_disaster_unit_affected_dirrectInput
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUncheckedCreateInput = {
+    id: string
+    disaster_id?: string | null
+    location_org_id?: string | null
+    is_operating?: boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+    is_operating?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    bcm_disaster?: bcm_disasterUpdateOneWithoutBcm_disaster_unit_affected_dirrectNestedInput
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+    is_operating?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectCreateManyInput = {
+    id: string
+    disaster_id?: string | null
+    location_org_id?: string | null
+    is_operating?: boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+    is_operating?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+    is_operating?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectCreateInput = {
+    id: string
+    location_org_id?: string | null
+    status_indirect_unit?: Indirect_UnitCreateNestedOneWithoutBcm_disaster_unit_affected_indirrectInput
+    bcm_disaster?: bcm_disasterCreateNestedOneWithoutBcm_disaster_unit_affected_indirrectInput
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedCreateInput = {
+    id: string
+    disaster_id?: string | null
+    status_indirect_unit_id?: string | null
+    location_org_id?: string | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+    status_indirect_unit?: Indirect_UnitUpdateOneWithoutBcm_disaster_unit_affected_indirrectNestedInput
+    bcm_disaster?: bcm_disasterUpdateOneWithoutBcm_disaster_unit_affected_indirrectNestedInput
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    status_indirect_unit_id?: NullableStringFieldUpdateOperationsInput | string | null
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectCreateManyInput = {
+    id: string
+    disaster_id?: string | null
+    status_indirect_unit_id?: string | null
+    location_org_id?: string | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    status_indirect_unit_id?: NullableStringFieldUpdateOperationsInput | string | null
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type workflow_statusCreateInput = {
+    id: number
+    name?: string | null
+    is_active?: boolean | null
+    bcm_disaster?: bcm_disasterCreateNestedManyWithoutWorkflow_statusInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyCreateNestedManyWithoutWorkflow_statusInput
+  }
+
+  export type workflow_statusUncheckedCreateInput = {
+    id: number
+    name?: string | null
+    is_active?: boolean | null
+    bcm_disaster?: bcm_disasterUncheckedCreateNestedManyWithoutWorkflow_statusInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutWorkflow_statusInput
+  }
+
+  export type workflow_statusUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    is_active?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    bcm_disaster?: bcm_disasterUpdateManyWithoutWorkflow_statusNestedInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUpdateManyWithoutWorkflow_statusNestedInput
+  }
+
+  export type workflow_statusUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    is_active?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    bcm_disaster?: bcm_disasterUncheckedUpdateManyWithoutWorkflow_statusNestedInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedUpdateManyWithoutWorkflow_statusNestedInput
+  }
+
+  export type workflow_statusCreateManyInput = {
+    id: number
+    name?: string | null
+    is_active?: boolean | null
+  }
+
+  export type workflow_statusUpdateManyMutationInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    is_active?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type workflow_statusUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    is_active?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type vw_threat_typesCreateInput = {
@@ -10348,9 +19663,19 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
+  export type Bcm_disasterListRelationFilter = {
+    every?: bcm_disasterWhereInput
+    some?: bcm_disasterWhereInput
+    none?: bcm_disasterWhereInput
+  }
+
   export type Threat_typeRelationFilter = {
     is?: threat_typeWhereInput
     isNot?: threat_typeWhereInput
+  }
+
+  export type bcm_disasterOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type threatType_idNameTenant_idCompoundUniqueInput = {
@@ -10505,6 +19830,16 @@ export namespace Prisma {
     sort_order?: SortOrder
   }
 
+  export type Bcm_disaster_unit_affected_indirrectListRelationFilter = {
+    every?: bcm_disaster_unit_affected_indirrectWhereInput
+    some?: bcm_disaster_unit_affected_indirrectWhereInput
+    none?: bcm_disaster_unit_affected_indirrectWhereInput
+  }
+
+  export type bcm_disaster_unit_affected_indirrectOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
   export type Indirect_UnitTenant_idNameCompoundUniqueInput = {
     tenant_id: string
     name: string
@@ -10651,9 +19986,419 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type DecimalNullableFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel> | null
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalNullableFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string | null
+  }
+
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type CurrencyNullableRelationFilter = {
+    is?: CurrencyWhereInput | null
+    isNot?: CurrencyWhereInput | null
+  }
+
+  export type ThreatRelationFilter = {
+    is?: threatWhereInput
+    isNot?: threatWhereInput
+  }
+
+  export type Workflow_statusNullableRelationFilter = {
+    is?: workflow_statusWhereInput | null
+    isNot?: workflow_statusWhereInput | null
+  }
+
+  export type Bcm_disaster_assignment_historyListRelationFilter = {
+    every?: bcm_disaster_assignment_historyWhereInput
+    some?: bcm_disaster_assignment_historyWhereInput
+    none?: bcm_disaster_assignment_historyWhereInput
+  }
+
+  export type Bcm_disaster_atm_affectedListRelationFilter = {
+    every?: bcm_disaster_atm_affectedWhereInput
+    some?: bcm_disaster_atm_affectedWhereInput
+    none?: bcm_disaster_atm_affectedWhereInput
+  }
+
+  export type Bcm_disaster_staff_affectedListRelationFilter = {
+    every?: bcm_disaster_staff_affectedWhereInput
+    some?: bcm_disaster_staff_affectedWhereInput
+    none?: bcm_disaster_staff_affectedWhereInput
+  }
+
+  export type Bcm_disaster_unit_affected_dirrectListRelationFilter = {
+    every?: bcm_disaster_unit_affected_dirrectWhereInput
+    some?: bcm_disaster_unit_affected_dirrectWhereInput
+    none?: bcm_disaster_unit_affected_dirrectWhereInput
+  }
+
+  export type bcm_disaster_assignment_historyOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type bcm_disaster_atm_affectedOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type bcm_disaster_staff_affectedOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type bcm_disaster_unit_affected_dirrectOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type bcm_disasterCountOrderByAggregateInput = {
+    id?: SortOrder
+    tenant_id?: SortOrder
+    org_id?: SortOrder
+    threat_id?: SortOrder
+    disaster_chronology?: SortOrder
+    disaster_date?: SortOrder
+    disaster_location?: SortOrder
+    estimated_lost_currency?: SortOrder
+    estimated_lost?: SortOrder
+    total_insurance_claim_currency?: SortOrder
+    total_insurance_claim?: SortOrder
+    temp_action_plan?: SortOrder
+    recovery_plan?: SortOrder
+    alt_customer_services?: SortOrder
+    alt_staff?: SortOrder
+    wf_status_id?: SortOrder
+    assign_curr_org?: SortOrder
+    assign_curr_role?: SortOrder
+    created_by?: SortOrder
+    created_at?: SortOrder
+    updated_by?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type bcm_disasterAvgOrderByAggregateInput = {
+    estimated_lost?: SortOrder
+    total_insurance_claim?: SortOrder
+    wf_status_id?: SortOrder
+  }
+
+  export type bcm_disasterMaxOrderByAggregateInput = {
+    id?: SortOrder
+    tenant_id?: SortOrder
+    org_id?: SortOrder
+    threat_id?: SortOrder
+    disaster_chronology?: SortOrder
+    disaster_date?: SortOrder
+    disaster_location?: SortOrder
+    estimated_lost_currency?: SortOrder
+    estimated_lost?: SortOrder
+    total_insurance_claim_currency?: SortOrder
+    total_insurance_claim?: SortOrder
+    temp_action_plan?: SortOrder
+    recovery_plan?: SortOrder
+    alt_customer_services?: SortOrder
+    alt_staff?: SortOrder
+    wf_status_id?: SortOrder
+    assign_curr_org?: SortOrder
+    assign_curr_role?: SortOrder
+    created_by?: SortOrder
+    created_at?: SortOrder
+    updated_by?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type bcm_disasterMinOrderByAggregateInput = {
+    id?: SortOrder
+    tenant_id?: SortOrder
+    org_id?: SortOrder
+    threat_id?: SortOrder
+    disaster_chronology?: SortOrder
+    disaster_date?: SortOrder
+    disaster_location?: SortOrder
+    estimated_lost_currency?: SortOrder
+    estimated_lost?: SortOrder
+    total_insurance_claim_currency?: SortOrder
+    total_insurance_claim?: SortOrder
+    temp_action_plan?: SortOrder
+    recovery_plan?: SortOrder
+    alt_customer_services?: SortOrder
+    alt_staff?: SortOrder
+    wf_status_id?: SortOrder
+    assign_curr_org?: SortOrder
+    assign_curr_role?: SortOrder
+    created_by?: SortOrder
+    created_at?: SortOrder
+    updated_by?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type bcm_disasterSumOrderByAggregateInput = {
+    estimated_lost?: SortOrder
+    total_insurance_claim?: SortOrder
+    wf_status_id?: SortOrder
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type DecimalNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel> | null
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalNullableWithAggregatesFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedDecimalNullableFilter<$PrismaModel>
+    _sum?: NestedDecimalNullableFilter<$PrismaModel>
+    _min?: NestedDecimalNullableFilter<$PrismaModel>
+    _max?: NestedDecimalNullableFilter<$PrismaModel>
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type Bcm_disasterNullableRelationFilter = {
+    is?: bcm_disasterWhereInput | null
+    isNot?: bcm_disasterWhereInput | null
+  }
+
+  export type bcm_disaster_assignment_historyCountOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    history_date?: SortOrder
+    user_id?: SortOrder
+    user_name?: SortOrder
+    wf_status_id?: SortOrder
+    reason?: SortOrder
+  }
+
+  export type bcm_disaster_assignment_historyAvgOrderByAggregateInput = {
+    wf_status_id?: SortOrder
+  }
+
+  export type bcm_disaster_assignment_historyMaxOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    history_date?: SortOrder
+    user_id?: SortOrder
+    user_name?: SortOrder
+    wf_status_id?: SortOrder
+    reason?: SortOrder
+  }
+
+  export type bcm_disaster_assignment_historyMinOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    history_date?: SortOrder
+    user_id?: SortOrder
+    user_name?: SortOrder
+    wf_status_id?: SortOrder
+    reason?: SortOrder
+  }
+
+  export type bcm_disaster_assignment_historySumOrderByAggregateInput = {
+    wf_status_id?: SortOrder
+  }
+
+  export type bcm_disaster_atm_affectedCountOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    total_atm?: SortOrder
+    total_atm_is_operating?: SortOrder
+    total_atm_is_not_operating?: SortOrder
+  }
+
+  export type bcm_disaster_atm_affectedAvgOrderByAggregateInput = {
+    total_atm?: SortOrder
+    total_atm_is_operating?: SortOrder
+    total_atm_is_not_operating?: SortOrder
+  }
+
+  export type bcm_disaster_atm_affectedMaxOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    total_atm?: SortOrder
+    total_atm_is_operating?: SortOrder
+    total_atm_is_not_operating?: SortOrder
+  }
+
+  export type bcm_disaster_atm_affectedMinOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    total_atm?: SortOrder
+    total_atm_is_operating?: SortOrder
+    total_atm_is_not_operating?: SortOrder
+  }
+
+  export type bcm_disaster_atm_affectedSumOrderByAggregateInput = {
+    total_atm?: SortOrder
+    total_atm_is_operating?: SortOrder
+    total_atm_is_not_operating?: SortOrder
+  }
+
+  export type bcm_disaster_staff_affectedCountOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    staff_condition_id?: SortOrder
+    total?: SortOrder
+    name?: SortOrder
+    total_family?: SortOrder
+  }
+
+  export type bcm_disaster_staff_affectedAvgOrderByAggregateInput = {
+    total?: SortOrder
+    total_family?: SortOrder
+  }
+
+  export type bcm_disaster_staff_affectedMaxOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    staff_condition_id?: SortOrder
+    total?: SortOrder
+    name?: SortOrder
+    total_family?: SortOrder
+  }
+
+  export type bcm_disaster_staff_affectedMinOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    staff_condition_id?: SortOrder
+    total?: SortOrder
+    name?: SortOrder
+    total_family?: SortOrder
+  }
+
+  export type bcm_disaster_staff_affectedSumOrderByAggregateInput = {
+    total?: SortOrder
+    total_family?: SortOrder
+  }
+
   export type BoolNullableFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
     not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectCountOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    location_org_id?: SortOrder
+    is_operating?: SortOrder
+  }
+
+  export type bcm_disaster_unit_affected_dirrectMaxOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    location_org_id?: SortOrder
+    is_operating?: SortOrder
+  }
+
+  export type bcm_disaster_unit_affected_dirrectMinOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    location_org_id?: SortOrder
+    is_operating?: SortOrder
+  }
+
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
+  export type Indirect_UnitNullableRelationFilter = {
+    is?: Indirect_UnitWhereInput | null
+    isNot?: Indirect_UnitWhereInput | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectCountOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    status_indirect_unit_id?: SortOrder
+    location_org_id?: SortOrder
+  }
+
+  export type bcm_disaster_unit_affected_indirrectMaxOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    status_indirect_unit_id?: SortOrder
+    location_org_id?: SortOrder
+  }
+
+  export type bcm_disaster_unit_affected_indirrectMinOrderByAggregateInput = {
+    id?: SortOrder
+    disaster_id?: SortOrder
+    status_indirect_unit_id?: SortOrder
+    location_org_id?: SortOrder
+  }
+
+  export type workflow_statusCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    is_active?: SortOrder
+  }
+
+  export type workflow_statusAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type workflow_statusMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    is_active?: SortOrder
+  }
+
+  export type workflow_statusMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    is_active?: SortOrder
+  }
+
+  export type workflow_statusSumOrderByAggregateInput = {
+    id?: SortOrder
   }
 
   export type vw_threat_typesCountOrderByAggregateInput = {
@@ -10692,31 +20437,6 @@ export namespace Prisma {
 
   export type vw_threat_typesSumOrderByAggregateInput = {
     delete_enable?: SortOrder
-  }
-
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedBoolNullableFilter<$PrismaModel>
-    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type threatCreateNestedManyWithoutThreat_typesInput = {
@@ -10777,10 +20497,38 @@ export namespace Prisma {
     deleteMany?: threatScalarWhereInput | threatScalarWhereInput[]
   }
 
+  export type bcm_disasterCreateNestedManyWithoutThreatInput = {
+    create?: XOR<bcm_disasterCreateWithoutThreatInput, bcm_disasterUncheckedCreateWithoutThreatInput> | bcm_disasterCreateWithoutThreatInput[] | bcm_disasterUncheckedCreateWithoutThreatInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutThreatInput | bcm_disasterCreateOrConnectWithoutThreatInput[]
+    createMany?: bcm_disasterCreateManyThreatInputEnvelope
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+  }
+
   export type threat_typeCreateNestedOneWithoutThreatsInput = {
     create?: XOR<threat_typeCreateWithoutThreatsInput, threat_typeUncheckedCreateWithoutThreatsInput>
     connectOrCreate?: threat_typeCreateOrConnectWithoutThreatsInput
     connect?: threat_typeWhereUniqueInput
+  }
+
+  export type bcm_disasterUncheckedCreateNestedManyWithoutThreatInput = {
+    create?: XOR<bcm_disasterCreateWithoutThreatInput, bcm_disasterUncheckedCreateWithoutThreatInput> | bcm_disasterCreateWithoutThreatInput[] | bcm_disasterUncheckedCreateWithoutThreatInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutThreatInput | bcm_disasterCreateOrConnectWithoutThreatInput[]
+    createMany?: bcm_disasterCreateManyThreatInputEnvelope
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+  }
+
+  export type bcm_disasterUpdateManyWithoutThreatNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutThreatInput, bcm_disasterUncheckedCreateWithoutThreatInput> | bcm_disasterCreateWithoutThreatInput[] | bcm_disasterUncheckedCreateWithoutThreatInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutThreatInput | bcm_disasterCreateOrConnectWithoutThreatInput[]
+    upsert?: bcm_disasterUpsertWithWhereUniqueWithoutThreatInput | bcm_disasterUpsertWithWhereUniqueWithoutThreatInput[]
+    createMany?: bcm_disasterCreateManyThreatInputEnvelope
+    set?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    disconnect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    delete?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    update?: bcm_disasterUpdateWithWhereUniqueWithoutThreatInput | bcm_disasterUpdateWithWhereUniqueWithoutThreatInput[]
+    updateMany?: bcm_disasterUpdateManyWithWhereWithoutThreatInput | bcm_disasterUpdateManyWithWhereWithoutThreatInput[]
+    deleteMany?: bcm_disasterScalarWhereInput | bcm_disasterScalarWhereInput[]
   }
 
   export type threat_typeUpdateOneRequiredWithoutThreatsNestedInput = {
@@ -10791,6 +20539,20 @@ export namespace Prisma {
     update?: XOR<XOR<threat_typeUpdateToOneWithWhereWithoutThreatsInput, threat_typeUpdateWithoutThreatsInput>, threat_typeUncheckedUpdateWithoutThreatsInput>
   }
 
+  export type bcm_disasterUncheckedUpdateManyWithoutThreatNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutThreatInput, bcm_disasterUncheckedCreateWithoutThreatInput> | bcm_disasterCreateWithoutThreatInput[] | bcm_disasterUncheckedCreateWithoutThreatInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutThreatInput | bcm_disasterCreateOrConnectWithoutThreatInput[]
+    upsert?: bcm_disasterUpsertWithWhereUniqueWithoutThreatInput | bcm_disasterUpsertWithWhereUniqueWithoutThreatInput[]
+    createMany?: bcm_disasterCreateManyThreatInputEnvelope
+    set?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    disconnect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    delete?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    update?: bcm_disasterUpdateWithWhereUniqueWithoutThreatInput | bcm_disasterUpdateWithWhereUniqueWithoutThreatInput[]
+    updateMany?: bcm_disasterUpdateManyWithWhereWithoutThreatInput | bcm_disasterUpdateManyWithWhereWithoutThreatInput[]
+    deleteMany?: bcm_disasterScalarWhereInput | bcm_disasterScalarWhereInput[]
+  }
+
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
@@ -10799,12 +20561,622 @@ export namespace Prisma {
     divide?: number
   }
 
+  export type bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutStatus_indirect_unitInput = {
+    create?: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutStatus_indirect_unitInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutStatus_indirect_unitInput> | bcm_disaster_unit_affected_indirrectCreateWithoutStatus_indirect_unitInput[] | bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutStatus_indirect_unitInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutStatus_indirect_unitInput | bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutStatus_indirect_unitInput[]
+    createMany?: bcm_disaster_unit_affected_indirrectCreateManyStatus_indirect_unitInputEnvelope
+    connect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutStatus_indirect_unitInput = {
+    create?: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutStatus_indirect_unitInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutStatus_indirect_unitInput> | bcm_disaster_unit_affected_indirrectCreateWithoutStatus_indirect_unitInput[] | bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutStatus_indirect_unitInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutStatus_indirect_unitInput | bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutStatus_indirect_unitInput[]
+    createMany?: bcm_disaster_unit_affected_indirrectCreateManyStatus_indirect_unitInputEnvelope
+    connect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpdateManyWithoutStatus_indirect_unitNestedInput = {
+    create?: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutStatus_indirect_unitInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutStatus_indirect_unitInput> | bcm_disaster_unit_affected_indirrectCreateWithoutStatus_indirect_unitInput[] | bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutStatus_indirect_unitInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutStatus_indirect_unitInput | bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutStatus_indirect_unitInput[]
+    upsert?: bcm_disaster_unit_affected_indirrectUpsertWithWhereUniqueWithoutStatus_indirect_unitInput | bcm_disaster_unit_affected_indirrectUpsertWithWhereUniqueWithoutStatus_indirect_unitInput[]
+    createMany?: bcm_disaster_unit_affected_indirrectCreateManyStatus_indirect_unitInputEnvelope
+    set?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    disconnect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    delete?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    connect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    update?: bcm_disaster_unit_affected_indirrectUpdateWithWhereUniqueWithoutStatus_indirect_unitInput | bcm_disaster_unit_affected_indirrectUpdateWithWhereUniqueWithoutStatus_indirect_unitInput[]
+    updateMany?: bcm_disaster_unit_affected_indirrectUpdateManyWithWhereWithoutStatus_indirect_unitInput | bcm_disaster_unit_affected_indirrectUpdateManyWithWhereWithoutStatus_indirect_unitInput[]
+    deleteMany?: bcm_disaster_unit_affected_indirrectScalarWhereInput | bcm_disaster_unit_affected_indirrectScalarWhereInput[]
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutStatus_indirect_unitNestedInput = {
+    create?: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutStatus_indirect_unitInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutStatus_indirect_unitInput> | bcm_disaster_unit_affected_indirrectCreateWithoutStatus_indirect_unitInput[] | bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutStatus_indirect_unitInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutStatus_indirect_unitInput | bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutStatus_indirect_unitInput[]
+    upsert?: bcm_disaster_unit_affected_indirrectUpsertWithWhereUniqueWithoutStatus_indirect_unitInput | bcm_disaster_unit_affected_indirrectUpsertWithWhereUniqueWithoutStatus_indirect_unitInput[]
+    createMany?: bcm_disaster_unit_affected_indirrectCreateManyStatus_indirect_unitInputEnvelope
+    set?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    disconnect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    delete?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    connect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    update?: bcm_disaster_unit_affected_indirrectUpdateWithWhereUniqueWithoutStatus_indirect_unitInput | bcm_disaster_unit_affected_indirrectUpdateWithWhereUniqueWithoutStatus_indirect_unitInput[]
+    updateMany?: bcm_disaster_unit_affected_indirrectUpdateManyWithWhereWithoutStatus_indirect_unitInput | bcm_disaster_unit_affected_indirrectUpdateManyWithWhereWithoutStatus_indirect_unitInput[]
+    deleteMany?: bcm_disaster_unit_affected_indirrectScalarWhereInput | bcm_disaster_unit_affected_indirrectScalarWhereInput[]
+  }
+
+  export type bcm_disasterCreateNestedManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    create?: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput> | bcm_disasterCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[] | bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput | bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    createMany?: bcm_disasterCreateManyReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInputEnvelope
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+  }
+
+  export type bcm_disasterCreateNestedManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    create?: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput> | bcm_disasterCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[] | bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput | bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    createMany?: bcm_disasterCreateManyReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInputEnvelope
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+  }
+
+  export type bcm_disasterUncheckedCreateNestedManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    create?: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput> | bcm_disasterCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[] | bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput | bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    createMany?: bcm_disasterCreateManyReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInputEnvelope
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+  }
+
+  export type bcm_disasterUncheckedCreateNestedManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    create?: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput> | bcm_disasterCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[] | bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput | bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    createMany?: bcm_disasterCreateManyReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInputEnvelope
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+  }
+
+  export type bcm_disasterUpdateManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput> | bcm_disasterCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[] | bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput | bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    upsert?: bcm_disasterUpsertWithWhereUniqueWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput | bcm_disasterUpsertWithWhereUniqueWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    createMany?: bcm_disasterCreateManyReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInputEnvelope
+    set?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    disconnect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    delete?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    update?: bcm_disasterUpdateWithWhereUniqueWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput | bcm_disasterUpdateWithWhereUniqueWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    updateMany?: bcm_disasterUpdateManyWithWhereWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput | bcm_disasterUpdateManyWithWhereWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    deleteMany?: bcm_disasterScalarWhereInput | bcm_disasterScalarWhereInput[]
+  }
+
+  export type bcm_disasterUpdateManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput> | bcm_disasterCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[] | bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput | bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    upsert?: bcm_disasterUpsertWithWhereUniqueWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput | bcm_disasterUpsertWithWhereUniqueWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    createMany?: bcm_disasterCreateManyReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInputEnvelope
+    set?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    disconnect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    delete?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    update?: bcm_disasterUpdateWithWhereUniqueWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput | bcm_disasterUpdateWithWhereUniqueWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    updateMany?: bcm_disasterUpdateManyWithWhereWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput | bcm_disasterUpdateManyWithWhereWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    deleteMany?: bcm_disasterScalarWhereInput | bcm_disasterScalarWhereInput[]
+  }
+
+  export type bcm_disasterUncheckedUpdateManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput> | bcm_disasterCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[] | bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput | bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    upsert?: bcm_disasterUpsertWithWhereUniqueWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput | bcm_disasterUpsertWithWhereUniqueWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    createMany?: bcm_disasterCreateManyReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInputEnvelope
+    set?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    disconnect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    delete?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    update?: bcm_disasterUpdateWithWhereUniqueWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput | bcm_disasterUpdateWithWhereUniqueWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    updateMany?: bcm_disasterUpdateManyWithWhereWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput | bcm_disasterUpdateManyWithWhereWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    deleteMany?: bcm_disasterScalarWhereInput | bcm_disasterScalarWhereInput[]
+  }
+
+  export type bcm_disasterUncheckedUpdateManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput> | bcm_disasterCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[] | bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput | bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    upsert?: bcm_disasterUpsertWithWhereUniqueWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput | bcm_disasterUpsertWithWhereUniqueWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    createMany?: bcm_disasterCreateManyReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInputEnvelope
+    set?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    disconnect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    delete?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    update?: bcm_disasterUpdateWithWhereUniqueWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput | bcm_disasterUpdateWithWhereUniqueWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    updateMany?: bcm_disasterUpdateManyWithWhereWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput | bcm_disasterUpdateManyWithWhereWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    deleteMany?: bcm_disasterScalarWhereInput | bcm_disasterScalarWhereInput[]
+  }
+
+  export type CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    create?: XOR<CurrencyCreateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput, CurrencyUncheckedCreateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+    connectOrCreate?: CurrencyCreateOrConnectWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    connect?: CurrencyWhereUniqueInput
+  }
+
+  export type CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    create?: XOR<CurrencyCreateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, CurrencyUncheckedCreateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+    connectOrCreate?: CurrencyCreateOrConnectWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    connect?: CurrencyWhereUniqueInput
+  }
+
+  export type threatCreateNestedOneWithoutBcm_disasterInput = {
+    create?: XOR<threatCreateWithoutBcm_disasterInput, threatUncheckedCreateWithoutBcm_disasterInput>
+    connectOrCreate?: threatCreateOrConnectWithoutBcm_disasterInput
+    connect?: threatWhereUniqueInput
+  }
+
+  export type workflow_statusCreateNestedOneWithoutBcm_disasterInput = {
+    create?: XOR<workflow_statusCreateWithoutBcm_disasterInput, workflow_statusUncheckedCreateWithoutBcm_disasterInput>
+    connectOrCreate?: workflow_statusCreateOrConnectWithoutBcm_disasterInput
+    connect?: workflow_statusWhereUniqueInput
+  }
+
+  export type bcm_disaster_assignment_historyCreateNestedManyWithoutBcm_disasterInput = {
+    create?: XOR<bcm_disaster_assignment_historyCreateWithoutBcm_disasterInput, bcm_disaster_assignment_historyUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_assignment_historyCreateWithoutBcm_disasterInput[] | bcm_disaster_assignment_historyUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_assignment_historyCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_assignment_historyCreateOrConnectWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_assignment_historyCreateManyBcm_disasterInputEnvelope
+    connect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_atm_affectedCreateNestedManyWithoutBcm_disasterInput = {
+    create?: XOR<bcm_disaster_atm_affectedCreateWithoutBcm_disasterInput, bcm_disaster_atm_affectedUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_atm_affectedCreateWithoutBcm_disasterInput[] | bcm_disaster_atm_affectedUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_atm_affectedCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_atm_affectedCreateOrConnectWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_atm_affectedCreateManyBcm_disasterInputEnvelope
+    connect?: bcm_disaster_atm_affectedWhereUniqueInput | bcm_disaster_atm_affectedWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_staff_affectedCreateNestedManyWithoutBcm_disasterInput = {
+    create?: XOR<bcm_disaster_staff_affectedCreateWithoutBcm_disasterInput, bcm_disaster_staff_affectedUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_staff_affectedCreateWithoutBcm_disasterInput[] | bcm_disaster_staff_affectedUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_staff_affectedCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_staff_affectedCreateOrConnectWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_staff_affectedCreateManyBcm_disasterInputEnvelope
+    connect?: bcm_disaster_staff_affectedWhereUniqueInput | bcm_disaster_staff_affectedWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_unit_affected_dirrectCreateNestedManyWithoutBcm_disasterInput = {
+    create?: XOR<bcm_disaster_unit_affected_dirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_dirrectUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_unit_affected_dirrectCreateWithoutBcm_disasterInput[] | bcm_disaster_unit_affected_dirrectUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_dirrectCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_unit_affected_dirrectCreateOrConnectWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_unit_affected_dirrectCreateManyBcm_disasterInputEnvelope
+    connect?: bcm_disaster_unit_affected_dirrectWhereUniqueInput | bcm_disaster_unit_affected_dirrectWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutBcm_disasterInput = {
+    create?: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_unit_affected_indirrectCreateWithoutBcm_disasterInput[] | bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_unit_affected_indirrectCreateManyBcm_disasterInputEnvelope
+    connect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutBcm_disasterInput = {
+    create?: XOR<bcm_disaster_assignment_historyCreateWithoutBcm_disasterInput, bcm_disaster_assignment_historyUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_assignment_historyCreateWithoutBcm_disasterInput[] | bcm_disaster_assignment_historyUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_assignment_historyCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_assignment_historyCreateOrConnectWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_assignment_historyCreateManyBcm_disasterInputEnvelope
+    connect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_atm_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput = {
+    create?: XOR<bcm_disaster_atm_affectedCreateWithoutBcm_disasterInput, bcm_disaster_atm_affectedUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_atm_affectedCreateWithoutBcm_disasterInput[] | bcm_disaster_atm_affectedUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_atm_affectedCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_atm_affectedCreateOrConnectWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_atm_affectedCreateManyBcm_disasterInputEnvelope
+    connect?: bcm_disaster_atm_affectedWhereUniqueInput | bcm_disaster_atm_affectedWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_staff_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput = {
+    create?: XOR<bcm_disaster_staff_affectedCreateWithoutBcm_disasterInput, bcm_disaster_staff_affectedUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_staff_affectedCreateWithoutBcm_disasterInput[] | bcm_disaster_staff_affectedUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_staff_affectedCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_staff_affectedCreateOrConnectWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_staff_affectedCreateManyBcm_disasterInputEnvelope
+    connect?: bcm_disaster_staff_affectedWhereUniqueInput | bcm_disaster_staff_affectedWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUncheckedCreateNestedManyWithoutBcm_disasterInput = {
+    create?: XOR<bcm_disaster_unit_affected_dirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_dirrectUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_unit_affected_dirrectCreateWithoutBcm_disasterInput[] | bcm_disaster_unit_affected_dirrectUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_dirrectCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_unit_affected_dirrectCreateOrConnectWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_unit_affected_dirrectCreateManyBcm_disasterInputEnvelope
+    connect?: bcm_disaster_unit_affected_dirrectWhereUniqueInput | bcm_disaster_unit_affected_dirrectWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutBcm_disasterInput = {
+    create?: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_unit_affected_indirrectCreateWithoutBcm_disasterInput[] | bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_unit_affected_indirrectCreateManyBcm_disasterInputEnvelope
+    connect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+  }
+
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
   }
 
+  export type NullableDecimalFieldUpdateOperationsInput = {
+    set?: Decimal | DecimalJsLike | number | string | null
+    increment?: Decimal | DecimalJsLike | number | string
+    decrement?: Decimal | DecimalJsLike | number | string
+    multiply?: Decimal | DecimalJsLike | number | string
+    divide?: Decimal | DecimalJsLike | number | string
+  }
+
+  export type CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput = {
+    create?: XOR<CurrencyCreateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput, CurrencyUncheckedCreateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+    connectOrCreate?: CurrencyCreateOrConnectWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    upsert?: CurrencyUpsertWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    disconnect?: CurrencyWhereInput | boolean
+    delete?: CurrencyWhereInput | boolean
+    connect?: CurrencyWhereUniqueInput
+    update?: XOR<XOR<CurrencyUpdateToOneWithWhereWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput, CurrencyUpdateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput>, CurrencyUncheckedUpdateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+  }
+
+  export type CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput = {
+    create?: XOR<CurrencyCreateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, CurrencyUncheckedCreateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+    connectOrCreate?: CurrencyCreateOrConnectWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    upsert?: CurrencyUpsertWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    disconnect?: CurrencyWhereInput | boolean
+    delete?: CurrencyWhereInput | boolean
+    connect?: CurrencyWhereUniqueInput
+    update?: XOR<XOR<CurrencyUpdateToOneWithWhereWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, CurrencyUpdateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>, CurrencyUncheckedUpdateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+  }
+
+  export type threatUpdateOneRequiredWithoutBcm_disasterNestedInput = {
+    create?: XOR<threatCreateWithoutBcm_disasterInput, threatUncheckedCreateWithoutBcm_disasterInput>
+    connectOrCreate?: threatCreateOrConnectWithoutBcm_disasterInput
+    upsert?: threatUpsertWithoutBcm_disasterInput
+    connect?: threatWhereUniqueInput
+    update?: XOR<XOR<threatUpdateToOneWithWhereWithoutBcm_disasterInput, threatUpdateWithoutBcm_disasterInput>, threatUncheckedUpdateWithoutBcm_disasterInput>
+  }
+
+  export type workflow_statusUpdateOneWithoutBcm_disasterNestedInput = {
+    create?: XOR<workflow_statusCreateWithoutBcm_disasterInput, workflow_statusUncheckedCreateWithoutBcm_disasterInput>
+    connectOrCreate?: workflow_statusCreateOrConnectWithoutBcm_disasterInput
+    upsert?: workflow_statusUpsertWithoutBcm_disasterInput
+    disconnect?: workflow_statusWhereInput | boolean
+    delete?: workflow_statusWhereInput | boolean
+    connect?: workflow_statusWhereUniqueInput
+    update?: XOR<XOR<workflow_statusUpdateToOneWithWhereWithoutBcm_disasterInput, workflow_statusUpdateWithoutBcm_disasterInput>, workflow_statusUncheckedUpdateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_assignment_historyUpdateManyWithoutBcm_disasterNestedInput = {
+    create?: XOR<bcm_disaster_assignment_historyCreateWithoutBcm_disasterInput, bcm_disaster_assignment_historyUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_assignment_historyCreateWithoutBcm_disasterInput[] | bcm_disaster_assignment_historyUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_assignment_historyCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_assignment_historyCreateOrConnectWithoutBcm_disasterInput[]
+    upsert?: bcm_disaster_assignment_historyUpsertWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_assignment_historyUpsertWithWhereUniqueWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_assignment_historyCreateManyBcm_disasterInputEnvelope
+    set?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    disconnect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    delete?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    connect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    update?: bcm_disaster_assignment_historyUpdateWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_assignment_historyUpdateWithWhereUniqueWithoutBcm_disasterInput[]
+    updateMany?: bcm_disaster_assignment_historyUpdateManyWithWhereWithoutBcm_disasterInput | bcm_disaster_assignment_historyUpdateManyWithWhereWithoutBcm_disasterInput[]
+    deleteMany?: bcm_disaster_assignment_historyScalarWhereInput | bcm_disaster_assignment_historyScalarWhereInput[]
+  }
+
+  export type bcm_disaster_atm_affectedUpdateManyWithoutBcm_disasterNestedInput = {
+    create?: XOR<bcm_disaster_atm_affectedCreateWithoutBcm_disasterInput, bcm_disaster_atm_affectedUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_atm_affectedCreateWithoutBcm_disasterInput[] | bcm_disaster_atm_affectedUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_atm_affectedCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_atm_affectedCreateOrConnectWithoutBcm_disasterInput[]
+    upsert?: bcm_disaster_atm_affectedUpsertWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_atm_affectedUpsertWithWhereUniqueWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_atm_affectedCreateManyBcm_disasterInputEnvelope
+    set?: bcm_disaster_atm_affectedWhereUniqueInput | bcm_disaster_atm_affectedWhereUniqueInput[]
+    disconnect?: bcm_disaster_atm_affectedWhereUniqueInput | bcm_disaster_atm_affectedWhereUniqueInput[]
+    delete?: bcm_disaster_atm_affectedWhereUniqueInput | bcm_disaster_atm_affectedWhereUniqueInput[]
+    connect?: bcm_disaster_atm_affectedWhereUniqueInput | bcm_disaster_atm_affectedWhereUniqueInput[]
+    update?: bcm_disaster_atm_affectedUpdateWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_atm_affectedUpdateWithWhereUniqueWithoutBcm_disasterInput[]
+    updateMany?: bcm_disaster_atm_affectedUpdateManyWithWhereWithoutBcm_disasterInput | bcm_disaster_atm_affectedUpdateManyWithWhereWithoutBcm_disasterInput[]
+    deleteMany?: bcm_disaster_atm_affectedScalarWhereInput | bcm_disaster_atm_affectedScalarWhereInput[]
+  }
+
+  export type bcm_disaster_staff_affectedUpdateManyWithoutBcm_disasterNestedInput = {
+    create?: XOR<bcm_disaster_staff_affectedCreateWithoutBcm_disasterInput, bcm_disaster_staff_affectedUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_staff_affectedCreateWithoutBcm_disasterInput[] | bcm_disaster_staff_affectedUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_staff_affectedCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_staff_affectedCreateOrConnectWithoutBcm_disasterInput[]
+    upsert?: bcm_disaster_staff_affectedUpsertWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_staff_affectedUpsertWithWhereUniqueWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_staff_affectedCreateManyBcm_disasterInputEnvelope
+    set?: bcm_disaster_staff_affectedWhereUniqueInput | bcm_disaster_staff_affectedWhereUniqueInput[]
+    disconnect?: bcm_disaster_staff_affectedWhereUniqueInput | bcm_disaster_staff_affectedWhereUniqueInput[]
+    delete?: bcm_disaster_staff_affectedWhereUniqueInput | bcm_disaster_staff_affectedWhereUniqueInput[]
+    connect?: bcm_disaster_staff_affectedWhereUniqueInput | bcm_disaster_staff_affectedWhereUniqueInput[]
+    update?: bcm_disaster_staff_affectedUpdateWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_staff_affectedUpdateWithWhereUniqueWithoutBcm_disasterInput[]
+    updateMany?: bcm_disaster_staff_affectedUpdateManyWithWhereWithoutBcm_disasterInput | bcm_disaster_staff_affectedUpdateManyWithWhereWithoutBcm_disasterInput[]
+    deleteMany?: bcm_disaster_staff_affectedScalarWhereInput | bcm_disaster_staff_affectedScalarWhereInput[]
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUpdateManyWithoutBcm_disasterNestedInput = {
+    create?: XOR<bcm_disaster_unit_affected_dirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_dirrectUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_unit_affected_dirrectCreateWithoutBcm_disasterInput[] | bcm_disaster_unit_affected_dirrectUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_dirrectCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_unit_affected_dirrectCreateOrConnectWithoutBcm_disasterInput[]
+    upsert?: bcm_disaster_unit_affected_dirrectUpsertWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_unit_affected_dirrectUpsertWithWhereUniqueWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_unit_affected_dirrectCreateManyBcm_disasterInputEnvelope
+    set?: bcm_disaster_unit_affected_dirrectWhereUniqueInput | bcm_disaster_unit_affected_dirrectWhereUniqueInput[]
+    disconnect?: bcm_disaster_unit_affected_dirrectWhereUniqueInput | bcm_disaster_unit_affected_dirrectWhereUniqueInput[]
+    delete?: bcm_disaster_unit_affected_dirrectWhereUniqueInput | bcm_disaster_unit_affected_dirrectWhereUniqueInput[]
+    connect?: bcm_disaster_unit_affected_dirrectWhereUniqueInput | bcm_disaster_unit_affected_dirrectWhereUniqueInput[]
+    update?: bcm_disaster_unit_affected_dirrectUpdateWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_unit_affected_dirrectUpdateWithWhereUniqueWithoutBcm_disasterInput[]
+    updateMany?: bcm_disaster_unit_affected_dirrectUpdateManyWithWhereWithoutBcm_disasterInput | bcm_disaster_unit_affected_dirrectUpdateManyWithWhereWithoutBcm_disasterInput[]
+    deleteMany?: bcm_disaster_unit_affected_dirrectScalarWhereInput | bcm_disaster_unit_affected_dirrectScalarWhereInput[]
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpdateManyWithoutBcm_disasterNestedInput = {
+    create?: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_unit_affected_indirrectCreateWithoutBcm_disasterInput[] | bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutBcm_disasterInput[]
+    upsert?: bcm_disaster_unit_affected_indirrectUpsertWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_unit_affected_indirrectUpsertWithWhereUniqueWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_unit_affected_indirrectCreateManyBcm_disasterInputEnvelope
+    set?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    disconnect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    delete?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    connect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    update?: bcm_disaster_unit_affected_indirrectUpdateWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_unit_affected_indirrectUpdateWithWhereUniqueWithoutBcm_disasterInput[]
+    updateMany?: bcm_disaster_unit_affected_indirrectUpdateManyWithWhereWithoutBcm_disasterInput | bcm_disaster_unit_affected_indirrectUpdateManyWithWhereWithoutBcm_disasterInput[]
+    deleteMany?: bcm_disaster_unit_affected_indirrectScalarWhereInput | bcm_disaster_unit_affected_indirrectScalarWhereInput[]
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterNestedInput = {
+    create?: XOR<bcm_disaster_assignment_historyCreateWithoutBcm_disasterInput, bcm_disaster_assignment_historyUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_assignment_historyCreateWithoutBcm_disasterInput[] | bcm_disaster_assignment_historyUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_assignment_historyCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_assignment_historyCreateOrConnectWithoutBcm_disasterInput[]
+    upsert?: bcm_disaster_assignment_historyUpsertWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_assignment_historyUpsertWithWhereUniqueWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_assignment_historyCreateManyBcm_disasterInputEnvelope
+    set?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    disconnect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    delete?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    connect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    update?: bcm_disaster_assignment_historyUpdateWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_assignment_historyUpdateWithWhereUniqueWithoutBcm_disasterInput[]
+    updateMany?: bcm_disaster_assignment_historyUpdateManyWithWhereWithoutBcm_disasterInput | bcm_disaster_assignment_historyUpdateManyWithWhereWithoutBcm_disasterInput[]
+    deleteMany?: bcm_disaster_assignment_historyScalarWhereInput | bcm_disaster_assignment_historyScalarWhereInput[]
+  }
+
+  export type bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput = {
+    create?: XOR<bcm_disaster_atm_affectedCreateWithoutBcm_disasterInput, bcm_disaster_atm_affectedUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_atm_affectedCreateWithoutBcm_disasterInput[] | bcm_disaster_atm_affectedUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_atm_affectedCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_atm_affectedCreateOrConnectWithoutBcm_disasterInput[]
+    upsert?: bcm_disaster_atm_affectedUpsertWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_atm_affectedUpsertWithWhereUniqueWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_atm_affectedCreateManyBcm_disasterInputEnvelope
+    set?: bcm_disaster_atm_affectedWhereUniqueInput | bcm_disaster_atm_affectedWhereUniqueInput[]
+    disconnect?: bcm_disaster_atm_affectedWhereUniqueInput | bcm_disaster_atm_affectedWhereUniqueInput[]
+    delete?: bcm_disaster_atm_affectedWhereUniqueInput | bcm_disaster_atm_affectedWhereUniqueInput[]
+    connect?: bcm_disaster_atm_affectedWhereUniqueInput | bcm_disaster_atm_affectedWhereUniqueInput[]
+    update?: bcm_disaster_atm_affectedUpdateWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_atm_affectedUpdateWithWhereUniqueWithoutBcm_disasterInput[]
+    updateMany?: bcm_disaster_atm_affectedUpdateManyWithWhereWithoutBcm_disasterInput | bcm_disaster_atm_affectedUpdateManyWithWhereWithoutBcm_disasterInput[]
+    deleteMany?: bcm_disaster_atm_affectedScalarWhereInput | bcm_disaster_atm_affectedScalarWhereInput[]
+  }
+
+  export type bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput = {
+    create?: XOR<bcm_disaster_staff_affectedCreateWithoutBcm_disasterInput, bcm_disaster_staff_affectedUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_staff_affectedCreateWithoutBcm_disasterInput[] | bcm_disaster_staff_affectedUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_staff_affectedCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_staff_affectedCreateOrConnectWithoutBcm_disasterInput[]
+    upsert?: bcm_disaster_staff_affectedUpsertWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_staff_affectedUpsertWithWhereUniqueWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_staff_affectedCreateManyBcm_disasterInputEnvelope
+    set?: bcm_disaster_staff_affectedWhereUniqueInput | bcm_disaster_staff_affectedWhereUniqueInput[]
+    disconnect?: bcm_disaster_staff_affectedWhereUniqueInput | bcm_disaster_staff_affectedWhereUniqueInput[]
+    delete?: bcm_disaster_staff_affectedWhereUniqueInput | bcm_disaster_staff_affectedWhereUniqueInput[]
+    connect?: bcm_disaster_staff_affectedWhereUniqueInput | bcm_disaster_staff_affectedWhereUniqueInput[]
+    update?: bcm_disaster_staff_affectedUpdateWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_staff_affectedUpdateWithWhereUniqueWithoutBcm_disasterInput[]
+    updateMany?: bcm_disaster_staff_affectedUpdateManyWithWhereWithoutBcm_disasterInput | bcm_disaster_staff_affectedUpdateManyWithWhereWithoutBcm_disasterInput[]
+    deleteMany?: bcm_disaster_staff_affectedScalarWhereInput | bcm_disaster_staff_affectedScalarWhereInput[]
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput = {
+    create?: XOR<bcm_disaster_unit_affected_dirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_dirrectUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_unit_affected_dirrectCreateWithoutBcm_disasterInput[] | bcm_disaster_unit_affected_dirrectUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_dirrectCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_unit_affected_dirrectCreateOrConnectWithoutBcm_disasterInput[]
+    upsert?: bcm_disaster_unit_affected_dirrectUpsertWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_unit_affected_dirrectUpsertWithWhereUniqueWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_unit_affected_dirrectCreateManyBcm_disasterInputEnvelope
+    set?: bcm_disaster_unit_affected_dirrectWhereUniqueInput | bcm_disaster_unit_affected_dirrectWhereUniqueInput[]
+    disconnect?: bcm_disaster_unit_affected_dirrectWhereUniqueInput | bcm_disaster_unit_affected_dirrectWhereUniqueInput[]
+    delete?: bcm_disaster_unit_affected_dirrectWhereUniqueInput | bcm_disaster_unit_affected_dirrectWhereUniqueInput[]
+    connect?: bcm_disaster_unit_affected_dirrectWhereUniqueInput | bcm_disaster_unit_affected_dirrectWhereUniqueInput[]
+    update?: bcm_disaster_unit_affected_dirrectUpdateWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_unit_affected_dirrectUpdateWithWhereUniqueWithoutBcm_disasterInput[]
+    updateMany?: bcm_disaster_unit_affected_dirrectUpdateManyWithWhereWithoutBcm_disasterInput | bcm_disaster_unit_affected_dirrectUpdateManyWithWhereWithoutBcm_disasterInput[]
+    deleteMany?: bcm_disaster_unit_affected_dirrectScalarWhereInput | bcm_disaster_unit_affected_dirrectScalarWhereInput[]
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput = {
+    create?: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutBcm_disasterInput> | bcm_disaster_unit_affected_indirrectCreateWithoutBcm_disasterInput[] | bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutBcm_disasterInput[]
+    connectOrCreate?: bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutBcm_disasterInput | bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutBcm_disasterInput[]
+    upsert?: bcm_disaster_unit_affected_indirrectUpsertWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_unit_affected_indirrectUpsertWithWhereUniqueWithoutBcm_disasterInput[]
+    createMany?: bcm_disaster_unit_affected_indirrectCreateManyBcm_disasterInputEnvelope
+    set?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    disconnect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    delete?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    connect?: bcm_disaster_unit_affected_indirrectWhereUniqueInput | bcm_disaster_unit_affected_indirrectWhereUniqueInput[]
+    update?: bcm_disaster_unit_affected_indirrectUpdateWithWhereUniqueWithoutBcm_disasterInput | bcm_disaster_unit_affected_indirrectUpdateWithWhereUniqueWithoutBcm_disasterInput[]
+    updateMany?: bcm_disaster_unit_affected_indirrectUpdateManyWithWhereWithoutBcm_disasterInput | bcm_disaster_unit_affected_indirrectUpdateManyWithWhereWithoutBcm_disasterInput[]
+    deleteMany?: bcm_disaster_unit_affected_indirrectScalarWhereInput | bcm_disaster_unit_affected_indirrectScalarWhereInput[]
+  }
+
+  export type bcm_disasterCreateNestedOneWithoutBcm_disaster_assignment_historyInput = {
+    create?: XOR<bcm_disasterCreateWithoutBcm_disaster_assignment_historyInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_assignment_historyInput>
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutBcm_disaster_assignment_historyInput
+    connect?: bcm_disasterWhereUniqueInput
+  }
+
+  export type workflow_statusCreateNestedOneWithoutBcm_disaster_assignment_historyInput = {
+    create?: XOR<workflow_statusCreateWithoutBcm_disaster_assignment_historyInput, workflow_statusUncheckedCreateWithoutBcm_disaster_assignment_historyInput>
+    connectOrCreate?: workflow_statusCreateOrConnectWithoutBcm_disaster_assignment_historyInput
+    connect?: workflow_statusWhereUniqueInput
+  }
+
+  export type bcm_disasterUpdateOneWithoutBcm_disaster_assignment_historyNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutBcm_disaster_assignment_historyInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_assignment_historyInput>
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutBcm_disaster_assignment_historyInput
+    upsert?: bcm_disasterUpsertWithoutBcm_disaster_assignment_historyInput
+    disconnect?: bcm_disasterWhereInput | boolean
+    delete?: bcm_disasterWhereInput | boolean
+    connect?: bcm_disasterWhereUniqueInput
+    update?: XOR<XOR<bcm_disasterUpdateToOneWithWhereWithoutBcm_disaster_assignment_historyInput, bcm_disasterUpdateWithoutBcm_disaster_assignment_historyInput>, bcm_disasterUncheckedUpdateWithoutBcm_disaster_assignment_historyInput>
+  }
+
+  export type workflow_statusUpdateOneWithoutBcm_disaster_assignment_historyNestedInput = {
+    create?: XOR<workflow_statusCreateWithoutBcm_disaster_assignment_historyInput, workflow_statusUncheckedCreateWithoutBcm_disaster_assignment_historyInput>
+    connectOrCreate?: workflow_statusCreateOrConnectWithoutBcm_disaster_assignment_historyInput
+    upsert?: workflow_statusUpsertWithoutBcm_disaster_assignment_historyInput
+    disconnect?: workflow_statusWhereInput | boolean
+    delete?: workflow_statusWhereInput | boolean
+    connect?: workflow_statusWhereUniqueInput
+    update?: XOR<XOR<workflow_statusUpdateToOneWithWhereWithoutBcm_disaster_assignment_historyInput, workflow_statusUpdateWithoutBcm_disaster_assignment_historyInput>, workflow_statusUncheckedUpdateWithoutBcm_disaster_assignment_historyInput>
+  }
+
+  export type bcm_disasterCreateNestedOneWithoutBcm_disaster_atm_affectedInput = {
+    create?: XOR<bcm_disasterCreateWithoutBcm_disaster_atm_affectedInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_atm_affectedInput>
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutBcm_disaster_atm_affectedInput
+    connect?: bcm_disasterWhereUniqueInput
+  }
+
+  export type bcm_disasterUpdateOneWithoutBcm_disaster_atm_affectedNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutBcm_disaster_atm_affectedInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_atm_affectedInput>
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutBcm_disaster_atm_affectedInput
+    upsert?: bcm_disasterUpsertWithoutBcm_disaster_atm_affectedInput
+    disconnect?: bcm_disasterWhereInput | boolean
+    delete?: bcm_disasterWhereInput | boolean
+    connect?: bcm_disasterWhereUniqueInput
+    update?: XOR<XOR<bcm_disasterUpdateToOneWithWhereWithoutBcm_disaster_atm_affectedInput, bcm_disasterUpdateWithoutBcm_disaster_atm_affectedInput>, bcm_disasterUncheckedUpdateWithoutBcm_disaster_atm_affectedInput>
+  }
+
+  export type bcm_disasterCreateNestedOneWithoutBcm_disaster_staff_affectedInput = {
+    create?: XOR<bcm_disasterCreateWithoutBcm_disaster_staff_affectedInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_staff_affectedInput>
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutBcm_disaster_staff_affectedInput
+    connect?: bcm_disasterWhereUniqueInput
+  }
+
+  export type bcm_disasterUpdateOneWithoutBcm_disaster_staff_affectedNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutBcm_disaster_staff_affectedInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_staff_affectedInput>
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutBcm_disaster_staff_affectedInput
+    upsert?: bcm_disasterUpsertWithoutBcm_disaster_staff_affectedInput
+    disconnect?: bcm_disasterWhereInput | boolean
+    delete?: bcm_disasterWhereInput | boolean
+    connect?: bcm_disasterWhereUniqueInput
+    update?: XOR<XOR<bcm_disasterUpdateToOneWithWhereWithoutBcm_disaster_staff_affectedInput, bcm_disasterUpdateWithoutBcm_disaster_staff_affectedInput>, bcm_disasterUncheckedUpdateWithoutBcm_disaster_staff_affectedInput>
+  }
+
+  export type bcm_disasterCreateNestedOneWithoutBcm_disaster_unit_affected_dirrectInput = {
+    create?: XOR<bcm_disasterCreateWithoutBcm_disaster_unit_affected_dirrectInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_unit_affected_dirrectInput>
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutBcm_disaster_unit_affected_dirrectInput
+    connect?: bcm_disasterWhereUniqueInput
+  }
+
   export type NullableBoolFieldUpdateOperationsInput = {
     set?: boolean | null
+  }
+
+  export type bcm_disasterUpdateOneWithoutBcm_disaster_unit_affected_dirrectNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutBcm_disaster_unit_affected_dirrectInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_unit_affected_dirrectInput>
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutBcm_disaster_unit_affected_dirrectInput
+    upsert?: bcm_disasterUpsertWithoutBcm_disaster_unit_affected_dirrectInput
+    disconnect?: bcm_disasterWhereInput | boolean
+    delete?: bcm_disasterWhereInput | boolean
+    connect?: bcm_disasterWhereUniqueInput
+    update?: XOR<XOR<bcm_disasterUpdateToOneWithWhereWithoutBcm_disaster_unit_affected_dirrectInput, bcm_disasterUpdateWithoutBcm_disaster_unit_affected_dirrectInput>, bcm_disasterUncheckedUpdateWithoutBcm_disaster_unit_affected_dirrectInput>
+  }
+
+  export type Indirect_UnitCreateNestedOneWithoutBcm_disaster_unit_affected_indirrectInput = {
+    create?: XOR<Indirect_UnitCreateWithoutBcm_disaster_unit_affected_indirrectInput, Indirect_UnitUncheckedCreateWithoutBcm_disaster_unit_affected_indirrectInput>
+    connectOrCreate?: Indirect_UnitCreateOrConnectWithoutBcm_disaster_unit_affected_indirrectInput
+    connect?: Indirect_UnitWhereUniqueInput
+  }
+
+  export type bcm_disasterCreateNestedOneWithoutBcm_disaster_unit_affected_indirrectInput = {
+    create?: XOR<bcm_disasterCreateWithoutBcm_disaster_unit_affected_indirrectInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_unit_affected_indirrectInput>
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutBcm_disaster_unit_affected_indirrectInput
+    connect?: bcm_disasterWhereUniqueInput
+  }
+
+  export type Indirect_UnitUpdateOneWithoutBcm_disaster_unit_affected_indirrectNestedInput = {
+    create?: XOR<Indirect_UnitCreateWithoutBcm_disaster_unit_affected_indirrectInput, Indirect_UnitUncheckedCreateWithoutBcm_disaster_unit_affected_indirrectInput>
+    connectOrCreate?: Indirect_UnitCreateOrConnectWithoutBcm_disaster_unit_affected_indirrectInput
+    upsert?: Indirect_UnitUpsertWithoutBcm_disaster_unit_affected_indirrectInput
+    disconnect?: Indirect_UnitWhereInput | boolean
+    delete?: Indirect_UnitWhereInput | boolean
+    connect?: Indirect_UnitWhereUniqueInput
+    update?: XOR<XOR<Indirect_UnitUpdateToOneWithWhereWithoutBcm_disaster_unit_affected_indirrectInput, Indirect_UnitUpdateWithoutBcm_disaster_unit_affected_indirrectInput>, Indirect_UnitUncheckedUpdateWithoutBcm_disaster_unit_affected_indirrectInput>
+  }
+
+  export type bcm_disasterUpdateOneWithoutBcm_disaster_unit_affected_indirrectNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutBcm_disaster_unit_affected_indirrectInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_unit_affected_indirrectInput>
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutBcm_disaster_unit_affected_indirrectInput
+    upsert?: bcm_disasterUpsertWithoutBcm_disaster_unit_affected_indirrectInput
+    disconnect?: bcm_disasterWhereInput | boolean
+    delete?: bcm_disasterWhereInput | boolean
+    connect?: bcm_disasterWhereUniqueInput
+    update?: XOR<XOR<bcm_disasterUpdateToOneWithWhereWithoutBcm_disaster_unit_affected_indirrectInput, bcm_disasterUpdateWithoutBcm_disaster_unit_affected_indirrectInput>, bcm_disasterUncheckedUpdateWithoutBcm_disaster_unit_affected_indirrectInput>
+  }
+
+  export type bcm_disasterCreateNestedManyWithoutWorkflow_statusInput = {
+    create?: XOR<bcm_disasterCreateWithoutWorkflow_statusInput, bcm_disasterUncheckedCreateWithoutWorkflow_statusInput> | bcm_disasterCreateWithoutWorkflow_statusInput[] | bcm_disasterUncheckedCreateWithoutWorkflow_statusInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutWorkflow_statusInput | bcm_disasterCreateOrConnectWithoutWorkflow_statusInput[]
+    createMany?: bcm_disasterCreateManyWorkflow_statusInputEnvelope
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_assignment_historyCreateNestedManyWithoutWorkflow_statusInput = {
+    create?: XOR<bcm_disaster_assignment_historyCreateWithoutWorkflow_statusInput, bcm_disaster_assignment_historyUncheckedCreateWithoutWorkflow_statusInput> | bcm_disaster_assignment_historyCreateWithoutWorkflow_statusInput[] | bcm_disaster_assignment_historyUncheckedCreateWithoutWorkflow_statusInput[]
+    connectOrCreate?: bcm_disaster_assignment_historyCreateOrConnectWithoutWorkflow_statusInput | bcm_disaster_assignment_historyCreateOrConnectWithoutWorkflow_statusInput[]
+    createMany?: bcm_disaster_assignment_historyCreateManyWorkflow_statusInputEnvelope
+    connect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+  }
+
+  export type bcm_disasterUncheckedCreateNestedManyWithoutWorkflow_statusInput = {
+    create?: XOR<bcm_disasterCreateWithoutWorkflow_statusInput, bcm_disasterUncheckedCreateWithoutWorkflow_statusInput> | bcm_disasterCreateWithoutWorkflow_statusInput[] | bcm_disasterUncheckedCreateWithoutWorkflow_statusInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutWorkflow_statusInput | bcm_disasterCreateOrConnectWithoutWorkflow_statusInput[]
+    createMany?: bcm_disasterCreateManyWorkflow_statusInputEnvelope
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutWorkflow_statusInput = {
+    create?: XOR<bcm_disaster_assignment_historyCreateWithoutWorkflow_statusInput, bcm_disaster_assignment_historyUncheckedCreateWithoutWorkflow_statusInput> | bcm_disaster_assignment_historyCreateWithoutWorkflow_statusInput[] | bcm_disaster_assignment_historyUncheckedCreateWithoutWorkflow_statusInput[]
+    connectOrCreate?: bcm_disaster_assignment_historyCreateOrConnectWithoutWorkflow_statusInput | bcm_disaster_assignment_historyCreateOrConnectWithoutWorkflow_statusInput[]
+    createMany?: bcm_disaster_assignment_historyCreateManyWorkflow_statusInputEnvelope
+    connect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+  }
+
+  export type bcm_disasterUpdateManyWithoutWorkflow_statusNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutWorkflow_statusInput, bcm_disasterUncheckedCreateWithoutWorkflow_statusInput> | bcm_disasterCreateWithoutWorkflow_statusInput[] | bcm_disasterUncheckedCreateWithoutWorkflow_statusInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutWorkflow_statusInput | bcm_disasterCreateOrConnectWithoutWorkflow_statusInput[]
+    upsert?: bcm_disasterUpsertWithWhereUniqueWithoutWorkflow_statusInput | bcm_disasterUpsertWithWhereUniqueWithoutWorkflow_statusInput[]
+    createMany?: bcm_disasterCreateManyWorkflow_statusInputEnvelope
+    set?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    disconnect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    delete?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    update?: bcm_disasterUpdateWithWhereUniqueWithoutWorkflow_statusInput | bcm_disasterUpdateWithWhereUniqueWithoutWorkflow_statusInput[]
+    updateMany?: bcm_disasterUpdateManyWithWhereWithoutWorkflow_statusInput | bcm_disasterUpdateManyWithWhereWithoutWorkflow_statusInput[]
+    deleteMany?: bcm_disasterScalarWhereInput | bcm_disasterScalarWhereInput[]
+  }
+
+  export type bcm_disaster_assignment_historyUpdateManyWithoutWorkflow_statusNestedInput = {
+    create?: XOR<bcm_disaster_assignment_historyCreateWithoutWorkflow_statusInput, bcm_disaster_assignment_historyUncheckedCreateWithoutWorkflow_statusInput> | bcm_disaster_assignment_historyCreateWithoutWorkflow_statusInput[] | bcm_disaster_assignment_historyUncheckedCreateWithoutWorkflow_statusInput[]
+    connectOrCreate?: bcm_disaster_assignment_historyCreateOrConnectWithoutWorkflow_statusInput | bcm_disaster_assignment_historyCreateOrConnectWithoutWorkflow_statusInput[]
+    upsert?: bcm_disaster_assignment_historyUpsertWithWhereUniqueWithoutWorkflow_statusInput | bcm_disaster_assignment_historyUpsertWithWhereUniqueWithoutWorkflow_statusInput[]
+    createMany?: bcm_disaster_assignment_historyCreateManyWorkflow_statusInputEnvelope
+    set?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    disconnect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    delete?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    connect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    update?: bcm_disaster_assignment_historyUpdateWithWhereUniqueWithoutWorkflow_statusInput | bcm_disaster_assignment_historyUpdateWithWhereUniqueWithoutWorkflow_statusInput[]
+    updateMany?: bcm_disaster_assignment_historyUpdateManyWithWhereWithoutWorkflow_statusInput | bcm_disaster_assignment_historyUpdateManyWithWhereWithoutWorkflow_statusInput[]
+    deleteMany?: bcm_disaster_assignment_historyScalarWhereInput | bcm_disaster_assignment_historyScalarWhereInput[]
+  }
+
+  export type bcm_disasterUncheckedUpdateManyWithoutWorkflow_statusNestedInput = {
+    create?: XOR<bcm_disasterCreateWithoutWorkflow_statusInput, bcm_disasterUncheckedCreateWithoutWorkflow_statusInput> | bcm_disasterCreateWithoutWorkflow_statusInput[] | bcm_disasterUncheckedCreateWithoutWorkflow_statusInput[]
+    connectOrCreate?: bcm_disasterCreateOrConnectWithoutWorkflow_statusInput | bcm_disasterCreateOrConnectWithoutWorkflow_statusInput[]
+    upsert?: bcm_disasterUpsertWithWhereUniqueWithoutWorkflow_statusInput | bcm_disasterUpsertWithWhereUniqueWithoutWorkflow_statusInput[]
+    createMany?: bcm_disasterCreateManyWorkflow_statusInputEnvelope
+    set?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    disconnect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    delete?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    connect?: bcm_disasterWhereUniqueInput | bcm_disasterWhereUniqueInput[]
+    update?: bcm_disasterUpdateWithWhereUniqueWithoutWorkflow_statusInput | bcm_disasterUpdateWithWhereUniqueWithoutWorkflow_statusInput[]
+    updateMany?: bcm_disasterUpdateManyWithWhereWithoutWorkflow_statusInput | bcm_disasterUpdateManyWithWhereWithoutWorkflow_statusInput[]
+    deleteMany?: bcm_disasterScalarWhereInput | bcm_disasterScalarWhereInput[]
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedUpdateManyWithoutWorkflow_statusNestedInput = {
+    create?: XOR<bcm_disaster_assignment_historyCreateWithoutWorkflow_statusInput, bcm_disaster_assignment_historyUncheckedCreateWithoutWorkflow_statusInput> | bcm_disaster_assignment_historyCreateWithoutWorkflow_statusInput[] | bcm_disaster_assignment_historyUncheckedCreateWithoutWorkflow_statusInput[]
+    connectOrCreate?: bcm_disaster_assignment_historyCreateOrConnectWithoutWorkflow_statusInput | bcm_disaster_assignment_historyCreateOrConnectWithoutWorkflow_statusInput[]
+    upsert?: bcm_disaster_assignment_historyUpsertWithWhereUniqueWithoutWorkflow_statusInput | bcm_disaster_assignment_historyUpsertWithWhereUniqueWithoutWorkflow_statusInput[]
+    createMany?: bcm_disaster_assignment_historyCreateManyWorkflow_statusInputEnvelope
+    set?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    disconnect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    delete?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    connect?: bcm_disaster_assignment_historyWhereUniqueInput | bcm_disaster_assignment_historyWhereUniqueInput[]
+    update?: bcm_disaster_assignment_historyUpdateWithWhereUniqueWithoutWorkflow_statusInput | bcm_disaster_assignment_historyUpdateWithWhereUniqueWithoutWorkflow_statusInput[]
+    updateMany?: bcm_disaster_assignment_historyUpdateManyWithWhereWithoutWorkflow_statusInput | bcm_disaster_assignment_historyUpdateManyWithWhereWithoutWorkflow_statusInput[]
+    deleteMany?: bcm_disaster_assignment_historyScalarWhereInput | bcm_disaster_assignment_historyScalarWhereInput[]
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -10964,9 +21336,15 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type NestedBoolNullableFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  export type NestedDecimalNullableFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel> | null
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalNullableFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string | null
   }
 
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -10986,6 +21364,54 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
+  export type NestedDecimalNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel> | null
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalNullableWithAggregatesFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedDecimalNullableFilter<$PrismaModel>
+    _sum?: NestedDecimalNullableFilter<$PrismaModel>
+    _min?: NestedDecimalNullableFilter<$PrismaModel>
+    _max?: NestedDecimalNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
     not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
@@ -11001,6 +21427,7 @@ export namespace Prisma {
     is_active?: boolean
     created_at?: Date | string
     updated_at?: Date | string | null
+    bcm_disaster?: bcm_disasterCreateNestedManyWithoutThreatInput
   }
 
   export type threatUncheckedCreateWithoutThreat_typesInput = {
@@ -11010,6 +21437,7 @@ export namespace Prisma {
     is_active?: boolean
     created_at?: Date | string
     updated_at?: Date | string | null
+    bcm_disaster?: bcm_disasterUncheckedCreateNestedManyWithoutThreatInput
   }
 
   export type threatCreateOrConnectWithoutThreat_typesInput = {
@@ -11051,6 +21479,74 @@ export namespace Prisma {
     updated_at?: DateTimeNullableFilter<"threat"> | Date | string | null
   }
 
+  export type bcm_disasterCreateWithoutThreatInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    workflow_status?: workflow_statusCreateNestedOneWithoutBcm_disasterInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterUncheckedCreateWithoutThreatInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterCreateOrConnectWithoutThreatInput = {
+    where: bcm_disasterWhereUniqueInput
+    create: XOR<bcm_disasterCreateWithoutThreatInput, bcm_disasterUncheckedCreateWithoutThreatInput>
+  }
+
+  export type bcm_disasterCreateManyThreatInputEnvelope = {
+    data: bcm_disasterCreateManyThreatInput | bcm_disasterCreateManyThreatInput[]
+    skipDuplicates?: boolean
+  }
+
   export type threat_typeCreateWithoutThreatsInput = {
     id: string
     tenant_id: string
@@ -11072,6 +21568,50 @@ export namespace Prisma {
   export type threat_typeCreateOrConnectWithoutThreatsInput = {
     where: threat_typeWhereUniqueInput
     create: XOR<threat_typeCreateWithoutThreatsInput, threat_typeUncheckedCreateWithoutThreatsInput>
+  }
+
+  export type bcm_disasterUpsertWithWhereUniqueWithoutThreatInput = {
+    where: bcm_disasterWhereUniqueInput
+    update: XOR<bcm_disasterUpdateWithoutThreatInput, bcm_disasterUncheckedUpdateWithoutThreatInput>
+    create: XOR<bcm_disasterCreateWithoutThreatInput, bcm_disasterUncheckedCreateWithoutThreatInput>
+  }
+
+  export type bcm_disasterUpdateWithWhereUniqueWithoutThreatInput = {
+    where: bcm_disasterWhereUniqueInput
+    data: XOR<bcm_disasterUpdateWithoutThreatInput, bcm_disasterUncheckedUpdateWithoutThreatInput>
+  }
+
+  export type bcm_disasterUpdateManyWithWhereWithoutThreatInput = {
+    where: bcm_disasterScalarWhereInput
+    data: XOR<bcm_disasterUpdateManyMutationInput, bcm_disasterUncheckedUpdateManyWithoutThreatInput>
+  }
+
+  export type bcm_disasterScalarWhereInput = {
+    AND?: bcm_disasterScalarWhereInput | bcm_disasterScalarWhereInput[]
+    OR?: bcm_disasterScalarWhereInput[]
+    NOT?: bcm_disasterScalarWhereInput | bcm_disasterScalarWhereInput[]
+    id?: StringFilter<"bcm_disaster"> | string
+    tenant_id?: StringFilter<"bcm_disaster"> | string
+    org_id?: StringFilter<"bcm_disaster"> | string
+    threat_id?: StringFilter<"bcm_disaster"> | string
+    disaster_chronology?: StringNullableFilter<"bcm_disaster"> | string | null
+    disaster_date?: DateTimeNullableFilter<"bcm_disaster"> | Date | string | null
+    disaster_location?: StringNullableFilter<"bcm_disaster"> | string | null
+    estimated_lost_currency?: StringNullableFilter<"bcm_disaster"> | string | null
+    estimated_lost?: DecimalNullableFilter<"bcm_disaster"> | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: StringNullableFilter<"bcm_disaster"> | string | null
+    total_insurance_claim?: DecimalNullableFilter<"bcm_disaster"> | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: StringNullableFilter<"bcm_disaster"> | string | null
+    recovery_plan?: StringNullableFilter<"bcm_disaster"> | string | null
+    alt_customer_services?: StringNullableFilter<"bcm_disaster"> | string | null
+    alt_staff?: StringNullableFilter<"bcm_disaster"> | string | null
+    wf_status_id?: IntNullableFilter<"bcm_disaster"> | number | null
+    assign_curr_org?: StringNullableFilter<"bcm_disaster"> | string | null
+    assign_curr_role?: StringNullableFilter<"bcm_disaster"> | string | null
+    created_by?: StringNullableFilter<"bcm_disaster"> | string | null
+    created_at?: DateTimeNullableFilter<"bcm_disaster"> | Date | string | null
+    updated_by?: StringNullableFilter<"bcm_disaster"> | string | null
+    updated_at?: DateTimeNullableFilter<"bcm_disaster"> | Date | string | null
   }
 
   export type threat_typeUpsertWithoutThreatsInput = {
@@ -11103,6 +21643,1586 @@ export namespace Prisma {
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
+  export type bcm_disaster_unit_affected_indirrectCreateWithoutStatus_indirect_unitInput = {
+    id: string
+    location_org_id?: string | null
+    bcm_disaster?: bcm_disasterCreateNestedOneWithoutBcm_disaster_unit_affected_indirrectInput
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutStatus_indirect_unitInput = {
+    id: string
+    disaster_id?: string | null
+    location_org_id?: string | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutStatus_indirect_unitInput = {
+    where: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    create: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutStatus_indirect_unitInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutStatus_indirect_unitInput>
+  }
+
+  export type bcm_disaster_unit_affected_indirrectCreateManyStatus_indirect_unitInputEnvelope = {
+    data: bcm_disaster_unit_affected_indirrectCreateManyStatus_indirect_unitInput | bcm_disaster_unit_affected_indirrectCreateManyStatus_indirect_unitInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpsertWithWhereUniqueWithoutStatus_indirect_unitInput = {
+    where: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    update: XOR<bcm_disaster_unit_affected_indirrectUpdateWithoutStatus_indirect_unitInput, bcm_disaster_unit_affected_indirrectUncheckedUpdateWithoutStatus_indirect_unitInput>
+    create: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutStatus_indirect_unitInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutStatus_indirect_unitInput>
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpdateWithWhereUniqueWithoutStatus_indirect_unitInput = {
+    where: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    data: XOR<bcm_disaster_unit_affected_indirrectUpdateWithoutStatus_indirect_unitInput, bcm_disaster_unit_affected_indirrectUncheckedUpdateWithoutStatus_indirect_unitInput>
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpdateManyWithWhereWithoutStatus_indirect_unitInput = {
+    where: bcm_disaster_unit_affected_indirrectScalarWhereInput
+    data: XOR<bcm_disaster_unit_affected_indirrectUpdateManyMutationInput, bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutStatus_indirect_unitInput>
+  }
+
+  export type bcm_disaster_unit_affected_indirrectScalarWhereInput = {
+    AND?: bcm_disaster_unit_affected_indirrectScalarWhereInput | bcm_disaster_unit_affected_indirrectScalarWhereInput[]
+    OR?: bcm_disaster_unit_affected_indirrectScalarWhereInput[]
+    NOT?: bcm_disaster_unit_affected_indirrectScalarWhereInput | bcm_disaster_unit_affected_indirrectScalarWhereInput[]
+    id?: StringFilter<"bcm_disaster_unit_affected_indirrect"> | string
+    disaster_id?: StringNullableFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+    status_indirect_unit_id?: StringNullableFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+    location_org_id?: StringNullableFilter<"bcm_disaster_unit_affected_indirrect"> | string | null
+  }
+
+  export type bcm_disasterCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    threat: threatCreateNestedOneWithoutBcm_disasterInput
+    workflow_status?: workflow_statusCreateNestedOneWithoutBcm_disasterInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    where: bcm_disasterWhereUniqueInput
+    create: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+  }
+
+  export type bcm_disasterCreateManyReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInputEnvelope = {
+    data: bcm_disasterCreateManyReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput | bcm_disasterCreateManyReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type bcm_disasterCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    threat: threatCreateNestedOneWithoutBcm_disasterInput
+    workflow_status?: workflow_statusCreateNestedOneWithoutBcm_disasterInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterCreateOrConnectWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    where: bcm_disasterWhereUniqueInput
+    create: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+  }
+
+  export type bcm_disasterCreateManyReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInputEnvelope = {
+    data: bcm_disasterCreateManyReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput | bcm_disasterCreateManyReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type bcm_disasterUpsertWithWhereUniqueWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    where: bcm_disasterWhereUniqueInput
+    update: XOR<bcm_disasterUpdateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput, bcm_disasterUncheckedUpdateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+    create: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+  }
+
+  export type bcm_disasterUpdateWithWhereUniqueWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    where: bcm_disasterWhereUniqueInput
+    data: XOR<bcm_disasterUpdateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput, bcm_disasterUncheckedUpdateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+  }
+
+  export type bcm_disasterUpdateManyWithWhereWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    where: bcm_disasterScalarWhereInput
+    data: XOR<bcm_disasterUpdateManyMutationInput, bcm_disasterUncheckedUpdateManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+  }
+
+  export type bcm_disasterUpsertWithWhereUniqueWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    where: bcm_disasterWhereUniqueInput
+    update: XOR<bcm_disasterUpdateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, bcm_disasterUncheckedUpdateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+    create: XOR<bcm_disasterCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, bcm_disasterUncheckedCreateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+  }
+
+  export type bcm_disasterUpdateWithWhereUniqueWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    where: bcm_disasterWhereUniqueInput
+    data: XOR<bcm_disasterUpdateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, bcm_disasterUncheckedUpdateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+  }
+
+  export type bcm_disasterUpdateManyWithWhereWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    where: bcm_disasterScalarWhereInput
+    data: XOR<bcm_disasterUpdateManyMutationInput, bcm_disasterUncheckedUpdateManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+  }
+
+  export type CurrencyCreateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    code: string
+    tenant_id: string
+    name: string
+    description: string
+    sort_order?: number
+    is_active?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string | null
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: bcm_disasterCreateNestedManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+  }
+
+  export type CurrencyUncheckedCreateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    code: string
+    tenant_id: string
+    name: string
+    description: string
+    sort_order?: number
+    is_active?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string | null
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: bcm_disasterUncheckedCreateNestedManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+  }
+
+  export type CurrencyCreateOrConnectWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    where: CurrencyWhereUniqueInput
+    create: XOR<CurrencyCreateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput, CurrencyUncheckedCreateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+  }
+
+  export type CurrencyCreateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    code: string
+    tenant_id: string
+    name: string
+    description: string
+    sort_order?: number
+    is_active?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string | null
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: bcm_disasterCreateNestedManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+  }
+
+  export type CurrencyUncheckedCreateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    code: string
+    tenant_id: string
+    name: string
+    description: string
+    sort_order?: number
+    is_active?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string | null
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: bcm_disasterUncheckedCreateNestedManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+  }
+
+  export type CurrencyCreateOrConnectWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    where: CurrencyWhereUniqueInput
+    create: XOR<CurrencyCreateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, CurrencyUncheckedCreateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+  }
+
+  export type threatCreateWithoutBcm_disasterInput = {
+    id: string
+    tenant_id: string
+    name: string
+    is_active?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string | null
+    threat_types: threat_typeCreateNestedOneWithoutThreatsInput
+  }
+
+  export type threatUncheckedCreateWithoutBcm_disasterInput = {
+    id: string
+    tenant_id: string
+    type_id: string
+    name: string
+    is_active?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string | null
+  }
+
+  export type threatCreateOrConnectWithoutBcm_disasterInput = {
+    where: threatWhereUniqueInput
+    create: XOR<threatCreateWithoutBcm_disasterInput, threatUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type workflow_statusCreateWithoutBcm_disasterInput = {
+    id: number
+    name?: string | null
+    is_active?: boolean | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyCreateNestedManyWithoutWorkflow_statusInput
+  }
+
+  export type workflow_statusUncheckedCreateWithoutBcm_disasterInput = {
+    id: number
+    name?: string | null
+    is_active?: boolean | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutWorkflow_statusInput
+  }
+
+  export type workflow_statusCreateOrConnectWithoutBcm_disasterInput = {
+    where: workflow_statusWhereUniqueInput
+    create: XOR<workflow_statusCreateWithoutBcm_disasterInput, workflow_statusUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_assignment_historyCreateWithoutBcm_disasterInput = {
+    id: string
+    history_date?: Date | string | null
+    user_id?: string | null
+    user_name?: string | null
+    reason?: string | null
+    workflow_status?: workflow_statusCreateNestedOneWithoutBcm_disaster_assignment_historyInput
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedCreateWithoutBcm_disasterInput = {
+    id: string
+    history_date?: Date | string | null
+    user_id?: string | null
+    user_name?: string | null
+    wf_status_id?: number | null
+    reason?: string | null
+  }
+
+  export type bcm_disaster_assignment_historyCreateOrConnectWithoutBcm_disasterInput = {
+    where: bcm_disaster_assignment_historyWhereUniqueInput
+    create: XOR<bcm_disaster_assignment_historyCreateWithoutBcm_disasterInput, bcm_disaster_assignment_historyUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_assignment_historyCreateManyBcm_disasterInputEnvelope = {
+    data: bcm_disaster_assignment_historyCreateManyBcm_disasterInput | bcm_disaster_assignment_historyCreateManyBcm_disasterInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type bcm_disaster_atm_affectedCreateWithoutBcm_disasterInput = {
+    id: string
+    total_atm?: number | null
+    total_atm_is_operating?: number | null
+    total_atm_is_not_operating?: number | null
+  }
+
+  export type bcm_disaster_atm_affectedUncheckedCreateWithoutBcm_disasterInput = {
+    id: string
+    total_atm?: number | null
+    total_atm_is_operating?: number | null
+    total_atm_is_not_operating?: number | null
+  }
+
+  export type bcm_disaster_atm_affectedCreateOrConnectWithoutBcm_disasterInput = {
+    where: bcm_disaster_atm_affectedWhereUniqueInput
+    create: XOR<bcm_disaster_atm_affectedCreateWithoutBcm_disasterInput, bcm_disaster_atm_affectedUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_atm_affectedCreateManyBcm_disasterInputEnvelope = {
+    data: bcm_disaster_atm_affectedCreateManyBcm_disasterInput | bcm_disaster_atm_affectedCreateManyBcm_disasterInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type bcm_disaster_staff_affectedCreateWithoutBcm_disasterInput = {
+    id: string
+    staff_condition_id?: string | null
+    total?: number | null
+    name?: string | null
+    total_family?: number | null
+  }
+
+  export type bcm_disaster_staff_affectedUncheckedCreateWithoutBcm_disasterInput = {
+    id: string
+    staff_condition_id?: string | null
+    total?: number | null
+    name?: string | null
+    total_family?: number | null
+  }
+
+  export type bcm_disaster_staff_affectedCreateOrConnectWithoutBcm_disasterInput = {
+    where: bcm_disaster_staff_affectedWhereUniqueInput
+    create: XOR<bcm_disaster_staff_affectedCreateWithoutBcm_disasterInput, bcm_disaster_staff_affectedUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_staff_affectedCreateManyBcm_disasterInputEnvelope = {
+    data: bcm_disaster_staff_affectedCreateManyBcm_disasterInput | bcm_disaster_staff_affectedCreateManyBcm_disasterInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type bcm_disaster_unit_affected_dirrectCreateWithoutBcm_disasterInput = {
+    id: string
+    location_org_id?: string | null
+    is_operating?: boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUncheckedCreateWithoutBcm_disasterInput = {
+    id: string
+    location_org_id?: string | null
+    is_operating?: boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectCreateOrConnectWithoutBcm_disasterInput = {
+    where: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+    create: XOR<bcm_disaster_unit_affected_dirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_dirrectUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_unit_affected_dirrectCreateManyBcm_disasterInputEnvelope = {
+    data: bcm_disaster_unit_affected_dirrectCreateManyBcm_disasterInput | bcm_disaster_unit_affected_dirrectCreateManyBcm_disasterInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type bcm_disaster_unit_affected_indirrectCreateWithoutBcm_disasterInput = {
+    id: string
+    location_org_id?: string | null
+    status_indirect_unit?: Indirect_UnitCreateNestedOneWithoutBcm_disaster_unit_affected_indirrectInput
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutBcm_disasterInput = {
+    id: string
+    status_indirect_unit_id?: string | null
+    location_org_id?: string | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectCreateOrConnectWithoutBcm_disasterInput = {
+    where: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    create: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_unit_affected_indirrectCreateManyBcm_disasterInputEnvelope = {
+    data: bcm_disaster_unit_affected_indirrectCreateManyBcm_disasterInput | bcm_disaster_unit_affected_indirrectCreateManyBcm_disasterInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type CurrencyUpsertWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    update: XOR<CurrencyUpdateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput, CurrencyUncheckedUpdateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+    create: XOR<CurrencyCreateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput, CurrencyUncheckedCreateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+    where?: CurrencyWhereInput
+  }
+
+  export type CurrencyUpdateToOneWithWhereWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    where?: CurrencyWhereInput
+    data: XOR<CurrencyUpdateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput, CurrencyUncheckedUpdateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput>
+  }
+
+  export type CurrencyUpdateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    code?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    sort_order?: IntFieldUpdateOperationsInput | number
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: bcm_disasterUpdateManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
+  }
+
+  export type CurrencyUncheckedUpdateWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    code?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    sort_order?: IntFieldUpdateOperationsInput | number
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency?: bcm_disasterUncheckedUpdateManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
+  }
+
+  export type CurrencyUpsertWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    update: XOR<CurrencyUpdateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, CurrencyUncheckedUpdateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+    create: XOR<CurrencyCreateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, CurrencyUncheckedCreateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+    where?: CurrencyWhereInput
+  }
+
+  export type CurrencyUpdateToOneWithWhereWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    where?: CurrencyWhereInput
+    data: XOR<CurrencyUpdateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput, CurrencyUncheckedUpdateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput>
+  }
+
+  export type CurrencyUpdateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    code?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    sort_order?: IntFieldUpdateOperationsInput | number
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: bcm_disasterUpdateManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+  }
+
+  export type CurrencyUncheckedUpdateWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    code?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    sort_order?: IntFieldUpdateOperationsInput | number
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency?: bcm_disasterUncheckedUpdateManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+  }
+
+  export type threatUpsertWithoutBcm_disasterInput = {
+    update: XOR<threatUpdateWithoutBcm_disasterInput, threatUncheckedUpdateWithoutBcm_disasterInput>
+    create: XOR<threatCreateWithoutBcm_disasterInput, threatUncheckedCreateWithoutBcm_disasterInput>
+    where?: threatWhereInput
+  }
+
+  export type threatUpdateToOneWithWhereWithoutBcm_disasterInput = {
+    where?: threatWhereInput
+    data: XOR<threatUpdateWithoutBcm_disasterInput, threatUncheckedUpdateWithoutBcm_disasterInput>
+  }
+
+  export type threatUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    threat_types?: threat_typeUpdateOneRequiredWithoutThreatsNestedInput
+  }
+
+  export type threatUncheckedUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    type_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type workflow_statusUpsertWithoutBcm_disasterInput = {
+    update: XOR<workflow_statusUpdateWithoutBcm_disasterInput, workflow_statusUncheckedUpdateWithoutBcm_disasterInput>
+    create: XOR<workflow_statusCreateWithoutBcm_disasterInput, workflow_statusUncheckedCreateWithoutBcm_disasterInput>
+    where?: workflow_statusWhereInput
+  }
+
+  export type workflow_statusUpdateToOneWithWhereWithoutBcm_disasterInput = {
+    where?: workflow_statusWhereInput
+    data: XOR<workflow_statusUpdateWithoutBcm_disasterInput, workflow_statusUncheckedUpdateWithoutBcm_disasterInput>
+  }
+
+  export type workflow_statusUpdateWithoutBcm_disasterInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    is_active?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUpdateManyWithoutWorkflow_statusNestedInput
+  }
+
+  export type workflow_statusUncheckedUpdateWithoutBcm_disasterInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    is_active?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedUpdateManyWithoutWorkflow_statusNestedInput
+  }
+
+  export type bcm_disaster_assignment_historyUpsertWithWhereUniqueWithoutBcm_disasterInput = {
+    where: bcm_disaster_assignment_historyWhereUniqueInput
+    update: XOR<bcm_disaster_assignment_historyUpdateWithoutBcm_disasterInput, bcm_disaster_assignment_historyUncheckedUpdateWithoutBcm_disasterInput>
+    create: XOR<bcm_disaster_assignment_historyCreateWithoutBcm_disasterInput, bcm_disaster_assignment_historyUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_assignment_historyUpdateWithWhereUniqueWithoutBcm_disasterInput = {
+    where: bcm_disaster_assignment_historyWhereUniqueInput
+    data: XOR<bcm_disaster_assignment_historyUpdateWithoutBcm_disasterInput, bcm_disaster_assignment_historyUncheckedUpdateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_assignment_historyUpdateManyWithWhereWithoutBcm_disasterInput = {
+    where: bcm_disaster_assignment_historyScalarWhereInput
+    data: XOR<bcm_disaster_assignment_historyUpdateManyMutationInput, bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_assignment_historyScalarWhereInput = {
+    AND?: bcm_disaster_assignment_historyScalarWhereInput | bcm_disaster_assignment_historyScalarWhereInput[]
+    OR?: bcm_disaster_assignment_historyScalarWhereInput[]
+    NOT?: bcm_disaster_assignment_historyScalarWhereInput | bcm_disaster_assignment_historyScalarWhereInput[]
+    id?: StringFilter<"bcm_disaster_assignment_history"> | string
+    disaster_id?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+    history_date?: DateTimeNullableFilter<"bcm_disaster_assignment_history"> | Date | string | null
+    user_id?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+    user_name?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+    wf_status_id?: IntNullableFilter<"bcm_disaster_assignment_history"> | number | null
+    reason?: StringNullableFilter<"bcm_disaster_assignment_history"> | string | null
+  }
+
+  export type bcm_disaster_atm_affectedUpsertWithWhereUniqueWithoutBcm_disasterInput = {
+    where: bcm_disaster_atm_affectedWhereUniqueInput
+    update: XOR<bcm_disaster_atm_affectedUpdateWithoutBcm_disasterInput, bcm_disaster_atm_affectedUncheckedUpdateWithoutBcm_disasterInput>
+    create: XOR<bcm_disaster_atm_affectedCreateWithoutBcm_disasterInput, bcm_disaster_atm_affectedUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_atm_affectedUpdateWithWhereUniqueWithoutBcm_disasterInput = {
+    where: bcm_disaster_atm_affectedWhereUniqueInput
+    data: XOR<bcm_disaster_atm_affectedUpdateWithoutBcm_disasterInput, bcm_disaster_atm_affectedUncheckedUpdateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_atm_affectedUpdateManyWithWhereWithoutBcm_disasterInput = {
+    where: bcm_disaster_atm_affectedScalarWhereInput
+    data: XOR<bcm_disaster_atm_affectedUpdateManyMutationInput, bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_atm_affectedScalarWhereInput = {
+    AND?: bcm_disaster_atm_affectedScalarWhereInput | bcm_disaster_atm_affectedScalarWhereInput[]
+    OR?: bcm_disaster_atm_affectedScalarWhereInput[]
+    NOT?: bcm_disaster_atm_affectedScalarWhereInput | bcm_disaster_atm_affectedScalarWhereInput[]
+    id?: StringFilter<"bcm_disaster_atm_affected"> | string
+    disaster_id?: StringNullableFilter<"bcm_disaster_atm_affected"> | string | null
+    total_atm?: IntNullableFilter<"bcm_disaster_atm_affected"> | number | null
+    total_atm_is_operating?: IntNullableFilter<"bcm_disaster_atm_affected"> | number | null
+    total_atm_is_not_operating?: IntNullableFilter<"bcm_disaster_atm_affected"> | number | null
+  }
+
+  export type bcm_disaster_staff_affectedUpsertWithWhereUniqueWithoutBcm_disasterInput = {
+    where: bcm_disaster_staff_affectedWhereUniqueInput
+    update: XOR<bcm_disaster_staff_affectedUpdateWithoutBcm_disasterInput, bcm_disaster_staff_affectedUncheckedUpdateWithoutBcm_disasterInput>
+    create: XOR<bcm_disaster_staff_affectedCreateWithoutBcm_disasterInput, bcm_disaster_staff_affectedUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_staff_affectedUpdateWithWhereUniqueWithoutBcm_disasterInput = {
+    where: bcm_disaster_staff_affectedWhereUniqueInput
+    data: XOR<bcm_disaster_staff_affectedUpdateWithoutBcm_disasterInput, bcm_disaster_staff_affectedUncheckedUpdateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_staff_affectedUpdateManyWithWhereWithoutBcm_disasterInput = {
+    where: bcm_disaster_staff_affectedScalarWhereInput
+    data: XOR<bcm_disaster_staff_affectedUpdateManyMutationInput, bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_staff_affectedScalarWhereInput = {
+    AND?: bcm_disaster_staff_affectedScalarWhereInput | bcm_disaster_staff_affectedScalarWhereInput[]
+    OR?: bcm_disaster_staff_affectedScalarWhereInput[]
+    NOT?: bcm_disaster_staff_affectedScalarWhereInput | bcm_disaster_staff_affectedScalarWhereInput[]
+    id?: StringFilter<"bcm_disaster_staff_affected"> | string
+    disaster_id?: StringNullableFilter<"bcm_disaster_staff_affected"> | string | null
+    staff_condition_id?: StringNullableFilter<"bcm_disaster_staff_affected"> | string | null
+    total?: IntNullableFilter<"bcm_disaster_staff_affected"> | number | null
+    name?: StringNullableFilter<"bcm_disaster_staff_affected"> | string | null
+    total_family?: IntNullableFilter<"bcm_disaster_staff_affected"> | number | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUpsertWithWhereUniqueWithoutBcm_disasterInput = {
+    where: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+    update: XOR<bcm_disaster_unit_affected_dirrectUpdateWithoutBcm_disasterInput, bcm_disaster_unit_affected_dirrectUncheckedUpdateWithoutBcm_disasterInput>
+    create: XOR<bcm_disaster_unit_affected_dirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_dirrectUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUpdateWithWhereUniqueWithoutBcm_disasterInput = {
+    where: bcm_disaster_unit_affected_dirrectWhereUniqueInput
+    data: XOR<bcm_disaster_unit_affected_dirrectUpdateWithoutBcm_disasterInput, bcm_disaster_unit_affected_dirrectUncheckedUpdateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUpdateManyWithWhereWithoutBcm_disasterInput = {
+    where: bcm_disaster_unit_affected_dirrectScalarWhereInput
+    data: XOR<bcm_disaster_unit_affected_dirrectUpdateManyMutationInput, bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_unit_affected_dirrectScalarWhereInput = {
+    AND?: bcm_disaster_unit_affected_dirrectScalarWhereInput | bcm_disaster_unit_affected_dirrectScalarWhereInput[]
+    OR?: bcm_disaster_unit_affected_dirrectScalarWhereInput[]
+    NOT?: bcm_disaster_unit_affected_dirrectScalarWhereInput | bcm_disaster_unit_affected_dirrectScalarWhereInput[]
+    id?: StringFilter<"bcm_disaster_unit_affected_dirrect"> | string
+    disaster_id?: StringNullableFilter<"bcm_disaster_unit_affected_dirrect"> | string | null
+    location_org_id?: StringNullableFilter<"bcm_disaster_unit_affected_dirrect"> | string | null
+    is_operating?: BoolNullableFilter<"bcm_disaster_unit_affected_dirrect"> | boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpsertWithWhereUniqueWithoutBcm_disasterInput = {
+    where: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    update: XOR<bcm_disaster_unit_affected_indirrectUpdateWithoutBcm_disasterInput, bcm_disaster_unit_affected_indirrectUncheckedUpdateWithoutBcm_disasterInput>
+    create: XOR<bcm_disaster_unit_affected_indirrectCreateWithoutBcm_disasterInput, bcm_disaster_unit_affected_indirrectUncheckedCreateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpdateWithWhereUniqueWithoutBcm_disasterInput = {
+    where: bcm_disaster_unit_affected_indirrectWhereUniqueInput
+    data: XOR<bcm_disaster_unit_affected_indirrectUpdateWithoutBcm_disasterInput, bcm_disaster_unit_affected_indirrectUncheckedUpdateWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpdateManyWithWhereWithoutBcm_disasterInput = {
+    where: bcm_disaster_unit_affected_indirrectScalarWhereInput
+    data: XOR<bcm_disaster_unit_affected_indirrectUpdateManyMutationInput, bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterInput>
+  }
+
+  export type bcm_disasterCreateWithoutBcm_disaster_assignment_historyInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    threat: threatCreateNestedOneWithoutBcm_disasterInput
+    workflow_status?: workflow_statusCreateNestedOneWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterUncheckedCreateWithoutBcm_disaster_assignment_historyInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterCreateOrConnectWithoutBcm_disaster_assignment_historyInput = {
+    where: bcm_disasterWhereUniqueInput
+    create: XOR<bcm_disasterCreateWithoutBcm_disaster_assignment_historyInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_assignment_historyInput>
+  }
+
+  export type workflow_statusCreateWithoutBcm_disaster_assignment_historyInput = {
+    id: number
+    name?: string | null
+    is_active?: boolean | null
+    bcm_disaster?: bcm_disasterCreateNestedManyWithoutWorkflow_statusInput
+  }
+
+  export type workflow_statusUncheckedCreateWithoutBcm_disaster_assignment_historyInput = {
+    id: number
+    name?: string | null
+    is_active?: boolean | null
+    bcm_disaster?: bcm_disasterUncheckedCreateNestedManyWithoutWorkflow_statusInput
+  }
+
+  export type workflow_statusCreateOrConnectWithoutBcm_disaster_assignment_historyInput = {
+    where: workflow_statusWhereUniqueInput
+    create: XOR<workflow_statusCreateWithoutBcm_disaster_assignment_historyInput, workflow_statusUncheckedCreateWithoutBcm_disaster_assignment_historyInput>
+  }
+
+  export type bcm_disasterUpsertWithoutBcm_disaster_assignment_historyInput = {
+    update: XOR<bcm_disasterUpdateWithoutBcm_disaster_assignment_historyInput, bcm_disasterUncheckedUpdateWithoutBcm_disaster_assignment_historyInput>
+    create: XOR<bcm_disasterCreateWithoutBcm_disaster_assignment_historyInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_assignment_historyInput>
+    where?: bcm_disasterWhereInput
+  }
+
+  export type bcm_disasterUpdateToOneWithWhereWithoutBcm_disaster_assignment_historyInput = {
+    where?: bcm_disasterWhereInput
+    data: XOR<bcm_disasterUpdateWithoutBcm_disaster_assignment_historyInput, bcm_disasterUncheckedUpdateWithoutBcm_disaster_assignment_historyInput>
+  }
+
+  export type bcm_disasterUpdateWithoutBcm_disaster_assignment_historyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
+    threat?: threatUpdateOneRequiredWithoutBcm_disasterNestedInput
+    workflow_status?: workflow_statusUpdateOneWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateWithoutBcm_disaster_assignment_historyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type workflow_statusUpsertWithoutBcm_disaster_assignment_historyInput = {
+    update: XOR<workflow_statusUpdateWithoutBcm_disaster_assignment_historyInput, workflow_statusUncheckedUpdateWithoutBcm_disaster_assignment_historyInput>
+    create: XOR<workflow_statusCreateWithoutBcm_disaster_assignment_historyInput, workflow_statusUncheckedCreateWithoutBcm_disaster_assignment_historyInput>
+    where?: workflow_statusWhereInput
+  }
+
+  export type workflow_statusUpdateToOneWithWhereWithoutBcm_disaster_assignment_historyInput = {
+    where?: workflow_statusWhereInput
+    data: XOR<workflow_statusUpdateWithoutBcm_disaster_assignment_historyInput, workflow_statusUncheckedUpdateWithoutBcm_disaster_assignment_historyInput>
+  }
+
+  export type workflow_statusUpdateWithoutBcm_disaster_assignment_historyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    is_active?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    bcm_disaster?: bcm_disasterUpdateManyWithoutWorkflow_statusNestedInput
+  }
+
+  export type workflow_statusUncheckedUpdateWithoutBcm_disaster_assignment_historyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    is_active?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    bcm_disaster?: bcm_disasterUncheckedUpdateManyWithoutWorkflow_statusNestedInput
+  }
+
+  export type bcm_disasterCreateWithoutBcm_disaster_atm_affectedInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    threat: threatCreateNestedOneWithoutBcm_disasterInput
+    workflow_status?: workflow_statusCreateNestedOneWithoutBcm_disasterInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterUncheckedCreateWithoutBcm_disaster_atm_affectedInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterCreateOrConnectWithoutBcm_disaster_atm_affectedInput = {
+    where: bcm_disasterWhereUniqueInput
+    create: XOR<bcm_disasterCreateWithoutBcm_disaster_atm_affectedInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_atm_affectedInput>
+  }
+
+  export type bcm_disasterUpsertWithoutBcm_disaster_atm_affectedInput = {
+    update: XOR<bcm_disasterUpdateWithoutBcm_disaster_atm_affectedInput, bcm_disasterUncheckedUpdateWithoutBcm_disaster_atm_affectedInput>
+    create: XOR<bcm_disasterCreateWithoutBcm_disaster_atm_affectedInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_atm_affectedInput>
+    where?: bcm_disasterWhereInput
+  }
+
+  export type bcm_disasterUpdateToOneWithWhereWithoutBcm_disaster_atm_affectedInput = {
+    where?: bcm_disasterWhereInput
+    data: XOR<bcm_disasterUpdateWithoutBcm_disaster_atm_affectedInput, bcm_disasterUncheckedUpdateWithoutBcm_disaster_atm_affectedInput>
+  }
+
+  export type bcm_disasterUpdateWithoutBcm_disaster_atm_affectedInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
+    threat?: threatUpdateOneRequiredWithoutBcm_disasterNestedInput
+    workflow_status?: workflow_statusUpdateOneWithoutBcm_disasterNestedInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateWithoutBcm_disaster_atm_affectedInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterCreateWithoutBcm_disaster_staff_affectedInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    threat: threatCreateNestedOneWithoutBcm_disasterInput
+    workflow_status?: workflow_statusCreateNestedOneWithoutBcm_disasterInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterUncheckedCreateWithoutBcm_disaster_staff_affectedInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterCreateOrConnectWithoutBcm_disaster_staff_affectedInput = {
+    where: bcm_disasterWhereUniqueInput
+    create: XOR<bcm_disasterCreateWithoutBcm_disaster_staff_affectedInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_staff_affectedInput>
+  }
+
+  export type bcm_disasterUpsertWithoutBcm_disaster_staff_affectedInput = {
+    update: XOR<bcm_disasterUpdateWithoutBcm_disaster_staff_affectedInput, bcm_disasterUncheckedUpdateWithoutBcm_disaster_staff_affectedInput>
+    create: XOR<bcm_disasterCreateWithoutBcm_disaster_staff_affectedInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_staff_affectedInput>
+    where?: bcm_disasterWhereInput
+  }
+
+  export type bcm_disasterUpdateToOneWithWhereWithoutBcm_disaster_staff_affectedInput = {
+    where?: bcm_disasterWhereInput
+    data: XOR<bcm_disasterUpdateWithoutBcm_disaster_staff_affectedInput, bcm_disasterUncheckedUpdateWithoutBcm_disaster_staff_affectedInput>
+  }
+
+  export type bcm_disasterUpdateWithoutBcm_disaster_staff_affectedInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
+    threat?: threatUpdateOneRequiredWithoutBcm_disasterNestedInput
+    workflow_status?: workflow_statusUpdateOneWithoutBcm_disasterNestedInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateWithoutBcm_disaster_staff_affectedInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterCreateWithoutBcm_disaster_unit_affected_dirrectInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    threat: threatCreateNestedOneWithoutBcm_disasterInput
+    workflow_status?: workflow_statusCreateNestedOneWithoutBcm_disasterInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterUncheckedCreateWithoutBcm_disaster_unit_affected_dirrectInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterCreateOrConnectWithoutBcm_disaster_unit_affected_dirrectInput = {
+    where: bcm_disasterWhereUniqueInput
+    create: XOR<bcm_disasterCreateWithoutBcm_disaster_unit_affected_dirrectInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_unit_affected_dirrectInput>
+  }
+
+  export type bcm_disasterUpsertWithoutBcm_disaster_unit_affected_dirrectInput = {
+    update: XOR<bcm_disasterUpdateWithoutBcm_disaster_unit_affected_dirrectInput, bcm_disasterUncheckedUpdateWithoutBcm_disaster_unit_affected_dirrectInput>
+    create: XOR<bcm_disasterCreateWithoutBcm_disaster_unit_affected_dirrectInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_unit_affected_dirrectInput>
+    where?: bcm_disasterWhereInput
+  }
+
+  export type bcm_disasterUpdateToOneWithWhereWithoutBcm_disaster_unit_affected_dirrectInput = {
+    where?: bcm_disasterWhereInput
+    data: XOR<bcm_disasterUpdateWithoutBcm_disaster_unit_affected_dirrectInput, bcm_disasterUncheckedUpdateWithoutBcm_disaster_unit_affected_dirrectInput>
+  }
+
+  export type bcm_disasterUpdateWithoutBcm_disaster_unit_affected_dirrectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
+    threat?: threatUpdateOneRequiredWithoutBcm_disasterNestedInput
+    workflow_status?: workflow_statusUpdateOneWithoutBcm_disasterNestedInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateWithoutBcm_disaster_unit_affected_dirrectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type Indirect_UnitCreateWithoutBcm_disaster_unit_affected_indirrectInput = {
+    id: string
+    tenant_id: string
+    name: string
+    sort_order: number
+    is_active?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string | null
+  }
+
+  export type Indirect_UnitUncheckedCreateWithoutBcm_disaster_unit_affected_indirrectInput = {
+    id: string
+    tenant_id: string
+    name: string
+    sort_order: number
+    is_active?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string | null
+  }
+
+  export type Indirect_UnitCreateOrConnectWithoutBcm_disaster_unit_affected_indirrectInput = {
+    where: Indirect_UnitWhereUniqueInput
+    create: XOR<Indirect_UnitCreateWithoutBcm_disaster_unit_affected_indirrectInput, Indirect_UnitUncheckedCreateWithoutBcm_disaster_unit_affected_indirrectInput>
+  }
+
+  export type bcm_disasterCreateWithoutBcm_disaster_unit_affected_indirrectInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    threat: threatCreateNestedOneWithoutBcm_disasterInput
+    workflow_status?: workflow_statusCreateNestedOneWithoutBcm_disasterInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterUncheckedCreateWithoutBcm_disaster_unit_affected_indirrectInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterCreateOrConnectWithoutBcm_disaster_unit_affected_indirrectInput = {
+    where: bcm_disasterWhereUniqueInput
+    create: XOR<bcm_disasterCreateWithoutBcm_disaster_unit_affected_indirrectInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_unit_affected_indirrectInput>
+  }
+
+  export type Indirect_UnitUpsertWithoutBcm_disaster_unit_affected_indirrectInput = {
+    update: XOR<Indirect_UnitUpdateWithoutBcm_disaster_unit_affected_indirrectInput, Indirect_UnitUncheckedUpdateWithoutBcm_disaster_unit_affected_indirrectInput>
+    create: XOR<Indirect_UnitCreateWithoutBcm_disaster_unit_affected_indirrectInput, Indirect_UnitUncheckedCreateWithoutBcm_disaster_unit_affected_indirrectInput>
+    where?: Indirect_UnitWhereInput
+  }
+
+  export type Indirect_UnitUpdateToOneWithWhereWithoutBcm_disaster_unit_affected_indirrectInput = {
+    where?: Indirect_UnitWhereInput
+    data: XOR<Indirect_UnitUpdateWithoutBcm_disaster_unit_affected_indirrectInput, Indirect_UnitUncheckedUpdateWithoutBcm_disaster_unit_affected_indirrectInput>
+  }
+
+  export type Indirect_UnitUpdateWithoutBcm_disaster_unit_affected_indirrectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    sort_order?: IntFieldUpdateOperationsInput | number
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type Indirect_UnitUncheckedUpdateWithoutBcm_disaster_unit_affected_indirrectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    sort_order?: IntFieldUpdateOperationsInput | number
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type bcm_disasterUpsertWithoutBcm_disaster_unit_affected_indirrectInput = {
+    update: XOR<bcm_disasterUpdateWithoutBcm_disaster_unit_affected_indirrectInput, bcm_disasterUncheckedUpdateWithoutBcm_disaster_unit_affected_indirrectInput>
+    create: XOR<bcm_disasterCreateWithoutBcm_disaster_unit_affected_indirrectInput, bcm_disasterUncheckedCreateWithoutBcm_disaster_unit_affected_indirrectInput>
+    where?: bcm_disasterWhereInput
+  }
+
+  export type bcm_disasterUpdateToOneWithWhereWithoutBcm_disaster_unit_affected_indirrectInput = {
+    where?: bcm_disasterWhereInput
+    data: XOR<bcm_disasterUpdateWithoutBcm_disaster_unit_affected_indirrectInput, bcm_disasterUncheckedUpdateWithoutBcm_disaster_unit_affected_indirrectInput>
+  }
+
+  export type bcm_disasterUpdateWithoutBcm_disaster_unit_affected_indirrectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
+    threat?: threatUpdateOneRequiredWithoutBcm_disasterNestedInput
+    workflow_status?: workflow_statusUpdateOneWithoutBcm_disasterNestedInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateWithoutBcm_disaster_unit_affected_indirrectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterCreateWithoutWorkflow_statusInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyCreateNestedOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput
+    threat: threatCreateNestedOneWithoutBcm_disasterInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterUncheckedCreateWithoutWorkflow_statusInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedCreateNestedManyWithoutBcm_disasterInput
+  }
+
+  export type bcm_disasterCreateOrConnectWithoutWorkflow_statusInput = {
+    where: bcm_disasterWhereUniqueInput
+    create: XOR<bcm_disasterCreateWithoutWorkflow_statusInput, bcm_disasterUncheckedCreateWithoutWorkflow_statusInput>
+  }
+
+  export type bcm_disasterCreateManyWorkflow_statusInputEnvelope = {
+    data: bcm_disasterCreateManyWorkflow_statusInput | bcm_disasterCreateManyWorkflow_statusInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type bcm_disaster_assignment_historyCreateWithoutWorkflow_statusInput = {
+    id: string
+    history_date?: Date | string | null
+    user_id?: string | null
+    user_name?: string | null
+    reason?: string | null
+    bcm_disaster?: bcm_disasterCreateNestedOneWithoutBcm_disaster_assignment_historyInput
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedCreateWithoutWorkflow_statusInput = {
+    id: string
+    disaster_id?: string | null
+    history_date?: Date | string | null
+    user_id?: string | null
+    user_name?: string | null
+    reason?: string | null
+  }
+
+  export type bcm_disaster_assignment_historyCreateOrConnectWithoutWorkflow_statusInput = {
+    where: bcm_disaster_assignment_historyWhereUniqueInput
+    create: XOR<bcm_disaster_assignment_historyCreateWithoutWorkflow_statusInput, bcm_disaster_assignment_historyUncheckedCreateWithoutWorkflow_statusInput>
+  }
+
+  export type bcm_disaster_assignment_historyCreateManyWorkflow_statusInputEnvelope = {
+    data: bcm_disaster_assignment_historyCreateManyWorkflow_statusInput | bcm_disaster_assignment_historyCreateManyWorkflow_statusInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type bcm_disasterUpsertWithWhereUniqueWithoutWorkflow_statusInput = {
+    where: bcm_disasterWhereUniqueInput
+    update: XOR<bcm_disasterUpdateWithoutWorkflow_statusInput, bcm_disasterUncheckedUpdateWithoutWorkflow_statusInput>
+    create: XOR<bcm_disasterCreateWithoutWorkflow_statusInput, bcm_disasterUncheckedCreateWithoutWorkflow_statusInput>
+  }
+
+  export type bcm_disasterUpdateWithWhereUniqueWithoutWorkflow_statusInput = {
+    where: bcm_disasterWhereUniqueInput
+    data: XOR<bcm_disasterUpdateWithoutWorkflow_statusInput, bcm_disasterUncheckedUpdateWithoutWorkflow_statusInput>
+  }
+
+  export type bcm_disasterUpdateManyWithWhereWithoutWorkflow_statusInput = {
+    where: bcm_disasterScalarWhereInput
+    data: XOR<bcm_disasterUpdateManyMutationInput, bcm_disasterUncheckedUpdateManyWithoutWorkflow_statusInput>
+  }
+
+  export type bcm_disaster_assignment_historyUpsertWithWhereUniqueWithoutWorkflow_statusInput = {
+    where: bcm_disaster_assignment_historyWhereUniqueInput
+    update: XOR<bcm_disaster_assignment_historyUpdateWithoutWorkflow_statusInput, bcm_disaster_assignment_historyUncheckedUpdateWithoutWorkflow_statusInput>
+    create: XOR<bcm_disaster_assignment_historyCreateWithoutWorkflow_statusInput, bcm_disaster_assignment_historyUncheckedCreateWithoutWorkflow_statusInput>
+  }
+
+  export type bcm_disaster_assignment_historyUpdateWithWhereUniqueWithoutWorkflow_statusInput = {
+    where: bcm_disaster_assignment_historyWhereUniqueInput
+    data: XOR<bcm_disaster_assignment_historyUpdateWithoutWorkflow_statusInput, bcm_disaster_assignment_historyUncheckedUpdateWithoutWorkflow_statusInput>
+  }
+
+  export type bcm_disaster_assignment_historyUpdateManyWithWhereWithoutWorkflow_statusInput = {
+    where: bcm_disaster_assignment_historyScalarWhereInput
+    data: XOR<bcm_disaster_assignment_historyUpdateManyMutationInput, bcm_disaster_assignment_historyUncheckedUpdateManyWithoutWorkflow_statusInput>
+  }
+
   export type threatCreateManyThreat_typesInput = {
     id: string
     tenant_id: string
@@ -11119,6 +23239,7 @@ export namespace Prisma {
     is_active?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster?: bcm_disasterUpdateManyWithoutThreatNestedInput
   }
 
   export type threatUncheckedUpdateWithoutThreat_typesInput = {
@@ -11128,6 +23249,7 @@ export namespace Prisma {
     is_active?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster?: bcm_disasterUncheckedUpdateManyWithoutThreatNestedInput
   }
 
   export type threatUncheckedUpdateManyWithoutThreat_typesInput = {
@@ -11139,6 +23261,634 @@ export namespace Prisma {
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
+  export type bcm_disasterCreateManyThreatInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+  }
+
+  export type bcm_disasterUpdateWithoutThreatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
+    workflow_status?: workflow_statusUpdateOneWithoutBcm_disasterNestedInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateWithoutThreatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateManyWithoutThreatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectCreateManyStatus_indirect_unitInput = {
+    id: string
+    disaster_id?: string | null
+    location_org_id?: string | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpdateWithoutStatus_indirect_unitInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+    bcm_disaster?: bcm_disasterUpdateOneWithoutBcm_disaster_unit_affected_indirrectNestedInput
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedUpdateWithoutStatus_indirect_unitInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutStatus_indirect_unitInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disasterCreateManyReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+  }
+
+  export type bcm_disasterCreateManyReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    wf_status_id?: number | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+  }
+
+  export type bcm_disasterUpdateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
+    threat?: threatUpdateOneRequiredWithoutBcm_disasterNestedInput
+    workflow_status?: workflow_statusUpdateOneWithoutBcm_disasterNestedInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateManyWithoutReff_currency_bcm_disaster_estimated_lost_currencyToreff_currencyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type bcm_disasterUpdateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+    threat?: threatUpdateOneRequiredWithoutBcm_disasterNestedInput
+    workflow_status?: workflow_statusUpdateOneWithoutBcm_disasterNestedInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateManyWithoutReff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currencyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type bcm_disaster_assignment_historyCreateManyBcm_disasterInput = {
+    id: string
+    history_date?: Date | string | null
+    user_id?: string | null
+    user_name?: string | null
+    wf_status_id?: number | null
+    reason?: string | null
+  }
+
+  export type bcm_disaster_atm_affectedCreateManyBcm_disasterInput = {
+    id: string
+    total_atm?: number | null
+    total_atm_is_operating?: number | null
+    total_atm_is_not_operating?: number | null
+  }
+
+  export type bcm_disaster_staff_affectedCreateManyBcm_disasterInput = {
+    id: string
+    staff_condition_id?: string | null
+    total?: number | null
+    name?: string | null
+    total_family?: number | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectCreateManyBcm_disasterInput = {
+    id: string
+    location_org_id?: string | null
+    is_operating?: boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectCreateManyBcm_disasterInput = {
+    id: string
+    status_indirect_unit_id?: string | null
+    location_org_id?: string | null
+  }
+
+  export type bcm_disaster_assignment_historyUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    history_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user_id?: NullableStringFieldUpdateOperationsInput | string | null
+    user_name?: NullableStringFieldUpdateOperationsInput | string | null
+    reason?: NullableStringFieldUpdateOperationsInput | string | null
+    workflow_status?: workflow_statusUpdateOneWithoutBcm_disaster_assignment_historyNestedInput
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    history_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user_id?: NullableStringFieldUpdateOperationsInput | string | null
+    user_name?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    reason?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    history_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user_id?: NullableStringFieldUpdateOperationsInput | string | null
+    user_name?: NullableStringFieldUpdateOperationsInput | string | null
+    wf_status_id?: NullableIntFieldUpdateOperationsInput | number | null
+    reason?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disaster_atm_affectedUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    total_atm?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_operating?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_not_operating?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_atm_affectedUncheckedUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    total_atm?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_operating?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_not_operating?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    total_atm?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_operating?: NullableIntFieldUpdateOperationsInput | number | null
+    total_atm_is_not_operating?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_staff_affectedUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    staff_condition_id?: NullableStringFieldUpdateOperationsInput | string | null
+    total?: NullableIntFieldUpdateOperationsInput | number | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    total_family?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_staff_affectedUncheckedUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    staff_condition_id?: NullableStringFieldUpdateOperationsInput | string | null
+    total?: NullableIntFieldUpdateOperationsInput | number | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    total_family?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    staff_condition_id?: NullableStringFieldUpdateOperationsInput | string | null
+    total?: NullableIntFieldUpdateOperationsInput | number | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    total_family?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+    is_operating?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUncheckedUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+    is_operating?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+    is_operating?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+    status_indirect_unit?: Indirect_UnitUpdateOneWithoutBcm_disaster_unit_affected_indirrectNestedInput
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedUpdateWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    status_indirect_unit_id?: NullableStringFieldUpdateOperationsInput | string | null
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    status_indirect_unit_id?: NullableStringFieldUpdateOperationsInput | string | null
+    location_org_id?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disasterCreateManyWorkflow_statusInput = {
+    id: string
+    tenant_id: string
+    org_id: string
+    threat_id: string
+    disaster_chronology?: string | null
+    disaster_date?: Date | string | null
+    disaster_location?: string | null
+    estimated_lost_currency?: string | null
+    estimated_lost?: Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: string | null
+    total_insurance_claim?: Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: string | null
+    recovery_plan?: string | null
+    alt_customer_services?: string | null
+    alt_staff?: string | null
+    assign_curr_org?: string | null
+    assign_curr_role?: string | null
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+  }
+
+  export type bcm_disaster_assignment_historyCreateManyWorkflow_statusInput = {
+    id: string
+    disaster_id?: string | null
+    history_date?: Date | string | null
+    user_id?: string | null
+    user_name?: string | null
+    reason?: string | null
+  }
+
+  export type bcm_disasterUpdateWithoutWorkflow_statusInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currencyNestedInput
+    reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency?: CurrencyUpdateOneWithoutBcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currencyNestedInput
+    threat?: threatUpdateOneRequiredWithoutBcm_disasterNestedInput
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateWithoutWorkflow_statusInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    bcm_disaster_assignment_history?: bcm_disaster_assignment_historyUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_atm_affected?: bcm_disaster_atm_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_staff_affected?: bcm_disaster_staff_affectedUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_dirrect?: bcm_disaster_unit_affected_dirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+    bcm_disaster_unit_affected_indirrect?: bcm_disaster_unit_affected_indirrectUncheckedUpdateManyWithoutBcm_disasterNestedInput
+  }
+
+  export type bcm_disasterUncheckedUpdateManyWithoutWorkflow_statusInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tenant_id?: StringFieldUpdateOperationsInput | string
+    org_id?: StringFieldUpdateOperationsInput | string
+    threat_id?: StringFieldUpdateOperationsInput | string
+    disaster_chronology?: NullableStringFieldUpdateOperationsInput | string | null
+    disaster_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    disaster_location?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    estimated_lost?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    total_insurance_claim_currency?: NullableStringFieldUpdateOperationsInput | string | null
+    total_insurance_claim?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    temp_action_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_plan?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_customer_services?: NullableStringFieldUpdateOperationsInput | string | null
+    alt_staff?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_org?: NullableStringFieldUpdateOperationsInput | string | null
+    assign_curr_role?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type bcm_disaster_assignment_historyUpdateWithoutWorkflow_statusInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    history_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user_id?: NullableStringFieldUpdateOperationsInput | string | null
+    user_name?: NullableStringFieldUpdateOperationsInput | string | null
+    reason?: NullableStringFieldUpdateOperationsInput | string | null
+    bcm_disaster?: bcm_disasterUpdateOneWithoutBcm_disaster_assignment_historyNestedInput
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedUpdateWithoutWorkflow_statusInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    history_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user_id?: NullableStringFieldUpdateOperationsInput | string | null
+    user_name?: NullableStringFieldUpdateOperationsInput | string | null
+    reason?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type bcm_disaster_assignment_historyUncheckedUpdateManyWithoutWorkflow_statusInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    disaster_id?: NullableStringFieldUpdateOperationsInput | string | null
+    history_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user_id?: NullableStringFieldUpdateOperationsInput | string | null
+    user_name?: NullableStringFieldUpdateOperationsInput | string | null
+    reason?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
 
 
   /**
@@ -11148,6 +23898,26 @@ export namespace Prisma {
      * @deprecated Use Threat_typeCountOutputTypeDefaultArgs instead
      */
     export type Threat_typeCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Threat_typeCountOutputTypeDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use ThreatCountOutputTypeDefaultArgs instead
+     */
+    export type ThreatCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = ThreatCountOutputTypeDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use Indirect_UnitCountOutputTypeDefaultArgs instead
+     */
+    export type Indirect_UnitCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Indirect_UnitCountOutputTypeDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use CurrencyCountOutputTypeDefaultArgs instead
+     */
+    export type CurrencyCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = CurrencyCountOutputTypeDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use Bcm_disasterCountOutputTypeDefaultArgs instead
+     */
+    export type Bcm_disasterCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Bcm_disasterCountOutputTypeDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use Workflow_statusCountOutputTypeDefaultArgs instead
+     */
+    export type Workflow_statusCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Workflow_statusCountOutputTypeDefaultArgs<ExtArgs>
     /**
      * @deprecated Use threat_typeDefaultArgs instead
      */
@@ -11176,6 +23946,34 @@ export namespace Prisma {
      * @deprecated Use CurrencyDefaultArgs instead
      */
     export type CurrencyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = CurrencyDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use bcm_disasterDefaultArgs instead
+     */
+    export type bcm_disasterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = bcm_disasterDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use bcm_disaster_assignment_historyDefaultArgs instead
+     */
+    export type bcm_disaster_assignment_historyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = bcm_disaster_assignment_historyDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use bcm_disaster_atm_affectedDefaultArgs instead
+     */
+    export type bcm_disaster_atm_affectedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = bcm_disaster_atm_affectedDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use bcm_disaster_staff_affectedDefaultArgs instead
+     */
+    export type bcm_disaster_staff_affectedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = bcm_disaster_staff_affectedDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use bcm_disaster_unit_affected_dirrectDefaultArgs instead
+     */
+    export type bcm_disaster_unit_affected_dirrectArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = bcm_disaster_unit_affected_dirrectDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use bcm_disaster_unit_affected_indirrectDefaultArgs instead
+     */
+    export type bcm_disaster_unit_affected_indirrectArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = bcm_disaster_unit_affected_indirrectDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use workflow_statusDefaultArgs instead
+     */
+    export type workflow_statusArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = workflow_statusDefaultArgs<ExtArgs>
     /**
      * @deprecated Use vw_threat_typesDefaultArgs instead
      */
