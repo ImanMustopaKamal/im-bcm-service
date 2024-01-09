@@ -1,6 +1,5 @@
 generator client {
   provider        = "prisma-client-js"
-  output          = "generated/client"
   previewFeatures = ["views"]
 }
 
@@ -92,7 +91,7 @@ model App_Testing_Period {
 
 model Currency {
   code                                                                    String         @id @db.Char(50)
-  tenant_id                                                               String         @db.Char(8)
+  tenant_id                                                               String?         @db.Char(8)
   name                                                                    String         @db.Char(100)
   description                                                             String         @db.VarChar(2500)
   sort_order                                                              Int            @default(2)
@@ -221,7 +220,7 @@ model sys_process_list {
   workflow_module workflow_module[]
 }
 
-model org_structure {
+model Org_structure {
   id              String    @id @db.Char(40)
   org_id          String?   @db.Char(40)
   org_name        String?   @db.VarChar(200)
@@ -231,6 +230,8 @@ model org_structure {
   created_by      String?   @db.VarChar(50)
   updated_at      DateTime? @updatedAt
   updated_by      String?   @db.VarChar(50)
+
+  @@map("org_structure")
 }
 
 model workflow_level {
