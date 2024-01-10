@@ -24,6 +24,7 @@ app.get("/", (req, res, next) => {
 });
 
 require("./routes/sys_process_list.routes")(app);
+require("./routes/workflow_level.routes")(app);
 require("./routes/workflow_module.routes")(app);
 require("./routes/org_structure.routes")(app);
 require("./routes/disaster.routes")(app);
