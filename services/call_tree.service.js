@@ -1,7 +1,21 @@
 const fs = require("fs");
 const path = require("path");
 const csv = require("fast-csv");
-const { store } = require("../repositories/call_tree.repository");
+const { store, getAll } = require("../repositories/call_tree.repository");
+const { func } = require("../helpers");
+
+const validateRow = (row) => {
+  if (row["NPP"] === undefined) return false;
+  if (row["Nama"] === undefined) return false;
+  if (row["Posisi"] === undefined) return false;
+  if (row["NPP Atasan"] === undefined) return false;
+  if (row["No HP"] === undefined) return false;
+  if (row["No Rumah"] === undefined) return false;
+  if (row["Alamat"] === undefined) return false;
+  if (row["Status Karyawan"] === undefined) return false;
+
+  return true;
+};
 
 const validateCsv = (filePath, options) => {
   let data = [];
@@ -39,6 +53,34 @@ const validateCsv = (filePath, options) => {
   });
 };
 
+const getAllService = async (req, res) => {
+  const { pagiante, tenant_id } = res;
+  const { query } = req;
+  console.log(query.npp)
+  let filter = {
+    where: {
+      
+    },
+  };
+
+  if (!func.isNull(query.npp)) {
+    filter.where["npp"] = query.npp;
+  }
+
+  if (!func.isNull(query.org_id)) {
+    filter.where["org_id"] = query.org_id;
+  }
+  console.log("filter:", filter)
+  try {
+    const results = await getAll(filter, pagiante);
+
+    return results; 
+  } catch (error) {
+    console.log("🚀 ~ file: call_tree.service.js:79 ~ getAllService ~ error:", error)
+    throw new Error("database error");
+  }
+};
+
 const storeService = async (req, res) => {
   const { file } = req;
   const basePath = path.resolve(path.dirname(""));
@@ -65,19 +107,7 @@ const storeService = async (req, res) => {
   }
 };
 
-const validateRow = (row) => {
-  if (row["NPP"] === undefined) return false;
-  if (row["Nama"] === undefined) return false;
-  if (row["Posisi"] === undefined) return false;
-  if (row["NPP Atasan"] === undefined) return false;
-  if (row["No HP"] === undefined) return false;
-  if (row["No Rumah"] === undefined) return false;
-  if (row["Alamat"] === undefined) return false;
-  if (row["Status Karyawan"] === undefined) return false;
-
-  return true;
-};
-
 module.exports = {
+  getAllService,
   storeService,
 };
