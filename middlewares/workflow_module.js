@@ -11,7 +11,7 @@ const createValidator = async (req, res, next) => {
     next();
 };
 
-const deleteValidator = async (req, res, next) => {
+const updateDeleteValidator = async (req, res, next) => {
     const { code } = req.params;
     const tenant_id = res.tenant_id;
     const wfModule = await findBy(tenant_id, "code", code);
@@ -22,5 +22,5 @@ const deleteValidator = async (req, res, next) => {
 };
 
 module.exports = {
-    createValidator, deleteValidator
+    createValidator, updateDeleteValidator
 };
