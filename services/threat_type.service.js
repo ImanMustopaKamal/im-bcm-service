@@ -1,20 +1,24 @@
 const { nanoid } = require("nanoid");
 const { func } = require("../helpers");
 const {
-    findAll, findBy, storeThreatTypes, removeThreatTypes, changeThreatTypes
+    findAll, findBy, storeThreatTypes, removeThreatTypes, changeThreatTypes, countAll
   } = require("../repositories/threat_type.repository");
-  
+
   const getAllThreats = async (req, res) => {
     const { query } = req;
     const { pagiante } = res;
+    const tenant_id = res.tenant_id;
+
     let filter = {
-      where : {}
+      where : {
+        "tenant_id" : tenant_id
+      }
     };
     
     if (!func.isNull(query.is_active)) {
       filter.where['is_active'] = query.is_active === 'true';   
     }
-
+  
     if (!func.isNull(query.name)) {
       const nameFilter = {
         contains : query.name
@@ -22,22 +26,23 @@ const {
       filter.where['name'] = nameFilter;
     }
 
-    const threats = await findAll(filter, pagiante);
+    const results = await findAll(filter, pagiante);
   
-    return threats;
+    return results;
   };
 
-  const getThreatByID = async (id) => {
-    const threat = await findBy('id', id);
+  const getThreatByID = async (tenant_id, id) => {
+    const threat = await findBy(tenant_id, 'id', id);
 
     return threat;
   };
 
-  const addNewThreatTypes = async (body) => {
+  const addNewThreatTypes = async (tenant_id, body) => {
     const data = {
-      id : nanoid(8),
+      "id" : nanoid(8),
+      "tenant_id" : tenant_id,
       ...body,
-      is_active : true
+      "is_active" : true
     };
     const threat = await storeThreatTypes(data);
     

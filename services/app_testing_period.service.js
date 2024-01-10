@@ -4,8 +4,11 @@ const { findAll, findBy
 
 const getAll = async (req, res) => {
     const { query } = req;
+    const tenant_id = res.tenant_id;
     let filter = {
-        where : {}
+        where : {
+            "tenant_id" : tenant_id
+        }
     };
 
     if (!func.isNull(query.is_active)) {
@@ -22,8 +25,8 @@ const getAll = async (req, res) => {
     return atp;
 };
 
-const findByCode = async (code) => {
-    const atp = findBy("code", code);
+const findByCode = async (tenant_id, code) => {
+    const atp = findBy(tenant_id, "code", code);
 
     return atp;
 };

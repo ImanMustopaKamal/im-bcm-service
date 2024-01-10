@@ -10,7 +10,14 @@ const findAll = async (filter, pagiante) => {
     }
   });
 
-  return threats;
+  const threatCount = await prisma.threat.count({
+    ...filter
+  });
+
+  return {
+    dataCount : threatCount,
+    data : threats
+  };
 };
 
 const countThreatByFilter = async (filter) => {
@@ -20,10 +27,11 @@ const countThreatByFilter = async (filter) => {
     return thCount;
 };
 
-const findBy = async (key, value) => {
-  const threats = await prisma.threat.findUnique({
+const findBy = async (tenant_id, key, value) => {
+  const threats = await prisma.threat.findFirst({
     where: {
-      [key]: value,
+        "tenant_id" : tenant_id,
+        [key]: value
     },
     include: {
       threat_types: true,

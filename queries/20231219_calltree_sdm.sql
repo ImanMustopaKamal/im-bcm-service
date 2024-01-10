@@ -11,9 +11,9 @@ create table call_tree_sdm (
     address varchar(2500),
     employment_status char(20),
     created_by char(50),
-    created_date datetime,
+    created_at datetime,
     updated_by char(50),
-    updated_date datetime,
+    updated_at datetime,
     primary key (npp),
     constraint fk_npp_supervisor foreign key (supervisor_npp)
     references call_tree_sdm(npp)

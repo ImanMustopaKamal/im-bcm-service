@@ -11,9 +11,10 @@ const findAll = async (filter) => {
     return atp;
   };
 
-  const findBy = async (key, value) => {
+  const findBy = async (tenant_id, key, value) => {
     const atp = await prisma.App_Testing_Period.findUnique({
         where : {
+          "tenant_id" : tenant_id,
             [key] : value
         }
     });

@@ -4,20 +4,22 @@ const {
   } = require("../services/threat_type.service");
   
 const get = async (req, res) => {
-  threats = await getAllThreats(req, res);
+  const { dataCount, data } = await getAllThreats(req, res);
 
-  response.success(res, threats, "Threat type retrieved", 200);
+  response.successWithDataCount(res, dataCount, data, "Threat type retrieved with count", 200);
 };
 
 const getByID = async (req, res) => {
-  const threat = await getThreatByID(req.params.id);
+  const tenant_id = res.tenant_id;
+  const threat = await getThreatByID(tenant_id, req.params.id);
 
   response.success(res, threat, "Threat type retrieved", 200);
 };
 
 const create = async (req, res) => {
   const { body } = req;
-  const threat = await addNewThreatTypes(body);
+  const tenant_id = res.tenant_id;
+  const threat = await addNewThreatTypes(tenant_id, body);
 
   response.success(res, threat, "Threat type created", 201);
 };

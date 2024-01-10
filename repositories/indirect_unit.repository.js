@@ -1,7 +1,7 @@
 const prisma = require("../config/database");
 
 const findAll = async (filter) => {
-    const iu = await prisma.Indirect_Unit.findMany({
+    const iu = await prisma.indirect_Unit.findMany({
       ...filter,
       orderBy: {
         sort_order : "asc"
@@ -11,9 +11,10 @@ const findAll = async (filter) => {
     return iu;
   };
 
-  const findBy = async (key, value) => {
-    const iu = await prisma.Indirect_Unit.findUnique({
+  const findBy = async (tenant_id, key, value) => {
+    const iu = await prisma.indirect_Unit.findFirst({
         where : {
+            "tenant_id" : tenant_id,
             [key] : value
         }
     });

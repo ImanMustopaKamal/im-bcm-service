@@ -1,0 +1,26 @@
+drop table if exists bcm_disaster;
+create table bcm_disaster (
+	id char(40),
+    tenant_id char(40),
+    org_id char(40),
+    threat_id char(40),
+    disaster_chronology varchar(2500),
+    disaster_date datetime,
+    disaster_location varchar(2500),
+    estimated_lost_currency char(50),
+    estimated_lost decimal,
+    total_insurance_claim_currency char(50),
+    total_insurance_claim decimal,
+    temp_action_plan varchar(2500),
+    recovery_plan varchar(2500),
+    alt_customer_services varchar(2500),
+    alt_staff varchar(2500),
+    created_by varchar(50),
+    created_at datetime,
+    updated_by varchar(50),
+    updated_at datetime,
+    primary key (id),
+    constraint fk_disaster_threat foreign key (threat_id) references threat(id),
+    constraint fk_disaster_estimated_lost_curr foreign key (estimated_lost_currency) references reff_currency(code),
+    constraint fk_disaster_insurance_claim_curr foreign key (total_insurance_claim_currency) references reff_currency(code)
+);

@@ -1,7 +1,8 @@
 const prisma = require("../config/database");
+const { func } = require("../helpers");
 
 const findAll = async (filter, pagiante) => {
-  const threats = await prisma.threat_type.findMany({
+  const threats = await prisma.vw_threat_types.findMany({
     ...filter,
     take: pagiante.limit,
     skip: pagiante.offset,
@@ -10,13 +11,21 @@ const findAll = async (filter, pagiante) => {
     }
   });
 
-  return threats;
+  const threatCount = await prisma.threat_type.count({
+    ...filter
+  });
+
+  return {
+    dataCount: threatCount,
+    data: threats,
+  };
 };
 
-const findBy = async (key, value) => {
-  const threats = await prisma.threat_type.findUnique({
+const findBy = async (tenant_id, key, value) => {
+  const threats = await prisma.threat_type.findFirst({
     where: {
-      [key]: value,
+        "tenant_id" : tenant_id,
+        [key]: value
     }
   });
 
