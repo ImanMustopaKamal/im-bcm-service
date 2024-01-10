@@ -38,7 +38,7 @@ const getByID = async(req,res) => {
 const getAll = async(req,res) => {
     const { datacount, data } = await getAllStructure(req, res);
 
-  response.successWithDataCount(res, datacount, data, "Application retrieved", 200);
+  response.successWithDataCount(res, datacount, data, "Organisation structure retrieved", 200);
 };
 
 module.exports = {

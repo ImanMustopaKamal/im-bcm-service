@@ -1,6 +1,6 @@
 const { nanoid } = require("nanoid");
 const { func } = require("../helpers");
-const { storeStructure, changeStructure, removeStrcture, getBy, getAll
+const { storeStructure, changeStructure, removeStructure, getBy, getAll
 } = require("../repositories/org_structure.repository");
 
 const addNewStructure = async (user_id, body) => {
@@ -25,7 +25,7 @@ const updateStructure = async (user_id, id, body) => {
 };
 
 const deleteStructure = async(id) => {
-    const org = await removeStrcture(id);
+    const org = await removeStructure(id);
 
     return org;
 };

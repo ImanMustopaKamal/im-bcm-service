@@ -27,7 +27,7 @@ const getAll = async (req, res) => {
         filter.where["code"] = query.code
     }
     if(!func.isNull(query.is_active)) {
-        filter.where["is_active"] = query.is_active === "true" || query.is_active === 1;
+        filter.where["is_active"] = query.is_active === "true";
     }
 
     if(!func.isNull(query.name)){

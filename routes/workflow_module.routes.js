@@ -1,10 +1,10 @@
-const { authMiddleware, pagination } = require("../middlewares");
+const { authMiddleware, pagination, wfModuleMiddleware } = require("../middlewares");
 const { addWfModule, get, getBy, update, deleteWfModule } = require("../controllers/workflow_module.controller");
 
 module.exports = (app) => {
-    app.post("/workflow_module/add", [authMiddleware.authToken], addWfModule);
-    app.get("/wowkflow_module/:code",[authMiddleware.authToken], getBy);
-    app.get("/wowkflow_module",[authMiddleware.authToken, pagination.pagiantion], get);
-    app.put("/workflow_module/:code",[authMiddleware.authToken], update);
-    app.delete("/workflow_module/:code",[authMiddleware.authToken], deleteWfModule);
+    app.post("/workflow_module/add", [authMiddleware.authToken, wfModuleMiddleware.createValidator], addWfModule);
+    app.get("/workflow_module/:code",[authMiddleware.authToken], getBy);
+    app.get("/workflow_module",[authMiddleware.authToken, pagination.pagiantion], get);
+    app.put("/workflow_module/:code",[authMiddleware.authToken, wfModuleMiddleware.updateDeleteValidator], update);
+    app.delete("/workflow_module/:code",[authMiddleware.authToken, wfModuleMiddleware.updateDeleteValidator], deleteWfModule);
 }

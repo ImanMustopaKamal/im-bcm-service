@@ -14,11 +14,14 @@ const findAll = async (filter, pagiante) => {
         take : pagiante.limit,
         skip : pagiante.offset,
         orderBy : {
-            code : "asc"
+            "sys_code" : {
+                sort : "asc",
+                nulls : "first"
+            }
         }
     });
     const wfCount = await prisma.workflow_module.count({
-        filter
+        ...filter
     });
 
     return {

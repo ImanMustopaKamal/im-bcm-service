@@ -16,6 +16,7 @@ const changeStructure = async (id, data) => {
     data: data,
   });
 
+<<<<<<< HEAD
   return org;
 };
 
@@ -25,6 +26,26 @@ const removeStrcture = async (id) => {
       id: id,
     },
   });
+=======
+    const org_parent = await prisma.org_structure.updateMany({
+        where : {
+            "parent_org_id" : data["org_id"]
+        },
+        data : {
+            "parent_org_name" : data["org_name"]
+        }
+    });
+
+    return org;
+};
+
+const removeStructure = async (id) => {
+    const org = prisma.org_structure.delete({
+        where : {
+            "id" : id
+        }
+    });
+>>>>>>> local
 
   return org;
 };
@@ -69,6 +90,7 @@ const findOne = async (filter) => {
   return org;
 };
 module.exports = {
+<<<<<<< HEAD
   storeStructure,
   changeStructure,
   removeStrcture,
@@ -76,3 +98,7 @@ module.exports = {
   getAll,
   findOne,
 };
+=======
+    storeStructure, changeStructure, removeStructure, getBy, getAll, findOne
+};
+>>>>>>> local
