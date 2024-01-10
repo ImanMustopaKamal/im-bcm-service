@@ -1,9 +1,13 @@
+const { response } = require("../helpers");
+
+
 const createValidator = (req, res, next) => {
-  console.log('createValidator', req.file.path)
-  
+  if(req.file.mimetype !== 'text/csv') {
+    return response.badRequest(res, null, "Code is required", 404);
+  }
   next()
-}
+};
 
 module.exports = {
-  createValidator
-}
+  createValidator,
+};

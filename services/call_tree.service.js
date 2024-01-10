@@ -45,16 +45,23 @@ const storeService = async (req, res) => {
 
   try {
     const data = await validateCsv(path.resolve(basePath, file.path), res);
-    if(data.length > 0) {
+    if (data.length > 0) {
       try {
         await store(data);
       } catch (error) {
-        throw new Error('error db'); 
+        fs.unlink(path.resolve(basePath, file.path), (err) => {
+          if (err) console.log(err);
+        });
+        throw new Error("error db");
       }
     }
     return data;
   } catch (error) {
-    throw new Error('error validasi');
+    fs.unlink(path.resolve(basePath, file.path), (err) => {
+      if (err) console.log(err);
+    });
+
+    throw new Error("error validasi");
   }
 };
 
