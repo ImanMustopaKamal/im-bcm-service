@@ -31,8 +31,6 @@ const upload = multer({
 }).single("file");
 
 function checkFileType(file, cb) {
-  console.log("🚀 ~ file: file.js:33 ~ checkFileType ~ file, cb:", file, cb)
-  
   // Allowed ext
   // const filetypes = /csv|jpg|png|gif/;
   const filetypes = /csv|xlxs|xls/;

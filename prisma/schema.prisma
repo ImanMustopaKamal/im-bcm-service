@@ -91,7 +91,7 @@ model App_Testing_Period {
 
 model Currency {
   code                                                                    String         @id @db.Char(50)
-  tenant_id                                                               String?         @db.Char(8)
+  tenant_id                                                               String?        @db.Char(8)
   name                                                                    String         @db.Char(100)
   description                                                             String         @db.VarChar(2500)
   sort_order                                                              Int            @default(2)
@@ -270,23 +270,26 @@ model workflow_module {
 }
 
 model call_tree_sdm {
-  npp                 String          @id @db.Char(50)
-  name                String?         @db.VarChar(100)
-  position            String?         @db.VarChar(2500)
-  supervisor_npp      String?         @db.Char(50)
-  org_id              String?         @db.Char(50)
-  phone_number        String?         @db.Char(50)
-  phone_home          String?         @db.Char(50)
-  address             String?         @db.VarChar(2500)
-  employment_status   String?         @db.Char(20)
-  created_by          String?         @db.Char(50)
-  created_at          DateTime?       @default(now())
-  updated_by          String?         @db.Char(50)
-  updated_at          DateTime?       @updatedAt
-  call_tree_sdm       call_tree_sdm?  @relation("call_tree_sdmTocall_tree_sdm", fields: [supervisor_npp], references: [npp], onDelete: NoAction, onUpdate: NoAction, map: "fk_npp_supervisor")
+  id                String    @id @db.Char(40)
+  tenant_id         String    @db.Char(10)
+  npp               String    @db.Char(50)
+  name              String?   @db.VarChar(100)
+  position          String?   @db.VarChar(2500)
+  supervisor_id     String?   @db.Char(50)
+  org_id            String?   @db.Char(50)
+  phone_number      String?   @db.Char(50)
+  phone_home        String?   @db.Char(50)
+  address           String?   @db.VarChar(2500)
+  employment_status String?   @db.Char(20)
+  created_by        String?   @db.Char(50)
+  created_at        DateTime? @default(now())
+  updated_by        String?   @db.Char(50)
+  updated_at        DateTime? @updatedAt
+  call_tree_sdm       call_tree_sdm?  @relation("call_tree_sdmTocall_tree_sdm", fields: [supervisor_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_npp_supervisor")
   other_call_tree_sdm call_tree_sdm[] @relation("call_tree_sdmTocall_tree_sdm")
-
-  @@index([supervisor_npp], map: "fk_npp_supervisor")
+  
+  @@unique([tenant_id, npp], map: "u_call_tree_sdm_npp_tenant")
+  @@index([supervisor_id], map: "fk_npp_supervisor")
 }
 
 view vw_threat_types {
