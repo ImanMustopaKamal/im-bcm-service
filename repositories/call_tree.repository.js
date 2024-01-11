@@ -5,6 +5,9 @@ const getAll = async (filter, pagiante) => {
     ...filter,
     take: pagiante.limit,
     skip: pagiante.offset,
+    include: {
+      call_tree_sdm: true,
+    },
     orderBy: {
       ["created_at"]: "desc",
     },

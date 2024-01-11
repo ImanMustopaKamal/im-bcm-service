@@ -86,7 +86,7 @@ const storeData = async (req, res) => {
     
     const data = await storeService(req, res);
 
-    response.success(res, data, "Call Tree SDM stored", 200);
+    response.success(res, data, "Call Tree SDM stored", 201);
   } catch (error) {
     response.error(res, null, error?.message ?? "Call Tree SDM failed to store", 500);
   }

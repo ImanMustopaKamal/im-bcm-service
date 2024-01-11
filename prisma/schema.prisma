@@ -270,24 +270,24 @@ model workflow_module {
 }
 
 model call_tree_sdm {
-  id                String    @id @db.Char(40)
-  tenant_id         String    @db.Char(10)
-  npp               String    @db.Char(50)
-  name              String?   @db.VarChar(100)
-  position          String?   @db.VarChar(2500)
-  supervisor_id     String?   @db.Char(50)
-  org_id            String?   @db.Char(50)
-  phone_number      String?   @db.Char(50)
-  phone_home        String?   @db.Char(50)
-  address           String?   @db.VarChar(2500)
-  employment_status String?   @db.Char(20)
-  created_by        String?   @db.Char(50)
-  created_at        DateTime? @default(now())
-  updated_by        String?   @db.Char(50)
-  updated_at        DateTime? @updatedAt
+  id                  String          @id @db.Char(40)
+  tenant_id           String          @db.Char(10)
+  npp                 String          @db.Char(50)
+  name                String?         @db.VarChar(100)
+  position            String?         @db.VarChar(2500)
+  supervisor_id       String?         @db.Char(50)
+  org_id              String?         @db.Char(50)
+  phone_number        String?         @db.Char(50)
+  phone_home          String?         @db.Char(50)
+  address             String?         @db.VarChar(2500)
+  employment_status   String?         @db.Char(20)
+  created_by          String?         @db.Char(50)
+  created_at          DateTime?       @default(now())
+  updated_by          String?         @db.Char(50)
+  updated_at          DateTime?       @updatedAt
   call_tree_sdm       call_tree_sdm?  @relation("call_tree_sdmTocall_tree_sdm", fields: [supervisor_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_npp_supervisor")
   other_call_tree_sdm call_tree_sdm[] @relation("call_tree_sdmTocall_tree_sdm")
-  
+
   @@unique([tenant_id, npp], map: "u_call_tree_sdm_npp_tenant")
   @@index([supervisor_id], map: "fk_npp_supervisor")
 }
