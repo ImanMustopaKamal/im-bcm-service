@@ -78,6 +78,16 @@ const findOne = async (filter) => {
 
     return org;
 };
+
+const findChild = async (parent_id) => {
+    const childOrg = await prisma.org_structure.findMany({
+        where : {
+            "parent_org_id" : parent_id
+        }
+    });
+
+    return childOrg;
+}
 module.exports = {
-    storeStructure, changeStructure, removeStructure, getBy, getAll, findOne
+    storeStructure, changeStructure, removeStructure, getBy, getAll, findOne, findChild
 };

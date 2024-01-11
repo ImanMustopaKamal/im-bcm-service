@@ -71,6 +71,14 @@ const removeWfLevel = async (id) => {
     return wf_level;
 };
 
+const findNext = async (filter) => {
+    const wf_level = await prisma.workflow_level.findFirst({
+        ...filter
+    });
+
+    return findNext;
+};
+
 module.exports = {
-    findAll, findBy, storeWfLevel, changeWfLevel, removeWfLevel, countAll
+    findAll, findBy, storeWfLevel, changeWfLevel, removeWfLevel, countAll, findNext
 };

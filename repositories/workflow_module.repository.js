@@ -35,6 +35,9 @@ const findBy = async (tenant_id, key, value) => {
         where : {
             "tenant_id" : tenant_id,
             [key] : value
+        },
+        include : {
+            workflow_level : true
         }
     })
 

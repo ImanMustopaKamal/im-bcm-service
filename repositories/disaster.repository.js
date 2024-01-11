@@ -109,6 +109,26 @@ const findAll = async (filter, pagiante) => {
     return disasters;
 };
 
+const changeDisaster = async (id, data) => {
+    const disaster = await prisma.bcm_disaster.update({
+        where : {
+            "id" : id
+        }, "data" : data
+    });
+
+    return disaster;
+};
+
+const removeDisaster = async(id) => {
+    const disaster = await prisma.bcm_disaster.delete({
+        where : {
+            "id" : id
+        }
+    });
+
+    return disaster;
+};
+
 module.exports = {
-    storeNewDisaster, findByID, findAll
+    storeNewDisaster, findByID, findAll, changeDisaster, removeDisaster
 };

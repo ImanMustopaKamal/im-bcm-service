@@ -3,7 +3,12 @@ const { func } = require("../helpers");
 const {
     storeNewDisaster, findByID, findAll
   } = require("../repositories/disaster.repository");
+
+const org = require("../repositories/org_structure.repository");
 const { now } = require("moment");
+
+const WflSetting = require("../repositories/workflow_module.repository");
+const WflLevel = require("../repositories/workflow_level.repository");
 
 const getDisasterByID = async (id) => {
     const result = await findByID(id);
@@ -21,6 +26,7 @@ const getAll = async (req, res) => {
         "tenant_id" : tenant_id
       }
     };
+
 
     if (!func.isNull(query.orgID)) {
         filter.where["org_id"] = query.orgID;
@@ -68,6 +74,8 @@ const addNewDisaster = async (tenant_id, user_id, body) => {
         "tenant_id" : tenant_id,
         ...disaster,
         "wf_status_id": 1,
+        //"assign_curr_org" : "",
+        //"assign_curr_role" : "",
         "created_by" : user_id
     };
     let data_staff = [];
@@ -112,6 +120,19 @@ const addNewDisaster = async (tenant_id, user_id, body) => {
     
     const result = await storeNewDisaster(data_disaster, data_staff, data_dir_unit, data_indir_unit, data_atm);
     return result;
+};
+
+const workflowRun = async (req, res) => {
+    const user_id = res.user_id;
+    const tenant_id = res.tenant_id;
+    const { id } = req.params;
+    const procCode = "DISASTER";
+    const wfModule = WflSetting.findBy(tenant_id, "Code", procCode);
+        
+    const curData = await findByID(id);
+    const curStatus = curData.disaster.wf_status_id;
+    const orgOrigin = curData.disaster.org_id;
+    const nextFlow = await WflLevel.findNext(procCode, curStatus, orgOrigin);
 };
 
 module.exports = {
