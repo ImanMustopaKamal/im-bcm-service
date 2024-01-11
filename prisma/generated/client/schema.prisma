@@ -1,0 +1,299 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "generated/client"
+  previewFeatures = ["views"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model threat_type {
+  id         String    @id @db.Char(40)
+  tenant_id  String    @db.Char(8)
+  name       String    @db.VarChar(250)
+  is_active  Boolean   @default(true)
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  threats    threat[]
+
+  @@unique([tenant_id, name], map: "u_threat_type_name_tenant")
+}
+
+model threat {
+  id           String         @id @db.Char(40)
+  tenant_id    String         @db.Char(8)
+  type_id      String         @db.Char(40)
+  name         String         @db.VarChar(250)
+  is_active    Boolean        @default(true)
+  created_at   DateTime       @default(now())
+  updated_at   DateTime?      @updatedAt
+  bcm_disaster bcm_disaster[]
+  threat_types threat_type    @relation(fields: [type_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_threat_types")
+
+  @@unique([type_id, name, tenant_id], map: "u_threat_type_name_tenant")
+  @@index([type_id], map: "fk_threat_type")
+}
+
+model Applications {
+  id         String    @id @db.VarChar(22)
+  tenant_id  String    @db.Char(8)
+  code       String    @db.VarChar(120)
+  name       String    @db.VarChar(250)
+  severity   Int
+  is_active  Boolean   @default(true)
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@unique([tenant_id, code], map: "u_app_tenant_code")
+  @@map("reff_applications")
+}
+
+model Staff_Condition {
+  id         String    @id @db.VarChar(22)
+  tenant_id  String    @db.Char(8)
+  name       String    @db.VarChar(250)
+  sort_order Int
+  is_active  Boolean   @default(true)
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@unique([name, tenant_id], map: "status_staff_condition_name_key")
+  @@map("status_staff_condition")
+}
+
+model Indirect_Unit {
+  id                                   String                                 @id @db.VarChar(22)
+  tenant_id                            String                                 @db.Char(8)
+  name                                 String                                 @db.VarChar(250)
+  sort_order                           Int
+  is_active                            Boolean                                @default(true)
+  created_at                           DateTime                               @default(now())
+  updated_at                           DateTime?                              @updatedAt
+  bcm_disaster_unit_affected_indirrect bcm_disaster_unit_affected_indirrect[]
+
+  @@unique([tenant_id, name], map: "u_i_unit_tenant")
+  @@map("status_indirect_unit")
+}
+
+model App_Testing_Period {
+  code       String    @id @db.VarChar(22)
+  tenant_id  String    @db.Char(8)
+  name       String    @db.VarChar(250)
+  sort_order Int
+  is_active  Boolean   @default(true)
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@unique([tenant_id, name], map: "u_app_testing_name_tenant")
+  @@map("status_app_testing_period")
+}
+
+model Currency {
+  code                                                                    String         @id @db.Char(50)
+  tenant_id                                                               String         @db.Char(8)
+  name                                                                    String         @db.Char(100)
+  description                                                             String         @db.VarChar(2500)
+  sort_order                                                              Int            @default(2)
+  is_active                                                               Boolean        @default(true)
+  created_at                                                              DateTime       @default(now())
+  updated_at                                                              DateTime?      @updatedAt
+  bcm_disaster_bcm_disaster_estimated_lost_currencyToreff_currency        bcm_disaster[] @relation("bcm_disaster_estimated_lost_currencyToreff_currency")
+  bcm_disaster_bcm_disaster_total_insurance_claim_currencyToreff_currency bcm_disaster[] @relation("bcm_disaster_total_insurance_claim_currencyToreff_currency")
+
+  @@unique([tenant_id, name], map: "u_curr_name_tenant")
+  @@map("reff_currency")
+}
+
+model bcm_disaster {
+  id                                                                       String                                 @id @db.Char(40)
+  tenant_id                                                                String                                 @db.Char(40)
+  org_id                                                                   String                                 @db.Char(40)
+  threat_id                                                                String                                 @db.Char(40)
+  disaster_chronology                                                      String?                                @db.VarChar(2500)
+  disaster_date                                                            DateTime?                              @db.Date
+  disaster_location                                                        String?                                @db.Char(40)
+  estimated_lost_currency                                                  String?                                @db.Char(50)
+  estimated_lost                                                           Decimal?                               @db.Decimal(10, 0)
+  total_insurance_claim_currency                                           String?                                @db.Char(50)
+  total_insurance_claim                                                    Decimal?                               @db.Decimal(10, 0)
+  temp_action_plan                                                         String?                                @db.VarChar(2500)
+  recovery_plan                                                            String?                                @db.VarChar(2500)
+  alt_customer_services                                                    String?                                @db.VarChar(2500)
+  alt_staff                                                                String?                                @db.VarChar(2500)
+  wf_status_id                                                             Int?
+  assign_curr_org                                                          String?                                @db.Char(40)
+  assign_curr_role                                                         String?                                @db.Char(40)
+  created_by                                                               String?                                @db.VarChar(50)
+  created_at                                                               DateTime?                              @default(now()) @db.DateTime(0)
+  updated_by                                                               String?                                @db.VarChar(50)
+  updated_at                                                               DateTime?                              @updatedAt @db.DateTime(0)
+  reff_currency_bcm_disaster_estimated_lost_currencyToreff_currency        Currency?                              @relation("bcm_disaster_estimated_lost_currencyToreff_currency", fields: [estimated_lost_currency], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_disaster_estimated_lost_curr")
+  reff_currency_bcm_disaster_total_insurance_claim_currencyToreff_currency Currency?                              @relation("bcm_disaster_total_insurance_claim_currencyToreff_currency", fields: [total_insurance_claim_currency], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_disaster_insurance_claim_curr")
+  threat                                                                   threat                                 @relation(fields: [threat_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_disaster_threat")
+  workflow_status                                                          workflow_status?                       @relation(fields: [wf_status_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_disaster_wf_status")
+  bcm_disaster_assignment_history                                          bcm_disaster_assignment_history[]
+  bcm_disaster_atm_affected                                                bcm_disaster_atm_affected[]
+  bcm_disaster_staff_affected                                              bcm_disaster_staff_affected[]
+  bcm_disaster_unit_affected_dirrect                                       bcm_disaster_unit_affected_dirrect[]
+  bcm_disaster_unit_affected_indirrect                                     bcm_disaster_unit_affected_indirrect[]
+
+  @@index([estimated_lost_currency], map: "fk_disaster_estimated_lost_curr")
+  @@index([total_insurance_claim_currency], map: "fk_disaster_insurance_claim_curr")
+  @@index([threat_id], map: "fk_disaster_threat")
+  @@index([wf_status_id], map: "fk_disaster_wf_status")
+}
+
+model bcm_disaster_assignment_history {
+  id              String           @id @db.Char(40)
+  disaster_id     String?          @db.Char(40)
+  history_date    DateTime?        @db.DateTime(0)
+  user_id         String?          @db.Char(40)
+  user_name       String?          @db.VarChar(2500)
+  wf_status_id    Int?
+  reason          String?          @db.VarChar(2500)
+  bcm_disaster    bcm_disaster?    @relation(fields: [disaster_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_history_disaster")
+  workflow_status workflow_status? @relation(fields: [wf_status_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_history_wf_status")
+
+  @@index([disaster_id], map: "fk_history_disaster")
+  @@index([wf_status_id], map: "fk_history_wf_status")
+}
+
+model bcm_disaster_atm_affected {
+  id                         String        @id @db.Char(40)
+  disaster_id                String?       @db.Char(40)
+  total_atm                  Int?
+  total_atm_is_operating     Int?
+  total_atm_is_not_operating Int?
+  bcm_disaster               bcm_disaster? @relation(fields: [disaster_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_atm_affected_disaster")
+
+  @@index([disaster_id], map: "fk_atm_affected_disaster")
+}
+
+model bcm_disaster_staff_affected {
+  id                 String        @id @db.Char(40)
+  disaster_id        String?       @db.Char(40)
+  staff_condition_id String?       @db.VarChar(22)
+  total              Int?
+  name               String?       @db.VarChar(2500)
+  total_family       Int?
+  bcm_disaster       bcm_disaster? @relation(fields: [disaster_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_staff_affected_disaster")
+
+  @@index([disaster_id], map: "fk_staff_affected_disaster")
+}
+
+model bcm_disaster_unit_affected_dirrect {
+  id              String        @id @db.Char(40)
+  disaster_id     String?       @db.Char(40)
+  location_org_id String?       @db.Char(40)
+  is_operating    Boolean?
+  bcm_disaster    bcm_disaster? @relation(fields: [disaster_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_unit_affected_dirrect_disaster")
+
+  @@index([disaster_id], map: "fk_unit_affected_dirrect_disaster")
+}
+
+model bcm_disaster_unit_affected_indirrect {
+  id                      String         @id @db.Char(40)
+  disaster_id             String?        @db.Char(40)
+  status_indirect_unit_id String?        @db.VarChar(22)
+  location_org_id         String?        @db.Char(40)
+  status_indirect_unit    Indirect_Unit? @relation(fields: [status_indirect_unit_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_indirect_unit_status")
+  bcm_disaster            bcm_disaster?  @relation(fields: [disaster_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_unit_affected_indirrect_disaster")
+
+  @@index([status_indirect_unit_id], map: "fk_indirect_unit_status")
+  @@index([disaster_id], map: "fk_unit_affected_indirrect_disaster")
+}
+
+model workflow_status {
+  id                              Int                               @id
+  name                            String?                           @db.VarChar(100)
+  is_active                       Boolean?                          @default(dbgenerated("(true)"))
+  bcm_disaster                    bcm_disaster[]
+  bcm_disaster_assignment_history bcm_disaster_assignment_history[]
+}
+
+model sys_process_list {
+  code        String   @id @db.Char(40)
+  name        String   @db.Char(100)
+  description String?  @db.VarChar(2500)
+  is_active   Boolean? @default(true)
+}
+
+model org_structure {
+  id              String    @id @db.Char(40)
+  org_id          String?   @db.Char(40)
+  org_name        String?   @db.VarChar(200)
+  parent_org_id   String?   @db.Char(40)
+  parent_org_name String?   @db.VarChar(200)
+  created_at      DateTime? @default(now())
+  created_by      String?   @db.VarChar(50)
+  updated_at      DateTime? @updatedAt
+  updated_by      String?   @db.VarChar(50)
+}
+
+model workflow_level {
+  id              String          @id @db.Char(40)
+  wf_module_code  String          @db.Char(40)
+  level           Int
+  role_id         String          @db.Char(40)
+  org_id          String?         @db.Char(40)
+  org_type_id     String?         @db.Char(40)
+  dept_id         String?         @db.Char(40)
+  parent_dept_id  String?         @db.Char(40)
+  created_at      DateTime?       @default(now())
+  created_by      String?         @db.VarChar(50)
+  updated_at      DateTime?       @updatedAt
+  updated_by      String?         @db.VarChar(50)
+  wf_status_id    Int
+  workflow_module workflow_module @relation(fields: [wf_module_code], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_wf_level_module")
+
+  @@index([wf_module_code], map: "fk_wf_level_module")
+}
+
+model workflow_module {
+  code           String           @id @db.Char(40)
+  tenant_id      String?          @db.Char(40)
+  name           String?          @db.VarChar(200)
+  is_active      Boolean?
+  created_at     DateTime?        @default(now())
+  created_by     String?          @db.VarChar(50)
+  updated_at     DateTime?        @updatedAt
+  updated_by     String?          @db.VarChar(50)
+  org_id         String?          @db.Char(40)
+  org_type_id    String?          @db.Char(40)
+  sys_code       String?          @db.Char(40)
+  workflow_level workflow_level[]
+
+  @@index([sys_code], map: "fk_module_sys_code")
+}
+
+model call_tree_sdm {
+  npp                 String          @id @db.Char(50)
+  name                String?         @db.VarChar(100)
+  position            String?         @db.VarChar(2500)
+  supervisor_npp      String?         @db.Char(50)
+  org_id              String?         @db.Char(50)
+  phone_number        String?         @db.Char(50)
+  phone_home          String?         @db.Char(50)
+  address             String?         @db.VarChar(2500)
+  employment_status   String?         @db.Char(20)
+  created_by          String?         @db.Char(50)
+  created_at          DateTime?       @default(now())
+  updated_by          String?         @db.Char(50)
+  updated_at          DateTime?       @updatedAt
+  call_tree_sdm       call_tree_sdm?  @relation("call_tree_sdmTocall_tree_sdm", fields: [supervisor_npp], references: [npp], onDelete: NoAction, onUpdate: NoAction, map: "fk_npp_supervisor")
+  other_call_tree_sdm call_tree_sdm[] @relation("call_tree_sdmTocall_tree_sdm")
+
+  @@index([supervisor_npp], map: "fk_npp_supervisor")
+}
+
+view vw_threat_types {
+  id            String    @id @db.Char(40)
+  tenant_id     String?   @db.Char(8)
+  name          String?   @db.VarChar(250)
+  is_active     Boolean?  @default(true)
+  created_at    DateTime? @default(now())
+  updated_at    DateTime?
+  delete_enable Int       @default(0)
+}
