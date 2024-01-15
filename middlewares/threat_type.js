@@ -4,11 +4,12 @@ const { countThreatByFilter } = require("../repositories/threat.repository");
 
 const createValidator = async (req, res, next) => {
   const { name } = req.body;
+  const tenant_id = res.tenant_id;
 
   if (func.isNull(name)) {
     return response.badRequest(res, null, "Name is required", 404);
   } else {
-    const threat_type = await findBy("name", name);
+    const threat_type = await findBy(tenant_id, "name", name);
     if (threat_type) {
       return response.badRequest(res, null, "Name is already exist", 404);
     }

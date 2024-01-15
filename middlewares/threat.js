@@ -3,6 +3,7 @@ const { findBy, findAll } = require("../repositories/threat.repository");
 
 const createValidator = async (req, res, next) => {
   const { name, type_id } = req.body;
+  const tenant_id = res.tenant_id;
 
   if (func.isNull(name)) {
     return response.badRequest(res, null, "Name is required", 404);
@@ -13,6 +14,7 @@ const createValidator = async (req, res, next) => {
   }
   const filter = {
     where : {
+      "tenant_id" : tenant_id,
       "type_id" : type_id,
       "name" : name
     }
@@ -28,7 +30,8 @@ const createValidator = async (req, res, next) => {
 const updateValidator = async (req, res, next) => {
   const { id } = req.params;
   const { body } = req;
-  const threat = findBy("id", id);
+  const tenant_id = res.tenant_id;
+  const threat = findBy(tenant_id, "id", id);
   if (!threat)
   {
     return response.badRequest(res, null, "Threat type not found", 404);
@@ -42,7 +45,8 @@ const updateValidator = async (req, res, next) => {
 
 const deleteValidator = async (req, res, next) => {
   const { id } = req.params;
-  const threat_types = await findBy("id", id);
+  const tenant_id = res.tenant_id;
+  const threat_types = await findBy(tenant_id, "id", id);
   if (!threat_types) {
     return response.badRequest(res, null, "Threat types not found", 404);
   }
