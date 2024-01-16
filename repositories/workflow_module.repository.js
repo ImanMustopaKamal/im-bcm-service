@@ -44,10 +44,10 @@ const findBy = async (tenant_id, key, value) => {
     return wfModule
 };
 
-const changeWfModule = async (code, data) => {
+const changeWfModule = async (id, data) => {
     const wfModule = await prisma.workflow_module.update({
         where : {
-            "code" : code
+            "id" : id
         },
         "data" : data
     });
@@ -55,10 +55,10 @@ const changeWfModule = async (code, data) => {
     return wfModule;
 };
 
-const removeWfModule = async(code) => {
+const removeWfModule = async(id) => {
     const wfModule = await prisma.workflow_module.delete({
         where : {
-            "code" : code
+            "id" : id
         }
     });
     return wfModule

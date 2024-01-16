@@ -12,11 +12,11 @@ const createValidator = async (req, res, next) => {
 };
 
 const updateDeleteValidator = async (req, res, next) => {
-    const { code } = req.params;
+    const { id } = req.params;
     const tenant_id = res.tenant_id;
-    const wfModule = await findBy(tenant_id, "code", code);
+    const wfModule = await findBy(tenant_id, "id", id);
     if (!wfModule) {
-        return response.badRequest(res, null, "Code is not exsists!", 404);
+        return response.badRequest(res, null, "ID is not exsists!", 404);
     }
     next();
 };

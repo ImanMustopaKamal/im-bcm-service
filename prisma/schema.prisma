@@ -224,6 +224,7 @@ model org_structure {
   id              String    @id @db.Char(40)
   org_id          String?   @db.Char(40)
   org_name        String?   @db.VarChar(200)
+  org_type_id     String?   @db.Char(40)
   parent_org_id   String?   @db.Char(40)
   parent_org_name String?   @db.VarChar(200)
   created_at      DateTime? @default(now())
@@ -234,7 +235,7 @@ model org_structure {
 
 model workflow_level {
   id              String          @id @db.Char(40)
-  wf_module_code  String          @db.Char(40)
+  wf_module_id    String          @db.Char(40)
   level           Int
   role_id         String          @db.Char(40)
   org_id          String?         @db.Char(40)
@@ -246,13 +247,14 @@ model workflow_level {
   updated_at      DateTime?       @updatedAt
   updated_by      String?         @db.VarChar(50)
   wf_status_id    Int
-  workflow_module workflow_module @relation(fields: [wf_module_code], references: [code], onDelete: NoAction, onUpdate: NoAction, map: "fk_wf_level_module")
+  workflow_module workflow_module @relation(fields: [wf_module_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_wf_level_module")
 
-  @@index([wf_module_code], map: "fk_wf_level_module")
+  @@index([wf_module_id], map: "fk_wf_level_module")
 }
 
 model workflow_module {
-  code           String           @id @db.Char(40)
+  id             String           @id @db.Char(40)
+  code           String           @db.Char(40)
   tenant_id      String?          @db.Char(40)
   name           String?          @db.VarChar(200)
   is_active      Boolean?
@@ -286,6 +288,21 @@ model call_tree_sdm {
   other_call_tree_sdm call_tree_sdm[] @relation("call_tree_sdmTocall_tree_sdm")
 
   @@index([supervisor_npp], map: "fk_npp_supervisor")
+}
+
+model org_type {
+  id            String          @id @db.Char(40)
+  name          String          @db.Char(40)
+  description   String?         @db.Char(250)
+  sort_order    Int             @default(0)
+  is_active     Boolean         @default(true)
+  is_cmt        Boolean         @default(false)
+  is_consol     Boolean         @default(false)
+  is_real       Boolean         @default(true)
+  created_by    String?         @db.Char(50)
+  created_at    DateTime?       @default(now())
+  updated_by    String?         @db.Char(50)
+  updated_at    DateTime?       @updatedAt
 }
 
 view vw_threat_types {

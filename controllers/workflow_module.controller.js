@@ -1,4 +1,4 @@
-const { addNewWfModule, getAll, getByCode, updateByCode, deleteByCode } = require("../services/workflow_module.service");
+const { addNewWfModule, getAll, getByID, updateByID, deleteByID } = require("../services/workflow_module.service");
 const { response } = require("../helpers")
 
 const addWfModule = async (req,res) => {
@@ -17,25 +17,25 @@ const get = async (req,res) => {
 };
 
 const getBy = async (req,res) => {
-    const { code } = req.params;
+    const { id } = req.params;
     const tenant_id = res.tenant_id;
-    const wfModule = await getByCode(tenant_id, code);
+    const wfModule = await getByCode(tenant_id, id);
 
     response.success(res, wfModule, "Workflow Module retrieved!", 200);
 };
 
 const update = async (req,res) => {
-    const { code } = req.params;
+    const { id } = req.params;
     const { body } = req;
 
-    const wfModule = await updateByCode(code, body);
+    const wfModule = await updateByCode(id, body);
 
     response.success(res, wfModule, "Workflow Module updated!", 200);
 };
 
 const deleteWfModule = async(req,res) => {
-    const { code } = req.params;
-    const wfModule = await deleteByCode(code);
+    const { id } = req.params;
+    const wfModule = await deleteByCode(id);
     response.success(res, wfModule, "Workflow Module deleted!", 200);
 };
 

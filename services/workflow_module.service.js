@@ -1,9 +1,11 @@
 const { func } = require("../helpers");
+const { nanoid } = require("nanoid");
 const { storeWfModule, findAll, findBy, changeWfModule, removeWfModule } = require("../repositories/workflow_module.repository")
 
 const addNewWfModule = async (tenant_id, user_id, body) => {
     const data = {
         ...body,
+        "id" : nanoid(8),
         "tenant_id" : tenant_id,
         "is_active" : true,
         "created_by" : user_id
@@ -41,23 +43,23 @@ const getAll = async (req, res) => {
     return result;
 };
 
-const getByCode = async (tenant_id, code) => {
-    const wfModule = await findBy(tenant_id, "code", code);
+const getByID = async (tenant_id, id) => {
+    const wfModule = await findBy(tenant_id, "id", id);
 
     return wfModule;
 };
-const updateByCode = async(code, data) => {
-    const wfModule = await changeWfModule(code, data);
+const updateByID = async(id, data) => {
+    const wfModule = await changeWfModule(id, data);
 
     return wfModule;
 };
 
-const deleteByCode = async(code) => {
-    const wfModule = await removeWfModule(code);
+const deleteByID = async(id) => {
+    const wfModule = await removeWfModule(id);
 
     return wfModule;
 };
 
 module.exports = {
-    addNewWfModule, getAll, getByCode, updateByCode, deleteByCode
+    addNewWfModule, getAll, getByID, updateByID, deleteByID
 };
