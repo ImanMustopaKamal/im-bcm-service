@@ -71,6 +71,7 @@ CREATE TABLE `status_indirect_unit` (
 
 -- CreateTable
 CREATE TABLE `status_app_testing_period` (
+    `id` VARCHAR(22) NOT NULL,
     `code` VARCHAR(22) NOT NULL,
     `tenant_id` CHAR(8) NOT NULL,
     `name` VARCHAR(250) NOT NULL,
@@ -79,8 +80,8 @@ CREATE TABLE `status_app_testing_period` (
     `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updated_at` DATETIME(3) NULL,
 
-    UNIQUE INDEX `u_app_testing_name_tenant`(`tenant_id`, `name`),
-    PRIMARY KEY (`code`)
+    UNIQUE INDEX `u_app_testing_code_tenant`(`code`, `tenant_id`),
+    PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable

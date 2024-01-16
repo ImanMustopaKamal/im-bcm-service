@@ -38,30 +38,35 @@ const statusStafCondition = async () => {
 const status_app_testing_period = async () => {
   const list = [
     {
+      id: nanoid(8),
       code: 'I',
       tenant_id: "H3pZkf7W",
       name: "Periode I",
       sort_order: 1,
     },
     {
+      id: nanoid(8),
       code: 'II',
       tenant_id: "H3pZkf7W",
       name: "Periode II",
       sort_order: 2,
     },
     {
+      id: nanoid(8),
       code: 'III',
       tenant_id: "H3pZkf7W",
       name: "Periode III",
       sort_order: 3,
     },
     {
+      id: nanoid(8),
       code: 'IV',
       tenant_id: "H3pZkf7W",
       name: "Periode IV",
       sort_order: 4,
     },
     {
+      id: nanoid(8),
       code: 'V',
       tenant_id: "H3pZkf7W",
       name: "Periode V",
