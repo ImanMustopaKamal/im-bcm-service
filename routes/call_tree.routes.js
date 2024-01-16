@@ -12,10 +12,31 @@ module.exports = (app) => {
     [authMiddleware.authToken, pagination.pagiantion],
     callTreeController.getData
   );
+  app.get("/call-tree/download", callTreeController.downloadData);
+  app.get(
+    "/call-tree/:id",
+    [authMiddleware.authToken],
+    callTreeController.getDataById
+  );
+  app.post(
+    "/call-tree/import",
+    fileMiddleware.upload,
+    [authMiddleware.authToken, callTreeMiddleware.importValidator],
+    callTreeController.importData
+  );
   app.post(
     "/call-tree",
-    fileMiddleware.upload,
     [authMiddleware.authToken, callTreeMiddleware.createValidator],
     callTreeController.storeData
+  );
+  app.put(
+    "/call-tree/:id",
+    [authMiddleware.authToken, callTreeMiddleware.updateValidator],
+    callTreeController.updateData
+  );
+  app.delete(
+    "/call-tree/:id",
+    [authMiddleware.authToken],
+    callTreeController.deleteData
   );
 };

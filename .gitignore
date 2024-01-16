@@ -5,3 +5,6 @@ node_modules
 .DS_Store
 resources/static/uploads/csv
 resources/static/uploads/csv.csv
+stotage/uploads/*
+stotage/uploads/
+stotage/*

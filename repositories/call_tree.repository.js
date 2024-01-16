@@ -5,8 +5,11 @@ const getAll = async (filter, pagiante) => {
     ...filter,
     take: pagiante.limit,
     skip: pagiante.offset,
+    include: {
+      call_tree_sdm: true,
+    },
     orderBy: {
-      ["npp"]: "asc",
+      ["created_at"]: "desc",
     },
   });
 
@@ -20,9 +23,58 @@ const getAll = async (filter, pagiante) => {
   };
 };
 
-const store = async (callTree) => {
-  const data = await prisma.call_tree_sdm.createMany({
-    data: callTree,
+const storeMany = async (callTree) => {
+  try {
+    const data = await prisma.call_tree_sdm.createMany({
+      data: callTree,
+    });
+  
+    return data;
+  } catch (error) {
+    throw new Error('data not created');
+  }
+};
+
+const getById = async (id) => {
+  const data = await prisma.call_tree_sdm.findUnique({
+    where: {
+      id,
+    },
+  });
+
+  return data;
+};
+
+const updated = async (id, payload) => {
+  const data = await prisma.call_tree_sdm.update({
+    where: {
+      id,
+    },
+    data: payload,
+  });
+
+  return data;
+};
+
+const deleteById = async (id) => {
+  try {
+    const data = await prisma.call_tree_sdm.delete({
+      where: {
+        id,
+      },
+    });
+  
+    return data;
+  } catch (error) {
+    throw new Error('data not deleted');
+  }
+};
+
+const getByFilter = async (filter) => {
+  const data = await prisma.call_tree_sdm.findFirst({
+    // where: {
+      ...filter,
+    // },
   });
 
   return data;
@@ -30,5 +82,9 @@ const store = async (callTree) => {
 
 module.exports = {
   getAll,
-  store,
+  storeMany,
+  getById,
+  updated,
+  deleteById,
+  getByFilter,
 };

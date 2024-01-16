@@ -11,7 +11,7 @@ const {
 
   const getByID = async (req, res) => {
     const tenant_id = res.tenant_id;
-    const threat = await getThreatByID(tenant_id, req.params.id);
+    const threat = await getThreatByID(tenant_id, req.params.id); 
 
     response.success(res, threat, "Threat retrieved", 200);
   };

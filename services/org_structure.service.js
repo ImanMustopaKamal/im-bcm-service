@@ -65,7 +65,7 @@ const getAllStructure = async(req, res) => {
         };
         filter.where['parent_org_name'] = nameFilter;
     }
-
+    
     const result = await getAll(filter, pagiante);
 
     return result;
