@@ -109,6 +109,11 @@ export type workflow_module = $Result.DefaultSelection<Prisma.$workflow_modulePa
  */
 export type call_tree_sdm = $Result.DefaultSelection<Prisma.$call_tree_sdmPayload>
 /**
+ * Model org_type
+ * 
+ */
+export type org_type = $Result.DefaultSelection<Prisma.$org_typePayload>
+/**
  * Model vw_threat_types
  * 
  */
@@ -427,6 +432,16 @@ export class PrismaClient<
   get call_tree_sdm(): Prisma.call_tree_sdmDelegate<ExtArgs>;
 
   /**
+   * `prisma.org_type`: Exposes CRUD operations for the **org_type** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Org_types
+    * const org_types = await prisma.org_type.findMany()
+    * ```
+    */
+  get org_type(): Prisma.org_typeDelegate<ExtArgs>;
+
+  /**
    * `prisma.vw_threat_types`: Exposes CRUD operations for the **vw_threat_types** model.
     * Example usage:
     * ```ts
@@ -492,8 +507,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 5.7.0
-   * Query Engine version: 79fb5193cf0a8fdbef536e4b4a159cad677ab1b9
+   * Prisma Client JS version: 5.8.0
+   * Query Engine version: 0a83d8541752d7582de2ebc1ece46519ce72a848
    */
   export type PrismaVersion = {
     client: string
@@ -924,6 +939,7 @@ export namespace Prisma {
     workflow_level: 'workflow_level',
     workflow_module: 'workflow_module',
     call_tree_sdm: 'call_tree_sdm',
+    org_type: 'org_type',
     vw_threat_types: 'vw_threat_types'
   };
 
@@ -941,7 +957,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meta: {
-      modelProps: 'threat_type' | 'threat' | 'applications' | 'staff_Condition' | 'indirect_Unit' | 'app_Testing_Period' | 'currency' | 'bcm_disaster' | 'bcm_disaster_assignment_history' | 'bcm_disaster_atm_affected' | 'bcm_disaster_staff_affected' | 'bcm_disaster_unit_affected_dirrect' | 'bcm_disaster_unit_affected_indirrect' | 'workflow_status' | 'sys_process_list' | 'org_structure' | 'workflow_level' | 'workflow_module' | 'call_tree_sdm' | 'vw_threat_types'
+      modelProps: 'threat_type' | 'threat' | 'applications' | 'staff_Condition' | 'indirect_Unit' | 'app_Testing_Period' | 'currency' | 'bcm_disaster' | 'bcm_disaster_assignment_history' | 'bcm_disaster_atm_affected' | 'bcm_disaster_staff_affected' | 'bcm_disaster_unit_affected_dirrect' | 'bcm_disaster_unit_affected_indirrect' | 'workflow_status' | 'sys_process_list' | 'org_structure' | 'workflow_level' | 'workflow_module' | 'call_tree_sdm' | 'org_type' | 'vw_threat_types'
       txIsolationLevel: Prisma.TransactionIsolationLevel
     },
     model: {
@@ -2199,6 +2215,72 @@ export namespace Prisma {
           }
         }
       }
+      org_type: {
+        payload: Prisma.$org_typePayload<ExtArgs>
+        fields: Prisma.org_typeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.org_typeFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$org_typePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.org_typeFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$org_typePayload>
+          }
+          findFirst: {
+            args: Prisma.org_typeFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$org_typePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.org_typeFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$org_typePayload>
+          }
+          findMany: {
+            args: Prisma.org_typeFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$org_typePayload>[]
+          }
+          create: {
+            args: Prisma.org_typeCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$org_typePayload>
+          }
+          createMany: {
+            args: Prisma.org_typeCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.org_typeDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$org_typePayload>
+          }
+          update: {
+            args: Prisma.org_typeUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$org_typePayload>
+          }
+          deleteMany: {
+            args: Prisma.org_typeDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.org_typeUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.org_typeUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$org_typePayload>
+          }
+          aggregate: {
+            args: Prisma.Org_typeAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateOrg_type>
+          }
+          groupBy: {
+            args: Prisma.org_typeGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Org_typeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.org_typeCountArgs<ExtArgs>,
+            result: $Utils.Optional<Org_typeCountAggregateOutputType> | number
+          }
+        }
+      }
       vw_threat_types: {
         payload: Prisma.$vw_threat_typesPayload<ExtArgs>
         fields: Prisma.vw_threat_typesFieldRefs
@@ -2956,7 +3038,7 @@ export namespace Prisma {
   type threat_typeGetPayload<S extends boolean | null | undefined | threat_typeDefaultArgs> = $Result.GetResult<Prisma.$threat_typePayload, S>
 
   type threat_typeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<threat_typeFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<threat_typeFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Threat_typeCountAggregateInputType | true
     }
 
@@ -3921,7 +4003,7 @@ export namespace Prisma {
   type threatGetPayload<S extends boolean | null | undefined | threatDefaultArgs> = $Result.GetResult<Prisma.$threatPayload, S>
 
   type threatCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<threatFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<threatFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: ThreatCountAggregateInputType | true
     }
 
@@ -4921,7 +5003,7 @@ export namespace Prisma {
   type ApplicationsGetPayload<S extends boolean | null | undefined | ApplicationsDefaultArgs> = $Result.GetResult<Prisma.$ApplicationsPayload, S>
 
   type ApplicationsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<ApplicationsFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<ApplicationsFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: ApplicationsCountAggregateInputType | true
     }
 
@@ -5848,7 +5930,7 @@ export namespace Prisma {
   type Staff_ConditionGetPayload<S extends boolean | null | undefined | Staff_ConditionDefaultArgs> = $Result.GetResult<Prisma.$Staff_ConditionPayload, S>
 
   type Staff_ConditionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<Staff_ConditionFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<Staff_ConditionFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Staff_ConditionCountAggregateInputType | true
     }
 
@@ -6783,7 +6865,7 @@ export namespace Prisma {
   type Indirect_UnitGetPayload<S extends boolean | null | undefined | Indirect_UnitDefaultArgs> = $Result.GetResult<Prisma.$Indirect_UnitPayload, S>
 
   type Indirect_UnitCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<Indirect_UnitFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<Indirect_UnitFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Indirect_UnitCountAggregateInputType | true
     }
 
@@ -7771,7 +7853,7 @@ export namespace Prisma {
   type App_Testing_PeriodGetPayload<S extends boolean | null | undefined | App_Testing_PeriodDefaultArgs> = $Result.GetResult<Prisma.$App_Testing_PeriodPayload, S>
 
   type App_Testing_PeriodCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<App_Testing_PeriodFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<App_Testing_PeriodFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: App_Testing_PeriodCountAggregateInputType | true
     }
 
@@ -8719,7 +8801,7 @@ export namespace Prisma {
   type CurrencyGetPayload<S extends boolean | null | undefined | CurrencyDefaultArgs> = $Result.GetResult<Prisma.$CurrencyPayload, S>
 
   type CurrencyCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<CurrencyFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<CurrencyFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: CurrencyCountAggregateInputType | true
     }
 
@@ -9922,7 +10004,7 @@ export namespace Prisma {
   type bcm_disasterGetPayload<S extends boolean | null | undefined | bcm_disasterDefaultArgs> = $Result.GetResult<Prisma.$bcm_disasterPayload, S>
 
   type bcm_disasterCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<bcm_disasterFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<bcm_disasterFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Bcm_disasterCountAggregateInputType | true
     }
 
@@ -11083,7 +11165,7 @@ export namespace Prisma {
   type bcm_disaster_assignment_historyGetPayload<S extends boolean | null | undefined | bcm_disaster_assignment_historyDefaultArgs> = $Result.GetResult<Prisma.$bcm_disaster_assignment_historyPayload, S>
 
   type bcm_disaster_assignment_historyCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<bcm_disaster_assignment_historyFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<bcm_disaster_assignment_historyFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Bcm_disaster_assignment_historyCountAggregateInputType | true
     }
 
@@ -12079,7 +12161,7 @@ export namespace Prisma {
   type bcm_disaster_atm_affectedGetPayload<S extends boolean | null | undefined | bcm_disaster_atm_affectedDefaultArgs> = $Result.GetResult<Prisma.$bcm_disaster_atm_affectedPayload, S>
 
   type bcm_disaster_atm_affectedCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<bcm_disaster_atm_affectedFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<bcm_disaster_atm_affectedFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Bcm_disaster_atm_affectedCountAggregateInputType | true
     }
 
@@ -13061,7 +13143,7 @@ export namespace Prisma {
   type bcm_disaster_staff_affectedGetPayload<S extends boolean | null | undefined | bcm_disaster_staff_affectedDefaultArgs> = $Result.GetResult<Prisma.$bcm_disaster_staff_affectedPayload, S>
 
   type bcm_disaster_staff_affectedCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<bcm_disaster_staff_affectedFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<bcm_disaster_staff_affectedFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Bcm_disaster_staff_affectedCountAggregateInputType | true
     }
 
@@ -13986,7 +14068,7 @@ export namespace Prisma {
   type bcm_disaster_unit_affected_dirrectGetPayload<S extends boolean | null | undefined | bcm_disaster_unit_affected_dirrectDefaultArgs> = $Result.GetResult<Prisma.$bcm_disaster_unit_affected_dirrectPayload, S>
 
   type bcm_disaster_unit_affected_dirrectCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<bcm_disaster_unit_affected_dirrectFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<bcm_disaster_unit_affected_dirrectFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Bcm_disaster_unit_affected_dirrectCountAggregateInputType | true
     }
 
@@ -14912,7 +14994,7 @@ export namespace Prisma {
   type bcm_disaster_unit_affected_indirrectGetPayload<S extends boolean | null | undefined | bcm_disaster_unit_affected_indirrectDefaultArgs> = $Result.GetResult<Prisma.$bcm_disaster_unit_affected_indirrectPayload, S>
 
   type bcm_disaster_unit_affected_indirrectCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<bcm_disaster_unit_affected_indirrectFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<bcm_disaster_unit_affected_indirrectFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Bcm_disaster_unit_affected_indirrectCountAggregateInputType | true
     }
 
@@ -15882,7 +15964,7 @@ export namespace Prisma {
   type workflow_statusGetPayload<S extends boolean | null | undefined | workflow_statusDefaultArgs> = $Result.GetResult<Prisma.$workflow_statusPayload, S>
 
   type workflow_statusCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<workflow_statusFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<workflow_statusFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Workflow_statusCountAggregateInputType | true
     }
 
@@ -16825,7 +16907,7 @@ export namespace Prisma {
   type sys_process_listGetPayload<S extends boolean | null | undefined | sys_process_listDefaultArgs> = $Result.GetResult<Prisma.$sys_process_listPayload, S>
 
   type sys_process_listCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<sys_process_listFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<sys_process_listFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Sys_process_listCountAggregateInputType | true
     }
 
@@ -17516,6 +17598,7 @@ export namespace Prisma {
     id: string | null
     org_id: string | null
     org_name: string | null
+    org_type_id: string | null
     parent_org_id: string | null
     parent_org_name: string | null
     created_at: Date | null
@@ -17528,6 +17611,7 @@ export namespace Prisma {
     id: string | null
     org_id: string | null
     org_name: string | null
+    org_type_id: string | null
     parent_org_id: string | null
     parent_org_name: string | null
     created_at: Date | null
@@ -17540,6 +17624,7 @@ export namespace Prisma {
     id: number
     org_id: number
     org_name: number
+    org_type_id: number
     parent_org_id: number
     parent_org_name: number
     created_at: number
@@ -17554,6 +17639,7 @@ export namespace Prisma {
     id?: true
     org_id?: true
     org_name?: true
+    org_type_id?: true
     parent_org_id?: true
     parent_org_name?: true
     created_at?: true
@@ -17566,6 +17652,7 @@ export namespace Prisma {
     id?: true
     org_id?: true
     org_name?: true
+    org_type_id?: true
     parent_org_id?: true
     parent_org_name?: true
     created_at?: true
@@ -17578,6 +17665,7 @@ export namespace Prisma {
     id?: true
     org_id?: true
     org_name?: true
+    org_type_id?: true
     parent_org_id?: true
     parent_org_name?: true
     created_at?: true
@@ -17663,6 +17751,7 @@ export namespace Prisma {
     id: string
     org_id: string | null
     org_name: string | null
+    org_type_id: string | null
     parent_org_id: string | null
     parent_org_name: string | null
     created_at: Date | null
@@ -17692,6 +17781,7 @@ export namespace Prisma {
     id?: boolean
     org_id?: boolean
     org_name?: boolean
+    org_type_id?: boolean
     parent_org_id?: boolean
     parent_org_name?: boolean
     created_at?: boolean
@@ -17704,6 +17794,7 @@ export namespace Prisma {
     id?: boolean
     org_id?: boolean
     org_name?: boolean
+    org_type_id?: boolean
     parent_org_id?: boolean
     parent_org_name?: boolean
     created_at?: boolean
@@ -17720,6 +17811,7 @@ export namespace Prisma {
       id: string
       org_id: string | null
       org_name: string | null
+      org_type_id: string | null
       parent_org_id: string | null
       parent_org_name: string | null
       created_at: Date | null
@@ -17734,7 +17826,7 @@ export namespace Prisma {
   type org_structureGetPayload<S extends boolean | null | undefined | org_structureDefaultArgs> = $Result.GetResult<Prisma.$org_structurePayload, S>
 
   type org_structureCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<org_structureFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<org_structureFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Org_structureCountAggregateInputType | true
     }
 
@@ -18123,6 +18215,7 @@ export namespace Prisma {
     readonly id: FieldRef<"org_structure", 'String'>
     readonly org_id: FieldRef<"org_structure", 'String'>
     readonly org_name: FieldRef<"org_structure", 'String'>
+    readonly org_type_id: FieldRef<"org_structure", 'String'>
     readonly parent_org_id: FieldRef<"org_structure", 'String'>
     readonly parent_org_name: FieldRef<"org_structure", 'String'>
     readonly created_at: FieldRef<"org_structure", 'DateTime'>
@@ -18440,7 +18533,7 @@ export namespace Prisma {
 
   export type Workflow_levelMinAggregateOutputType = {
     id: string | null
-    wf_module_code: string | null
+    wf_module_id: string | null
     level: number | null
     role_id: string | null
     org_id: string | null
@@ -18456,7 +18549,7 @@ export namespace Prisma {
 
   export type Workflow_levelMaxAggregateOutputType = {
     id: string | null
-    wf_module_code: string | null
+    wf_module_id: string | null
     level: number | null
     role_id: string | null
     org_id: string | null
@@ -18472,7 +18565,7 @@ export namespace Prisma {
 
   export type Workflow_levelCountAggregateOutputType = {
     id: number
-    wf_module_code: number
+    wf_module_id: number
     level: number
     role_id: number
     org_id: number
@@ -18500,7 +18593,7 @@ export namespace Prisma {
 
   export type Workflow_levelMinAggregateInputType = {
     id?: true
-    wf_module_code?: true
+    wf_module_id?: true
     level?: true
     role_id?: true
     org_id?: true
@@ -18516,7 +18609,7 @@ export namespace Prisma {
 
   export type Workflow_levelMaxAggregateInputType = {
     id?: true
-    wf_module_code?: true
+    wf_module_id?: true
     level?: true
     role_id?: true
     org_id?: true
@@ -18532,7 +18625,7 @@ export namespace Prisma {
 
   export type Workflow_levelCountAggregateInputType = {
     id?: true
-    wf_module_code?: true
+    wf_module_id?: true
     level?: true
     role_id?: true
     org_id?: true
@@ -18635,7 +18728,7 @@ export namespace Prisma {
 
   export type Workflow_levelGroupByOutputType = {
     id: string
-    wf_module_code: string
+    wf_module_id: string
     level: number
     role_id: string
     org_id: string | null
@@ -18670,7 +18763,7 @@ export namespace Prisma {
 
   export type workflow_levelSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    wf_module_code?: boolean
+    wf_module_id?: boolean
     level?: boolean
     role_id?: boolean
     org_id?: boolean
@@ -18687,7 +18780,7 @@ export namespace Prisma {
 
   export type workflow_levelSelectScalar = {
     id?: boolean
-    wf_module_code?: boolean
+    wf_module_id?: boolean
     level?: boolean
     role_id?: boolean
     org_id?: boolean
@@ -18713,7 +18806,7 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      wf_module_code: string
+      wf_module_id: string
       level: number
       role_id: string
       org_id: string | null
@@ -18733,7 +18826,7 @@ export namespace Prisma {
   type workflow_levelGetPayload<S extends boolean | null | undefined | workflow_levelDefaultArgs> = $Result.GetResult<Prisma.$workflow_levelPayload, S>
 
   type workflow_levelCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<workflow_levelFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<workflow_levelFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Workflow_levelCountAggregateInputType | true
     }
 
@@ -19121,7 +19214,7 @@ export namespace Prisma {
    */ 
   interface workflow_levelFieldRefs {
     readonly id: FieldRef<"workflow_level", 'String'>
-    readonly wf_module_code: FieldRef<"workflow_level", 'String'>
+    readonly wf_module_id: FieldRef<"workflow_level", 'String'>
     readonly level: FieldRef<"workflow_level", 'Int'>
     readonly role_id: FieldRef<"workflow_level", 'String'>
     readonly org_id: FieldRef<"workflow_level", 'String'>
@@ -19471,6 +19564,7 @@ export namespace Prisma {
   }
 
   export type Workflow_moduleMinAggregateOutputType = {
+    id: string | null
     code: string | null
     tenant_id: string | null
     name: string | null
@@ -19485,6 +19579,7 @@ export namespace Prisma {
   }
 
   export type Workflow_moduleMaxAggregateOutputType = {
+    id: string | null
     code: string | null
     tenant_id: string | null
     name: string | null
@@ -19499,6 +19594,7 @@ export namespace Prisma {
   }
 
   export type Workflow_moduleCountAggregateOutputType = {
+    id: number
     code: number
     tenant_id: number
     name: number
@@ -19515,6 +19611,7 @@ export namespace Prisma {
 
 
   export type Workflow_moduleMinAggregateInputType = {
+    id?: true
     code?: true
     tenant_id?: true
     name?: true
@@ -19529,6 +19626,7 @@ export namespace Prisma {
   }
 
   export type Workflow_moduleMaxAggregateInputType = {
+    id?: true
     code?: true
     tenant_id?: true
     name?: true
@@ -19543,6 +19641,7 @@ export namespace Prisma {
   }
 
   export type Workflow_moduleCountAggregateInputType = {
+    id?: true
     code?: true
     tenant_id?: true
     name?: true
@@ -19630,6 +19729,7 @@ export namespace Prisma {
   }
 
   export type Workflow_moduleGroupByOutputType = {
+    id: string
     code: string
     tenant_id: string | null
     name: string | null
@@ -19661,6 +19761,7 @@ export namespace Prisma {
 
 
   export type workflow_moduleSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
     code?: boolean
     tenant_id?: boolean
     name?: boolean
@@ -19677,6 +19778,7 @@ export namespace Prisma {
   }, ExtArgs["result"]["workflow_module"]>
 
   export type workflow_moduleSelectScalar = {
+    id?: boolean
     code?: boolean
     tenant_id?: boolean
     name?: boolean
@@ -19702,6 +19804,7 @@ export namespace Prisma {
       workflow_level: Prisma.$workflow_levelPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
+      id: string
       code: string
       tenant_id: string | null
       name: string | null
@@ -19721,7 +19824,7 @@ export namespace Prisma {
   type workflow_moduleGetPayload<S extends boolean | null | undefined | workflow_moduleDefaultArgs> = $Result.GetResult<Prisma.$workflow_modulePayload, S>
 
   type workflow_moduleCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<workflow_moduleFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<workflow_moduleFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Workflow_moduleCountAggregateInputType | true
     }
 
@@ -19805,8 +19908,8 @@ export namespace Prisma {
      * // Get first 10 Workflow_modules
      * const workflow_modules = await prisma.workflow_module.findMany({ take: 10 })
      * 
-     * // Only select the `code`
-     * const workflow_moduleWithCodeOnly = await prisma.workflow_module.findMany({ select: { code: true } })
+     * // Only select the `id`
+     * const workflow_moduleWithIdOnly = await prisma.workflow_module.findMany({ select: { id: true } })
      * 
     **/
     findMany<T extends workflow_moduleFindManyArgs<ExtArgs>>(
@@ -20108,6 +20211,7 @@ export namespace Prisma {
    * Fields of the workflow_module model
    */ 
   interface workflow_moduleFieldRefs {
+    readonly id: FieldRef<"workflow_module", 'String'>
     readonly code: FieldRef<"workflow_module", 'String'>
     readonly tenant_id: FieldRef<"workflow_module", 'String'>
     readonly name: FieldRef<"workflow_module", 'String'>
@@ -20751,7 +20855,7 @@ export namespace Prisma {
   type call_tree_sdmGetPayload<S extends boolean | null | undefined | call_tree_sdmDefaultArgs> = $Result.GetResult<Prisma.$call_tree_sdmPayload, S>
 
   type call_tree_sdmCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<call_tree_sdmFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<call_tree_sdmFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Call_tree_sdmCountAggregateInputType | true
     }
 
@@ -21518,6 +21622,987 @@ export namespace Prisma {
 
 
   /**
+   * Model org_type
+   */
+
+  export type AggregateOrg_type = {
+    _count: Org_typeCountAggregateOutputType | null
+    _avg: Org_typeAvgAggregateOutputType | null
+    _sum: Org_typeSumAggregateOutputType | null
+    _min: Org_typeMinAggregateOutputType | null
+    _max: Org_typeMaxAggregateOutputType | null
+  }
+
+  export type Org_typeAvgAggregateOutputType = {
+    sort_order: number | null
+  }
+
+  export type Org_typeSumAggregateOutputType = {
+    sort_order: number | null
+  }
+
+  export type Org_typeMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    sort_order: number | null
+    is_active: boolean | null
+    is_cmt: boolean | null
+    is_consol: boolean | null
+    is_real: boolean | null
+    created_by: string | null
+    created_at: Date | null
+    updated_by: string | null
+    updated_at: Date | null
+  }
+
+  export type Org_typeMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    sort_order: number | null
+    is_active: boolean | null
+    is_cmt: boolean | null
+    is_consol: boolean | null
+    is_real: boolean | null
+    created_by: string | null
+    created_at: Date | null
+    updated_by: string | null
+    updated_at: Date | null
+  }
+
+  export type Org_typeCountAggregateOutputType = {
+    id: number
+    name: number
+    description: number
+    sort_order: number
+    is_active: number
+    is_cmt: number
+    is_consol: number
+    is_real: number
+    created_by: number
+    created_at: number
+    updated_by: number
+    updated_at: number
+    _all: number
+  }
+
+
+  export type Org_typeAvgAggregateInputType = {
+    sort_order?: true
+  }
+
+  export type Org_typeSumAggregateInputType = {
+    sort_order?: true
+  }
+
+  export type Org_typeMinAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    sort_order?: true
+    is_active?: true
+    is_cmt?: true
+    is_consol?: true
+    is_real?: true
+    created_by?: true
+    created_at?: true
+    updated_by?: true
+    updated_at?: true
+  }
+
+  export type Org_typeMaxAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    sort_order?: true
+    is_active?: true
+    is_cmt?: true
+    is_consol?: true
+    is_real?: true
+    created_by?: true
+    created_at?: true
+    updated_by?: true
+    updated_at?: true
+  }
+
+  export type Org_typeCountAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    sort_order?: true
+    is_active?: true
+    is_cmt?: true
+    is_consol?: true
+    is_real?: true
+    created_by?: true
+    created_at?: true
+    updated_by?: true
+    updated_at?: true
+    _all?: true
+  }
+
+  export type Org_typeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which org_type to aggregate.
+     */
+    where?: org_typeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of org_types to fetch.
+     */
+    orderBy?: org_typeOrderByWithRelationInput | org_typeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: org_typeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` org_types from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` org_types.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned org_types
+    **/
+    _count?: true | Org_typeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Org_typeAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Org_typeSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Org_typeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Org_typeMaxAggregateInputType
+  }
+
+  export type GetOrg_typeAggregateType<T extends Org_typeAggregateArgs> = {
+        [P in keyof T & keyof AggregateOrg_type]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateOrg_type[P]>
+      : GetScalarType<T[P], AggregateOrg_type[P]>
+  }
+
+
+
+
+  export type org_typeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: org_typeWhereInput
+    orderBy?: org_typeOrderByWithAggregationInput | org_typeOrderByWithAggregationInput[]
+    by: Org_typeScalarFieldEnum[] | Org_typeScalarFieldEnum
+    having?: org_typeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Org_typeCountAggregateInputType | true
+    _avg?: Org_typeAvgAggregateInputType
+    _sum?: Org_typeSumAggregateInputType
+    _min?: Org_typeMinAggregateInputType
+    _max?: Org_typeMaxAggregateInputType
+  }
+
+  export type Org_typeGroupByOutputType = {
+    id: string
+    name: string
+    description: string | null
+    sort_order: number
+    is_active: boolean
+    is_cmt: boolean
+    is_consol: boolean
+    is_real: boolean
+    created_by: string | null
+    created_at: Date | null
+    updated_by: string | null
+    updated_at: Date | null
+    _count: Org_typeCountAggregateOutputType | null
+    _avg: Org_typeAvgAggregateOutputType | null
+    _sum: Org_typeSumAggregateOutputType | null
+    _min: Org_typeMinAggregateOutputType | null
+    _max: Org_typeMaxAggregateOutputType | null
+  }
+
+  type GetOrg_typeGroupByPayload<T extends org_typeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Org_typeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Org_typeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Org_typeGroupByOutputType[P]>
+            : GetScalarType<T[P], Org_typeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type org_typeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    sort_order?: boolean
+    is_active?: boolean
+    is_cmt?: boolean
+    is_consol?: boolean
+    is_real?: boolean
+    created_by?: boolean
+    created_at?: boolean
+    updated_by?: boolean
+    updated_at?: boolean
+  }, ExtArgs["result"]["org_type"]>
+
+  export type org_typeSelectScalar = {
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    sort_order?: boolean
+    is_active?: boolean
+    is_cmt?: boolean
+    is_consol?: boolean
+    is_real?: boolean
+    created_by?: boolean
+    created_at?: boolean
+    updated_by?: boolean
+    updated_at?: boolean
+  }
+
+
+  export type $org_typePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "org_type"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      description: string | null
+      sort_order: number
+      is_active: boolean
+      is_cmt: boolean
+      is_consol: boolean
+      is_real: boolean
+      created_by: string | null
+      created_at: Date | null
+      updated_by: string | null
+      updated_at: Date | null
+    }, ExtArgs["result"]["org_type"]>
+    composites: {}
+  }
+
+
+  type org_typeGetPayload<S extends boolean | null | undefined | org_typeDefaultArgs> = $Result.GetResult<Prisma.$org_typePayload, S>
+
+  type org_typeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<org_typeFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Org_typeCountAggregateInputType | true
+    }
+
+  export interface org_typeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['org_type'], meta: { name: 'org_type' } }
+    /**
+     * Find zero or one Org_type that matches the filter.
+     * @param {org_typeFindUniqueArgs} args - Arguments to find a Org_type
+     * @example
+     * // Get one Org_type
+     * const org_type = await prisma.org_type.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends org_typeFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, org_typeFindUniqueArgs<ExtArgs>>
+    ): Prisma__org_typeClient<$Result.GetResult<Prisma.$org_typePayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one Org_type that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {org_typeFindUniqueOrThrowArgs} args - Arguments to find a Org_type
+     * @example
+     * // Get one Org_type
+     * const org_type = await prisma.org_type.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends org_typeFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, org_typeFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__org_typeClient<$Result.GetResult<Prisma.$org_typePayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first Org_type that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {org_typeFindFirstArgs} args - Arguments to find a Org_type
+     * @example
+     * // Get one Org_type
+     * const org_type = await prisma.org_type.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends org_typeFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, org_typeFindFirstArgs<ExtArgs>>
+    ): Prisma__org_typeClient<$Result.GetResult<Prisma.$org_typePayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first Org_type that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {org_typeFindFirstOrThrowArgs} args - Arguments to find a Org_type
+     * @example
+     * // Get one Org_type
+     * const org_type = await prisma.org_type.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends org_typeFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, org_typeFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__org_typeClient<$Result.GetResult<Prisma.$org_typePayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more Org_types that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {org_typeFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Org_types
+     * const org_types = await prisma.org_type.findMany()
+     * 
+     * // Get first 10 Org_types
+     * const org_types = await prisma.org_type.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const org_typeWithIdOnly = await prisma.org_type.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends org_typeFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, org_typeFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$org_typePayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a Org_type.
+     * @param {org_typeCreateArgs} args - Arguments to create a Org_type.
+     * @example
+     * // Create one Org_type
+     * const Org_type = await prisma.org_type.create({
+     *   data: {
+     *     // ... data to create a Org_type
+     *   }
+     * })
+     * 
+    **/
+    create<T extends org_typeCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, org_typeCreateArgs<ExtArgs>>
+    ): Prisma__org_typeClient<$Result.GetResult<Prisma.$org_typePayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many Org_types.
+     *     @param {org_typeCreateManyArgs} args - Arguments to create many Org_types.
+     *     @example
+     *     // Create many Org_types
+     *     const org_type = await prisma.org_type.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends org_typeCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, org_typeCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Org_type.
+     * @param {org_typeDeleteArgs} args - Arguments to delete one Org_type.
+     * @example
+     * // Delete one Org_type
+     * const Org_type = await prisma.org_type.delete({
+     *   where: {
+     *     // ... filter to delete one Org_type
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends org_typeDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, org_typeDeleteArgs<ExtArgs>>
+    ): Prisma__org_typeClient<$Result.GetResult<Prisma.$org_typePayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one Org_type.
+     * @param {org_typeUpdateArgs} args - Arguments to update one Org_type.
+     * @example
+     * // Update one Org_type
+     * const org_type = await prisma.org_type.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends org_typeUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, org_typeUpdateArgs<ExtArgs>>
+    ): Prisma__org_typeClient<$Result.GetResult<Prisma.$org_typePayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more Org_types.
+     * @param {org_typeDeleteManyArgs} args - Arguments to filter Org_types to delete.
+     * @example
+     * // Delete a few Org_types
+     * const { count } = await prisma.org_type.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends org_typeDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, org_typeDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Org_types.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {org_typeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Org_types
+     * const org_type = await prisma.org_type.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends org_typeUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, org_typeUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Org_type.
+     * @param {org_typeUpsertArgs} args - Arguments to update or create a Org_type.
+     * @example
+     * // Update or create a Org_type
+     * const org_type = await prisma.org_type.upsert({
+     *   create: {
+     *     // ... data to create a Org_type
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Org_type we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends org_typeUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, org_typeUpsertArgs<ExtArgs>>
+    ): Prisma__org_typeClient<$Result.GetResult<Prisma.$org_typePayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of Org_types.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {org_typeCountArgs} args - Arguments to filter Org_types to count.
+     * @example
+     * // Count the number of Org_types
+     * const count = await prisma.org_type.count({
+     *   where: {
+     *     // ... the filter for the Org_types we want to count
+     *   }
+     * })
+    **/
+    count<T extends org_typeCountArgs>(
+      args?: Subset<T, org_typeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Org_typeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Org_type.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Org_typeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Org_typeAggregateArgs>(args: Subset<T, Org_typeAggregateArgs>): Prisma.PrismaPromise<GetOrg_typeAggregateType<T>>
+
+    /**
+     * Group by Org_type.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {org_typeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends org_typeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: org_typeGroupByArgs['orderBy'] }
+        : { orderBy?: org_typeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, org_typeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetOrg_typeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the org_type model
+   */
+  readonly fields: org_typeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for org_type.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__org_typeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the org_type model
+   */ 
+  interface org_typeFieldRefs {
+    readonly id: FieldRef<"org_type", 'String'>
+    readonly name: FieldRef<"org_type", 'String'>
+    readonly description: FieldRef<"org_type", 'String'>
+    readonly sort_order: FieldRef<"org_type", 'Int'>
+    readonly is_active: FieldRef<"org_type", 'Boolean'>
+    readonly is_cmt: FieldRef<"org_type", 'Boolean'>
+    readonly is_consol: FieldRef<"org_type", 'Boolean'>
+    readonly is_real: FieldRef<"org_type", 'Boolean'>
+    readonly created_by: FieldRef<"org_type", 'String'>
+    readonly created_at: FieldRef<"org_type", 'DateTime'>
+    readonly updated_by: FieldRef<"org_type", 'String'>
+    readonly updated_at: FieldRef<"org_type", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * org_type findUnique
+   */
+  export type org_typeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the org_type
+     */
+    select?: org_typeSelect<ExtArgs> | null
+    /**
+     * Filter, which org_type to fetch.
+     */
+    where: org_typeWhereUniqueInput
+  }
+
+
+  /**
+   * org_type findUniqueOrThrow
+   */
+  export type org_typeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the org_type
+     */
+    select?: org_typeSelect<ExtArgs> | null
+    /**
+     * Filter, which org_type to fetch.
+     */
+    where: org_typeWhereUniqueInput
+  }
+
+
+  /**
+   * org_type findFirst
+   */
+  export type org_typeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the org_type
+     */
+    select?: org_typeSelect<ExtArgs> | null
+    /**
+     * Filter, which org_type to fetch.
+     */
+    where?: org_typeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of org_types to fetch.
+     */
+    orderBy?: org_typeOrderByWithRelationInput | org_typeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for org_types.
+     */
+    cursor?: org_typeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` org_types from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` org_types.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of org_types.
+     */
+    distinct?: Org_typeScalarFieldEnum | Org_typeScalarFieldEnum[]
+  }
+
+
+  /**
+   * org_type findFirstOrThrow
+   */
+  export type org_typeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the org_type
+     */
+    select?: org_typeSelect<ExtArgs> | null
+    /**
+     * Filter, which org_type to fetch.
+     */
+    where?: org_typeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of org_types to fetch.
+     */
+    orderBy?: org_typeOrderByWithRelationInput | org_typeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for org_types.
+     */
+    cursor?: org_typeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` org_types from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` org_types.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of org_types.
+     */
+    distinct?: Org_typeScalarFieldEnum | Org_typeScalarFieldEnum[]
+  }
+
+
+  /**
+   * org_type findMany
+   */
+  export type org_typeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the org_type
+     */
+    select?: org_typeSelect<ExtArgs> | null
+    /**
+     * Filter, which org_types to fetch.
+     */
+    where?: org_typeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of org_types to fetch.
+     */
+    orderBy?: org_typeOrderByWithRelationInput | org_typeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing org_types.
+     */
+    cursor?: org_typeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` org_types from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` org_types.
+     */
+    skip?: number
+    distinct?: Org_typeScalarFieldEnum | Org_typeScalarFieldEnum[]
+  }
+
+
+  /**
+   * org_type create
+   */
+  export type org_typeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the org_type
+     */
+    select?: org_typeSelect<ExtArgs> | null
+    /**
+     * The data needed to create a org_type.
+     */
+    data: XOR<org_typeCreateInput, org_typeUncheckedCreateInput>
+  }
+
+
+  /**
+   * org_type createMany
+   */
+  export type org_typeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many org_types.
+     */
+    data: org_typeCreateManyInput | org_typeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * org_type update
+   */
+  export type org_typeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the org_type
+     */
+    select?: org_typeSelect<ExtArgs> | null
+    /**
+     * The data needed to update a org_type.
+     */
+    data: XOR<org_typeUpdateInput, org_typeUncheckedUpdateInput>
+    /**
+     * Choose, which org_type to update.
+     */
+    where: org_typeWhereUniqueInput
+  }
+
+
+  /**
+   * org_type updateMany
+   */
+  export type org_typeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update org_types.
+     */
+    data: XOR<org_typeUpdateManyMutationInput, org_typeUncheckedUpdateManyInput>
+    /**
+     * Filter which org_types to update
+     */
+    where?: org_typeWhereInput
+  }
+
+
+  /**
+   * org_type upsert
+   */
+  export type org_typeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the org_type
+     */
+    select?: org_typeSelect<ExtArgs> | null
+    /**
+     * The filter to search for the org_type to update in case it exists.
+     */
+    where: org_typeWhereUniqueInput
+    /**
+     * In case the org_type found by the `where` argument doesn't exist, create a new org_type with this data.
+     */
+    create: XOR<org_typeCreateInput, org_typeUncheckedCreateInput>
+    /**
+     * In case the org_type was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<org_typeUpdateInput, org_typeUncheckedUpdateInput>
+  }
+
+
+  /**
+   * org_type delete
+   */
+  export type org_typeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the org_type
+     */
+    select?: org_typeSelect<ExtArgs> | null
+    /**
+     * Filter which org_type to delete.
+     */
+    where: org_typeWhereUniqueInput
+  }
+
+
+  /**
+   * org_type deleteMany
+   */
+  export type org_typeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which org_types to delete
+     */
+    where?: org_typeWhereInput
+  }
+
+
+  /**
+   * org_type without action
+   */
+  export type org_typeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the org_type
+     */
+    select?: org_typeSelect<ExtArgs> | null
+  }
+
+
+
+  /**
    * Model vw_threat_types
    */
 
@@ -21763,7 +22848,7 @@ export namespace Prisma {
   type vw_threat_typesGetPayload<S extends boolean | null | undefined | vw_threat_typesDefaultArgs> = $Result.GetResult<Prisma.$vw_threat_typesPayload, S>
 
   type vw_threat_typesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<vw_threat_typesFindManyArgs, 'select' | 'include' | 'distinct' > & {
+    Omit<vw_threat_typesFindManyArgs, 'select' | 'include' | 'distinct'> & {
       select?: Vw_threat_typesCountAggregateInputType | true
     }
 
@@ -22656,6 +23741,7 @@ export namespace Prisma {
     id: 'id',
     org_id: 'org_id',
     org_name: 'org_name',
+    org_type_id: 'org_type_id',
     parent_org_id: 'parent_org_id',
     parent_org_name: 'parent_org_name',
     created_at: 'created_at',
@@ -22669,7 +23755,7 @@ export namespace Prisma {
 
   export const Workflow_levelScalarFieldEnum: {
     id: 'id',
-    wf_module_code: 'wf_module_code',
+    wf_module_id: 'wf_module_id',
     level: 'level',
     role_id: 'role_id',
     org_id: 'org_id',
@@ -22687,6 +23773,7 @@ export namespace Prisma {
 
 
   export const Workflow_moduleScalarFieldEnum: {
+    id: 'id',
     code: 'code',
     tenant_id: 'tenant_id',
     name: 'name',
@@ -22720,6 +23807,24 @@ export namespace Prisma {
   };
 
   export type Call_tree_sdmScalarFieldEnum = (typeof Call_tree_sdmScalarFieldEnum)[keyof typeof Call_tree_sdmScalarFieldEnum]
+
+
+  export const Org_typeScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    description: 'description',
+    sort_order: 'sort_order',
+    is_active: 'is_active',
+    is_cmt: 'is_cmt',
+    is_consol: 'is_consol',
+    is_real: 'is_real',
+    created_by: 'created_by',
+    created_at: 'created_at',
+    updated_by: 'updated_by',
+    updated_at: 'updated_at'
+  };
+
+  export type Org_typeScalarFieldEnum = (typeof Org_typeScalarFieldEnum)[keyof typeof Org_typeScalarFieldEnum]
 
 
   export const Vw_threat_typesScalarFieldEnum: {
@@ -23837,6 +24942,7 @@ export namespace Prisma {
     id?: StringFilter<"org_structure"> | string
     org_id?: StringNullableFilter<"org_structure"> | string | null
     org_name?: StringNullableFilter<"org_structure"> | string | null
+    org_type_id?: StringNullableFilter<"org_structure"> | string | null
     parent_org_id?: StringNullableFilter<"org_structure"> | string | null
     parent_org_name?: StringNullableFilter<"org_structure"> | string | null
     created_at?: DateTimeNullableFilter<"org_structure"> | Date | string | null
@@ -23849,6 +24955,7 @@ export namespace Prisma {
     id?: SortOrder
     org_id?: SortOrderInput | SortOrder
     org_name?: SortOrderInput | SortOrder
+    org_type_id?: SortOrderInput | SortOrder
     parent_org_id?: SortOrderInput | SortOrder
     parent_org_name?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
@@ -23864,6 +24971,7 @@ export namespace Prisma {
     NOT?: org_structureWhereInput | org_structureWhereInput[]
     org_id?: StringNullableFilter<"org_structure"> | string | null
     org_name?: StringNullableFilter<"org_structure"> | string | null
+    org_type_id?: StringNullableFilter<"org_structure"> | string | null
     parent_org_id?: StringNullableFilter<"org_structure"> | string | null
     parent_org_name?: StringNullableFilter<"org_structure"> | string | null
     created_at?: DateTimeNullableFilter<"org_structure"> | Date | string | null
@@ -23876,6 +24984,7 @@ export namespace Prisma {
     id?: SortOrder
     org_id?: SortOrderInput | SortOrder
     org_name?: SortOrderInput | SortOrder
+    org_type_id?: SortOrderInput | SortOrder
     parent_org_id?: SortOrderInput | SortOrder
     parent_org_name?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
@@ -23894,6 +25003,7 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"org_structure"> | string
     org_id?: StringNullableWithAggregatesFilter<"org_structure"> | string | null
     org_name?: StringNullableWithAggregatesFilter<"org_structure"> | string | null
+    org_type_id?: StringNullableWithAggregatesFilter<"org_structure"> | string | null
     parent_org_id?: StringNullableWithAggregatesFilter<"org_structure"> | string | null
     parent_org_name?: StringNullableWithAggregatesFilter<"org_structure"> | string | null
     created_at?: DateTimeNullableWithAggregatesFilter<"org_structure"> | Date | string | null
@@ -23907,7 +25017,7 @@ export namespace Prisma {
     OR?: workflow_levelWhereInput[]
     NOT?: workflow_levelWhereInput | workflow_levelWhereInput[]
     id?: StringFilter<"workflow_level"> | string
-    wf_module_code?: StringFilter<"workflow_level"> | string
+    wf_module_id?: StringFilter<"workflow_level"> | string
     level?: IntFilter<"workflow_level"> | number
     role_id?: StringFilter<"workflow_level"> | string
     org_id?: StringNullableFilter<"workflow_level"> | string | null
@@ -23924,7 +25034,7 @@ export namespace Prisma {
 
   export type workflow_levelOrderByWithRelationInput = {
     id?: SortOrder
-    wf_module_code?: SortOrder
+    wf_module_id?: SortOrder
     level?: SortOrder
     role_id?: SortOrder
     org_id?: SortOrderInput | SortOrder
@@ -23944,7 +25054,7 @@ export namespace Prisma {
     AND?: workflow_levelWhereInput | workflow_levelWhereInput[]
     OR?: workflow_levelWhereInput[]
     NOT?: workflow_levelWhereInput | workflow_levelWhereInput[]
-    wf_module_code?: StringFilter<"workflow_level"> | string
+    wf_module_id?: StringFilter<"workflow_level"> | string
     level?: IntFilter<"workflow_level"> | number
     role_id?: StringFilter<"workflow_level"> | string
     org_id?: StringNullableFilter<"workflow_level"> | string | null
@@ -23961,7 +25071,7 @@ export namespace Prisma {
 
   export type workflow_levelOrderByWithAggregationInput = {
     id?: SortOrder
-    wf_module_code?: SortOrder
+    wf_module_id?: SortOrder
     level?: SortOrder
     role_id?: SortOrder
     org_id?: SortOrderInput | SortOrder
@@ -23985,7 +25095,7 @@ export namespace Prisma {
     OR?: workflow_levelScalarWhereWithAggregatesInput[]
     NOT?: workflow_levelScalarWhereWithAggregatesInput | workflow_levelScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"workflow_level"> | string
-    wf_module_code?: StringWithAggregatesFilter<"workflow_level"> | string
+    wf_module_id?: StringWithAggregatesFilter<"workflow_level"> | string
     level?: IntWithAggregatesFilter<"workflow_level"> | number
     role_id?: StringWithAggregatesFilter<"workflow_level"> | string
     org_id?: StringNullableWithAggregatesFilter<"workflow_level"> | string | null
@@ -24003,6 +25113,7 @@ export namespace Prisma {
     AND?: workflow_moduleWhereInput | workflow_moduleWhereInput[]
     OR?: workflow_moduleWhereInput[]
     NOT?: workflow_moduleWhereInput | workflow_moduleWhereInput[]
+    id?: StringFilter<"workflow_module"> | string
     code?: StringFilter<"workflow_module"> | string
     tenant_id?: StringNullableFilter<"workflow_module"> | string | null
     name?: StringNullableFilter<"workflow_module"> | string | null
@@ -24018,6 +25129,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleOrderByWithRelationInput = {
+    id?: SortOrder
     code?: SortOrder
     tenant_id?: SortOrderInput | SortOrder
     name?: SortOrderInput | SortOrder
@@ -24033,10 +25145,11 @@ export namespace Prisma {
   }
 
   export type workflow_moduleWhereUniqueInput = Prisma.AtLeast<{
-    code?: string
+    id?: string
     AND?: workflow_moduleWhereInput | workflow_moduleWhereInput[]
     OR?: workflow_moduleWhereInput[]
     NOT?: workflow_moduleWhereInput | workflow_moduleWhereInput[]
+    code?: StringFilter<"workflow_module"> | string
     tenant_id?: StringNullableFilter<"workflow_module"> | string | null
     name?: StringNullableFilter<"workflow_module"> | string | null
     is_active?: BoolNullableFilter<"workflow_module"> | boolean | null
@@ -24048,9 +25161,10 @@ export namespace Prisma {
     org_type_id?: StringNullableFilter<"workflow_module"> | string | null
     sys_code?: StringNullableFilter<"workflow_module"> | string | null
     workflow_level?: Workflow_levelListRelationFilter
-  }, "code">
+  }, "id">
 
   export type workflow_moduleOrderByWithAggregationInput = {
+    id?: SortOrder
     code?: SortOrder
     tenant_id?: SortOrderInput | SortOrder
     name?: SortOrderInput | SortOrder
@@ -24071,6 +25185,7 @@ export namespace Prisma {
     AND?: workflow_moduleScalarWhereWithAggregatesInput | workflow_moduleScalarWhereWithAggregatesInput[]
     OR?: workflow_moduleScalarWhereWithAggregatesInput[]
     NOT?: workflow_moduleScalarWhereWithAggregatesInput | workflow_moduleScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"workflow_module"> | string
     code?: StringWithAggregatesFilter<"workflow_module"> | string
     tenant_id?: StringNullableWithAggregatesFilter<"workflow_module"> | string | null
     name?: StringNullableWithAggregatesFilter<"workflow_module"> | string | null
@@ -24180,6 +25295,95 @@ export namespace Prisma {
     created_at?: DateTimeNullableWithAggregatesFilter<"call_tree_sdm"> | Date | string | null
     updated_by?: StringNullableWithAggregatesFilter<"call_tree_sdm"> | string | null
     updated_at?: DateTimeNullableWithAggregatesFilter<"call_tree_sdm"> | Date | string | null
+  }
+
+  export type org_typeWhereInput = {
+    AND?: org_typeWhereInput | org_typeWhereInput[]
+    OR?: org_typeWhereInput[]
+    NOT?: org_typeWhereInput | org_typeWhereInput[]
+    id?: StringFilter<"org_type"> | string
+    name?: StringFilter<"org_type"> | string
+    description?: StringNullableFilter<"org_type"> | string | null
+    sort_order?: IntFilter<"org_type"> | number
+    is_active?: BoolFilter<"org_type"> | boolean
+    is_cmt?: BoolFilter<"org_type"> | boolean
+    is_consol?: BoolFilter<"org_type"> | boolean
+    is_real?: BoolFilter<"org_type"> | boolean
+    created_by?: StringNullableFilter<"org_type"> | string | null
+    created_at?: DateTimeNullableFilter<"org_type"> | Date | string | null
+    updated_by?: StringNullableFilter<"org_type"> | string | null
+    updated_at?: DateTimeNullableFilter<"org_type"> | Date | string | null
+  }
+
+  export type org_typeOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrderInput | SortOrder
+    sort_order?: SortOrder
+    is_active?: SortOrder
+    is_cmt?: SortOrder
+    is_consol?: SortOrder
+    is_real?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
+    updated_at?: SortOrderInput | SortOrder
+  }
+
+  export type org_typeWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: org_typeWhereInput | org_typeWhereInput[]
+    OR?: org_typeWhereInput[]
+    NOT?: org_typeWhereInput | org_typeWhereInput[]
+    name?: StringFilter<"org_type"> | string
+    description?: StringNullableFilter<"org_type"> | string | null
+    sort_order?: IntFilter<"org_type"> | number
+    is_active?: BoolFilter<"org_type"> | boolean
+    is_cmt?: BoolFilter<"org_type"> | boolean
+    is_consol?: BoolFilter<"org_type"> | boolean
+    is_real?: BoolFilter<"org_type"> | boolean
+    created_by?: StringNullableFilter<"org_type"> | string | null
+    created_at?: DateTimeNullableFilter<"org_type"> | Date | string | null
+    updated_by?: StringNullableFilter<"org_type"> | string | null
+    updated_at?: DateTimeNullableFilter<"org_type"> | Date | string | null
+  }, "id">
+
+  export type org_typeOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrderInput | SortOrder
+    sort_order?: SortOrder
+    is_active?: SortOrder
+    is_cmt?: SortOrder
+    is_consol?: SortOrder
+    is_real?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
+    updated_at?: SortOrderInput | SortOrder
+    _count?: org_typeCountOrderByAggregateInput
+    _avg?: org_typeAvgOrderByAggregateInput
+    _max?: org_typeMaxOrderByAggregateInput
+    _min?: org_typeMinOrderByAggregateInput
+    _sum?: org_typeSumOrderByAggregateInput
+  }
+
+  export type org_typeScalarWhereWithAggregatesInput = {
+    AND?: org_typeScalarWhereWithAggregatesInput | org_typeScalarWhereWithAggregatesInput[]
+    OR?: org_typeScalarWhereWithAggregatesInput[]
+    NOT?: org_typeScalarWhereWithAggregatesInput | org_typeScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"org_type"> | string
+    name?: StringWithAggregatesFilter<"org_type"> | string
+    description?: StringNullableWithAggregatesFilter<"org_type"> | string | null
+    sort_order?: IntWithAggregatesFilter<"org_type"> | number
+    is_active?: BoolWithAggregatesFilter<"org_type"> | boolean
+    is_cmt?: BoolWithAggregatesFilter<"org_type"> | boolean
+    is_consol?: BoolWithAggregatesFilter<"org_type"> | boolean
+    is_real?: BoolWithAggregatesFilter<"org_type"> | boolean
+    created_by?: StringNullableWithAggregatesFilter<"org_type"> | string | null
+    created_at?: DateTimeNullableWithAggregatesFilter<"org_type"> | Date | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"org_type"> | string | null
+    updated_at?: DateTimeNullableWithAggregatesFilter<"org_type"> | Date | string | null
   }
 
   export type vw_threat_typesWhereInput = {
@@ -25336,6 +26540,7 @@ export namespace Prisma {
     id: string
     org_id?: string | null
     org_name?: string | null
+    org_type_id?: string | null
     parent_org_id?: string | null
     parent_org_name?: string | null
     created_at?: Date | string | null
@@ -25348,6 +26553,7 @@ export namespace Prisma {
     id: string
     org_id?: string | null
     org_name?: string | null
+    org_type_id?: string | null
     parent_org_id?: string | null
     parent_org_name?: string | null
     created_at?: Date | string | null
@@ -25360,6 +26566,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     org_id?: NullableStringFieldUpdateOperationsInput | string | null
     org_name?: NullableStringFieldUpdateOperationsInput | string | null
+    org_type_id?: NullableStringFieldUpdateOperationsInput | string | null
     parent_org_id?: NullableStringFieldUpdateOperationsInput | string | null
     parent_org_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -25372,6 +26579,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     org_id?: NullableStringFieldUpdateOperationsInput | string | null
     org_name?: NullableStringFieldUpdateOperationsInput | string | null
+    org_type_id?: NullableStringFieldUpdateOperationsInput | string | null
     parent_org_id?: NullableStringFieldUpdateOperationsInput | string | null
     parent_org_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -25384,6 +26592,7 @@ export namespace Prisma {
     id: string
     org_id?: string | null
     org_name?: string | null
+    org_type_id?: string | null
     parent_org_id?: string | null
     parent_org_name?: string | null
     created_at?: Date | string | null
@@ -25396,6 +26605,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     org_id?: NullableStringFieldUpdateOperationsInput | string | null
     org_name?: NullableStringFieldUpdateOperationsInput | string | null
+    org_type_id?: NullableStringFieldUpdateOperationsInput | string | null
     parent_org_id?: NullableStringFieldUpdateOperationsInput | string | null
     parent_org_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -25408,6 +26618,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     org_id?: NullableStringFieldUpdateOperationsInput | string | null
     org_name?: NullableStringFieldUpdateOperationsInput | string | null
+    org_type_id?: NullableStringFieldUpdateOperationsInput | string | null
     parent_org_id?: NullableStringFieldUpdateOperationsInput | string | null
     parent_org_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -25434,7 +26645,7 @@ export namespace Prisma {
 
   export type workflow_levelUncheckedCreateInput = {
     id: string
-    wf_module_code: string
+    wf_module_id: string
     level: number
     role_id: string
     org_id?: string | null
@@ -25466,7 +26677,7 @@ export namespace Prisma {
 
   export type workflow_levelUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    wf_module_code?: StringFieldUpdateOperationsInput | string
+    wf_module_id?: StringFieldUpdateOperationsInput | string
     level?: IntFieldUpdateOperationsInput | number
     role_id?: StringFieldUpdateOperationsInput | string
     org_id?: NullableStringFieldUpdateOperationsInput | string | null
@@ -25482,7 +26693,7 @@ export namespace Prisma {
 
   export type workflow_levelCreateManyInput = {
     id: string
-    wf_module_code: string
+    wf_module_id: string
     level: number
     role_id: string
     org_id?: string | null
@@ -25513,7 +26724,7 @@ export namespace Prisma {
 
   export type workflow_levelUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    wf_module_code?: StringFieldUpdateOperationsInput | string
+    wf_module_id?: StringFieldUpdateOperationsInput | string
     level?: IntFieldUpdateOperationsInput | number
     role_id?: StringFieldUpdateOperationsInput | string
     org_id?: NullableStringFieldUpdateOperationsInput | string | null
@@ -25528,6 +26739,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleCreateInput = {
+    id: string
     code: string
     tenant_id?: string | null
     name?: string | null
@@ -25543,6 +26755,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleUncheckedCreateInput = {
+    id: string
     code: string
     tenant_id?: string | null
     name?: string | null
@@ -25558,6 +26771,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
     code?: StringFieldUpdateOperationsInput | string
     tenant_id?: NullableStringFieldUpdateOperationsInput | string | null
     name?: NullableStringFieldUpdateOperationsInput | string | null
@@ -25573,6 +26787,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
     code?: StringFieldUpdateOperationsInput | string
     tenant_id?: NullableStringFieldUpdateOperationsInput | string | null
     name?: NullableStringFieldUpdateOperationsInput | string | null
@@ -25588,6 +26803,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleCreateManyInput = {
+    id: string
     code: string
     tenant_id?: string | null
     name?: string | null
@@ -25602,6 +26818,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
     code?: StringFieldUpdateOperationsInput | string
     tenant_id?: NullableStringFieldUpdateOperationsInput | string | null
     name?: NullableStringFieldUpdateOperationsInput | string | null
@@ -25616,6 +26833,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
     code?: StringFieldUpdateOperationsInput | string
     tenant_id?: NullableStringFieldUpdateOperationsInput | string | null
     name?: NullableStringFieldUpdateOperationsInput | string | null
@@ -25738,6 +26956,111 @@ export namespace Prisma {
     phone_home?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
     employment_status?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type org_typeCreateInput = {
+    id: string
+    name: string
+    description?: string | null
+    sort_order?: number
+    is_active?: boolean
+    is_cmt?: boolean
+    is_consol?: boolean
+    is_real?: boolean
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+  }
+
+  export type org_typeUncheckedCreateInput = {
+    id: string
+    name: string
+    description?: string | null
+    sort_order?: number
+    is_active?: boolean
+    is_cmt?: boolean
+    is_consol?: boolean
+    is_real?: boolean
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+  }
+
+  export type org_typeUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    sort_order?: IntFieldUpdateOperationsInput | number
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    is_cmt?: BoolFieldUpdateOperationsInput | boolean
+    is_consol?: BoolFieldUpdateOperationsInput | boolean
+    is_real?: BoolFieldUpdateOperationsInput | boolean
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type org_typeUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    sort_order?: IntFieldUpdateOperationsInput | number
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    is_cmt?: BoolFieldUpdateOperationsInput | boolean
+    is_consol?: BoolFieldUpdateOperationsInput | boolean
+    is_real?: BoolFieldUpdateOperationsInput | boolean
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type org_typeCreateManyInput = {
+    id: string
+    name: string
+    description?: string | null
+    sort_order?: number
+    is_active?: boolean
+    is_cmt?: boolean
+    is_consol?: boolean
+    is_real?: boolean
+    created_by?: string | null
+    created_at?: Date | string | null
+    updated_by?: string | null
+    updated_at?: Date | string | null
+  }
+
+  export type org_typeUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    sort_order?: IntFieldUpdateOperationsInput | number
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    is_cmt?: BoolFieldUpdateOperationsInput | boolean
+    is_consol?: BoolFieldUpdateOperationsInput | boolean
+    is_real?: BoolFieldUpdateOperationsInput | boolean
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type org_typeUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    sort_order?: IntFieldUpdateOperationsInput | number
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    is_cmt?: BoolFieldUpdateOperationsInput | boolean
+    is_consol?: BoolFieldUpdateOperationsInput | boolean
+    is_real?: BoolFieldUpdateOperationsInput | boolean
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_by?: NullableStringFieldUpdateOperationsInput | string | null
@@ -26718,6 +28041,7 @@ export namespace Prisma {
     id?: SortOrder
     org_id?: SortOrder
     org_name?: SortOrder
+    org_type_id?: SortOrder
     parent_org_id?: SortOrder
     parent_org_name?: SortOrder
     created_at?: SortOrder
@@ -26730,6 +28054,7 @@ export namespace Prisma {
     id?: SortOrder
     org_id?: SortOrder
     org_name?: SortOrder
+    org_type_id?: SortOrder
     parent_org_id?: SortOrder
     parent_org_name?: SortOrder
     created_at?: SortOrder
@@ -26742,6 +28067,7 @@ export namespace Prisma {
     id?: SortOrder
     org_id?: SortOrder
     org_name?: SortOrder
+    org_type_id?: SortOrder
     parent_org_id?: SortOrder
     parent_org_name?: SortOrder
     created_at?: SortOrder
@@ -26757,7 +28083,7 @@ export namespace Prisma {
 
   export type workflow_levelCountOrderByAggregateInput = {
     id?: SortOrder
-    wf_module_code?: SortOrder
+    wf_module_id?: SortOrder
     level?: SortOrder
     role_id?: SortOrder
     org_id?: SortOrder
@@ -26778,7 +28104,7 @@ export namespace Prisma {
 
   export type workflow_levelMaxOrderByAggregateInput = {
     id?: SortOrder
-    wf_module_code?: SortOrder
+    wf_module_id?: SortOrder
     level?: SortOrder
     role_id?: SortOrder
     org_id?: SortOrder
@@ -26794,7 +28120,7 @@ export namespace Prisma {
 
   export type workflow_levelMinOrderByAggregateInput = {
     id?: SortOrder
-    wf_module_code?: SortOrder
+    wf_module_id?: SortOrder
     level?: SortOrder
     role_id?: SortOrder
     org_id?: SortOrder
@@ -26824,6 +28150,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleCountOrderByAggregateInput = {
+    id?: SortOrder
     code?: SortOrder
     tenant_id?: SortOrder
     name?: SortOrder
@@ -26838,6 +28165,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleMaxOrderByAggregateInput = {
+    id?: SortOrder
     code?: SortOrder
     tenant_id?: SortOrder
     name?: SortOrder
@@ -26852,6 +28180,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleMinOrderByAggregateInput = {
+    id?: SortOrder
     code?: SortOrder
     tenant_id?: SortOrder
     name?: SortOrder
@@ -26926,6 +28255,59 @@ export namespace Prisma {
     created_at?: SortOrder
     updated_by?: SortOrder
     updated_at?: SortOrder
+  }
+
+  export type org_typeCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    sort_order?: SortOrder
+    is_active?: SortOrder
+    is_cmt?: SortOrder
+    is_consol?: SortOrder
+    is_real?: SortOrder
+    created_by?: SortOrder
+    created_at?: SortOrder
+    updated_by?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type org_typeAvgOrderByAggregateInput = {
+    sort_order?: SortOrder
+  }
+
+  export type org_typeMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    sort_order?: SortOrder
+    is_active?: SortOrder
+    is_cmt?: SortOrder
+    is_consol?: SortOrder
+    is_real?: SortOrder
+    created_by?: SortOrder
+    created_at?: SortOrder
+    updated_by?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type org_typeMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    sort_order?: SortOrder
+    is_active?: SortOrder
+    is_cmt?: SortOrder
+    is_consol?: SortOrder
+    is_real?: SortOrder
+    created_by?: SortOrder
+    created_at?: SortOrder
+    updated_by?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type org_typeSumOrderByAggregateInput = {
+    sort_order?: SortOrder
   }
 
   export type vw_threat_typesCountOrderByAggregateInput = {
@@ -29865,6 +31247,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleCreateWithoutWorkflow_levelInput = {
+    id: string
     code: string
     tenant_id?: string | null
     name?: string | null
@@ -29879,6 +31262,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleUncheckedCreateWithoutWorkflow_levelInput = {
+    id: string
     code: string
     tenant_id?: string | null
     name?: string | null
@@ -29909,6 +31293,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleUpdateWithoutWorkflow_levelInput = {
+    id?: StringFieldUpdateOperationsInput | string
     code?: StringFieldUpdateOperationsInput | string
     tenant_id?: NullableStringFieldUpdateOperationsInput | string | null
     name?: NullableStringFieldUpdateOperationsInput | string | null
@@ -29923,6 +31308,7 @@ export namespace Prisma {
   }
 
   export type workflow_moduleUncheckedUpdateWithoutWorkflow_levelInput = {
+    id?: StringFieldUpdateOperationsInput | string
     code?: StringFieldUpdateOperationsInput | string
     tenant_id?: NullableStringFieldUpdateOperationsInput | string | null
     name?: NullableStringFieldUpdateOperationsInput | string | null
@@ -29997,7 +31383,7 @@ export namespace Prisma {
     OR?: workflow_levelScalarWhereInput[]
     NOT?: workflow_levelScalarWhereInput | workflow_levelScalarWhereInput[]
     id?: StringFilter<"workflow_level"> | string
-    wf_module_code?: StringFilter<"workflow_level"> | string
+    wf_module_id?: StringFilter<"workflow_level"> | string
     level?: IntFilter<"workflow_level"> | number
     role_id?: StringFilter<"workflow_level"> | string
     org_id?: StringNullableFilter<"workflow_level"> | string | null
@@ -31069,6 +32455,10 @@ export namespace Prisma {
      * @deprecated Use call_tree_sdmDefaultArgs instead
      */
     export type call_tree_sdmArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = call_tree_sdmDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use org_typeDefaultArgs instead
+     */
+    export type org_typeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = org_typeDefaultArgs<ExtArgs>
     /**
      * @deprecated Use vw_threat_typesDefaultArgs instead
      */

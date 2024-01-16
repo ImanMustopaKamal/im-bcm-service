@@ -16,12 +16,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 5.7.0
- * Query Engine version: 79fb5193cf0a8fdbef536e4b4a159cad677ab1b9
+ * Prisma Client JS version: 5.8.0
+ * Query Engine version: 0a83d8541752d7582de2ebc1ece46519ce72a848
  */
 Prisma.prismaVersion = {
-  client: "5.7.0",
-  engine: "79fb5193cf0a8fdbef536e4b4a159cad677ab1b9"
+  client: "5.8.0",
+  engine: "0a83d8541752d7582de2ebc1ece46519ce72a848"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -261,6 +261,7 @@ exports.Prisma.Org_structureScalarFieldEnum = {
   id: 'id',
   org_id: 'org_id',
   org_name: 'org_name',
+  org_type_id: 'org_type_id',
   parent_org_id: 'parent_org_id',
   parent_org_name: 'parent_org_name',
   created_at: 'created_at',
@@ -271,7 +272,7 @@ exports.Prisma.Org_structureScalarFieldEnum = {
 
 exports.Prisma.Workflow_levelScalarFieldEnum = {
   id: 'id',
-  wf_module_code: 'wf_module_code',
+  wf_module_id: 'wf_module_id',
   level: 'level',
   role_id: 'role_id',
   org_id: 'org_id',
@@ -286,6 +287,7 @@ exports.Prisma.Workflow_levelScalarFieldEnum = {
 };
 
 exports.Prisma.Workflow_moduleScalarFieldEnum = {
+  id: 'id',
   code: 'code',
   tenant_id: 'tenant_id',
   name: 'name',
@@ -309,6 +311,21 @@ exports.Prisma.Call_tree_sdmScalarFieldEnum = {
   phone_home: 'phone_home',
   address: 'address',
   employment_status: 'employment_status',
+  created_by: 'created_by',
+  created_at: 'created_at',
+  updated_by: 'updated_by',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.Org_typeScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  sort_order: 'sort_order',
+  is_active: 'is_active',
+  is_cmt: 'is_cmt',
+  is_consol: 'is_consol',
+  is_real: 'is_real',
   created_by: 'created_by',
   created_at: 'created_at',
   updated_by: 'updated_by',
@@ -356,6 +373,7 @@ exports.Prisma.ModelName = {
   workflow_level: 'workflow_level',
   workflow_module: 'workflow_module',
   call_tree_sdm: 'call_tree_sdm',
+  org_type: 'org_type',
   vw_threat_types: 'vw_threat_types'
 };
 
